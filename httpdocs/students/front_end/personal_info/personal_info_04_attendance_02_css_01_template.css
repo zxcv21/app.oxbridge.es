@@ -1,0 +1,39 @@
+/*
+Page ID: p_0010150
+File: /front_end/personal_info/personal_info_04_attendance_02_css_01_template.css
+*/
+.p_0010150_personal_info_titulo_div_fecha, .p_0010150_personal_attendance
+{
+    float: left;
+    text-align: left;
+}
+.p_0010150_personal_info_titulo_div_fecha
+{
+margin-right:30px;
+width: 135px;
+text-align: left;
+font-size: 20px;
+color: #666;
+}
+.p_0010150_personal_info_titulo_asistencia
+{
+	margin-left: 20px;
+	width: 92px;
+	text-align: center;
+}
+.p_0010150_personal_asistencia_clase 
+{
+	width: 100%;
+	float: left;
+	border-top: solid rgba(45,206,228,1);
+	padding: 10px 0;
+	font-size: 20px;
+	color: #666;
+}
+.p_0010150_personal_asistencia_boton
+{
+	margin-top: 2px;
+	width: 38px;
+	height: 38px;
+	float: right;
+}

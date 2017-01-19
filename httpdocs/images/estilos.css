@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; }
+.menu_ico
+{
+	margin-right:-48px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+    animation-delay: 2s;
+}
+
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+#menu{
+		
+}
+	#menu_calendario{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+			background:url(./image/calendar_100.png);
+		}
+	#menu_clase_web{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+			background:url(../image/clasesweb_100.png);
+		}
+	#menu_clases{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+			background:url(../image/classes_100.png);
+		}
+	#menu_personal{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+			background:url(../image/personal_100.png);
+		}
+	#menu_smile{
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+			background:url(../image/smile_100.png);
+		}
+
+
+
+
+
+#pantalla
+{
+}
+#barra{}
+#contenedor{} 
+#calendario{}
+#clase_web{}
+#clases{}
+#personal{}
+#smile{}
+   

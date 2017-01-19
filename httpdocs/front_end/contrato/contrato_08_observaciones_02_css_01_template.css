@@ -1,0 +1,51 @@
+/*
+Page ID: p_0010189
+File: /front_end/contrato/contrato_08_observaciones_02_css_01_template.css
+*/
+
+.p_0010189_css_textarea
+{
+	width:95%;
+	height:120px;
+	margin-bottom: 5px;
+}
+
+.p_0010189_css_boton_guardar
+{
+	font-weight: bold;
+}
+
+.p_0010189_css_titulo_de_seccion
+{
+	/* font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #b7007b;
+    margin: 10px;
+    margin-bottom: 15px;
+    float: left; */
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #b7007b;
+    margin: -9px 10px 0 0;
+    float: left;
+    z-index: 99;
+    overflow: hidden;
+    height: 30px;
+    position: fixed;
+	margin-top: 10px;
+}
+
+.p_0010189_css_hr
+{
+	margin-right:5%;
+}
+
+.p_0010189_css_contenedor_pagina
+{
+    margin: 10px;
+    position: relative;
+    clear: both;
+	margin-top:47px;
+}

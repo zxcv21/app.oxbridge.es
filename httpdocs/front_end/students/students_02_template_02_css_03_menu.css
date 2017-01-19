@@ -1,0 +1,78 @@
+/*
+Page ID: p_0010220
+File: /front_end/students/students_02_template_02_css_03_menu.css
+*/
+
+.p_0010220_css_contenedor_menus
+{
+    height: 120px;
+	position: relative;
+}
+
+.p_0010220_css_img_menus
+{
+	float:left;
+	position:absolute;
+	transition: 0.3s left, 0.3s top;
+	cursor:pointer;
+    border-radius: 8px;
+	border:3px solid #fff;
+}
+	
+#p_0010216_contenedor_pagina_menu_mobil
+{
+	display:none !important;
+}
+
+#p_0010216_div_contenedor_menu
+{
+	display:inherit !important;
+}
+	
+@media (max-width:600px)
+{
+	.p_0010220_css_img_menus
+	{
+		float: left;
+		height: 100%;
+		left: 0;
+		position: relative;
+		width: 87px;
+	}
+
+	.p_0010220_css_contenedor_menus 
+	{
+		position: absolute;
+		bottom: 0;
+	}
+	
+	#p_0010216_contenedor_pagina_menu_mobil
+	{
+		display:inherit !important;
+	}
+	#p_0010216_div_contenedor_menu
+	{
+		display:none !important;
+	}
+	#p_0010214_divs_donde_carga_contenido_cada_seccion{
+		position: absolute;
+		margin: 80;
+	}
+}
+
+.p_0010220_css_img_menus_mobil
+{
+	float: left;
+	height: 100%;
+	left: 0;
+	position: relative;
+	width: 93px;
+	border-radius: 8px;
+	border:3px solid #fff;
+}
+
+.p_0010220_css_contenedor_menus_mobil
+{
+	position: absolute;
+	bottom: 0;
+}

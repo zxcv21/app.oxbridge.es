@@ -1,0 +1,82 @@
+/*
+Page ID: p_0010159
+File: /front_end/contrato/contrato_01_template_02_css_01_template_01_template.css
+*/
+.p_0010159_css_contenedor_titulo
+{
+	font-size: 30px;
+    border: solid;
+	text-align:center;
+	border-width: 2px;
+}
+
+.p_0010159_css_contenedor_listas_contenido
+{
+/* 	border-style: solid;
+    border-color: #000;
+	border-radius: 10px;
+	border-width: 5px;
+	height: 455px; */
+	margin-top:40px;
+	clear:both;
+	height:80%;
+}
+
+.p_0010159_css_contenedor_pestanas
+{
+	display:block;
+	position:absolute;
+	z-index:999;
+}
+
+@media (max-width:769px)
+{
+	.p_0010159_css_contenedor_listas_contenido
+	{
+		 min-width: 250px;
+	}
+	.p_0010159_css_contenedor_pestanas
+	{
+		display:none;
+		background: #333;
+		color: #999;
+		z-index: 9999;
+	}
+}
+@media (min-width:775px)
+{
+	.p_0010159_css_contenedor_pestanas
+	{
+		display:block !important;
+	}
+}
+
+.p_0010159_css_mensaje_no_hay_internet
+{
+	margin-top:80px;
+}
+
+.p_0010159_css_contenido_pestanas
+{
+	width:100%;
+	height: 80%;
+	float:left;
+	overflow: auto;
+}
+
+@-moz-keyframes p_00995_horario_loading{
+	100%{-moz-transform:rotate(360deg)}
+}
+@-webkit-keyframes p_00995_horario_loading{
+	100%{-webkit-transform:rotate(360deg)}
+}
+@keyframes p_00995_horario_loading{
+	100%{transform:rotate(360deg)}
+}
+
+body
+{
+	margin:1px;
+	overflow: hidden;
+}
+

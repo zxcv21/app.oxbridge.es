@@ -1,0 +1,55 @@
+/*
+Page ID: p_0010227
+File: /front_end/students/students_02_template_02_css_02_header.css
+*/
+
+.p_0010227_css_img_logo_OX
+{
+	float: right;
+    width: 210px;
+    height: auto;
+}
+
+
+.p_0010227_css_img_mail
+{
+	float: right;
+    width: 30px;
+    height: auto;
+    margin: 11px 0 0 0;
+    cursor: pointer;	
+}
+
+.p_0010227_css_div_idiomas
+{
+	float: right;
+    margin: 11px 10px 0 0;
+    width: 25px;
+    z-index: 110;
+}
+
+	#p_0010215_div_idiomas
+	{
+		display:inherit !important;
+	}
+	#p_0010215_img_logo_mail
+	{
+		display:inherit !important;
+	}
+
+@media (max-width:600px)
+{
+	
+	#p_0010215_div_idiomas
+	{
+		display:none !important;
+	}
+	#p_0010215_img_logo_mail
+	{
+		display:none !important;
+	}
+	.p_0010227_css_img_logo_OX
+	{
+		float:left;
+	}
+}

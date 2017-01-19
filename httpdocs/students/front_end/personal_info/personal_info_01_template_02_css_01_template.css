@@ -1,0 +1,198 @@
+/*
+Pag ID:p_0010011
+File:/front_end/personal_info/personal_info_01_template_02_css_01_template.css
+*/
+
+
+
+.p_0010011_recover_personal_info
+{
+	font-size: 15px;
+    clear: both;
+    text-decoration: underline;
+    color: #888;
+	
+}
+.p_0010011_botongris, .p_0010011_botonazul
+{
+	height:100%;
+}
+.p_0010011_personal_info_01_template_01
+{
+		
+ }
+.p_0010011_personal_info_01_img
+{
+	border: solid 2px #888;
+	border-radius: 45px 45px 0 45px;
+	width: 34px;
+	height: 34px;
+	padding: 2px;
+	margin-bottom: 20px;
+    position: relative;
+}
+.p_0010011_personal_info_01_img_seleccionada
+{
+	border-radius: 45px 0 0 45px;
+	width: 40px; 
+}  
+.p_0010011_personal_info_01_div_invisible
+{
+ float: left;
+ position: absolute;
+}
+.p_0010011_efecto_espacio_en_blanco
+{ 
+	display:none;
+    height: 100%;
+    width: 14px;
+    left: 1.2em;
+    background-color: #fff;
+    margin-left: 23px;
+    margin-top: -2px;
+    position: absolute;
+}
+.p_0010011_personal_info_01_img_seleccionada div.p_0010011_efecto_espacio_en_blanco
+{
+	display:inline;
+}
+.p_0010011_personal_info_01_contenedor_01
+{
+    margin-left: 46px;
+	padding:4px 3%;
+	border-radius: 10px;
+    border: solid 2px #888;
+    position: relative;
+	min-height: 420px;
+	min-width:191px;	
+}
+.p_0010011_div_personal_info_01_contenedor_inicial_01
+{
+    border-radius: 0 10px 10px 10px;
+}
+.p_0010011_personal_info_01_contenedor_ultima_seccion_03 
+{
+   border-radius: 10px 10px 10px 0;
+}
+.p_0010011_personal_info_01_div_invisible 
+{
+	z-index: 1;
+}
+.p_0010011_contenedor
+{
+ display: inline-block;
+ width:100%;
+ 
+}
+ /* Zona de codigo correspondiente a los contenedores */
+
+ ::-webkit-input-placeholder {
+color: #E7F3F3;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+color: #E7F3F3;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #E7F3F3; 
+}
+
+:-ms-input-placeholder {  
+  color: #E7F3F3;
+}
+.p_0010011_personal_info_global 
+{
+    float: left;
+    min-width: 310px;
+    margin: 10px;
+	position: relative;
+
+}
+.p_0010011_menu_seccion_titulo
+{
+	text-align: center;
+    margin-bottom: 0.5em;
+	color: #888;
+	font-size: 40px;
+	word-wrap: break-word;
+}
+.p_0010011_personal_info_campo_01
+{
+	float: left;
+	min-width: 150px;
+	color: #666;
+	font-size: 1.1em;
+	text-align: right;
+	margin: 0 1em 0 0;
+} 
+.p_0010011_personal_info_div_input_01
+{
+ float: right;
+ min-width: 135px;
+}
+.p_0010011_contenedor_assistence
+{
+max-width:600px;	
+}
+.p_0010011_personal_info_input_01
+{
+border: 1px solid #888;
+padding: 2px;
+float: right;
+}
+
+.p_0010011_personal_info_input_submit_01
+{
+text-align:center;	
+clear:both;
+}
+.p_0010011_personal_info_input_submit_01 input[type="submit"]
+{
+	min-width: 150px;
+	border: solid 0.1em #fff;
+    background-color: #555;
+    color: #fff;
+    font-size: 1.4em;
+    padding: 0 0.5em;
+    background-image: linear-gradient(to bottom, #bbb, #555);
+    border-radius: 1em;
+	margin-top: 10px;
+}
+/* SI OCUPA MENOS DE ESTO CENTRARÁ EL TEXTO*/
+@media(max-width:454px)
+{
+.p_0010011_personal_info_campo_01, .p_0010011_personal_info_div_input_01
+{
+	width:100%;
+	text-align: center;
+}
+.p_0010153_div_account_alineacion, .p_0010011_personal_info_input_texto_01
+{
+	text-align: center;
+}
+
+.p_0010011_personal_info_input_01, .p_0010011_personal_info_input_texto_01
+{
+		float:none;
+		
+}
+.p_0010011_personal_info_global
+{
+	min-width:0;
+	
+}
+}
+.p_0010011_personal_info_input_01:invalid {
+  border: solid 1px #f00;
+}
+/***************************/
+
+.p_0010011_alineacion {
+
+    color: inherit;
+    border: none;
+	
+}
+
+

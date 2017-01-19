@@ -1,0 +1,103 @@
+/*
+Page ID: p_0010168
+File: /front_end/personal_info/personal_info_07_account_info_02_css_01_template.css
+*/
+
+.p_0010168_formulario_datos_bancarios
+{
+	
+	 
+ }
+ 
+
+ 
+ .p_0010168_div_cuenta_extranjera
+ {
+	 text-align: left;
+    color: #888;
+    font-size: 18px;
+    margin-right: 1em;
+    margin-top: 1em;
+ }
+ 
+.p_0010168_div_margin_top
+{
+	margin-top:10px;
+	
+}
+.p_0010168_formulario_personal_info_iban
+{ 
+	width: 28px;
+    height: 21px;
+    text-align: center;
+    color: #888;
+    font-size: 11px;
+  }
+.p_0010168_formulario_personal_info_iban_letras
+{ 
+	width:31px;
+	
+  }
+.p_0010168_personal_info_div_iban
+{
+    min-width: 150px;
+    color: #888;
+    font-size: 1.5em;
+    text-align: left;
+    margin-right: 1em; 
+ }
+
+.p_0010168_personal_info_datos_titular
+{
+    min-width: 250px;
+    color: #888;
+    font-size: 1.5em;
+    text-align: left;
+    margin-right: 1em;
+	margin-top: 1em;
+	
+	
+}
+.p_0010153_div_account_alineacion
+{
+    float: right;
+    min-width: 150px;
+    color: #666;
+    font-size: 1.1em;
+    text-align: left;
+    margin-right: 1em;
+}
+.p_0010168_campos_datos_titular 
+ {
+	  /* margin-left:100px;*/
+	  margin: 0 auto 0 auto;
+	  max-width: 380px;
+	  color: #666;
+ 
+
+ }
+  .p_0010168_formulario_personal_info_iban_ext
+ {
+	width:186px;
+	height:21px;
+	
+
+ }
+
+ .p_0010168_div_textos_check_box
+ {
+	 max-width: 300px;
+	 text-align: center; 
+	 clear: both; 
+	 font-size: 1em;
+	 margin-right: 1em; 
+	 color: #666; 
+	 margin-top:10px;
+	 
+	 
+	 
+ }
+ 
+
+ 
+ 

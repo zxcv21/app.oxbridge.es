@@ -1,0 +1,68 @@
+/*
+Page ID:  p_0010162
+File: /front_end/contrato/contrato_01_template_02_css_05_menu.css
+*/
+
+.p_0010162_css_estilo_pestanas
+{
+	cursor: pointer;
+	float:left;
+	font-size:22px;
+	padding: 2px;
+    border-width: 1px 1px 0px;
+    border-style: solid;
+	border-right: #46A9A0 3px solid;
+	background: #333;
+	color:#aaa;
+}
+
+
+.p_0010162_css_oculta_muestra_pestanas_pantalla_pequena
+{
+	display:none;
+}
+
+@media (max-width:775px)
+{
+	.p_0010162_css_estilo_pestanas
+	{
+		clear: both;
+		border-style: none;
+		width:98%;
+		border-bottom: #46A9A0 1px solid;
+	}
+	.p_0010162_css_oculta_muestra_pestanas_pantalla_pequena
+	{
+		display: block;
+		width: 29px;
+		height: 27px;
+		background: #333;
+		border-bottom: #46A9A0 1px solid;
+		color: #aaa;
+		padding: 4px;
+		font-size: 24px;
+	}
+	
+}
+
+.p_0010162_css_opcion_de_pestanyas_div
+{
+    margin: 1px;
+	height:30px;
+}
+
+div#p_0010161_div_opciones_de_pestanas img {
+    height: 100%;
+}
+
+.p_0010162_css_estilo_pestanas_seleccionada
+{
+	background: #633;
+}
+
+/* .p_0010162_css_opcion_de_pestanyas_imagenes
+{
+	opacity:0.4;
+}
+ */
+

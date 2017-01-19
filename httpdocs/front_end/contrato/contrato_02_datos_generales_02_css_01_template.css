@@ -1,0 +1,118 @@
+/*
+Page ID: p_0010171
+File: /front_end/contrato/contrato_02_datos_generales_02_css_01_template.css
+*/
+.p_0010171_css_imagen_guardar
+{	
+	font-family: Arial, Helvetica, sans-serif;
+    margin: -5px 10px 0 0;
+    height: 20px;
+    margin-left: 90px;
+    position: fixed;
+	margin-top: 10px;
+	z-index:99;
+}
+
+.p_0010171_css_input
+{
+	background-color: #fff;
+	width:90px;
+}
+.p_0010171_css_input:invalid
+{
+	background-color: rgb(255, 178, 178);
+}
+
+.p_0010171_css_input_invalid
+{
+	background-color: rgb(255, 178, 178);
+}
+
+.p_0010171_css_contenedor_secciones
+{
+	float: left;
+    margin: 10px;
+    position: relative;
+}
+
+.p_0010171_css_titulo_de_seccion
+{
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #b7007b;
+    margin: -9px 10px 0 0;
+    float: left;
+    height: 30px;
+	position:fixed;
+	margin-top: 10px;
+	z-index: 99;
+}
+
+.p_0010171_css_texto_input
+{
+	font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    font-size: 1.1em;
+    text-align: right;
+    margin: 0 1em 0 0;
+	clear:both;
+}
+
+.p_0010171_css_text_div
+{
+	font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    font-size: 1.1em;
+    text-align: right;
+    clear: both;
+    border-radius: 0 0 0 10;
+    font-weight: bold;
+    border-bottom: 2px solid;
+    border-bottom-color: #b7007b;
+    margin-bottom: 5px;
+}
+
+.p_0010171_css_div_input
+{
+	float:right;
+}
+
+.p_0010171_css_separacion
+{
+	padding-top: 0.3em;
+	text-align:center;
+    font-size: 1.2em;
+    border-color: #2DCEE4;
+    background-color: #333;
+    color: #fff;
+	width: 100%;
+	float:left;
+    font-family: HelveticaNeueRoman;
+	margin-top: 30px;
+}
+
+@media (max-width:779px)
+{
+	.p_0010171_css_texto_input
+	{
+		width:100%;
+		text-align:center;
+		float:none;
+	}
+	.p_0010171_css_div_input
+	{
+		width:100%;
+		text-align:center;
+	}
+	.p_0010171_css_text_div
+	{
+		text-align:left;
+		float:none;
+	}
+	.p_0010171_css_contenedor_secciones
+	{
+		clear:both;
+	}
+	
+}

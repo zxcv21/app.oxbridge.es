@@ -1,0 +1,70 @@
+/*
+Page ID: p_0010144
+File: /front_end/personal_info/personal_info_02_personal_info_02_css_01_template.css
+*/
+-moz-placeholder
+{
+  color: blue;
+}
+ *focus 
+ {
+	outline: none;
+ }
+-webkit-input-placeholder
+{
+    color: blue;
+}
+.p_0010144_personal_info_global 
+{
+    float: left;
+    min-width: 310px;
+    margin: 10px;
+	position: relative;
+
+}
+@media(max-width:420px)
+{
+.p_0010144_personal_info_global
+{
+	min-width:0;
+}
+}
+.p_0010144_menu_seccion_titulo
+{
+	
+    text-align: center;
+    margin-bottom: 0.5em;
+	color: #888;
+	font-size: 40px;
+}
+.p_0010144_personal_info_campo_01
+{
+float: left;
+min-width: 150px;
+color: #666;
+font-size: 1.2em;
+} 
+.p_0010144_personal_info_div_input_01
+{
+ float: right;
+ min-width: 175px;
+
+    
+}
+.p_0010144_personal_info_input_01
+{
+border: 1px solid #888;
+padding: 2px;
+float: right;
+
+}
+.p_0010144_personal_info_input_submit_01
+{
+
+text-align:center;	
+clear:both;
+	
+}
+
+
+

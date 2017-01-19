@@ -1,0 +1,45 @@
+/*
+Page ID: p_0010153
+File: /front_end/personal_info/personal_info_06_config_02_css_01_template.css
+*/
+
+.p_0010153_personal_info_06_config {
+    margin: 0 auto 0 auto;
+    max-width: 360px;
+	
+}
+
+.p_0010153_titulo_version {
+	
+text-align: center;
+	
+margin: 46px 0 10px 0;
+	
+width: 100%;
+float: left;
+min-width: 150px;
+color: #666;
+font-size: 1.1em;
+
+
+
+}
+
+.p_0010153_div_config_alineacion{
+    float: right;
+    min-width: 150px;
+    color: #666;
+    font-size: 1.1em;
+    text-align: right;
+    margin-right: 1em;
+	}
+
+.p_0010153_bandera_deseleccionada {
+    width: 30px;
+    border: 3px solid #fff;
+	border-radius:30px;
+}
+ 
+.p_0010153_bandera_seleccionada {
+    border-color:#2DCEE4;
+} 

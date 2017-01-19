@@ -1,0 +1,168 @@
+<!--
+Pag. ID: 00994
+-->
+
+<style>
+#p_00994_clases_head_valoracion_formulario_titulo_out{
+	height:100%;
+	width:100%;
+	z-index:100;
+	position:absolute;
+	display:none;
+	background-color:#000;
+	opacity:0.7;
+	}
+
+#p_00994_clases_head_valoracion_formulario_titulo{
+  z-index: 101;
+  position: fixed;
+  top: 35%;
+  left: 10%;
+  width: 80%;
+  display: none;
+	}
+	#p_00994_clases_head_valoracion_formulario_titulo textarea{
+		font-size: 4em;
+		width: 100%;
+		}
+	#p_00994_clases_head_valoracion_formulario_titulo_titulo{
+		padding:6px;
+		margin-bottom:-6px;
+		background-color:#fff;
+		font-family:HelveticaNeue, Helvetica, Arial, sans-serif;
+			font-size: 18px;
+			color:#999;
+			letter-spacing: 6px;
+		}
+	#p_00994_clases_head_valoracion_formulario_titulo_submit{
+		float: right;
+		background-color: #fff;
+		font-size: 4em;
+		font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+		color:#aaa;
+		}
+</style>
+
+<div id="p_00994_clases_head_valoracion_formulario_titulo_out" onclick="formulario_valoracion(0);mostrar_valoracion(true);"></div>
+<div id="p_00994_clases_head_valoracion_formulario_titulo">
+   <input type="hidden" name="valoracion" id="p_00994_clases_head_valoracion_formulario_titulo_valoracion" >
+   <textarea placeholder="Comment" id="p_00994_clases_head_valoracion_formulario_titulo_textarea"  rows="3" cols="30"></textarea><br>
+   <input id="p_00994_clases_head_valoracion_formulario_titulo_submit" onclick="" type="submit" value="Send">
+</div>
+
+<script>
+	function p_00994_valorar_desde_menu_clase(val){
+		if(((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1))&&(dia_lectivo[DIA_LEC].incidencia!=1)){
+		//if((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1)){
+			p_1003_clase_formulario_valorar= DIA_LEC;
+			//formulario_valoracion(val);
+			p_1003_crear_formulario_valoracion(DIA_LEC);
+			formulario_valoracion(val);
+			//document.getElementById("p_0001851_form_valoracion").style.height = "610px";
+			p_00994_valoracion_voluntaria=true;
+		}
+	}
+	function formulario_valoracion(val){
+
+			document.getElementById("p_0001292_input_incidencia").value="0";
+			dia_lectivo[p_1003_clase_formulario_valorar].incidencia=0;
+			document.getElementById("p_01450_overall_valoracion_inputs").style.display = "none";
+			document.querySelector(".p_01450_div_valoracion_dia").style.display = "block";
+			document.getElementById("p_01450_div_incidencia").style.display = "none";
+			//document.getElementById("p_0001851_boton_incidencia").style.display = "block";
+
+				document.getElementById("p_0001851_form_valoracion").style.height = "610px";
+				document.getElementById("p_01450_overall_valoracion_inputs").style.display = "block";
+				document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display = "block";
+
+				document.getElementById("p_0001851_anular").style.display = "none";
+
+	//	if(document.getElementById("p_00960_clases_head_valoracion_s"+val+'_valorar').style.backgroundImage!="")
+	//		val=0;
+
+		if(val>-1)dia_lectivo[p_1003_clase_formulario_valorar].valoracion = val;
+
+		//document.getElementById("p_0001292_input_finalizador").value="";
+		document.getElementById("p_00960_clases_head_flecha_valorar").style.display = "none";
+		mostrar_valoracion(true, "formulario_valoracion");
+		//document.getElementById('p_01450_overall_valoracion_semanal').style.display='block';
+}
+
+	//mostrar y ocultar la valoracion del profesor
+	function mostrar_valoracion(mostrar, formulario){
+		var p_00994_estrellas=0;
+		//reset estrellas
+		for(k=1; k<=5;k++){
+				if(formulario===undefined)
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "";
+				else{
+					document.getElementById("p_00960_clases_head_valoracion_s"+k+"_valorar").style.backgroundImage = "";
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "";
+				}
+		}
+		if(mostrar){//pintar estrellas
+			if(formulario!==undefined){
+				for(k=1; k<=dia_lectivo[p_1003_clase_formulario_valorar].valoracion;k++){
+					document.getElementById("p_00960_clases_head_valoracion_s"+k+"_valorar").style.backgroundImage = "url(<? echo ver_url("images/estrella_FULL.png","src"); ?>)";
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "url(<? echo ver_url("images/estrella_FULL.png","src"); ?>)";
+				}
+			}
+			else{
+				if(dia_lectivo[DIA_LEC])//estará abierta la página de actividades
+					p_00994_estrellas= dia_lectivo[DIA_LEC].valoracion;
+				//else
+					//p_00994_estrellas= dia_lectivo[p_1003_clase_formulario_valorar].valoracion;
+				//for(k=1; k<=dia_lectivo[DIA_LEC].valoracion;k++){
+				for(k=1; k<=p_00994_estrellas;k++){
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "url(<? echo ver_url("images/estrella_FULL.png","src"); ?>)";
+				}
+			}
+		}else{//borrar estrellas
+			for(k=1; k<=5;k++){
+				if(formulario===undefined)
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "";
+				else{
+					document.getElementById("p_00960_clases_head_valoracion_s"+k+"_valorar").style.backgroundImage = "";
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "";
+					document.getElementById("p_00960_clases_head_flecha_valorar").style.display = "block";
+				}
+			}
+		}
+	}
+
+	//cancelar valoracion
+	function p_00994_cancelar_valoracion(){
+		for(k=1; k<=dia_lectivo[DIA_LEC].valoracion;k++)
+					document.getElementById("p_00960_clases_head_valoracion_s"+k).style.backgroundImage = "url(<? echo ver_url("images/estrella.png","src"); ?>)";
+	}
+
+
+	function p_00994_envio_incidencia(){
+		document.getElementById("p_0001292_input_incidencia").value="1";
+		dia_lectivo[p_1003_clase_formulario_valorar].incidencia=1;
+		//document.getElementById("p_0001851_form_valoracion").style.height = "610px";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.display = "block";
+		document.querySelector(".p_01450_div_valoracion_dia").style.display = "none";
+		document.getElementById("p_01450_div_incidencia").style.display = "block";
+
+		document.getElementById("p_0001851_form_valoracion").style.height="200px";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.border="2px solid #21aed7";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.borderRadius="10px";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.padding="20px";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.position="fixed";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+		document.getElementById("p_01450_overall_valoracion_inputs").style.boxShadow="5px 5px 20px grey";
+
+		document.getElementById("p_0001851_anular").style.display="inline-block";
+
+		//cambiar estilo botón enviar
+		document.getElementById("p_0001851_enviar").style.backgroundColor="white";//#21aed7
+		document.getElementById("p_0001851_enviar").style.color="red";//white
+		document.getElementById("p_0001851_enviar").value="No he asistido a esta clase";//Enviar
+		document.getElementById("p_0001851_enviar").style.width= "237px";//150
+
+		mostrar_valoracion(false, "formulario_valoracion");
+		dia_lectivo[p_1003_clase_formulario_valorar].valoracion="";
+	}
+
+</script>
