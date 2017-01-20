@@ -21,7 +21,7 @@ function filtro_direccion($direccion)
 		}
 		case 2:
 		{
-			$direccion="jonatan@oxbridge.es";
+			$direccion="jonatan_seguimineto@oxbridge.es";
 			break;
 		}
 		case 3:
@@ -194,12 +194,12 @@ if($departamento=='3'){
 if($departamento=='4'){
 	$mail->AddAddress("clientes@oxbridge.es","Oxmail");
 	$mail->AddAddress("tomas@oxbridge.es","Tomas");
-	$mail->AddAddress("jonatan@oxbridge.es","Jonatan");
+	//$mail->AddAddress("jonatan@oxbridge.es","Jonatan");
 }
 if($departamento=='5'){
 	$mail->AddAddress("alumnos@oxbridge.es","Alumnos");
 	$mail->AddAddress("tomas@oxbridge.es","Tomas");
-	$mail->AddAddress("jonatan@oxbridge.es","Jonatan");
+	//$mail->AddAddress("jonatan@oxbridge.es","Jonatan");
 }
 
 
