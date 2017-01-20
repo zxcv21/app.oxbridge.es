@@ -1,5 +1,4 @@
 <!--
-M
 -ID Pag: p_00955
 -->
 <?
@@ -51,7 +50,6 @@ if(!isset($_GET['idioma'])){
 >
 <script>
 	window.onload=function(){
-		p_0001854_mostrar_pagina_bienvenida_bool= true;
 		p_1003_guardar_horas_inicio_fin_clases();
 		p_1003_comprobar_valoraciones_pendientes();
 	}
@@ -159,7 +157,7 @@ if(!isset($_GET['idioma'])){
       <img style="height: 40%;" src="<? echo ver_url("images/orientacion4.png","src"); ?>">
    </div>
 
-	<div id="p_00995_reloguin" class="p_01300_contenedor" style="display:none;">
+	<div id="p_00995_reloguin" class="p_01300_contenedor" style="display:none;width:100%;height:100%;position:absolute;z-index:10;background-color:white;">
 	</div>
 
 	<div id="p_00995_smiles_mensage_proximamente" style="display:none;">

@@ -5,10 +5,12 @@
 	if(typeof GO_TO=="undefined"){
 		GO_TO="smile";
 	}
+	if(p_0001854_mostrar_pagina_bienvenida_bool)
+		p_0001854_mostrar_pagina_bienvenida();
 	mover_menu(true,"p_00987_menu_"+GO_TO);
 	orientacion_cambiada();
 	setTimeout(function(){p_00989_resize_menu_apartados();},50);
-	
+
 	setTimeout(cargar_tutorial,2000);
 
 	if(typeof sesion_id!="undefined")
