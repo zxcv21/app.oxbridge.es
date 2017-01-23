@@ -609,7 +609,7 @@ function p_00989_contar_firmas_pendientes(){
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
 	for(i in dia_lectivo){
-		if((dia_lectivo[i].firmado=="0")&&(dia_lectivo[i].historica=="1")&&(parseInt(dia_lectivo[i].incidencia)==0)){
+		if((dia_lectivo[i].firmado=="0")&&(dia_lectivo[i].historica=="1")&&(parseInt(dia_lectivo[i].incidencia)==0)&&(parseInt(dia_lectivo[i].asistencia)!=0)){
 			p_00989_firmas_pendientes++;
 		}
 	}
@@ -658,7 +658,7 @@ function p_00989_comprobar_firmas_pendientes(){
 	var p_00989_ultimo_dia= 0;
 
 	for(i in dia_lectivo){
-		if((dia_lectivo[i].firmado=="0")&&(dia_lectivo[i].historica=="1")&&(parseInt(dia_lectivo[i].incidencia)==0)){
+		if((dia_lectivo[i].firmado=="0")&&(dia_lectivo[i].historica=="1")&&(parseInt(dia_lectivo[i].incidencia)==0)&&(parseInt(dia_lectivo[i].asistencia)!=0)){
 			if(dia_lectivo[i].date_final.getTime()>p_00989_hora_ultimo_dia){
 				p_00989_ultimo_dia= i;
 				p_00989_hora_ultimo_dia= dia_lectivo[i].date_final.getTime();

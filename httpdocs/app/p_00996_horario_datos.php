@@ -82,9 +82,11 @@ if( $p_0001326_php_sesion_correcta == "si" && $p_0001326_php_usuario_correcto ==
 				}
 
 				//correccion dia semana
-				capsula.dia_semana=new Date(capsula.fecha_aaaa_mm_dd.replace("/",",")).getDay();
-		}
+				//capsula.dia_semana=new Date(capsula.fecha_aaaa_mm_dd.replace("/",",")).getDay();
+				var p_00996_fecha= capsula.fecha_aaaa_mm_dd.split("/");
+				capsula.dia_semana=new Date(p_00996_fecha[0],parseInt(p_00996_fecha[1])-1,p_00996_fecha[2]).getDay();
 
+		}
 		window.parent.horario_datos=horario_datos_corregir;
 
 		/*mostrar mensaje horario en hora local*/
