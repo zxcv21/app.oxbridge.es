@@ -484,8 +484,12 @@ function p_01000_reservar_capsula(id_capsula, accion, variable){
 					if(capsula.tipo_reserva=="fija")
 						html_botones+="<button onClick=\"horario_capsula('"+id_capsula_rl+"','"+accion.slice(-1)+"','fija');\">"+TEXTOS[7].text+"</button>";
 				}
-				else
-					html_botones+="<br><input id='p_01000_reserva_fija' style='height:20px;width:20px;vertical-align: middle;cursor: pointer;' type='checkbox'> <label for='p_01000_reserva_fija' style='cursor: pointer;'>"+TEXTOS[134].text.replace("[dia]",week[capsula.dia_semana+1]).replace("[hora]",capsula.hora_inicio)+"</label>";
+				else{
+					//html_botones+="<br><input id='p_01000_reserva_fija' style='height:20px;width:20px;vertical-align: middle;cursor: pointer;' type='checkbox'> <label for='p_01000_reserva_fija' style='cursor: pointer;'>"+TEXTOS[134].text.replace("[dia]",week[capsula.dia_semana+1]).replace("[hora]",capsula.hora_inicio)+"</label>";
+					var p_01000_texto_capsula_fija= TEXTOS[134].text.replace("[dia]",week[capsula.dia_semana+1]);
+					p_01000_texto_capsula_fija= p_01000_texto_capsula_fija.replace("[hora]",capsula.hora_inicio);
+					html_botones+="<br><input id='p_01000_reserva_fija' style='height:20px;width:20px;vertical-align: middle;cursor: pointer;' type='checkbox'> <label for='p_01000_reserva_fija' style='cursor: pointer;'>"+p_01000_texto_capsula_fija+"</label>";
+				}
 			}
 			html_botones+="</div>";
 

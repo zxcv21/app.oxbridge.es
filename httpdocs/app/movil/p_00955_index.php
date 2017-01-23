@@ -149,7 +149,7 @@ if(!isset($_GET['idioma'])){
         </div>
     </div>
 
-	<? include ver_url('movil/p_0001854_pagina_bienvenida.php','');?>
+	<? //include ver_url('movil/p_0001854_pagina_bienvenida.php','');?>
 
 	<div id="bloquear_giro" style="display:none;">
    	<br>
@@ -399,6 +399,7 @@ if(!isset($_GET['idioma'])){
 				 <div id="head_oxbridge_menu_apartados"></div>
       </div>
 		<?
+			include ver_url('movil/p_0001854_pagina_bienvenida.php','');
 			include ver_url("movil/p_00959_claseweb.php","");
 			include ver_url("movil/p_00960_clases.php","");
 			include ver_url("movil/p_00958_horario.php","");

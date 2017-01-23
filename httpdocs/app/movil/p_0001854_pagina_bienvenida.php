@@ -1,12 +1,13 @@
 <style>
 #p_0001854_pag_bienvenida_div{
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: white;
   opacity: 1;
   display: none;
-  z-index: 2;
+  z-index: 999;
   -webkit-transition: 2s;
   transition: 2s;
 }
