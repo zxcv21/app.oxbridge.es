@@ -51,19 +51,20 @@ Pag. ID: 00994
 </div>
 
 <script>
+
 	function p_00994_valorar_desde_menu_clase(val){
-		if(((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1))&&(dia_lectivo[DIA_LEC].incidencia!=1)){
-		//if((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1)){
-			p_1003_clase_formulario_valorar= DIA_LEC;
-			//formulario_valoracion(val);
-			p_1003_crear_formulario_valoracion(DIA_LEC);
-			formulario_valoracion(val);
-			//document.getElementById("p_0001851_form_valoracion").style.height = "610px";
-			p_00994_valoracion_voluntaria=true;
+		var p_00994_ahora= new Date(Date.now());
+		if(p_00994_ahora>=dia_lectivo[DIA_LEC].date_final+p_01003_diferencia_horaria_servidor){
+			if(((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1))&&(parseInt(dia_lectivo[DIA_LEC].incidencia)!=1)){
+				p_1003_clase_formulario_valorar= DIA_LEC;
+				p_1003_crear_formulario_valoracion(DIA_LEC);
+				formulario_valoracion(val);
+				p_00994_valoracion_voluntaria=true;
+			}
 		}
 	}
-	function formulario_valoracion(val){
 
+	function formulario_valoracion(val){
 			document.getElementById("p_0001292_input_incidencia").value="0";
 			dia_lectivo[p_1003_clase_formulario_valorar].incidencia=0;
 			document.getElementById("p_01450_overall_valoracion_inputs").style.display = "none";

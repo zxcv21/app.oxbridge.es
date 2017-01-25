@@ -2207,4 +2207,15 @@ function p_01174_textarea_contar_caracteres(ele,ele_imprimir,maximo,minimo)
 	}
 	document.getElementById(ele_imprimir).innerHTML=text.length+" / ("+minimo+"-"+maximo+")";
 }
+
+window.addEventListener('resize', function() {
+	if(document.getElementById("p_00962_preguntas_contenedor").style.display!="none"){
+		var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
+		if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
+			var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
+			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
+		}
+	}
+});
+
 </script>

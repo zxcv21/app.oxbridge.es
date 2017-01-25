@@ -605,34 +605,57 @@ function p_1003_guardar_horas_inicio_fin_clases(){
 	}
 }
 
-
-
 p_00994_valoracion_voluntaria= false;
 function p_1003_comprobar_valoraciones_pendientes(){
 //monica- testeo
-/*	if(this.primera_vez== undefined){
-		p_1003_maximo_dias_valorar= 200;
+/*	if(typeof this.primera_vez== "undefined"){
+//		p_1003_maximo_dias_valorar= 200;
 		for(i in dia_lectivo){
 			dia_lectivo[i].valoracion="";
 			dia_lectivo[i].incidencia==0;
 		}
 		this.primera_vez= false;
 	}
-	*/
+*/
 	if(!p_00994_valoracion_voluntaria){
 			//p_1003_maximo_dias_valorar= 28;
 			var p_1003_hora_ultimo_dia= 0;
 			var p_1003_ultimo_dia= 0;
 			var p_1003_dia_clase_variable;
 			var p_1003_maximo_dias_valorar_miliseg= p_1003_maximo_dias_valorar*24*3600000;
-			//document.getElementById("p_0001851_boton_incidencia").style.display="none";
+			var p_1003_ayer= new Date(Date.now()-24*3600*1000);
+			p_1003_ayer.setHours(0);
+			p_1003_ayer.setMinutes(0);
+			p_1003_ayer.setSeconds(0);
 
 			for(i in dia_lectivo){
-				if((dia_lectivo[i].historica=="1")&&(parseInt(dia_lectivo[i].incidencia)==0)&&((dia_lectivo[i].valoracion=="")||(parseInt(dia_lectivo[i].valoracion)<1))){
-					if(dia_lectivo[i].date_final.getTime()>p_1003_hora_ultimo_dia){
-						p_1003_ultimo_dia= i;
-						p_1003_hora_ultimo_dia= dia_lectivo[i].date_final.getTime();
+				if(dia_lectivo[i].date_final.getTime()+p_01003_diferencia_horaria_servidor>p_1003_ayer.getTime()){
+					console.log("clase ayer:")
+					a= new Date(dia_lectivo[i].date_final.getTime()+p_01003_diferencia_horaria_servidor);
+					console.log(a.toString());
+					console.log(p_1003_ayer.toString());
+
+					if((dia_lectivo[i].historica=="0")||(parseInt(dia_lectivo[i].incidencia)==1)||(parseInt(dia_lectivo[i].valoracion)>0)){
+						console.log("pasa de firma ayer: "+i);
+						if(parseInt(dia_lectivo[i].valoracion)>0)
+						console.log("por valorada");
+						continue;
 					}
+				}
+				else {
+					if((dia_lectivo[i].historica=="0")||(parseInt(dia_lectivo[i].incidencia)==1)||(parseInt(dia_lectivo[i].valoracion)>0)||(parseInt(dia_lectivo[i].asistencia)==0)){
+						console.log("pasa de firma: "+i);
+						if(parseInt(dia_lectivo[i].valoracion)>0)
+						console.log("por valorada");
+						if(parseInt(dia_lectivo[i].asistencia)==0)
+						console.log("por no asistencia");
+						continue;
+					}
+				}
+
+				if(dia_lectivo[i].date_final.getTime()>p_1003_hora_ultimo_dia){
+					p_1003_ultimo_dia= i;
+					p_1003_hora_ultimo_dia= dia_lectivo[i].date_final.getTime();
 				}
 			}
 			if(p_1003_ultimo_dia){
@@ -646,7 +669,7 @@ function p_1003_comprobar_valoraciones_pendientes(){
 			}
 
 			p_00989_contar_firmas_pendientes();
-		}
+	}
 }
 
 //RELLENAR COMENTARIO
@@ -981,12 +1004,7 @@ function p_01003_email_envio_comentario_profesor(){
 	p_01003_mensaje+= "</body>" ;
 	p_01003_mensaje+= "</html>" ;
 
-/*	document.getElementById('p_00995_formulario_envio_email').src='<? echo ver_url("p_01392_email.php","src"); ?>'+
-	'?to=5'+
-	'&from='+personal_datos_info.email+
-	'&subject=Comentario de profesor'+
-	'&txt='+p_01003_mensaje ;
-*/
+
 	var p_01003_cabecera_mail= '<? echo ver_url("p_01392_email.php","src"); ?>'+
 	'?to=5'+
 	'&from='+personal_datos_info.email;
@@ -1015,7 +1033,6 @@ function p_01003_email_envio_comentario_profesor(){
 	//p_00989_animacion_envio_mail();
 }
 
-
 function p_01003_valoracion_cambiar_cara()
 {
 	var c=0;
@@ -1030,4 +1047,37 @@ function p_01003_valoracion_cambiar_cara()
 
 	document.getElementById("p_00995_valoracion_cara_"+c).style.display="";
 }
+
+//guarda diferencia horaria local-servidor
+(function() {
+	var p_1003_fecha= datos_servidor.fecha.split("/");
+	var p_1003_horario= datos_servidor.horario.split(":");
+	var p_1003_hora_serv= new Date(p_1003_fecha[0],parseInt(p_1003_fecha[1])-1,p_1003_fecha[2],p_1003_horario[0],p_1003_horario[1],p_1003_horario[2]);
+	p_01003_diferencia_horaria_servidor = Date.now()-p_1003_hora_serv;
+})();
+
+//comprueba cada x minutos todas las alarmas
+//o pone nueva alarma
+/*
+function p_01003_comprobar_alarma(p_01003_fecha, p_01003_funcion, p_01003_parametro){
+	if(typeof p_01003_fecha== 'undefined'){
+		if(typeof this.p_01003_array_funciones!='undefined'){
+			var p_01003_ahora= Date.now();
+			this.p_01003_array_funciones.forEach(function(item,index){
+				if(p_01003_ahora>=item.fecha){
+					window[item.funcion](item.parametro);
+					this.p_01003_array_funciones.splice(index,1);
+				}
+			});
+		}
+		setTimeout(p_01003_comprobar_alarma, 2*60*1000);
+	}
+	else{
+		if(typeof this.p_01003_array_funciones=='undefined'){
+				this.p_01003_array_funciones=[];
+		}
+		this.p_01003_array_funciones.push({fecha:(p_01003_fecha+p_01003_diferencia_horaria_servidor), funcion:p_01003_funcion, parametro:p_01003_parametro});
+	}
+}
+*/
 </script>

@@ -56,7 +56,6 @@ Pag. ID: p_01168
 	.p_00961_contenedor_seccion{
 		padding: 71px 50px 50px;
 		border: solid 0.06em #888;
-		/*margin-bottom:40%;*/
 		background-color: #fff;
 		border-radius:0.7em;
 		min-height:300px;
@@ -65,6 +64,19 @@ Pag. ID: p_01168
     width: 500px;
 		position: relative;
     left: 15px;
+/*		padding: 71px 50px 0px;
+    border: solid 0.06em #888;
+    background-color: #fff;
+    border-radius: 0.7em;
+    min-height: 300px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 500px;
+    position: relative;
+    margin-left: 15px;
+		max-height: 79vh;
+    overflow-y: auto;
+		*/
 		}
 		.p_00961_contenedor_seccion_orizontal{
 			width: 400px;

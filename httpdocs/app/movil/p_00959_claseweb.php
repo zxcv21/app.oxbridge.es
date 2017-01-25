@@ -83,7 +83,7 @@ function p_00959_mostrar_enlace_clase(p_00959_hora_clase){
 
 <script type="text/javascript">
 
-	function p_00959_js_f_01_pintar_botones_clases_a_distancia()
+function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	{
 		var p_00959_js_f_01_contador = 0;
 		var p_00959_js_f_01_bucle_01 = 0;
@@ -96,10 +96,10 @@ function p_00959_mostrar_enlace_clase(p_00959_hora_clase){
 		var yyyy = hoy.getFullYear();
 		if(dd<10) {
 			dd='0'+dd
-		} 
+		}
 		if(mm<10) {
 			mm='0'+mm
-		} 
+		}
 		hoy = dd+'/'+mm+'/'+yyyy;
 
 		for( p_00959_js_f_01_bucle_01 in dia_lectivo )
@@ -133,7 +133,7 @@ function p_00959_mostrar_enlace_clase(p_00959_hora_clase){
 				p_00959_js_f_01_contador++ ;
 			};
 		};
-		
+
 		if( parseInt(p_00959_js_f_01_contador) == parseInt(0) )
 		{
 			//p_00959_js_f_01_html+= "<div id=\"p_00959_sin_clase\">";

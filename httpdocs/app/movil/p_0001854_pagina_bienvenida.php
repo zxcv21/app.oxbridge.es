@@ -10,6 +10,7 @@
   z-index: 999;
   -webkit-transition: 2s;
   transition: 2s;
+  overflow:auto;
 }
 #p_0001854_pag_bienvenida_div>div>img{
   width: 100%;
@@ -133,51 +134,66 @@ function p_0001854_printar_cuadrados() {
     p_0001854_iconos[i].style.height= p_0001854_cuadrado+"px";
   }
 
+  var p_0001854_margen= p_0001854_cuadrado/10;
+  var p_0001854_margen_mitad= p_0001854_margen/2;
+  var p_0001854_margen_logo= 75;
+  var p_0001854_inicio_vertical;
+
   if(window.innerWidth>window.innerHeight){
-    var p_0001854_margen= p_0001854_cuadrado/8;//30;
-    var p_0001854_margen_mitad= p_0001854_margen/2;
+    p_0001854_margen= p_0001854_cuadrado/8;//30;
+    p_0001854_margen_mitad= p_0001854_margen/2;
+    p_0001854_inicio_vertical= (window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_margen_mitad);
+
+    if(p_0001854_inicio_vertical<p_0001854_margen_logo)
+      p_0001854_inicio_vertical= p_0001854_margen_logo;
 
     document.getElementById("p_0001854_clases").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado+p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
-    document.getElementById("p_0001854_clases").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_clases").style.top= p_0001854_inicio_vertical+"px";
 
     document.getElementById("p_0001854_claseweb").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado_mitad))+"px";
-    document.getElementById("p_0001854_claseweb").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_claseweb").style.top= p_0001854_inicio_vertical+"px";
 
     document.getElementById("p_0001854_smile").style.left= ((window.innerWidth/2)+(p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
-    document.getElementById("p_0001854_smile").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_smile").style.top= p_0001854_inicio_vertical+"px";
 
     document.getElementById("p_0001854_horario").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado+p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
-    document.getElementById("p_0001854_horario").style.top= ((window.innerHeight/2)+(p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_horario").style.top= (p_0001854_inicio_vertical+p_0001854_cuadrado+p_0001854_margen)+"px";
 
     document.getElementById("p_0001854_personal").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado_mitad))+"px";
-    document.getElementById("p_0001854_personal").style.top= ((window.innerHeight/2)+(p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_personal").style.top= (p_0001854_inicio_vertical+p_0001854_cuadrado+p_0001854_margen)+"px";
 
     document.getElementById("p_0001854_mail").style.left= ((window.innerWidth/2)+(p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
-    document.getElementById("p_0001854_mail").style.top= ((window.innerHeight/2)+(p_0001854_margen_mitad))+"px";
+    document.getElementById("p_0001854_mail").style.top= (p_0001854_inicio_vertical+p_0001854_cuadrado+p_0001854_margen)+"px";
+
   }
   else{
-    var p_0001854_margen= p_0001854_cuadrado/10;
-    var p_0001854_margen_mitad= p_0001854_margen/2;
+    p_0001854_margen= p_0001854_cuadrado/10;
+    p_0001854_margen_mitad= p_0001854_margen/2;
+    p_0001854_inicio_vertical= (window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_cuadrado_mitad+p_0001854_margen);
+
+    if(p_0001854_inicio_vertical<p_0001854_margen_logo)
+      p_0001854_inicio_vertical= p_0001854_margen_logo;
 
     document.getElementById("p_0001854_clases").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_clases").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
+    document.getElementById("p_0001854_clases").style.top= p_0001854_inicio_vertical+"px";
 
     document.getElementById("p_0001854_claseweb").style.left= ((window.innerWidth/2)+(p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_claseweb").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado+p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
+    document.getElementById("p_0001854_claseweb").style.top= p_0001854_inicio_vertical+"px";
 
     document.getElementById("p_0001854_smile").style.left= ((window.innerWidth/2)+-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_smile").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado_mitad))+"px";
+    document.getElementById("p_0001854_smile").style.top= (p_0001854_inicio_vertical+p_0001854_cuadrado+p_0001854_margen)+"px";
 
     document.getElementById("p_0001854_horario").style.left= ((window.innerWidth/2)+(p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_horario").style.top= ((window.innerHeight/2)-(p_0001854_cuadrado_mitad))+"px";
+    document.getElementById("p_0001854_horario").style.top= (p_0001854_inicio_vertical+p_0001854_cuadrado+p_0001854_margen)+"px";
 
     document.getElementById("p_0001854_personal").style.left= ((window.innerWidth/2)-(p_0001854_cuadrado+p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_personal").style.top= ((window.innerHeight/2)+(p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
+    document.getElementById("p_0001854_personal").style.top= (p_0001854_inicio_vertical+2*p_0001854_cuadrado+2*p_0001854_margen)+"px";
 
     document.getElementById("p_0001854_mail").style.left= ((window.innerWidth/2)+(p_0001854_margen_mitad))+"px";
-    document.getElementById("p_0001854_mail").style.top= ((window.innerHeight/2)+(p_0001854_cuadrado_mitad+p_0001854_margen))+"px";
+    document.getElementById("p_0001854_mail").style.top= (p_0001854_inicio_vertical+2*p_0001854_cuadrado+2*p_0001854_margen)+"px";
 
   }
+
   var p_0001854_texto= document.querySelectorAll("#p_0001854_pag_bienvenida_div p");
   for (i = 0; i < p_0001854_texto.length; i++) {
     p_0001854_texto[i].style.fontSize= (p_0001854_cuadrado/8)+"px";
@@ -187,7 +203,8 @@ function p_0001854_printar_cuadrados() {
 p_0001854_printar_cuadrados();
 
 window.addEventListener('resize', function() {
-        p_0001854_printar_cuadrados();
+        if(document.getElementById("p_0001854_pag_bienvenida_div").style.display!="none")
+          p_0001854_printar_cuadrados();
     }, true);
 
 
