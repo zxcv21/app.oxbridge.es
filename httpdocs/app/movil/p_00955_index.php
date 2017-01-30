@@ -77,67 +77,68 @@ if(!isset($_GET['idioma'])){
     <script>
 		function p_00955_cambiar_seleccion_nivel(ele,lvl)
 		{
-			for(i in document.getElementsByClassName("p_00986_div_nivel_seleccion_nivel_redondo_select"))
-			{
-				document.getElementsByClassName("p_00986_div_nivel_seleccion_nivel_redondo_select")[i].className="p_00986_div_nivel_seleccion_nivel_redondo";
-			}
-			ele.className="p_00986_div_nivel_seleccion_nivel_redondo_select";
-			document.getElementById("p_00955_form_input_seleccion_nivel").value=lvl;
-			document.getElementById("p_00955_form_input_seleccion_id").value=personal_datos_info.alumno_id;
+				document.getElementById("p_00955_form_input_seleccion_nivel").value=lvl;
+				document.getElementById("p_00955_form_input_seleccion_id").value=personal_datos_info.alumno_id;
+				document.getElementById('p_00955_form_seleccion_nivel').setAttribute('onSubmit','');
+				document.getElementById('p_00955_form_seleccion_nivel').submit();
+				document.getElementById('p_00955_cargando_seleccion_nivel').style.display="block";
+				personal_datos_info.nombre= document.getElementById("p_00955_form_seleccion_nivel_nombre").value
 		}
 
 	</script>
     <iframe style="display:none;" id="p_00955_iframe_seleccion_nivel" name="p_00955_iframe_seleccion_nivel"></iframe>
-    <div id="p_00955_div_seleccion_nivel" class="p_00986_div_nivel" style="display:none;">
-        <div style="font-size:65px;text-align: left;margin: 50px;">
+		<div id="p_00955_overall_seleccion_nivel" class="overall"  style="display:none;">
+	    <div id="p_00955_div_seleccion_nivel" class="p_00986_div_nivel">
+				<img id="p_00955_cargando_seleccion_nivel" class="img_cargando" src="<? echo ver_url("images/loading.png","src"); ?>" >
+        <div id="p_00955_div_nombre_seleccion_nivel" style="font-size:34px;text-align: left;margin: 0 42px 20px;color: #1ABC9C;">
             <? echo $TEXTOS[149][2];?>
             <br>
             <form method="post" action="<? echo ver_url("p_01447_smiles_update_nivel.php","src");?>" id="p_00955_form_seleccion_nivel" target="p_00955_iframe_seleccion_nivel" onSubmit="event.preventDefault();">
-                <input id="p_00955_form_seleccion_nivel_nombre" name="" style="border: 3px solid #1ABC9C;font-size: 65px;">
+                <input id="p_00955_form_seleccion_nivel_nombre" name="" style="border: 1px solid #1ABC9C;font-size: 18px;">
                 <input type="submit" style="display:none">
                 <input type="hidden" name="p_01447_post_nivel" id="p_00955_form_input_seleccion_nivel">
                 <input type="hidden" name="p_01447_post_alumno_id" id="p_00955_form_input_seleccion_id">
             </form>
 
         </div>
-        <p style="font-size:65px;text-align: left;margin: 90px 50px 30px 50px;"><? echo $TEXTOS[150][2];?></p>
-        <div class="p_00986_div_nivel_seleccion">
+        <p style="font-size:34px;text-align: left;margin: 0 50px 8px 42px;color:#1ABC9C;"><? echo $TEXTOS[150][2];?></p>
+        <div id="p_00986_div_nivel_seleccion">
 
         	<div class="p_00986_div_nivel_seleccion_nivel">
         		<div class="p_00986_div_nivel_seleccion_nivel_redondo" onClick="p_00955_cambiar_seleccion_nivel(this,'S1');">
-                	<img style="height: 105%; width: 2px; vertical-align: middle;">S1
+                	S1
                 </div>
                 <p><? echo $TEXTOS[143][2];?></p>
             </div>
 
         	<div class="p_00986_div_nivel_seleccion_nivel">
         		<div class="p_00986_div_nivel_seleccion_nivel_redondo" onClick="p_00955_cambiar_seleccion_nivel(this,'P2');">
-                	<img style="height: 105%; width: 2px; vertical-align: middle;">P2
+                	P2
                     </div>
                 <p><? echo $TEXTOS[144][2];?></p>
             </div>
 
         	<div class="p_00986_div_nivel_seleccion_nivel">
         		<div class="p_00986_div_nivel_seleccion_nivel_redondo" onClick="p_00955_cambiar_seleccion_nivel(this,'P3');">
-                	<img style="height: 105%; width: 2px; vertical-align: middle;">P3
+                	P3
                 </div>
                 <p><? echo $TEXTOS[145][2];?></p>
             </div>
 
         	<div class="p_00986_div_nivel_seleccion_nivel">
         		<div class="p_00986_div_nivel_seleccion_nivel_redondo" onClick="p_00955_cambiar_seleccion_nivel(this,'P4');">
-                	<img style="height: 105%; width: 2px; vertical-align: middle;">P4
+                	P4
                 </div>
                 <p><? echo $TEXTOS[146][2];?></p>
             </div>
 
         	<div class="p_00986_div_nivel_seleccion_nivel">
         		<div class="p_00986_div_nivel_seleccion_nivel_redondo" onClick="p_00955_cambiar_seleccion_nivel(this,'P5');">
-                	<img style="height: 105%; width: 2px; vertical-align: middle;">P5
+                	P5
                 </div>
                 <p><? echo $TEXTOS[147][2];?></p>
             </div>
-            <br>
+      <!--      <br>
             <img
             	style=" height:150px;position: fixed;bottom: 50px;right: 50px;"
                 src="http://app.oxbridge.es/app/images/ok_nivel.png"
@@ -146,9 +147,10 @@ if(!isset($_GET['idioma'])){
                     document.getElementById('p_00955_form_seleccion_nivel').submit();
                 "
             >
-
+				-->
         </div>
-    </div>
+	    </div>
+		</div>
 
 	<? //include ver_url('movil/p_0001854_pagina_bienvenida.php','');?>
 

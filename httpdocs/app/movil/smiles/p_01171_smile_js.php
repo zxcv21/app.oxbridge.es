@@ -817,7 +817,7 @@ function p_01447_finalizador()
 		p_01176_funcion_consulta_smile_datos();
 	}
 	personal_datos_info.nivel=document.getElementById("p_00955_form_input_seleccion_nivel").value;
-	document.getElementById("p_00955_div_seleccion_nivel").style.display="none";
+	document.getElementById("p_00955_overall_seleccion_nivel").style.display="none";
 	document.getElementById("p_00961_formulario_info_nombre").value=document.getElementById("p_00955_form_seleccion_nivel_nombre").value;
 	document.getElementById("p_00961_formulario_personal_info").submit();
 }

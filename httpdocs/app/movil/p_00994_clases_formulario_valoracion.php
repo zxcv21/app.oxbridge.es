@@ -54,7 +54,10 @@ Pag. ID: 00994
 
 	function p_00994_valorar_desde_menu_clase(val){
 		var p_00994_ahora= new Date(Date.now());
-		if(p_00994_ahora>=dia_lectivo[DIA_LEC].date_final+p_01003_diferencia_horaria_servidor){
+		var p_00994_fecha_capsula= new Date(dia_lectivo[DIA_LEC].date_final);
+		p_00994_fecha_capsula= new Date(p_00994_fecha_capsula.getTime()+p_01003_diferencia_horaria_servidor);
+
+		if(p_00994_ahora.getTime()>=p_00994_fecha_capsula.getTime()){
 			if(((dia_lectivo[DIA_LEC].valoracion=="")||(parseInt(dia_lectivo[DIA_LEC].valoracion)<1))&&(parseInt(dia_lectivo[DIA_LEC].incidencia)!=1)){
 				p_1003_clase_formulario_valorar= DIA_LEC;
 				p_1003_crear_formulario_valoracion(DIA_LEC);

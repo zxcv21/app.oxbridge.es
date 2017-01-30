@@ -26,7 +26,7 @@ body{
 
 .boton_azul{
     padding: 0.1em 1em 0.1em 1em;
-    background: #fff;
+    background: #ccc;
     color: #0087ae;
     border: solid 0.1em;
     border-radius: 0.3em;
@@ -55,16 +55,16 @@ body{
 	<p><b><? echo $_GET['invitador'];?></b> te invita a jugar y aprender inglés con Oxbridge.</p>
     <br>
 	<button class="boton_azul" onclick="window.location.href='<? echo $_GET['enlace'];?>';">ACCEDER A LA APLICACIÓN.</button>
-    
+
 	<p class="pequenyo">* Para jugar a esta aplicación debes entrar desde el móvil.</p>
     <br>
 	<p>Esperamos que te guste y aprendas jugando!</p>
-    
+
 	<div class="alingl">
     	Equipo de Oxbridge<br>
     	<img class="avion alingl" src="http://app.oxbridge.es/app/images/OXBRIDGE-logo_avio.png">
      </div>
-    
+
     <br>
 	<p class="alingl pequenyo">Gracias a esta invitación no te cobraremos nada para que puedas juga con la aplicación móvil. Las clases por videoconferencia, en bares, o en empresas se deben contratar a parte y tienen coste.</p>
     <br>
@@ -73,8 +73,8 @@ body{
         <img src="http://app.oxbridge.es/images/firma-oxbridge-oscura.png"><br>
         B66446741 Avda. Diagonal 534 2º2ª<br>
         08006 Barcelona<br>
-        Telf. 935327565 / 915234243 /+44 20 8133 0043 
+        Telf. 935327565 / 915234243 /+44 20 8133 0043
 	</p>
-    
+
 </body>
 </html>

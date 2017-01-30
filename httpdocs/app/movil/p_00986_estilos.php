@@ -309,35 +309,59 @@ h4{
     height: 6em;
 }
 
+#p_00955_overall_seleccion_nivel{
+		z-index: 3;
+}
 .p_00986_div_nivel
 {
-	position:fixed;
-	height:100%;
-	width:100%;
-	background:#F6F6F6;
-	z-index: 9999;
-    text-align: center;
-    font-size: 35px;
-	overflow:auto;
+	position: absolute;
+  max-width: 718px;
+  background: #F6F6F6;
+  text-align: center;
+  font-size: 14px;
+  overflow: hidden;
+  padding-bottom: 11px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+	margin-top: -200px;
+	border: 4px solid #1ABC9C;
+  padding-top: 25px;
+	border-radius: 16px;
 }
-.p_00986_div_nivel_seleccion
+#p_00986_div_nivel_seleccion
 {
+	opacity: 1;
 }
 .p_00986_div_nivel_seleccion_nivel
 {
-    width: 300px;
+    width: 120px;
     float: left;
     padding: 10px;
 }
+.p_00986_div_nivel_seleccion_nivel p{
+	cursor: default;
+}
 .p_00986_div_nivel_seleccion_nivel_redondo
 {
-	height: 200px;
-    width: 200px;
-    border: solid 3px #1ABC9C;
-    border-radius: 100%;
-    margin: 0 auto 30px auto;
-    font-size: 100px;
-    color: #666;
+	height: 80px;
+  width: 80px;
+  border: solid 3px #1ABC9C;
+  border-radius: 100%;
+  margin: 0 auto 11px;
+  font-size: 39px;
+  color: #1ABC9C;
+  cursor: pointer;
+	font-weight: 600;
+	box-sizing: border-box;
+	padding-top: 19px;
+	padding-left: 4px;
+	background-color: white;
+}
+.p_00986_div_nivel_seleccion_nivel_redondo:hover{
+	color: white;
+	background-color: #1ABC9C;
 }
 .p_00986_div_nivel_seleccion_nivel_redondo_select
 {
@@ -349,6 +373,15 @@ h4{
     margin: 0 auto 30px auto;
     font-size: 100px;
     color: #F6F6F6;
+}
+#p_00955_cargando_seleccion_nivel{
+	position: absolute;
+  height: 135px;
+  display: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 54px;
 }
 
 </style>

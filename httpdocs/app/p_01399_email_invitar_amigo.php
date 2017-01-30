@@ -5,10 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Invitar Amigo</title>
 </head>
- 
+
 <?
 if(isset($_POST['to'])){
 	$to=$_POST['to'];
@@ -25,10 +25,11 @@ else if(isset($_GET['to'])){
 
 $subject="";
 
-$invitador=str_replace(" ","%20",$invitador);
 $enlace=str_replace(" ","%20",$enlace);
-
-$txt=file_get_contents("http://app.oxbridge.es/app/p_01400_email_invitar_amigo_html2.php?invitador=".$invitador."&enlace=".$enlace);
+$invitador= trim($invitador);
+$invitador= utf8_encode($invitador);
+$p_01399_invitador_codif_url= urlencode($invitador);
+$txt=file_get_contents("http://app.oxbridge.es/app/p_01400_email_invitar_amigo_html2.php?invitador=".$p_01399_invitador_codif_url."&enlace=".$enlace);
 
 $error="";
 
@@ -41,23 +42,70 @@ else
 	$error="No se puede enviar el e-mail (e-2)";
 	echo $error;
 }
+//$subject =  $_GET['invitador']." te invita a OxApp";
 
+$subject =$invitador." te invita a OxApp";
+
+/*
 if($error==""){
-	$headers = "\r\nMIME-Version: 1.0" . "\r\n".$headers;
-	$headers = "Content-type:text/html;charset=UTF-8" . "\r\n".$headers;
-	$subject =  $_GET['invitador']." te invita a OxApp";
+//	$headers = "\r\nMIME-Version: 1.0" . "\r\n".$headers;
+//	$headers = "Content-type:text/html;charset=UTF-8" . "\r\n".$headers;
+//	$subject =  $_GET['invitador']." te invita a OxApp";
+
+  $headers .= "\r\nMIME-Version: 1.0";
+  $headers .= "\r\nContent-type:text/html;charset=UTF-8\r\n";//charset=UTF-8";
+  $subject =  $_GET['invitador']." te invita a OxApp";
 
 	mail($to,$subject,$txt,$headers);
-	
+
 	echo "email enviado:\n".
 	$to."\n".
 	$subject."\n".
 	$headers."\n".
 	$txt;
-	
+
 	print_r(error_get_last());
 }
-	
+*/
+/*****************************************************************************************************************/
+//require("..\inc\class.phpmailer.php");
+require("enviomail\class.phpmailer.php");
+
+$mail = new PHPMailer();
+$mail->IsSMTP();                                // send via SMTP
+//$mail->Host     = "smtp.oxsite.com"; // SMTP servers
+//$mail->SMTPAuth = true;     // turn on SMTP authentication
+//$mail->Username = "oxmail@oxsite.com";   // SMTP username
+//$mail->Password = "oxox"; // SMTP password
+//$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+
+include('enviomail\oxico.php');
+/*
+$mail->Host     = "smtp.oxbridge.es"; // SMTP servers
+$mail->Username = "len323c";   // SMTP username
+$mail->Password = "Oxbridg3"; // SMTP password
+*/
+//$mail->From     = "mail@oxbridge.es";
+include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
+
+$mail->SMTPAuth = true;     // turn on SMTP authentication
+$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+
+$mail->From     = $from;
+$mail->FromName = $invitador;
+$mail->AddAddress($to,"");
+
+
+$mail->IsHTML(true);                               // send as HTML
+$mail->CharSet = "UTF-8";
+$mail->Subject= $subject;
+
+$mail->Body     =  $txt;
+
+$mail->Send();
+
+/****************************************************************************************************/
+
 ?>
 
 <body>

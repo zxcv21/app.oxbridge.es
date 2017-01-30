@@ -74,6 +74,7 @@
 			'		>'+
 			'		<input name="p_0001438_post_alumno_id" type="hidden" value="'+alumno_id+'">'+
 			'		<input name="p_0001438_post_usuario_id" type="hidden" value="'+alumno_id_nuevo+'">'+
+			'		<input name="p_0001438_post_dominio" type="hidden" value="app.oxbridge.es">'+
 			'		<input id="p_00962_carrera_add_amigo_finalizador_js" name="p_0001438_post_finalizador_js" type="hidden" value="">'+
 			'		<img'+
 			'			id="p_00962_carrera_add_amigo_submit"'+
@@ -82,7 +83,7 @@
 			'				document.getElementById(\'p_00962_carrera_add_amigo_cargando\').style.display=\'\';'+
 			'				document.getElementById(\'p_00962_carrera_add_amigo_form\').submit();'+
 			'			"'+
-			'			style="width:50px; vertical-align:middle;"'+
+			'			style="width:50px; vertical-align:middle;cursor:pointer;"'+
 			'			src="http://app.oxbridge.es/app/images/invitar_mas.png"'+
 			'		>'+
 			'		<img'+
@@ -98,18 +99,21 @@
 
 		document.getElementById("p_00962_carrera_add_amigo_email").addEventListener("change",function()
 		{
+			p_00962_personal_datos_info_nombre= escape(personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' '+personal_datos_info.apellido_2);
+			//p_00962_personal_datos_info_nombre= encodeURI(personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' '+personal_datos_info.apellido_2);
 			document.getElementById("p_00962_carrera_add_amigo_finalizador_js").value=''+
 			'	window.parent.ocultar_mostrar(\'p_00962_carrera_add_amigo\');\n'+
 			'	window.parent.document.getElementById(\'p_00962_carrera_add_amigo_submit\').style.display=\'\';\n'+
 			'	window.parent.document.getElementById(\'p_00962_carrera_add_amigo_cargando\').style.display=\'none\';\n'+
-			'	window.parent.p_00989_animacion_envio_mail();\n'+
+			//'	window.parent.p_00989_animacion_envio_mail();\n'+
 			'	window.parent.document.getElementById(\'p_00962_carrera_add_amigo_email\').value=\'\';\n'+
 			'	if(p_0001312_js_enlace!=\'\'){\n\t'+
 			'		window.location.href=\'<? echo ver_url("p_01399_email_invitar_amigo.php","src"); ?>'+
 					'?enlace=\'+p_0001312_js_enlace+\''+
 					'&to='+document.getElementById('p_00962_carrera_add_amigo_email').value+
 					'&from='+personal_datos_info.email+
-					'&invitador='+personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' '+personal_datos_info.apellido_2+
+					//'&invitador='+personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' '+personal_datos_info.apellido_2+
+					'&invitador='+p_00962_personal_datos_info_nombre+
 					'\';\n'+
 			'}\n';
 		});

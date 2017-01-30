@@ -7,11 +7,11 @@
       <o:PixelsPerInch>96</o:PixelsPerInch>
      </o:OfficeDocumentSettings>
     </xml><![endif]-->
-    
+
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <title>OxApp</title>
-    
+
 </head>
 <body style="width: 100% !important;min-width: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100% !important;margin: 0;padding: 0;background-color: #FFFFFF">
     <style id="media-query">
@@ -138,7 +138,7 @@
 <table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
   <tbody><tr style="vertical-align: top">
     <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 30px;padding-right: 0px;padding-bottom: 30px;padding-left: 0px">
-        <div style="line-height:120%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">            
+        <div style="line-height:120%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">
         	<div style="font-size:14px;line-height:17px;text-align:center;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;"><strong><span style="font-size: 28px; line-height: 33px;" data-mce-style="font-size: 28px; line-height: 33px;"><b><? echo $_GET['invitador'];?></b>&nbsp;te invita a jugar y aprender inglés con Oxbridge.</span></strong></div>
         </div>
     </td>
@@ -189,7 +189,7 @@
                                                                 <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent">
 <table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
     <tbody><tr style="vertical-align: top">
-        
+
     </tr>
 </tbody></table><table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
     <tbody><tr style="vertical-align: top">
@@ -210,7 +210,7 @@
                 <a href="<? echo $_GET['enlace'];?>" target="_blank">
                 <button class="boton_azul" style="
                 	padding: 5px 15px 5px 15px;
-                    background: #fff;
+                    background: #ccc;
                     color: #0087ae;
                     border: solid 3px;
                     border-radius: 10px;
@@ -240,7 +240,7 @@
 </tbody></table><table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
   <tbody><tr style="vertical-align: top">
     <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
-        <div style="line-height:150%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">            
+        <div style="line-height:150%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">
         	<div style="font-size:12px;line-height:18px;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;"><br><span style="font-size: 20px; line-height: 30px;" data-mce-style="font-size: 20px; line-height: 27px;">Esperamos que te guste y aprendas jugando!</span></div><div style="font-size:12px;line-height:18px;color:#ffffff;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;"><span style="font-size:20px; line-height:30px;"><br data-mce-bogus="1"></span></div><div style="font-size:12px;line-height:18px;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;"><span style="font-size:20px; line-height:30px;">Equipo de Oxbridge</span></div>
         </div>
     </td>
@@ -259,7 +259,7 @@
 <table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
   <tbody><tr style="vertical-align: top">
     <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 30px;padding-left: 10px">
-        <div style="color: #666;line-height:120%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">            
+        <div style="color: #666;line-height:120%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">
         	<div style="font-size:14px;line-height:17px;color: #666;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;"><br>Gracias a esta invitación no te cobraremos nada para que puedas juga con la aplicación móvil. Las clases por videoconferencia, en bares, o en empresas se deben contratar a parte y tienen coste.</div>
         </div>
     </td>
@@ -323,9 +323,9 @@
 </tbody></table><table style="border-spacing: 0;border-collapse: collapse;vertical-align: top" cellpadding="0" cellspacing="0" width="100%">
   <tbody><tr style="vertical-align: top">
     <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 15px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
-        <div style="line-height:150%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">            
+        <div style="line-height:150%;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;">
         	<div style="font-size:12px;line-height:18px;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 18px">Oxbridge English Teaching System, SL B66446741</p></div><div style="font-size:12px;line-height:18px;font-family:Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;text-align:left;">Avda. Diagonal 534 2º2ª<br>08006 Barcelona<br>Telf. 935327565 / 915234243 / +44 20 8133 0043</div><br>
-        
+
         </div>
     </td>
   </tr>
@@ -337,7 +337,7 @@
             <div>
 				<button class="boton_azul" style="
                 	padding: 5px;
-                    background: #fff;
+                    background: #ccc;
                     color: #000;
                     border: solid 1.7px;
                     cursor:pointer;

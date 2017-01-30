@@ -55,6 +55,7 @@
     '		>'+
     '		<input name="p_0001438_post_alumno_id" type="hidden" value="'+alumno_id+'">'+
     '		<input name="p_0001438_post_usuario_id" type="hidden" value="'+alumno_id_nuevo+'">'+
+    '		<input name="p_0001438_post_dominio" type="hidden" value="app.oxbridge.es">'+
     '		<input id="p_00962_carrera_add_amigo_finalizador_js" name="p_0001438_post_finalizador_js" type="hidden" value="">'+
     '		<img'+
     '			id="p_00962_carrera_add_amigo_submit"'+

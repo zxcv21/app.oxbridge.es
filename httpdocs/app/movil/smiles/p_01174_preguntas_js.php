@@ -2209,7 +2209,7 @@ function p_01174_textarea_contar_caracteres(ele,ele_imprimir,maximo,minimo)
 }
 
 window.addEventListener('resize', function() {
-	if(document.getElementById("p_00962_preguntas_contenedor").style.display!="none"){
+	if((document.getElementById("p_00962_preguntas_contenedor"))&&(document.getElementById("p_00962_preguntas_contenedor").style.display!="none")){
 		var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
 		if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
 			var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);

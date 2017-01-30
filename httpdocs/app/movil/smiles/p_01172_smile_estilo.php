@@ -389,9 +389,11 @@
 #p_00962_lista_vs
 {
     text-align: left;
-    margin: 1em auto 50%;
+    margin: 1em auto;
     max-height: 60%;
     overflow: auto;
+		font-size: 16px;
+		width: 326px;
 }
 
 .p_01172_oponente_en_lista
@@ -415,7 +417,8 @@
     height: 0.8em;
     right: -0.4em;
     top: 0.35em;
-	z-index:1;
+		z-index:1;
+		cursor: pointer;
 }
 .p_01172_oponente_quitar_confirmacion
 {

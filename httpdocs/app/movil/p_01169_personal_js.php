@@ -121,9 +121,16 @@ function mostrar_datos_pendientes(){
 function p_01169_cargar_presonal_datos_info_load()
 {
 	p_01169_pintar_personal_info();
-	if(personal_datos_info.nivel=="")
+	document.getElementById("p_00955_form_seleccion_nivel_nombre").addEventListener("input", p_01169_comprobar_nombre_seleccion_nivel);
+	if((personal_datos_info.nivel=="")||(!personal_datos_info.nivel))
 	{
-		document.getElementById("p_00955_div_seleccion_nivel").style.display="";
+		if(personal_datos_info.nombre){
+			document.getElementById("p_00955_div_nombre_seleccion_nivel").style.display="none";
+		}
+		else {
+			document.getElementById("p_00955_div_seleccion_nivel").style.height= "82px";
+		}
+		document.getElementById("p_00955_overall_seleccion_nivel").style.display="";
 		document.getElementById("p_00955_form_seleccion_nivel_nombre").value=personal_datos_info.nombre;
 	}
 	else
@@ -178,6 +185,17 @@ function p_01169_pintar_personal_info(){
 		document.getElementById("p_00962_detalle_trinity_solisitud_precio").style.display="none";
 	}
 }
+
+
+
+
+function p_01169_comprobar_nombre_seleccion_nivel(){
+	if(document.getElementById("p_00955_form_seleccion_nivel_nombre").value!="")
+		document.getElementById("p_00955_div_seleccion_nivel").style.height= "";
+	else
+		document.getElementById("p_00955_div_seleccion_nivel").style.height= "82px";
+}
+
 
 //IMPRIMIR INFORMACION DE ASISTENCIA
 function p_01169_imprimir_asistencia(a){
