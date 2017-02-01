@@ -90,7 +90,7 @@
 
 
 <div id="p_0001854_pag_bienvenida_div">
-    <img id="p_0001854_logo" <img id="head_oxbridge_img" src="<? echo ver_url("images/OXBRIDGE-logo_4_bis.png","src"); ?>">
+    <img id="p_0001854_logo" class= "logo_empresa" <img id="head_oxbridge_img" src="<? echo ver_url("images/OXBRIDGE-logo_4_bis.png","src"); ?>">
     <div id="p_0001854_clases" onclick="p_0001854_animar_icono_menu(this);" class="p_0001854_animar_icono">
       <img src="<? echo ver_url("images/material.png","src");?>">
       <p>material</p>

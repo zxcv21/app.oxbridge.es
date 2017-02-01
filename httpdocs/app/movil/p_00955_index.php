@@ -315,7 +315,7 @@ if(!isset($_GET['idioma'])){
 	<div id="contenedor" style="display:none;">
 			<!--//////////////////////////////////logotipo y email//////////////////////////////////-->
       <div id="head_oxbridge">
-      	<img id="head_oxbridge_img" src="<? echo ver_url("images/OXBRIDGE-logo_4_bis.png","src"); ?>" onClick="">
+      	<img id="head_oxbridge_img"  class= "logo_empresa" src="<? echo ver_url("images/OXBRIDGE-logo_4_bis.png","src"); ?>" onClick="">
 				<?
 					include ver_url("movil/p_00957_menu.php","");
 				?>

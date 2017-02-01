@@ -172,9 +172,11 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 		/*float:left;*/
 		float:right;
 		margin-left: 10px;
-		<?if($_SESSION["version__p_php_session"]!=""){?>
-		background-color: #21aed7;
-		<?}?>
+		}
+		.logo_empresa{
+			<?if($_SESSION["version__p_php_session"]!=""){?>
+			background-color: #21aed7;
+			<?}?>
 		}
 		#p_00995_formulario_mail_iframe{
 			position: absolute;

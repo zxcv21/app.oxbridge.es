@@ -91,7 +91,7 @@ include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
 
-$mail->From     = $from;
+//$mail->From     = $from;
 $mail->FromName = $invitador;
 $mail->AddAddress($to,"");
 
