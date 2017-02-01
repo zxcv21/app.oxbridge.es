@@ -563,6 +563,8 @@ Pag. ID: 00992
 		}
 
 		if(siguiente_clase==""){
+			console.log("p_01169_cargar_clase");
+			p_01169_cargar_clase();
 			p_00989_aviso_reservar(false);
 		}else if(aviso_reservar_calse_futura&&!quitar_aviso_reservar_calse_futura){
 			p_00989_aviso_reservar(true);
@@ -732,7 +734,6 @@ var BUFER_CARGA_ACTIVIDADES=[];
 
 		if(aviso_reservar_calse_futura&&!quitar_aviso_reservar_calse_futura)
 			p_00989_aviso_reservar();
-
 	}
 
 

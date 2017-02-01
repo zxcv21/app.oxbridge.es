@@ -310,7 +310,16 @@ h4{
     width: 100%;
     height: 6em;
 }
-
+#p_00955_img_cargando{
+	position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+	display:block;
+}
 #p_00955_overall_seleccion_nivel{
 		z-index: 3;
 }

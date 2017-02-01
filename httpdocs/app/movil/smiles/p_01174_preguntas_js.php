@@ -182,7 +182,8 @@ function p_01174_carga_pregunta()
 					if(texto.slice(-1)==".")
 					{
 						  var posicion_punto_final = texto.length;
-						  texto = texto.slice(0,posicion_punto_final-1);
+						  //texto = texto.slice(0,posicion_punto_final-1);
+							texto = texto.slice(0,posicion_punto_final);
 						  smile_datos.preguntas[indice_preguntas].pregunta=texto; //cambiamos el valor en el objeto
 					}
 					var nombres = texto.replace("  "," ").trim();
@@ -291,7 +292,7 @@ function p_01174_carga_pregunta()
 					document.getElementById("texto_ordenar_frase").innerHTML="";
 					for(i in array_preguntas_desordenadas)
 					{
-							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div onclick='p_01174_formar_frase_usuario(this.id);' style='margin-bottom: 0.5em; padding: 10px 10px 10px 20px; font-size: 0.8em; margin-left: 5%; padding 1em 1em 0.7em 1em; background-color: #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div>");
+							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div onclick='p_01174_formar_frase_usuario(this.id);' style='margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 5%; background-color: rgba(159, 210, 225,0.3); #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div>");
 					}
 					break;
 

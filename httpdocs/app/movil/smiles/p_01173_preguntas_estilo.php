@@ -69,7 +69,12 @@
     text-align: left;
     word-wrap: break-word;
     max-height: 10.4em;
-    overflow: auto;
+}
+.text2>div{
+    cursor: pointer;
+}
+.text2>div:hover{
+  transform: scale(1.1);
 }
 .text2Especial{
 	font-size: 2em;
@@ -230,7 +235,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 }
 
 .estilo_frase_usuario{
-    font-size: 18px;
+    font-size: 22px;
     font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 .estilo_frase_usuario_correcta{

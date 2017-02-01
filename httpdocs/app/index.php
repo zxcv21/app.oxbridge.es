@@ -41,25 +41,25 @@ if ($_GET['dev']=='monica'){
 		{
 			$_GET['VER']="";
 			$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
-			$version_pagina_src="http://app.oxbridge.es/app/";	
+			$version_pagina_src="http://app.oxbridge.es/app/";
 			echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
 		}
 	}
 	else
 	{
 		$_GET['VER']="";
-		$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";	
-		$version_pagina_src="http://app.oxbridge.es/app/";	
+		$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
+		$version_pagina_src="http://app.oxbridge.es/app/";
 		echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
 	}
-	
+
 	$VERSION_LISTADO = array();
 	include $version_pagina."version_listado.php";
-	
+
 	function ver_url($url,$tipo)
 	{
 		global $VERSION_LISTADO, $version_pagina;
-		
+
 		if($_GET['VER']!="")
 		{
 			$version=false;
@@ -97,7 +97,7 @@ if ($_GET['dev']=='monica'){
 		}
 		return $r;
 	}
-	
+
 	include ver_url("movil/p_00955_index.php","");
 
 }else{

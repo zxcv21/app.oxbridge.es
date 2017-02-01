@@ -5,6 +5,7 @@
 	if(typeof GO_TO=="undefined"){
 		GO_TO="smile";
 	}
+
 	if(p_0001854_mostrar_pagina_bienvenida_bool)
 		p_0001854_mostrar_pagina_bienvenida();
 	mover_menu(true,"p_00987_menu_"+GO_TO);
