@@ -73,20 +73,9 @@ require("enviomail\class.phpmailer.php");
 
 $mail = new PHPMailer();
 $mail->IsSMTP();                                // send via SMTP
-//$mail->Host     = "smtp.oxsite.com"; // SMTP servers
-//$mail->SMTPAuth = true;     // turn on SMTP authentication
-//$mail->Username = "oxmail@oxsite.com";   // SMTP username
-//$mail->Password = "oxox"; // SMTP password
-//$mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
 
 include('enviomail\oxico.php');
-/*
-$mail->Host     = "smtp.oxbridge.es"; // SMTP servers
-$mail->Username = "len323c";   // SMTP username
-$mail->Password = "Oxbridg3"; // SMTP password
-*/
-//$mail->From     = "mail@oxbridge.es";
-include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
+//include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
 
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)

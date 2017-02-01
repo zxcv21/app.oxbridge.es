@@ -119,7 +119,7 @@ function p_00989_quitar_aviso_reservar(set){
 	document.getElementById("p_00960_clases_actividades").style.right="initial";
 
 	quitar_aviso_reservar_calse_futura=true;
-	if(set)set_siguiente_clase();
+	//if(set)set_siguiente_clase();
 }
 
 
