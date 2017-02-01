@@ -202,7 +202,6 @@ if($departamento=='5'){
 	//$mail->AddAddress("jonatan@oxbridge.es","Jonatan");
 }
 
-
 $mail->IsHTML(true);                               // send as HTML
 $mail->CharSet = "iso-8859-1";
 //$mail->Subject  =  "Valoracion profesor";

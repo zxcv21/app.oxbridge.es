@@ -607,7 +607,7 @@ function p_1003_guardar_horas_inicio_fin_clases(){
 
 p_00994_valoracion_voluntaria= false;
 function p_1003_comprobar_valoraciones_pendientes(){
-//monica- testeo
+//testeo
 /*	if(typeof this.primera_vez== "undefined"){
 //		p_1003_maximo_dias_valorar= 200;
 		for(i in dia_lectivo){
@@ -898,127 +898,113 @@ function p_01003_email_envio_comentario_profesor(){
 		p_01003_f_valoracion_comentario = p_01003_f_valoracion_comentario.replace(/\r?\n/g, "<br>");
 	};
 
-	var p_01003_mensaje = "" ;
-	p_01003_mensaje+= "<html>" ;
-	p_01003_mensaje+= "<head>" ;
-	p_01003_mensaje+= 	"<meta charset='iso-8859-1'>" ;
-	p_01003_mensaje+= "</head>" ;
-	p_01003_mensaje+= "<body>" ;
-	p_01003_mensaje+= 	"<p>" ;
-	if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) == 1 )
-		p_01003_mensaje+=	"<span style='font-weight: bold'>Alumno no ha asistido</span><br>" ;
-	else{
-		p_01003_mensaje+= 		"<span style='font-weight: bold'>" ;
-		p_01003_mensaje+= 			"Valoracion: " ;
-		if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].valoracion) < 3 )
-		{
-			p_01003_mensaje+=	 		"<span style='color: red'>" ;
+	if((p_01003_f_valoracion_comentario.length>0)||((parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia)!=1)&&(parseInt(dia_lectivo[p_1003_clase_formulario_valorar].valoracion)<4))){
+		var p_01003_mensaje = "" ;
+		p_01003_mensaje+= "<html>" ;
+		p_01003_mensaje+= "<head>" ;
+		p_01003_mensaje+= 	"<meta charset='iso-8859-1'>" ;
+		p_01003_mensaje+= "</head>" ;
+		p_01003_mensaje+= "<body>" ;
+		p_01003_mensaje+= 	"<p>" ;
+		if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) == 1 )
+			p_01003_mensaje+=	"<span style='font-weight: bold'>Alumno no ha asistido</span><br>" ;
+		else{
+			p_01003_mensaje+= 		"<span style='font-weight: bold'>" ;
+			p_01003_mensaje+= 			"Valoracion: " ;
+			if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].valoracion) < 3 )
+			{
+				p_01003_mensaje+=	 		"<span style='color: red'>" ;
+			}
+			else
+			{
+				p_01003_mensaje+= 			"<span style='color: green'>" ;
+			} ;
+			p_01003_mensaje+= 				dia_lectivo[p_1003_clase_formulario_valorar].valoracion ;
+			p_01003_mensaje+= 			"</span>" ;
+			p_01003_mensaje+= 		"</span>" ;
 		}
-		else
-		{
-			p_01003_mensaje+= 			"<span style='color: green'>" ;
-		} ;
-		p_01003_mensaje+= 				dia_lectivo[p_1003_clase_formulario_valorar].valoracion ;
-		p_01003_mensaje+= 			"</span>" ;
+		p_01003_mensaje+= 		"<span>" ;
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			dia_lectivo[p_1003_clase_formulario_valorar].profesor;
+		p_01003_mensaje+= 			" ( "+ dia_lectivo[p_1003_clase_formulario_valorar].profesor_id + " )";
+		if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) != 1 ){
+			p_01003_mensaje+= 			"<br>" ;
+			p_01003_mensaje+= 			"Puntual: " ;
+			if( dia_lectivo[p_1003_clase_formulario_valorar].puntual == "1" )
+			{
+				p_01003_mensaje+= 			"<span style='color: green'>" ;
+				p_01003_mensaje+= 				"Si" ;
+				p_01003_mensaje+= 			"</span>" ;
+			}
+			else
+			{
+				p_01003_mensaje+= 			"<span style='color: red'>" ;
+				p_01003_mensaje+= 				"No" ;
+				p_01003_mensaje+= 			"</span>" ;
+			} ;
+			p_01003_mensaje+= 			"<br>" ;
+			p_01003_mensaje+= 			"Preparado: " ;
+			if( dia_lectivo[p_1003_clase_formulario_valorar].preparado == "1" )
+			{
+				p_01003_mensaje+= 			"<span style='color: green'>" ;
+				p_01003_mensaje+= 				"Si" ;
+				p_01003_mensaje+= 			"</span>" ;
+			}
+			else
+			{
+				p_01003_mensaje+= 			"<span style='color: red'>" ;
+				p_01003_mensaje+= 				"No" ;
+				p_01003_mensaje+= 			"</span>" ;
+			} ;
+			p_01003_mensaje+= 			"<br>" ;
+			p_01003_mensaje+= 			"Sistema: " ;
+			if( dia_lectivo[p_1003_clase_formulario_valorar].sistema == "1" )
+			{
+				p_01003_mensaje+= 			"<span style='color: green'>" ;
+				p_01003_mensaje+= 				"Si" ;
+				p_01003_mensaje+= 			"</span>" ;
+			}
+			else
+			{
+				p_01003_mensaje+= 			"<span style='color: red'>" ;
+				p_01003_mensaje+= 				"No" ;
+				p_01003_mensaje+= 			"</span>" ;
+			} ;
+		}
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			"Comentario:" ;
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			p_01003_f_valoracion_comentario;
 		p_01003_mensaje+= 		"</span>" ;
+		p_01003_mensaje+= 	"</p>" ;
+		p_01003_mensaje+= 	"<p>" ;
+		p_01003_mensaje+= 		"<span>" ;
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			"____________________" ;
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' ( '+personal_datos_info.nivel+' ), '+personal_datos_info.email;
+		p_01003_mensaje+= 			" ( "+ alumno_id + " )";
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			dia_lectivo[p_1003_clase_formulario_valorar].localizacion;
+		p_01003_mensaje+= 			"<br>" ;
+		p_01003_mensaje+= 			"CLASE " + p_1003_clase_formulario_valorar + ": "+dia_lectivo[p_1003_clase_formulario_valorar].fecha+' '+dia_lectivo[p_1003_clase_formulario_valorar].horaInicio;
+		p_01003_mensaje+= 		"</span>" ;
+		p_01003_mensaje+= 	"</p>" ;
+		p_01003_mensaje+= "</body>" ;
+		p_01003_mensaje+= "</html>" ;
+
+
+		var p_01003_cabecera_mail= '<? echo ver_url("p_01392_email.php","src"); ?>'+
+		'?to=5'+
+		'&from='+personal_datos_info.email;
+		if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) != 1 )
+			p_01003_cabecera_mail+= '&subject=Valoracion profesor';//Comentario de profesor';
+		else
+			p_01003_cabecera_mail+= '&subject=Incidencia con '+dia_lectivo[p_1003_clase_formulario_valorar].profesor;
+
+		p_01003_cabecera_mail+='&txt='+p_01003_mensaje ;
+		document.getElementById('p_00995_formulario_envio_email').src= p_01003_cabecera_mail;
 	}
-	p_01003_mensaje+= 		"<span>" ;
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			dia_lectivo[p_1003_clase_formulario_valorar].profesor;
-	p_01003_mensaje+= 			" ( "+ dia_lectivo[p_1003_clase_formulario_valorar].profesor_id + " )";
-	if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) != 1 ){
-		p_01003_mensaje+= 			"<br>" ;
-		p_01003_mensaje+= 			"Puntual: " ;
-		if( dia_lectivo[p_1003_clase_formulario_valorar].puntual == "1" )
-		{
-			p_01003_mensaje+= 			"<span style='color: green'>" ;
-			p_01003_mensaje+= 				"Si" ;
-			p_01003_mensaje+= 			"</span>" ;
-		}
-		else
-		{
-			p_01003_mensaje+= 			"<span style='color: red'>" ;
-			p_01003_mensaje+= 				"No" ;
-			p_01003_mensaje+= 			"</span>" ;
-		} ;
-		p_01003_mensaje+= 			"<br>" ;
-		p_01003_mensaje+= 			"Preparado: " ;
-		if( dia_lectivo[p_1003_clase_formulario_valorar].preparado == "1" )
-		{
-			p_01003_mensaje+= 			"<span style='color: green'>" ;
-			p_01003_mensaje+= 				"Si" ;
-			p_01003_mensaje+= 			"</span>" ;
-		}
-		else
-		{
-			p_01003_mensaje+= 			"<span style='color: red'>" ;
-			p_01003_mensaje+= 				"No" ;
-			p_01003_mensaje+= 			"</span>" ;
-		} ;
-		p_01003_mensaje+= 			"<br>" ;
-		p_01003_mensaje+= 			"Sistema: " ;
-		if( dia_lectivo[p_1003_clase_formulario_valorar].sistema == "1" )
-		{
-			p_01003_mensaje+= 			"<span style='color: green'>" ;
-			p_01003_mensaje+= 				"Si" ;
-			p_01003_mensaje+= 			"</span>" ;
-		}
-		else
-		{
-			p_01003_mensaje+= 			"<span style='color: red'>" ;
-			p_01003_mensaje+= 				"No" ;
-			p_01003_mensaje+= 			"</span>" ;
-		} ;
-	}
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			"Comentario:" ;
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			p_01003_f_valoracion_comentario;
-	p_01003_mensaje+= 		"</span>" ;
-	p_01003_mensaje+= 	"</p>" ;
-	p_01003_mensaje+= 	"<p>" ;
-	p_01003_mensaje+= 		"<span>" ;
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			"____________________" ;
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' ( '+personal_datos_info.nivel+' ), '+personal_datos_info.email;
-	p_01003_mensaje+= 			" ( "+ alumno_id + " )";
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			dia_lectivo[p_1003_clase_formulario_valorar].localizacion;
-	p_01003_mensaje+= 			"<br>" ;
-	p_01003_mensaje+= 			"CLASE " + p_1003_clase_formulario_valorar + ": "+dia_lectivo[p_1003_clase_formulario_valorar].fecha+' '+dia_lectivo[p_1003_clase_formulario_valorar].horaInicio;
-	p_01003_mensaje+= 		"</span>" ;
-	p_01003_mensaje+= 	"</p>" ;
-	p_01003_mensaje+= "</body>" ;
-	p_01003_mensaje+= "</html>" ;
-
-
-	var p_01003_cabecera_mail= '<? echo ver_url("p_01392_email.php","src"); ?>'+
-	'?to=5'+
-	'&from='+personal_datos_info.email;
-	if( parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia) != 1 )
-		p_01003_cabecera_mail+= '&subject=Valoracion profesor';//Comentario de profesor';
-	else
-		p_01003_cabecera_mail+= '&subject=Incidencia con '+dia_lectivo[p_1003_clase_formulario_valorar].profesor;
-
-	p_01003_cabecera_mail+='&txt='+p_01003_mensaje ;
-	document.getElementById('p_00995_formulario_envio_email').src= p_01003_cabecera_mail;
-
-
-	/*
-	'&txt=<html>DE: '+personal_datos_info.nombre+' '+personal_datos_info.apellido_1+' '+personal_datos_info.apellido_2+
-	'<br>Mail: '+personal_datos_info.email+
-	'<br>ID: '+alumno_id+
-	'<br><br>CLASE: '+dia_lectivo[p_1003_clase_formulario_valorar].fecha+' '+dia_lectivo[p_1003_clase_formulario_valorar].horaInicio+
-	'<br>ID: '+p_1003_clase_formulario_valorar+
-	'<br>Localizacion:'+dia_lectivo[p_1003_clase_formulario_valorar].localizacion+
-	'<br><br>PROFESOR: '+dia_lectivo[p_1003_clase_formulario_valorar].profesor+
-	'<br>ID: '+dia_lectivo[p_1003_clase_formulario_valorar].profesor_id+
-	'<br><br>VALORACION: '+dia_lectivo[p_1003_clase_formulario_valorar].valoracion+
-	'<br>COMENTARIO:<br>'+dia_lectivo[p_1003_clase_formulario_valorar].valoracion_comentario+
-	'</html>';
-	*/
-	//p_00989_animacion_envio_mail();
 }
 
 function p_01003_valoracion_cambiar_cara()
