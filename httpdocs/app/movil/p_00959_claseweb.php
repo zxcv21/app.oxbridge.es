@@ -104,7 +104,7 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 
 		for( p_00959_js_f_01_bucle_01 in dia_lectivo )
 		{
-			if( dia_lectivo[p_00959_js_f_01_bucle_01].tipo_clase == "telefono" && dia_lectivo[p_00959_js_f_01_bucle_01].fecha_europa == hoy )
+			if( ( dia_lectivo[p_00959_js_f_01_bucle_01].tipo_clase == "telefono" || dia_lectivo[p_00959_js_f_01_bucle_01].tipo_clase == "skype" ) && dia_lectivo[p_00959_js_f_01_bucle_01].fecha_europa == hoy )
 			{
 				p_00959_js_f_01_html+= "<div style=\"display: inline-block; cursor: pointer; margin-left: 20px\" align=\"center\" onclick='javascript: p_00959_js_f_02_abrir_clase_por_telefono( "+p_00959_js_f_01_bucle_01+" );'>" ;
 				p_00959_js_f_01_html+= 	"<div>" ;

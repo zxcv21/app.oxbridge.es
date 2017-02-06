@@ -91,7 +91,7 @@ function p_01169_cargar_presonal_datos_info()
 }
 
 //mostrar datos bancarios
-function mostrar_datos_bancarios()Ç
+function mostrar_datos_bancarios()
 {
 	if(typeof personal_datos_info.solicitar_datos_bancarios =="undefined")
 	{

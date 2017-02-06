@@ -294,7 +294,7 @@ function p_01174_carga_pregunta()
 					document.getElementById("texto_ordenar_frase").innerHTML="";
 					for(i in array_preguntas_desordenadas)
 					{
-							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div id=div"+i+" class='p_01174_div_palabras_dragdrop' ondragstart='p_01174_drag(event)' ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);'  ontouchstart='p_01174_drag_touch(event)' ontouchmove='p_01174_drag_move_touch(event)' ontouchend='p_01174_drag_drop_touch(event)' draggable='true'><div onclick='p_01174_formar_frase_usuario(this.id);' style='margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 12px; background-color: rgba(159, 210, 225,0.3); #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 2px 2px 0; display: inline-block;  font-family: HelveticaNeueRoman; margin-right:3px;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div></div>");
+							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div id=div"+i+" class='p_01174_div_palabras_dragdrop' ondragstart='p_01174_drag(event)' ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);'  ontouchstart='p_01174_drag_touch(event)' ontouchmove='p_01174_drag_move_touch(event)' ontouchend='p_01174_drag_drop_touch(event)' draggable='true'><div style='margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 12px; background-color: rgba(159, 210, 225,0.3); #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 2px 2px 0; display: inline-block;  font-family: HelveticaNeueRoman; margin-right:3px;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div></div>");
 					}
 					break;
 
@@ -446,7 +446,7 @@ function p_01174_carga_pregunta()
 			if(!llamar_solo_una_vez_funcion_mostrar_pregunta){llamar_solo_una_vez_funcion_mostrar_pregunta=true;mostrar_pregunta_actual();}
 		}
 	}
-	p_01174_resize_preguntas();
+
 }
 
 function playImagensonido()
@@ -716,7 +716,7 @@ function p_01174_almacenar_preguntas_en_div_p_01175_preguntas(valor,indice) //fu
 function mostrar_pregunta_actual()
 {
 	var id_primer_div = document.getElementById("p_01175_preguntas").getElementsByTagName('div')[0].id;
-	typo_de_pregunta = id_primer_div.replace(/^n[0-9]*_/,"");
+	var typo_de_pregunta = id_primer_div.replace(/^n[0-9]*_/,"");
 	if(typo_de_pregunta=="trinity")
 	{
 		p_01174_mostrar_preguntas_trinity();
@@ -725,6 +725,11 @@ function mostrar_pregunta_actual()
 	{
 		p_01174_mostra_preguntas_normal();
 	}
+	if(typo_de_pregunta!="ordenar_frase")
+		p_01174_resize_preguntas();
+	else
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";	
+
 }
 
 function p_01174_mostrar_preguntas_trinity()
@@ -1029,7 +1034,7 @@ function p_01174_pulsar_sobre_misma_palabra_borrar(valor)
 
 	/*************APLICAMOS LOS ESTILOS QUE TENIA EL BOTON***************/
 	document.getElementById(valor).setAttribute('style', 'margin-bottom: 0.5em; padding: 10px 10px 10px 20px; font-size: 0.8em; margin-left: 5%; padding 1em 1em 0.7em 1em; background-color: #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;');
-	document.getElementById(valor).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
+	//document.getElementById(valor).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
 	document.getElementById("n"+npregunta_frase+"_botonPasarOF").style.display="";
 	document.getElementById("n"+npregunta_frase+"_botonOF").style.display="none";
 	if($('#n'+npregunta_frase+'_frase_formada_usuario' + '> *').length > 0)
@@ -1219,7 +1224,7 @@ function p_01174_borrar_palabra_boton_deshacer(valor)
 		p_01174_contador_palabras_entrando-=document.getElementById(ultimo_hijo_id).innerHTML.split(" ").length;
 		var div_eliminar = document.getElementById(ultimo_hijo_id);
 		div_eliminar.parentNode.removeChild(div_eliminar); //eliminamos el div
-		document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
+		//document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
 		document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute('style', 'margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 12px; background-color: rgba(159, 210, 225,0.3);color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 2px 2px 0; display: inline-block;  font-family: HelveticaNeueRoman;margin-right:3px;');
 		document.getElementById("n"+npregunta+"_"+"botonPasarOF").style.display="";
 		document.getElementById("n"+npregunta+"_"+"botonOF").style.display="none";
@@ -1247,7 +1252,7 @@ function p_01174_borrar_palabra(valor) //función que me permite borrar el div d
 	var div_eliminar = document.getElementById(valor);
 	div_eliminar.parentNode.removeChild(div_eliminar); //eliminamos el div
 
-	document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
+	//document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
 	document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute('style', 'margin-bottom: 0.5em; padding: 10px 10px 10px 20px; font-size: 0.8em; margin-left: 5%; padding 1em 1em 0.7em 1em; background-color: #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;');
 	document.getElementById("n"+npregunta+"_"+"botonPasarOF").style.display="";
 	document.getElementById("n"+npregunta+"_"+"botonOF").style.display="none";
@@ -2357,7 +2362,7 @@ function p_01174_drag_touch(e){
 
 function p_01174_drag_move_touch(e){
 	var touchobj = e.changedTouches[0];
-	e.target.style.top= (parseInt(touchobj.clientY)-parseInt(e.target.clientHeight/2))+"px";
+	e.target.style.top= (parseInt(touchobj.clientY)-parseInt(e.target.clientHeight))+"px";
 	//e.target.style.left= (parseInt(touchobj.clientX)-parseInt(e.target.clientWidth/2))+"px";
 	e.target.style.left= (parseInt(touchobj.clientX)-2)+"px";
 	e.preventDefault();
