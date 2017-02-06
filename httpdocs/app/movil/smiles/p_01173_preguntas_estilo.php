@@ -7,21 +7,21 @@
 }
 
 .pestanas ul{
-    margin-left: -40px;
 }
 
 .pestanas li{
     list-style-type: none;
     float: left;
     text-align: center;
-    margin: 0px 5px -5px 1px;
+    margin: 0px 5px -5px 0;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border: 5px solid #aaa;
-    border-bottom: #fff;
+    border: 3px solid #aaa;
+    border-bottom: 3px solid rgb(253, 249, 245);
     padding: 0.2em 0.5em;
     background: #ccc;
-    font-size: 1.5em;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .pestanas a:link{
@@ -31,12 +31,23 @@
 
 .contenedor_pestanas{
     clear: both;
-    padding: 20px;
     border-radius: 5px;
     border-top-left-radius: 0px;
-    border: 5px solid #aaa;
-    margin-bottom: 25em;
-    width: inherit !important;
+    border: 3px solid #aaa;
+    margin-left: 7%;
+    margin-right: 5%;
+    box-sizing: border-box;
+    background-color: rgb(253, 249, 245);
+    margin-top: 45px;
+    padding: 3px 5px 5px 10px;
+}
+.p_01175_pregunta_trinity .contenedor_pestanas{
+  margin-bottom: 0;
+  margin-top: 47px;
+}
+.p_01174_espacio{
+    cursor: pointer;
+    background-color: #eee;
 }
 
 .preguntas{
@@ -47,20 +58,35 @@
     text-align: center;
     padding-right: 1.2em;
 }
+.preguntas label span{
+  cursor: pointer;
+}
+.style_checkbox_redondo input{
+  cursor: pointer;
+}
+.p_01175_zona_crear_frase{
+  /*background-color: linen;*/
+  width: 80%;
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+}
 .text{
 	padding-top: 30px;
 	padding-right: 3px;
 	font-size: 16px;
 	color: #676C71;
-	margin-left: 5%;
+	margin-left: 10%;
 	margin-right: 5%;
 	text-align: left;
 	font-family: HelveticaNeueRoman;
   margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: default;
 }
 .text2{
     font-size: 16px;
-    margin-left: 5%;
+    margin-left: 7%;
     margin-right: 5%;
     margin-bottom: 1em;
     padding-left: 1%;
@@ -70,10 +96,10 @@
     word-wrap: break-word;
     max-height: 10.4em;
 }
-.text2>div{
+.text2>div>div{
     cursor: pointer;
 }
-.text2>div:hover{
+.text2>div>div:hover{
   transform: scale(1.1);
 }
 .text2Especial{
@@ -88,39 +114,74 @@
 	padding-bottom: 1%;
 	text-align: left;
 }
+.text3{
+  font-size: 16px;
+  margin-left: 7%;
+  margin-right: 5%;
+  margin-bottom: 1em;
+  padding: 1% 1% 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: auto;
+  padding-top: 40px;
+  box-sizing: border-box;
+  max-height: 300px;
+  background-color: #eee;
+}
+.text4{
+  padding-right: 3px;
+  font-size: 16px;
+  color: #676C71;
+  margin-left: 10%;
+  margin-right: 5%;
+  text-align: left;
+  font-family: HelveticaNeueRoman;
+  margin-bottom: 2em;
+  margin-top: 0;
+  padding-top: 0;
+  cursor: default;
+}
+.p_01175_pregunta_trinity .text4{
+  margin-left: 0;
+  margin-right: 0;
+}
+.p_01174_div_palabras_dragdrop{
+  display: inline-block;
+  box-sizing: border-box;
+  background: transparent;
+}
+.p_01175_pregunta_trinity .text{
+  padding-right: 0;
+  font-size: 16px;
+  color: #676C71;
+  text-align: left;
+  font-family: HelveticaNeueRoman;
+  margin: 0 0 10px 0;
+  padding-top: 0;
+}
+.p_01175_pregunta_trinity .dragdrop{
+  margin-left: 0;
+  margin-right: 0;
+}
 .resp{
 	display: inline-block;
-	cursor: pointer;
 	font-size: 2.5em;
 	text-align: left;
 	margin-left: 10%;
 	word-wrap: break-word;
 }
+.p_01175_pregunta_trinity .resp{
+  margin-right: 0;
+  margin-left: 0;
+}
 .checkboxMultioption{
 	width: 18px; /*Desired width*/
 	height: 18px; /*Desired height*/
 	margin-left: 0px;
-	margin-bottom: -2px;
 	margin-top: -1px;
-	/*box-shadow: 10px 10px 20px #B7B327;*/
-	margin-bottom: 5em;
-
 }
 /*
 .style_checkbox_redondo{
-	border-radius: 100%;
-    overflow: hidden;
-    float: left;
-    /* background-color: #E80726; */
-    border: 7px solid rgb(24, 197, 206);
-    margin-bottom: 6%;
-    width: 9%;
-    /* top: 17%; */
-    /* margin-top: -2%; */
-    /* padding-top: 0%; */
-    /* padding-right: 0%; */
-    padding: 0% 0% 0% 0%;
-    margin-top: -2%;
 }
 */
 .drag {
@@ -133,11 +194,12 @@
 	background-color: yellow;
 }
 .dragdrop{
-	font-size: 3.5em;
+	font-size: 16px;
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 1%;
 	text-align: justify;
+  cursor: default;
 }
 #tabla{
 	margin-left: 32%;
@@ -157,8 +219,15 @@
 	font-family: HelveticaNeueRoman;
 }
 .estiloBoton{
-	margin-right: 10%;
-	margin-bottom: 3%;
+/*	margin-right: 10%;
+	margin-bottom: 3%;*/
+}
+.p_01174_espacio_option{
+  background-color: #eee;
+  padding-left: 5px;
+}
+.p_01174_espacio_option>div:hover{
+  background-color: #ddd;
 }
 .subtopics{
 	font-size: 2.5em;
@@ -237,12 +306,13 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 .estilo_frase_usuario{
     font-size: 22px;
     font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+    color: #0087ae;
 }
 .estilo_frase_usuario_correcta{
-	font-size: 18px;
-    font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+	font-size: 22px;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
 	color: green;
-	margin-bottom: 20%;
+	margin: 20px;
 }
 #p_01171_mostrar_ventana_option{
     position: fixed;
@@ -263,7 +333,6 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 .style_divs_respuestas{
 	float: left;
 	width: 100%;
-	min-height: 3.5em;
 	position: relative;
   font-size: 16px;
 }

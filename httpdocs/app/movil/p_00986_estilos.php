@@ -310,6 +310,13 @@ h4{
     width: 100%;
     height: 6em;
 }
+#p_00955_div_img_cargando{
+	height: 100%;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  z-index: 10;
+}
 #p_00955_img_cargando{
 	position: fixed;
   margin: auto;
@@ -317,7 +324,7 @@ h4{
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 10;
+  /*z-index: 10;*/
 	display:block;
 }
 #p_00955_overall_seleccion_nivel{

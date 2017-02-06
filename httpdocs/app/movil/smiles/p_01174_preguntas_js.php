@@ -51,11 +51,13 @@ function p_01174_carga_pregunta()
 		}
 		//smile_datos.preguntas_cargadas.push(indice_preguntas);
 
-
 		 personal_datos_info.ultimapregunta = smile_datos.preguntas[indice_preguntas]; //vamos añadiendo la pregunta actual a personal_datos_info
 		 //smile_datos.preguntas.push(preguntaActual); //añadimos a smile_datos.preguntas la pregunta acutal de manera que siempre van añadiendoce preguntas por el final del objeto (podemos añadirlo tambén de forma aleatoria).
 		//console.info(indice_preguntas);
 
+		//monica-testeo
+		//while(smile_datos.preguntas[indice_preguntas].categoria!="trinity")
+		//	indice_preguntas++;
 
 		if(smile_datos.preguntas[indice_preguntas].categoria!="trinity")
 		{
@@ -102,7 +104,7 @@ function p_01174_carga_pregunta()
 					document.getElementById('p_01175_respuesta_drag_drop').innerHTML=espacio_ele.replace(/_!_([^_]*[^!]*[^_]*)_!!_/g,""+
 						"&nbsp;"+
 						'<div name="espacios_en_blanco" class="p_01174_espacio" style="position:relative;display:inline;" onclick="p_01174_drag_option(this,\''+indice_preguntas+'\')">'+
-							"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9661"+
+							"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9660;"+
 						"</div>"+
 						"&nbsp;"+
 					"");
@@ -126,17 +128,17 @@ function p_01174_carga_pregunta()
 						{
 							document.getElementById("p_01175_respuesta_m_option").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_m_option"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 1.5em'>"+
+								"<label style='font-size: 16px'>"+
 								"<div class='style_checkbox_redondo'>"+
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
 								"<span id=checkboxM0"+i+" style='margin-left: 3%;'>"+smile_datos.preguntas[indice_preguntas].respuestas[i]+"</span>"+
 								"</label><br>"+
 							"</div>");
-							if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
+							/*if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
 							{
 								document.getElementById('respuestas_m_option'+i).style.marginBottom="1em";
-							}
+							}*/
 						}
 					break;
 
@@ -148,17 +150,17 @@ function p_01174_carga_pregunta()
 					{
 							document.getElementById("p_01175_respuesta_true_false").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_tf"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 1.5em'>"+
+								"<label style='font-size: 16px'>"+
 								"<div class='style_checkbox_redondo'>"+
-								"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left; margin-bottom:5em' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
+								"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 								"</div>"+
-								"<span id=aceptospan"+i+" style='margin-left: 3%;'>"+smile_datos.preguntas[indice_preguntas].respuestas[i]+"</span>"+
+								"<span id=aceptospan"+i+" style='display:block;padding-left:25px;'>"+smile_datos.preguntas[indice_preguntas].respuestas[i]+"</span>"+
 								"</label><br>"+
 							"</div>");
-							if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
+							/*if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
 							{
 								document.getElementById('respuestas_tf'+i).style.marginBottom="1em";
-							}
+							}*/
 						}
 					break;
 
@@ -292,7 +294,7 @@ function p_01174_carga_pregunta()
 					document.getElementById("texto_ordenar_frase").innerHTML="";
 					for(i in array_preguntas_desordenadas)
 					{
-							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div onclick='p_01174_formar_frase_usuario(this.id);' style='margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 5%; background-color: rgba(159, 210, 225,0.3); #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div>");
+							document.getElementById("texto_ordenar_frase").insertAdjacentHTML('beforeEnd',"<div id=div"+i+" class='p_01174_div_palabras_dragdrop' ondragstart='p_01174_drag(event)' ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);'  ontouchstart='p_01174_drag_touch(event)' ontouchmove='p_01174_drag_move_touch(event)' ontouchend='p_01174_drag_drop_touch(event)' draggable='true'><div onclick='p_01174_formar_frase_usuario(this.id);' style='margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 12px; background-color: rgba(159, 210, 225,0.3); #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 2px 2px 0; display: inline-block;  font-family: HelveticaNeueRoman; margin-right:3px;' name='palabras_desordenadas' id="+i+">"+array_preguntas_desordenadas[i]+"</div></div>");
 					}
 					break;
 
@@ -349,7 +351,7 @@ function p_01174_carga_pregunta()
 					document.getElementById('p_01175_respuesta_drag_drop').innerHTML=espacio_ele.replace(/_!_([^_]*[^!]*[^_]*)_!!_/g,""+
 						"&nbsp;"+
 						'<div name="espacios_en_blanco" class="p_01174_espacio" style="position:relative;display:inline;" onclick="p_01174_drag_option(this,\''+indidce_preguntas_mismo_tipo[p]+'\')">'+
-							"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9661"+
+							"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#9660;"+
 						"</div>"+
 						"&nbsp;"+
 					"");
@@ -374,17 +376,17 @@ function p_01174_carga_pregunta()
 						{
 							document.getElementById("p_01175_respuesta_m_option").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_m_option"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 1.5em'>"+
+								"<label style='font-size: 16px'>"+
 								"<div class='style_checkbox_redondo'>"+
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
-								"<span id=checkboxM0"+i+" style='margin-left: 3%;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
+								"<span id=checkboxM0"+i+" style='padding-left: 25px;display:block;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
 								"</label><br>"+
 							"</div>");
-							if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
+							/*if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
 							{
 								document.getElementById('respuestas_m_option'+i).style.marginBottom="1em";
-							}
+							}*/
 						}
 						break;
 
@@ -398,17 +400,17 @@ function p_01174_carga_pregunta()
 						{
 								document.getElementById("p_01175_respuesta_true_false").insertAdjacentHTML('beforeEnd',""+
 								"<div id=respuestas_tf"+i+" class='style_divs_respuestas'>"+
-									"<label style='font-size: 1.5em'>"+
+									"<label style='font-size: 16px'>"+
 									"<div class='style_checkbox_redondo'>"+
-									"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left; margin-bottom:5em' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
+									"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 									"</div>"+
-									"<span id=aceptospan"+i+" style='margin-left: 3%;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
+									"<span id=aceptospan"+i+" style='display:block; padding-left: 25px;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
 									"</label><br>"+
 								"</div>");
-								if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
+								/*if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
 								{
 									document.getElementById('respuestas_tf'+i).style.marginBottom="1em";
-								}
+								}*/
 						}
 						break;
 					default: break;
@@ -444,6 +446,7 @@ function p_01174_carga_pregunta()
 			if(!llamar_solo_una_vez_funcion_mostrar_pregunta){llamar_solo_una_vez_funcion_mostrar_pregunta=true;mostrar_pregunta_actual();}
 		}
 	}
+	p_01174_resize_preguntas();
 }
 
 function playImagensonido()
@@ -471,6 +474,63 @@ function  p_01174_filtro_pregunta_smile() //función que me permite hacer el fil
 			}
 
 		}
+}
+
+function p_01174_allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function p_01174_drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function p_01174_drop(ev, p_01174_drag_id_, p_01174_drop_id_) {
+		if(typeof p_01174_drag_id_=='undefined'){
+			ev.preventDefault();
+			ev.stopPropagation();
+		}
+
+    var p_01174_drag_id= (typeof p_01174_drag_id_=='undefined')?ev.dataTransfer.getData("text"):p_01174_drag_id_;
+		var p_01174_drop_id= (typeof p_01174_drop_id_=='undefined')?ev.target.id:p_01174_drop_id_;
+		var p_01174_pos_orig= (isNaN(parseInt(p_01174_drag_id.slice(-2))))?parseInt(p_01174_drag_id.slice(-1)):parseInt(p_01174_drag_id.slice(-2));
+		var p_01174_pos_dest= (isNaN(parseInt(p_01174_drop_id.slice(-2))))?parseInt(p_01174_drop_id.slice(-1)):parseInt(p_01174_drop_id.slice(-2));
+		//var p_01174_pos_dest= parseInt(ev.target.id.slice(-1));
+		/*
+		if(ev.target.className!="")
+			ev.target.children[0].innerText= document.getElementById(p_01174_drag_id).children[0].innerText;
+		else
+			ev.target.innerText= document.getElementById(p_01174_drag_id).children[0].innerText;
+		document.getElementById(p_01174_drag_id).children[0].innerText= p_01174_drop_text;
+		*/
+
+		var p_01174_padre_nodos= p_01174_drag_id.slice(0,p_01174_drag_id.indexOf("_")+1)+"texto_ordenar_frase";
+		p_01174_padre_nodos= document.getElementById(p_01174_padre_nodos);
+		if(p_01174_drop_id==p_01174_padre_nodos.id){
+			p_01174_pos_dest= p_01174_padre_nodos.children.length;
+		}
+
+		var p_01174_drag_text= p_01174_padre_nodos.children[p_01174_pos_orig].children[0].innerText;
+		if(p_01174_pos_orig>p_01174_pos_dest){
+			for(var i=p_01174_pos_orig; i>p_01174_pos_dest; i--){
+				p_01174_padre_nodos.children[i].children[0].innerText= p_01174_padre_nodos.children[i-1].children[0].innerText;
+			}
+			p_01174_padre_nodos.children[p_01174_pos_dest].children[0].innerText= p_01174_drag_text;
+		}
+		else if (p_01174_pos_orig<p_01174_pos_dest) {
+			p_01174_pos_dest--;
+			for(var i=p_01174_pos_orig; i<p_01174_pos_dest; i++){
+				p_01174_padre_nodos.children[i].children[0].innerText= p_01174_padre_nodos.children[i+1].children[0].innerText;
+			}
+			p_01174_padre_nodos.children[p_01174_pos_dest].children[0].innerText= p_01174_drag_text;
+
+		}
+		p_01174_formar_frase_usuario_drag_drop(p_01174_padre_nodos);
+}
+
+function p_01174_formar_frase_usuario_drag_drop(p_01174_padre_nodos){
+	var npregunta_frase = parseInt(p_01174_obtener_numero_pregunta(p_01174_padre_nodos.children[0].children[0].id));
+	document.getElementById("n"+npregunta_frase+"_botonPasarOF").style.display="none";
+	document.getElementById("n"+npregunta_frase+"_botonOF").style.display="";
 }
 
 function recargar_preguntas()
@@ -687,7 +747,7 @@ function p_01174_mostrar_preguntas_trinity()
 		if(!borrar_todo){
 			 var id_primer_div_contenido_pestanas=document.getElementById("n"+numero_pregunta_trinity+"_contenidopestanas").getElementsByTagName('div')[0].id;
 			 numero_pregunta_actual=parseInt(p_01174_obtener_numero_pregunta(id_primer_div_contenido_pestanas));
-			 document.getElementById('n'+numero_pregunta_trinity+'_lista').getElementsByTagName('li')[0].style.background='#fff';
+			 document.getElementById('n'+numero_pregunta_trinity+'_lista').getElementsByTagName('li')[0].style.background='#fdf9f5';
 			 document.getElementById(id_primer_div_contenido_pestanas).style.display="";
 
 
@@ -984,7 +1044,7 @@ function p_01174_pulsar_sobre_misma_palabra_borrar(valor)
 
 function p_01174_comprueba_frase_formada_usuario(valor) //acabar de hacer la función que sirve para comprobar si la frase que ha formado el usuario ha sido correcta.
 {
-
+/*
 	var npregunta_frase_formada_usu=parseInt(p_01174_obtener_numero_pregunta(valor));
 	respuestas_correctas_bdd_frase_usuario = smile_datos.preguntas[npregunta_frase_formada_usu].pregunta.trim();
 				do
@@ -1066,6 +1126,84 @@ function p_01174_comprueba_frase_formada_usuario(valor) //acabar de hacer la fun
 		//p_01174_subir_pregunta(); //3 llamamos a la función de subir preguntas
 		document.getElementById('n'+npregunta_frase_formada_usu+'_boton_deshacer_of').style.display="none";
 	}
+	*/
+	var npregunta_frase_formada_usu=parseInt(p_01174_obtener_numero_pregunta(valor));
+	respuestas_correctas_bdd_frase_usuario = smile_datos.preguntas[npregunta_frase_formada_usu].pregunta.trim();
+				do
+				{
+					respuestas_correctas_bdd_frase_usuario = respuestas_correctas_bdd_frase_usuario.replace("  "," ");
+				}while(respuestas_correctas_bdd_frase_usuario.match(/  /g));
+
+	respuestas_correctas_bdd_frase_usuario=p_01174_to_string(respuestas_correctas_bdd_frase_usuario); //remplazamos todos los elementos especiales.
+
+	//var cont_palabra_final=0;
+	var valor_div="";
+	for(var i=0;  i<document.getElementById("n"+npregunta_frase_formada_usu+"_"+"texto_ordenar_frase").children.length; i++)
+	{
+		var peque=document.getElementById("n"+npregunta_frase_formada_usu+"_"+"texto_ordenar_frase").children[i].children[0];
+				valor_div+=peque.innerText+" ";
+	}
+	valor_div = valor_div.replace("undefined","");
+	valor_div = valor_div.trim().replace("  "," ");
+	//alert(valor_div);
+
+	if(valor_div.toLowerCase()==respuestas_correctas_bdd_frase_usuario.toLowerCase())
+	{
+		document.getElementById("n"+npregunta_frase_formada_usu+"_compruebaOF").style.display="none";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_formada_usuario").style.color="green";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_formada_usuario").style.fontWeight = "900";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_boton_deshacer").style.display="none";
+		smile_datos.preguntas[npregunta_frase_formada_usu].resultado=1; //1 respuesta correcta
+		p_01174_contador_palabras_entrando=0;
+		var etiqueta_frase = document.getElementsByName("n"+npregunta_frase_formada_usu+'_palabras_desordenadas'); //deshabilitamos los onclick en las palabras desordenadas
+							for (var i=0; i < etiqueta_frase.length; i++)
+							{
+							   etiqueta_frase[i].onclick = false;
+							}
+		var etiqueta_frase_texto_borrar = document.getElementsByName("frase_formada_por_usuario"); //deshabilitamos los onclick en la frase formada por el usuario.
+							for (var i=0; i < etiqueta_frase_texto_borrar.length; i++)
+							{
+							   etiqueta_frase_texto_borrar[i].onclick = false;
+							}
+		//setTimeout(function(){document.getElementById(valor).parentNode.parentNode.remove();p_01174_carga_pregunta();},2000);
+		p_01174_borrar_div_preguntas(valor);
+
+		setTimeout(p_01171_ganar_smile_animacion("+",npregunta_frase_formada_usu),1);
+		smile_datos.preguntas_contestadas.push(npregunta_frase_formada_usu);
+		smile_datos.preguntas_cargadas.shift();
+		smile_datos.preguntas[npregunta_frase_formada_usu].respuesta_usuario=valor_div;
+		p_01174_subir_pregunta(); //3 llamamos a la función de subir preguntas
+	}
+	else
+	{
+		var etiqueta_frase_incorrecta = document.getElementsByName("n"+npregunta_frase_formada_usu+'_palabras_desordenadas'); //deshabilitamos los onclick en las palabras desordenadas
+							for (var i=0; i < etiqueta_frase_incorrecta.length; i++)
+							{
+							   etiqueta_frase_incorrecta[i].onclick = false;
+							}
+		var etiqueta_frase_texto_borrar = document.getElementsByName("frase_formada_por_usuario"); //deshabilitamos los onclick en la frase formada por el usuario.
+							for (var i=0; i < etiqueta_frase_texto_borrar.length; i++)
+							{
+							   etiqueta_frase_texto_borrar[i].onclick = false;
+							}
+		document.getElementById("n"+npregunta_frase_formada_usu+"_compruebaOF").style.display="none";
+		smile_datos.preguntas[npregunta_frase_formada_usu].resultado=0; //0 respuesta incorrecta
+		p_01174_contador_palabras_entrando=0;
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_formada_usuario").style.color="red";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_formada_usuario").style.fontWeight = "900";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_correcta").innerHTML=smile_datos.preguntas[npregunta_frase_formada_usu].pregunta;
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_correcta").style.fontWeight = "900";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_frase_correcta").style.display="";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_boton_pasar_of").style.display="none";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_boton_pasar_respuesta_contestada_OF").style.display="";
+		document.getElementById("n"+npregunta_frase_formada_usu+"_boton_deshacer_of").disabled = true;
+		setTimeout(p_01171_ganar_smile_animacion("-",npregunta_frase_formada_usu),1);
+		smile_datos.preguntas_contestadas.push(npregunta_frase_formada_usu);
+		//smile_datos.preguntas_cargadas.shift();
+		smile_datos.preguntas[npregunta_frase_formada_usu].respuesta_usuario=valor_div;
+		//p_01174_subir_pregunta(); //3 llamamos a la función de subir preguntas
+		document.getElementById('n'+npregunta_frase_formada_usu+'_boton_deshacer_of').style.display="none";
+	}
 }
 
 function p_01174_borrar_palabra_boton_deshacer(valor)
@@ -1082,7 +1220,7 @@ function p_01174_borrar_palabra_boton_deshacer(valor)
 		var div_eliminar = document.getElementById(ultimo_hijo_id);
 		div_eliminar.parentNode.removeChild(div_eliminar); //eliminamos el div
 		document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute("onclick", "p_01174_formar_frase_usuario(this.id);");
-		document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute('style', 'margin-bottom: 0.5em; padding: 10px 10px 10px 20px; font-size: 0.8em; margin-left: 5%; padding 1em 1em 0.7em 1em; background-color: #fff; color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 0.1em 0.1em 0; display: inline-block;  font-family: HelveticaNeueRoman;');
+		document.getElementById("n"+npregunta+"_"+numero_identificativo_palabra_borrar).setAttribute('style', 'margin-bottom: 0.5em; padding: 5px 10px; font-size: 16px; margin-left: 12px; background-color: rgba(159, 210, 225,0.3);color: #0087ae; border: solid 0.1em;  border-radius: 0.3em; box-shadow: 2px 2px 0; display: inline-block;  font-family: HelveticaNeueRoman;margin-right:3px;');
 		document.getElementById("n"+npregunta+"_"+"botonPasarOF").style.display="";
 		document.getElementById("n"+npregunta+"_"+"botonOF").style.display="none";
 		}
@@ -2209,14 +2347,42 @@ function p_01174_textarea_contar_caracteres(ele,ele_imprimir,maximo,minimo)
 	document.getElementById(ele_imprimir).innerHTML=text.length+" / ("+minimo+"-"+maximo+")";
 }
 
-window.addEventListener('resize', function() {
+
+
+function p_01174_drag_touch(e){
+	var p_01174_div_drag= e.target.id;
+	e.target.style.position= "fixed";
+	e.preventDefault();
+}
+
+function p_01174_drag_move_touch(e){
+	var touchobj = e.changedTouches[0];
+	e.target.style.top= (parseInt(touchobj.clientY)-parseInt(e.target.clientHeight/2))+"px";
+	//e.target.style.left= (parseInt(touchobj.clientX)-parseInt(e.target.clientWidth/2))+"px";
+	e.target.style.left= (parseInt(touchobj.clientX)-2)+"px";
+	e.preventDefault();
+}
+
+function p_01174_drag_drop_touch(e){
+	e.preventDefault();
+  e.stopPropagation();
+  var changedTouch = e.changedTouches[0];
+  var elem = document.elementFromPoint(changedTouch.clientX, changedTouch.clientY);
+	e.target.style.position= "";
+	p_01174_drop(null, e.target.id, elem.id);
+}
+
+window.addEventListener('resize', p_01174_resize_preguntas);
+
+function p_01174_resize_preguntas() {
 	if((document.getElementById("p_00962_preguntas_contenedor"))&&(document.getElementById("p_00962_preguntas_contenedor").style.display!="none")){
 		var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale(1)";
 		if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
 			var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
 			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
 		}
 	}
-});
+}
 
 </script>

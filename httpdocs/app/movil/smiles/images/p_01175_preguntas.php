@@ -24,10 +24,10 @@
 	<div id="pregun2" class="preguntas"><br>
 		<div id="Titulo2" class="text" style='margin-bottom: 15px;'></div>
 		<div id="contenedorDragDrop" class="text2Especial" onclick="p_01174_dragdrop(this.id)"></div>
-			
+
 			<div id="p_01175_respuesta_drag_drop" class="dragdrop">
 			</div>
-			
+
 		<!-- <div id="myDialogPasarPregFillGaps" title="Are you sure that you doesn't answer"></div> -->
 		<div id="botonPasarFILGAPS" align="right" class="estiloBoton"><input style="position: fixed;bottom: 4em;right: 4em;" id="boton_pasar_FILGAPS" type="image" src="../images/play_grey_70.png" width="15%" title="continue without answer" onclick="p_01174_skip_pregunta(this.id)" style="padding-top: 15px;"></div>
 		<div id="botonFG" align="right" class="estiloBoton" style='display:none;'><input style="position: fixed;bottom: 4em;right: 4em;" id="boton_verde" type="image" src="../images/play_green_70.png" width="15%" title="go next question" onclick="comprueba_correcta(this.id)"></div>

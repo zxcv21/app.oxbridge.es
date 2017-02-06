@@ -19,9 +19,9 @@
 
 			<!-- <div id="myDialogPasarPregTF" title="Are you sure that you doesn't answer"></div> -->
 			<!-- <div id="err_radio" class="missatges"></div> -->
-			<div id="botonPasarTF" align="right" class="estiloBoton"><input id="boton_pasar_tf" style="position: absolute;right: 10px;bottom: 10px;height: 50px;" type="image" src='<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>' title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
-			<div id="botonTF" align="right" class="estiloBoton" style='display:none;'><input id="compruebaTF" style="position: absolute;right: 10px;bottom: 10px;height: 50px" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" title="go next question" onclick="p_01174_comprueba_pregunta_correcta_tf(this.id)"></div>
-			<div id="boton_pasar_respuesta_contestada_TF" align="right" class="estiloBoton" style='display:none;'><input id="nextquestionTF" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  title="go next question" style="position: absolute;right: 10px;bottom: 10px;height: 50px;" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
+			<div id="botonPasarTF" align="right" class="estiloBoton"><input id="boton_pasar_tf" style="margin-right:-20px;height: 50px;" type="image" src='<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>' title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
+			<div id="botonTF" align="right" class="estiloBoton" style='display:none;'><input id="compruebaTF" style="margin-right:-20px;height: 50px" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" title="go next question" onclick="p_01174_comprueba_pregunta_correcta_tf(this.id)"></div>
+			<div id="boton_pasar_respuesta_contestada_TF" align="right" class="estiloBoton" style='display:none;'><input id="nextquestionTF" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  title="go next question" style="margin-right:-20px;height: 50px;" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
 	</div>
 </div>
  <!--style="right: 10%;bottom: 4em;"-->
@@ -36,16 +36,16 @@
 		<div id="palabras_arrastables"></div>
 		<div id="p_01175_respuesta_drag_drop" class="dragdrop"></div>
 		<!-- <div id="myDialogPasarPregFillGaps" title="Are you sure that you doesn't answer"></div> -->
-		<div id="botonPasarFILGAPS" align="right" class="estiloBoton"><input id="boton_pasar_FILGAPS" type="image" src="<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>" title="continue without answer" style="position:fixed;right: 4em;bottom: 4em;height: 10em;" onclick="p_01174_skip_pregunta(this.id)"></div>
-		<div id="botonFG" align="right" class="estiloBoton" style='display:none;'><input id="boton_verde_comprobar_fill_gaps" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" style="position:fixed;right: 4em;bottom: 4em;height: 10em;" title="go next question" onclick="comprobar(this.id)"></div>
-		<div id="botonFG_pasar_respuesta_contestada" align="right" class="estiloBoton" style='display:none;'><input id="boton_pasar_respuesta_contestada_fill_gaps" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  style="position:fixed;right: 4em;bottom: 4em;height: 10em;" title="go next question" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
+		<div id="botonPasarFILGAPS" align="right" class="estiloBoton"><input id="boton_pasar_FILGAPS" type="image" src="<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>" title="continue without answer" style="margin-right:-20px;height: 50px;" onclick="p_01174_skip_pregunta(this.id)"></div>
+		<div id="botonFG" align="right" class="estiloBoton" style='display:none;'><input id="boton_verde_comprobar_fill_gaps" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" style="height: 50px;margin-right:-20px;" title="go next question" onclick="comprobar(this.id)"></div>
+		<div id="botonFG_pasar_respuesta_contestada" align="right" class="estiloBoton" style='display:none;'><input id="boton_pasar_respuesta_contestada_fill_gaps" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  style="margin-right:-20px;height: 50px;" title="go next question" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
 	</div>
 </div>
 
 <!-- PREGUNTA MULTIOPTION -->
 <div id="p_01175_smile_estructura_m_option" style='display:none;'>
 	<div id="mo" class="preguntas" style="display:none;"><br>
-		<div id="Titulo3" class="text"></div>
+		<div id="Titulo3" class="text4"></div>
 		<div id="Texto3" class="text2"></div>
 		<!-- <form name=formPregun align='center' method='post' name='cookie' action='#'> -->
 		<div id="p_01175_respuesta_m_option" class="resp">
@@ -55,9 +55,9 @@
 		</div>
 			<!-- <div id="myDialogPasarPregMOPTION" title="Are you sure that you donesn't answer"></div> -->
 			<!-- <div id="err_checkbox" class="missatges"></div> -->
-			<div id="botonPasarMO" align="right" class="estiloBoton" ><input id="boton_pasar_MO" type="image" src="<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>" style="position:fixed;right: 4em;bottom: 4em;height: 10em;" title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
-		<div id="botonMO" align="right" class="estiloBoton" style='display:none;'><input id="compruebaM0" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" style="position:fixed;right: 4em;bottom: 4em;height: 10em;"title="go next question" onclick="obtenerValorMultirespuesta(this.id)"></div>
-		<div id="boton_pasar_respuesta_contestada_M0" align="right" class="estiloBoton" style='display:none;'><input id="nextquestionM0" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  title="go next question" style="position: absolute;right: 10px;bottom: 10px;height: 50px;" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
+			<div id="botonPasarMO" align="right" class="estiloBoton" ><input id="boton_pasar_MO" type="image" src="<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>" style="margin-right:-20px;height: 50px;" title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
+		<div id="botonMO" align="right" class="estiloBoton" style='display:none;'><input id="compruebaM0" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" style="margin-right:-20px;height: 50px;"title="go next question" onclick="obtenerValorMultirespuesta(this.id)"></div>
+		<div id="boton_pasar_respuesta_contestada_M0" align="right" class="estiloBoton" style='display:none;'><input id="nextquestionM0" type="image" src="<? echo ver_url("movil/smiles/images/next_green_70.png","src"); ?>"  title="go next question" style="margin-right:-20px;height: 50px;" onclick="p_01174_mostrar_siguiente_pregunta(this.id)"></div>
 	</div>
 </div>
 
@@ -110,9 +110,11 @@
 <div id="p_01175_smile_estructura_ordenar_frase" style='display:none;'>
 	<div id="ordenar_frase" class="preguntas" style="display:none;"><br>
 		<div id="titulo_ordenar_frase" class="text"></div>
-		<div id="texto_ordenar_frase" class="text2"></div>
-		<div id="frase_formada_usuario" class="estilo_frase_usuario"></div>
-		<div id="frase_correcta" class="estilo_frase_usuario_correcta"></div>
+		<div id="texto_ordenar_frase" class="text2" ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);'></div>
+		<div class="p_01175_zona_crear_frase">
+			<div id="frase_formada_usuario" class="estilo_frase_usuario"></div>
+			<div id="frase_correcta" class="estilo_frase_usuario_correcta"></div>
+		</div>
 		<div id="boton_deshacer" align="right" class="estiloBoton"><input id="boton_deshacer_of" type="image" src="<? echo ver_url("images/deshacer.png","src"); ?>" title="continue without answer" style="display:none;position: absolute;right: 77px;bottom: 10px;height: 50px;" onclick="p_01174_borrar_palabra_boton_deshacer(this.id)"></div>
 		<div id="botonPasarOF" align="right" class="estiloBoton"><input id="boton_pasar_of" type="image" src="<? echo ver_url("movil/smiles/images/play_grey_70.png","src"); ?>" title="continue without answer" style="position: absolute;right: 10px;bottom: 10px;height: 50px;" onclick="p_01174_skip_pregunta(this.id)"></div>
 		<div id="botonOF" align="right" class="estiloBoton" style='display:none;'><input id="compruebaOF" type="image" src="<? echo ver_url("movil/smiles/images/play_green_70.png","src"); ?>" title="go next question" style="position: absolute;right: 10px;bottom: 10px;height: 50px;" onclick="p_01174_comprueba_frase_formada_usuario(this.id)"></div>
@@ -121,14 +123,14 @@
 </div>
 
 <div id="p_01175_smile_estructura_trinity" style='display:none;'>
-	<div id="trinity" class="preguntas" style="margin-left:1.2em;display:none;">
-	<div id="texto_trinity" class="text2"></div>
-	  <div id="pestanas" class="pestanas" style="margin-left:1.2em;">
+	<div id="trinity" class="preguntas p_01175_pregunta_trinity" style="margin-left:1.2em;display:none;">
+	<div id="texto_trinity" class="text3"></div>
+	  <div id="pestanas" class="pestanas" style="margin-left:7%;">
             <ul id="lista">
                 <!-- <li id="pestana1"><a id="html" href="javascript:cambiarPestanna(pestanas,pestana1);"></a></li> -->
             </ul>
         </div>
-	 <div id="contenidopestanas" class="contenedor_pestanas" style="width:51em;">
+	 <div id="contenidopestanas" class="contenedor_pestanas">
 	 </div>
 	</div>
 </div>

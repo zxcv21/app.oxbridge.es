@@ -220,7 +220,7 @@ function p_01171_mover_yo(json){
 			document.getElementById("p_01171_carrera_reducida_km").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de_reducido' style='display:none;'>/"+distancia+"<br>/"+smile_datos.alumno.distancia+"Km</span>";
 			document.getElementById("p_00962_carrera_km_fin").innerHTML="London<br>"+smile_datos.alumno.distancia+" KM";
 
-			document.getElementById("p_00955_img_cargando").style.display="none";
+			document.getElementById("p_00955_div_img_cargando").style.display="none";
 		}
 /*	}
 	else

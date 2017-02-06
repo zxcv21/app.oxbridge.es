@@ -115,6 +115,9 @@
 	    left: 0;
 	    right: 0;
 		}
+		.p_01175_pregunta_trinity{
+			overflow: auto;
+		}
 .p_00962_start{
 	font-size: 1.2em;
 	/*padding: 1em 1em 0.7em 1em;*/
@@ -197,8 +200,7 @@
 			}
 
 #p_00962_preguntas_contenedor{
-	/*overflow-y:auto;*/
-	overflow: hidden;
+	overflow-y:auto;
 	width: 100%;
   height: 100%;
   position: fixed;
