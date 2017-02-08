@@ -484,7 +484,6 @@ function p_01174_drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 		//ev.target.children[0].style.backgroundColor= "#F6DDCC";
 		ev.target.children[0].style.color="#DC7633";
-
 }
 
 function p_01174_drop(e, p_01174_drag_, p_01174_drop_id_, p_01174_posx_, p_01174_posy_) {
@@ -538,7 +537,7 @@ function p_01174_drop(e, p_01174_drag_, p_01174_drop_id_, p_01174_posx_, p_01174
 	}
 	p_01174_nodo_drag.children[0].style.color= "#0087ae";
 
-	p_01174_formar_frase_usuario_drag_drop(p_01174_padre_nodos);
+	//p_01174_formar_frase_usuario_drag_drop(p_01174_padre_nodos);
 }
 
 function p_01174_formar_frase_usuario_drag_drop(p_01174_padre_nodos){
@@ -739,7 +738,11 @@ function mostrar_pregunta_actual()
 	{
 		p_01174_mostra_preguntas_normal();
 	}
-	if(typo_de_pregunta!="ordenar_frase")
+	if(typo_de_pregunta=="trinity"){
+		p_01174_resize_preguntas_trinity();
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";
+	}
+	else if(typo_de_pregunta!="ordenar_frase")
 		p_01174_resize_preguntas();
 	else
 		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";
@@ -940,7 +943,8 @@ function p_01174_skip_pregunta(valor)  //Función que me permite pasar de pregun
 				   etiqueta_frase_formada[i].onclick = false;
 				}
 			}
-			document.getElementById('n'+numero_pregunta+'_botonPasarOF').style.display="none";
+			//document.getElementById('n'+numero_pregunta+'_botonPasarOF').style.display="none";
+			document.getElementById('n'+numero_pregunta+'_botonOF').style.display="none";
 			document.getElementById('n'+numero_pregunta+'_boton_pasar_respuesta_contestada_OF').style.display="";
 			document.getElementById("n"+numero_pregunta+"_frase_correcta").innerHTML=smile_datos.preguntas[numero_pregunta].pregunta;
 			document.getElementById("n"+numero_pregunta+"_frase_correcta").style.fontWeight = "900";
@@ -2247,8 +2251,10 @@ function p_01174_drag_option(ele,ind_drag)
 function p_01174_drag_option_out()
 {
 	document.body.removeEventListener("click",p_01174_drag_option_out);
-	p_01174_drag_option_abierto.parentNode.removeChild(p_01174_drag_option_abierto);
-	p_01174_drag_option_abierto="";
+	if(p_01174_drag_option_abierto){
+		p_01174_drag_option_abierto.parentNode.removeChild(p_01174_drag_option_abierto);
+		p_01174_drag_option_abierto="";
+	}
 }
 
 function p_01174_mostrar_ocultar_boton_drag_option(ind_drag)
@@ -2319,54 +2325,6 @@ function p_01174_drag_drop_touch(e){
 
 	e.target.style.position="";
 	p_01174_drop(null,e.target.parentNode,p_01174_receptor_drop, changedTouch.clientX, changedTouch.clientY);
-/*
-	if(p_01174_receptor_drop.id!=p_01174_padre_nodos.id){
-		if(p_01174_receptor_drop.id.includes("_div")){
-			//var p_01174_index_of_drop = Array.prototype.indexOf.call(p_01174_padre_nodos.children, p_01174_receptor_drop);
-
-		}
-		else if (p_01174_receptor_drop.parentNode.id.includes("_div")) {
-			//var p_01174_index_of_drop = Array.prototype.indexOf.call(p_01174_padre_nodos.children, p_01174_receptor_drop.parentNode);
-			p_01174_receptor_drop= p_01174_receptor_drop.parentNode;
-		}
-		else {
-			//se suelta fuera
-			return;
-		}
-		e.target.style.position="";
-		p_01174_padre_nodos.insertBefore(e.target.parentNode, p_01174_receptor_drop);
-	}
-	else{
-
-	}
-
-*/
-
-
-/*	var p_01174_padre_nodos= elem.id.slice(0,elem.id.indexOf("_")+1)+"texto_ordenar_frase";
-	p_01174_padre_nodos= document.getElementById(p_01174_padre_nodos);
-	if(elem.id==p_01174_padre_nodos.id){
-		var p_01174_posx= e.clientX;
-		var p_01174_elemento_izq="";
-		while(p_01174_posx){
-			p_01174_elemento_izq= document.elementFromPoint(p_01174_posx--, e.clientY);
-			if(p_01174_elemento_izq.id!=p_01174_padre_nodos.id)
-				break;
-		}
-		if(p_01174_elemento_izq){
-			var p_01174_pos_dest= (isNaN(parseInt(p_01174_elemento_izq.id.slice(-2))))?parseInt(p_01174_elemento_izq.id.slice(-1)):parseInt(p_01174_elemento_izq.id.slice(-2));
-			if(p_01174_pos_dest== p_01174_padre_nodos.children.length-1)
-				p_01174_drop(null, e.target.id, elem.id);
-			else{
-				p_01174_pos_dest++;
-				p_01174_drop(null, e.target.id, p_01174_drag_id.slice(0,p_01174_drag_id.indexOf("_")+1)+"div"+p_01174_pos_dest);
-			}
-		}
-	}
-	else
-		p_01174_drop(null, e.target.id, elem.id);
-
-	*/
 }
 
 
@@ -2374,13 +2332,35 @@ window.addEventListener('resize', p_01174_resize_preguntas);
 
 function p_01174_resize_preguntas() {
 	if((document.getElementById("p_00962_preguntas_contenedor"))&&(document.getElementById("p_00962_preguntas_contenedor").style.display!="none")){
-		var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
-		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale(1)";
-		if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
-			var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
-			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
+		var p_01174_tipo_pregunta= document.getElementById("p_01175_preguntas").getElementsByTagName('div')[0].id.replace(/^n[0-9]*_/,"");
+		if((p_01174_tipo_pregunta=="trinity"))
+			p_01174_resize_preguntas_trinity();
+		else if(p_01174_tipo_pregunta!="ordenar_frase"){
+			var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
+			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale(1)";
+			if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
+				var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
+				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
+			}
 		}
 	}
 }
 
+function p_01174_resize_preguntas_trinity() {
+	var p_01174_contenedor= document.getElementById("p_01175_preguntas");
+	var p_01174_altura_disponible= window.innerHeight-80;
+	//resetear altura por si crece ventana
+	var p_01174_texto= document.querySelectorAll(".text3");
+	for(var i=0; i<p_01174_texto.length; i++){
+		if(p_01174_texto[i].offsetHeight){
+			p_01174_texto[i].style.height= "";
+			break;
+		}
+	}
+	if(p_01174_contenedor.offsetHeight>p_01174_altura_disponible){
+		var p_01174_altura_texto= p_01174_texto[i].offsetHeight- (p_01174_contenedor.offsetHeight-p_01174_altura_disponible);
+		p_01174_altura_texto= p_01174_altura_texto>100?p_01174_altura_texto:100;
+		p_01174_texto[i].style.height= p_01174_altura_texto+"px";
+	}
+}
 </script>

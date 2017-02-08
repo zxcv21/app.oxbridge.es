@@ -121,13 +121,14 @@
   margin-left: 7%;
   margin-right: 5%;
   margin-bottom: 1em;
-  padding: 1% 1% 0;
+  margin-top: 50px;
+  padding: 1% 1% 5px;
   text-align: left;
   word-wrap: break-word;
   overflow: auto;
-  padding-top: 40px;
+  padding-top: 11px;
   box-sizing: border-box;
-  max-height: 300px;
+/*  max-height: 300px;*/
   /*background-color: #eee;*/
   box-shadow: 0 0 10px;
 }
