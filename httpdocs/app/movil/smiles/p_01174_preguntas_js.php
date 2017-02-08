@@ -133,7 +133,7 @@ function p_01174_carga_pregunta()
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
 								"<span id=checkboxM0"+i+" style='margin-left: 3%;'>"+smile_datos.preguntas[indice_preguntas].respuestas[i]+"</span>"+
-								"</label><br>"+
+								"</label>"+
 							"</div>");
 							/*if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
 							{
@@ -155,7 +155,7 @@ function p_01174_carga_pregunta()
 								"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 								"</div>"+
 								"<span id=aceptospan"+i+" style='display:block;padding-left:25px;'>"+smile_datos.preguntas[indice_preguntas].respuestas[i]+"</span>"+
-								"</label><br>"+
+								"</label>"+
 							"</div>");
 							/*if(i==smile_datos.preguntas[indice_preguntas].respuestas.length-1)
 							{
@@ -369,7 +369,7 @@ function p_01174_carga_pregunta()
 					case "m_option" :
 					document.getElementById("p_01175_respuesta_m_option").innerHTML="";
 					document.getElementById("Titulo3").innerHTML=smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].titulo;
-					document.getElementById("Titulo3").style.marginBottom="2em";
+					document.getElementById("Titulo3").style.marginBottom="15px";
 					//document.getElementById("Texto3").innerHTML=smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].pregunta;
 					document.getElementById("Texto3").style.display='none';
 						for(i in smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas)
@@ -381,7 +381,7 @@ function p_01174_carga_pregunta()
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
 								"<span id=checkboxM0"+i+" style='padding-left: 25px;display:block;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
-								"</label><br>"+
+								"</label>"+
 							"</div>");
 							/*if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
 							{
@@ -392,7 +392,7 @@ function p_01174_carga_pregunta()
 
 					case "tf" :
 						document.getElementById("Titulo").innerHTML=smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].titulo;
-						document.getElementById("Titulo").style.marginBottom="2em";
+						document.getElementById("Titulo").style.marginBottom="15px";
 						//document.getElementById("Texto").innerHTML=smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].pregunta;
 						document.getElementById("Texto").style.display='none';
 						document.getElementById("p_01175_respuesta_true_false").innerHTML="";
@@ -405,7 +405,7 @@ function p_01174_carga_pregunta()
 									"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 									"</div>"+
 									"<span id=aceptospan"+i+" style='display:block; padding-left: 25px;'>"+smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas[i]+"</span>"+
-									"</label><br>"+
+									"</label>"+
 								"</div>");
 								/*if(i==smile_datos.preguntas[indidce_preguntas_mismo_tipo[p]].respuestas.length-1)
 								{
@@ -1273,13 +1273,13 @@ function p_01174_comprueba_pregunta_correcta_tf(valor) //funcion que me permite 
 		}
 		smile_datos.preguntas[npreguntavalorTF].resultado=0; //0 respuesta incorrecta
 		/**********************Marco la respuesta correcta ****************/
-		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_respuesta_correcta_tf).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorTF+"_acepto_correcta src='<? echo ver_url("movil/smiles/images/green-check.png","src"); ?>' style='display:none; width:9%; left: 0; position:absolute; margin-top:-2%;'></img>");
+		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_respuesta_correcta_tf).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorTF+"_acepto_correcta src='<? echo ver_url("movil/smiles/images/green-check.png","src"); ?>' style='display:none; width:9%; left: 0; position:absolute; margin-top:-2%; height:26px;width:25px;'></img>");
 		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_respuesta_correcta_tf).style.visibility="hidden"; //oculto el input
 		document.getElementById("n"+npreguntavalorTF+"_acepto_correcta").style.display=""; //muestro la imagen correcta
 
 		/**********************Marco la respuesta incorrecta ****************/
 
-		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_valor_presionado).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorTF+"_acepto_incorrecta src='<? echo ver_url("movil/smiles/images/error-flat.png","src"); ?>' style='display:none; width:7%; left: 0; position:absolute;'></img>");
+		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_valor_presionado).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorTF+"_acepto_incorrecta src='<? echo ver_url("movil/smiles/images/error-flat.png","src"); ?>' style='display:none; width:7%; left: 0; position:absolute; height:20px; width: 20px;'></img>");
 
 		document.getElementById("n"+npreguntavalorTF+"_acepto"+posicion_valor_presionado).style.visibility="hidden"; //oculto el input
 		document.getElementById("n"+npreguntavalorTF+"_acepto_incorrecta").style.display=""; //muestro la imagen correcta
@@ -1527,7 +1527,7 @@ function obtenerValorMultirespuesta(valor) //funcion que me permite comprobar si
 
 		for(s=0;s<posicion_correcta_guardar.length;s++) //for que me pinta las preguntas correctas con la flecha en verde
 		{
-			document.getElementById("n"+npreguntavalorMo+"_checkbox"+posicion_correcta_guardar[s]).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorMo+"_acepto_correcta_Moption"+s +" "+  "src='<? echo ver_url("movil/smiles/images/green-check.png","src"); ?>' style='display:none; width:9%; left: 0; position:absolute; margin-top:-2%;'></img>");
+			document.getElementById("n"+npreguntavalorMo+"_checkbox"+posicion_correcta_guardar[s]).insertAdjacentHTML("afterend","<img id=n"+npreguntavalorMo+"_acepto_correcta_Moption"+s +" "+  "src='<? echo ver_url("movil/smiles/images/green-check.png","src"); ?>' style='display:none; width:9%; left: 0; position:absolute; margin-top:-2%; height:28px; width:36px;'></img>");
 			document.getElementById("n"+npreguntavalorMo+"_checkbox"+posicion_correcta_guardar[s]).style.visibility="hidden"; //oculto el input
 			document.getElementById("n"+npreguntavalorMo+"_acepto_correcta_Moption"+s).style.display=""; //muestro la imagen correcta
 			//document.getElementById("n"+npreguntavalorMo+"_checkboxM0"+posicion_correcta_guardar[s]).style.backgroundColor="#1ECC1E";

@@ -39,7 +39,7 @@
     box-sizing: border-box;
     background-color: rgb(253, 249, 245);
     margin-top: 45px;
-    padding: 3px 5px 5px 10px;
+    padding: 10px 5px 5px 10px;
 }
 .p_01175_pregunta_trinity .contenedor_pestanas{
   margin-bottom: 0;
@@ -128,7 +128,8 @@
   padding-top: 40px;
   box-sizing: border-box;
   max-height: 300px;
-  background-color: #eee;
+  /*background-color: #eee;*/
+  box-shadow: 0 0 10px;
 }
 .text4{
   padding-right: 3px;
@@ -337,6 +338,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	width: 100%;
 	position: relative;
   font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .p_01172_contenedor_preguntas_write
