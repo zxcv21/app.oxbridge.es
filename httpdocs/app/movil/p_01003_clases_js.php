@@ -102,7 +102,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 		}else{
 			document.getElementById("p_00960_clases_head_horario").innerHTML=""+
 				"<div id='p_00992_clases_head_horario_clase' class='x'>"+
-				"	<span style='font-size:12px;' onclick='p_00989_quitar_aviso_reservar();document.getElementById(\"p_00960_clases_head\").style.cssFloat=\"left\";'>"+TEXTOS[80].text+"</span>"+
+				"	<span style='font-size:12px;' onclick='p_00989_quitar_aviso_reservar(\"mostrar_ultima\");document.getElementById(\"p_00960_clases_head\").style.cssFloat=\"left\";'>"+TEXTOS[80].text+"</span>"+
 				"</div>";
 		}
 	}else{
@@ -110,7 +110,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 	}
 }
 function p_00989_quitar_aviso_reservar(set){
-	if(typeof set=="undefined")set=true
+	if(typeof set=="undefined")set=true;
 	/*if(document.getElementById("p_00960_clases_head")) document.getElementById("p_00960_clases_head").style.display="";*/
 	if(document.getElementById("p_00960_clases_head_fecha")) document.getElementById("p_00960_clases_head_fecha").style.display="";
 	if(document.getElementById("p_00960_clases_head_info"))	document.getElementById("p_00960_clases_head_info").style.display="";
@@ -119,7 +119,9 @@ function p_00989_quitar_aviso_reservar(set){
 	document.getElementById("p_00960_clases_actividades").style.right="initial";
 
 	quitar_aviso_reservar_calse_futura=true;
-	//if(set)set_siguiente_clase();
+	if(set== "mostrar_ultima"){
+		set_siguiente_clase();
+	}
 }
 
 

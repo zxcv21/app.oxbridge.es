@@ -20,7 +20,7 @@ var DIA_LEC="";
             ?>
             <div id="p_00960_clases_head_fecha">
 					<img src="<? echo ver_url("images/desplegable.png","src"); ?>" id="p_00960_clases_head_fecha_desplegable" onclick="calendario_imprime();cargar_tutorial(6);" title="ver m&aacute;s clases" style="height:13px">
-               <span id="p_00960_clases_head_fecha_imprimir" onclick="calendario_imprime();cargar_tutorial(6);" content="telephone=no" title="ver m&aacute;s clases">
+               <span id="p_00960_clases_head_fecha_imprimir" onclick="calendario_imprime();cargar_tutorial(6);" content="telephone=no" title="<? echo $TEXTOS[189][2]; ?>">
                   <?
                      echo(date(d)); ?>/<?
                      echo(date(m)); ?>/<?
@@ -98,8 +98,8 @@ var DIA_LEC="";
 	         <div id="p_00960_clases_head_calendario_out_cerrar"></div>
          </div>
          <div id="p_00960_clases_head_calendario" style="display:none;">
-           <div id="p_00960_clases_head_calendario_ir_ultima" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');p_00989_quitar_aviso_reservar();document.getElementById('p_00960_clases_head').style.cssFloat='left';">
-             <p>Ir a &uacute;ltima clase</p>
+           <div id="p_00960_clases_head_calendario_ir_ultima" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');p_00989_quitar_aviso_reservar('mostrar_ultima');document.getElementById('p_00960_clases_head').style.cssFloat='left';">
+             <p><? echo $TEXTOS[188][2];?></p>
            </div>
             <div id="p_00960_clases_head_calendario_mes">
                <button id="p_00960_clases_head_calendario_mes_botoni" onclick="set_calendario(-1,0,0);">&#60;</button>
