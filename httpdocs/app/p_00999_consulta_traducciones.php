@@ -4,11 +4,27 @@ id: p_00999
 
 <script>
 <?
-function p_00999_corrige_html($texto){
-	$texto=str_replace("'","&#39;",$texto);
-	$texto=str_replace('"',"&#49;",$texto);
+function p_00999_corrige_texto_literal($texto){
+	$texto=str_replace("&lt;","<",$texto);
+	$texto=str_replace("&gt;",">",$texto);
+	$texto=str_replace("&#39;","\'",$texto);
+	$texto=str_replace("&#34;","\"",$texto);
+
 	return $texto;
 }
+function p_00999_corrige_escape_comillas($texto){
+	$texto=str_replace("\r","",$texto);
+	$texto=str_replace("'","\'",$texto);
+	$texto=str_replace('"','\"',$texto);
+
+	$texto=str_replace("&lt;","<",$texto);
+	$texto=str_replace("&gt;",">",$texto);
+	$texto=str_replace("&#39;","\'",$texto);
+	$texto=str_replace("&#34;","\"",$texto);
+
+	return $texto;
+}
+
 function p_00999_corrige($texto){
 /*	$texto=str_replace("\r","",$texto);
 	$texto=str_replace("\\","&#92;",$texto);
@@ -28,6 +44,12 @@ function p_00999_corrige($texto){
 	$texto=str_replace("\r","",$texto);
 	$texto=str_replace("'","\'",$texto);
 	$texto=str_replace('"','\"',$texto);
+
+	$texto=str_replace("&lt;","<",$texto);
+	$texto=str_replace("&gt;",">",$texto);
+	$texto=str_replace("&#39;","\'",$texto);
+	$texto=str_replace("&#34;","\"",$texto);
+
 	return $texto;
 }
 
@@ -87,10 +109,13 @@ if(!$resultado){
 }else{
 	echo "TEXTOS=[];\n";
 	while ($fila = mysql_fetch_array($resultado)){
-		//$TEXTOS[$fila[0]]=array($fila[0],$fila[1],htmlspecialchars($fila[2], ENT_SUBSTITUTE),);
-		$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige_html($fila[2]),p_00999_corrige($fila[2]));
+		//$TEXTOS[][2]->texto directamente, $TEXTOS[][3]->texto que pasa por javascript (escape de comillas)
+		//$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige($fila[2]));
+		$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige_texto_literal($fila[2]),p_00999_corrige_escape_comillas($fila[2]));
+
+		//TEXTOS[].text->texto que pasa por javascript (escape de comillas)
 		//echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_js($fila[2])."'};\n";
-		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_html($fila[2])."','text2':'".p_00999_corrige($fila[2])."'};\n";
+		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_escape_comillas($fila[2])."'};\n";
 	}
 }
 

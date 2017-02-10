@@ -379,20 +379,6 @@ function p_01171_boton_start(){
 		//document.getElementById('p_00962_carrera').style.display="";
 
 		if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="";
-		//document.getElementById('head_oxbridge').style.display="none";/*esto no lo ha anulado Tomas*/
-		//document.getElementById('p_00962_carrera').style.display="none";/*esto no lo ha anulado Tomas*/
-		//}else{
-		/*
-		document.getElementById("p_00995_smiles_mensage_proximamente").innerHTML='<? echo $TEXTOS[139][2]?>';
-		document.getElementById("p_00995_smiles_mensage_proximamente").setAttribute("style","position: fixed;height: 100%;width: 90%;background-color: rgba(0,0,0,0.75);z-index: 9003;padding: 15% 5%; color: #fff;font-size: 4em;");
-		var nuevo_div_superior = document.createElement("div");
-		nuevo_div_superior.id="p_00990_over_all_cerrar_mensage_proximamente";
-		nuevo_div_superior.style="position: fixed;height: 4em;width: 4em;right: 0.5em;top: 0.5em;background-image: url(<? echo ver_url("images/close.png","src"); ?>);background-repeat: no-repeat;background-size: 100%;z-index: 9002;";
-		document.getElementById("p_00995_smiles_mensage_proximamente").appendChild(nuevo_div_superior);
-		document.getElementById("p_00995_smiles_mensage_proximamente").setAttribute("onclick","document.getElementById('p_00995_smiles_mensage_proximamente').style.display='none'");
-		*/
-		//}
-	//}
 }
 function p_01171_boton_stop(){
 	document.getElementById('head_oxbridge').style.zIndex="999";

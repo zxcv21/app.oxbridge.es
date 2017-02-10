@@ -603,8 +603,8 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-//	for(i in dia_lectivo)
-//		dia_lectivo[i].firmado="0";
+	//for(i in dia_lectivo)
+	//	dia_lectivo[i].firmado="0";
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -649,7 +649,7 @@ function p_00989_comprobar_firmas_pendientes(){
 	var p_00989_numero_a_mostrar= p_00989_firmas_pendientes-p_00989_firmas_enviadas;
 	if(parseInt(p_00989_numero_a_mostrar)>1){
 
-		document.getElementById("p_00995_firmas_restantes").innerHTML="Faltan "+p_00989_numero_a_mostrar+" firmas";
+		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[214].text.replace("[firmas]",p_00989_numero_a_mostrar);//"Faltan "+p_00989_numero_a_mostrar+" firmas";
 	}
 	else
 		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[207].text;
@@ -749,7 +749,7 @@ function p_00989_avisos_firmas_mostrar(indice,time)
 {
 	console.info("Aviso de firma: "+indice+" en: "+time+"min.");
 	setTimeout(function(){
-		alert(TEXTOS[141].text);
+		alert("$TEXTOS[141].text");
 		console.info("Firma: "+indice);
 		DIA_LEC=indice;
 

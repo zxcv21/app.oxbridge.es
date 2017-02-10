@@ -245,9 +245,9 @@ function p_01169_imprimir_asistencia(a){
 		}
 	}
 	if(contador_asistensias==0){
-		asistencia.insertAdjacentHTML("afterBegin","<div style='font-size:1em;'><? echo $TEXTOS[92][2]?></div>");
+		asistencia.insertAdjacentHTML("afterBegin","<div style='font-size:1em;'><? echo $TEXTOS[92][3]?></div>");
 	}else{
-		asistencia.insertAdjacentHTML("afterBegin","<div class='p_00961_personal_asistencia_40' style='font-size:1em;'><? echo $TEXTOS[64][2]?></div>");
+		asistencia.insertAdjacentHTML("afterBegin","<div class='p_00961_personal_asistencia_40' style='font-size:1em;'><? echo $TEXTOS[64][3]?></div>");
 	}
 }
 

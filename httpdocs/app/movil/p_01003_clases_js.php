@@ -802,7 +802,7 @@ function p_01003_deshacer_estilos_no_asistencia(){
 	//deshacer cambio estilo botón enviar
 	document.getElementById("p_0001851_enviar").style.backgroundColor="#21aed7";
 	document.getElementById("p_0001851_enviar").style.color="white";
-	document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[22][2];?>";
+	document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[22][3];?>";
 	document.getElementById("p_0001851_enviar").style.width= "150px";
 
 }

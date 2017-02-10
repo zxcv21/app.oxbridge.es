@@ -162,16 +162,6 @@ Pag. ID: 00961
          </div>
       </div>
 
-      <? /*<div class="p_00961_info_menu_seccion p_00961_info_menu_seccion_click" onclick="p_01169_seleccionar_seccion(this);">
-      	<img class="p_00961_info_menu_logo" name="boton_a" src="<? echo ver_url("images/boton_a.png","src"); ?>"></img>
-         <div class="p_00961_info_menu_espacio_blanco"></div>
-         <div class="p_00961_menu_texto" style="display:none;">
-            <div id="p_00961_menu_contenedor_4" class="p_00961_contenedor_seccion">
-				<div class="p_00961_menu_seccion_titulo"> echo $TEXTOS[42][2]; ?></div>
-            </div>
-         </div>
-      </div> */ ?>
-
       <div class="p_00961_info_menu_seccion p_00961_info_menu_seccion_click" onclick="p_01169_seleccionar_seccion(this);">
       	<img class="p_00961_info_menu_logo" name="boton_gear" src="<? echo ver_url("images/boton_gear.png","src"); ?>"></img>
          <div class="p_00961_info_menu_espacio_blanco"></div>
@@ -339,14 +329,6 @@ Pag. ID: 00961
                	id=""
                	class="p_00961_formulario_personal_info"
                >
-                <!--  <input
-                     class="p_00961_formulario_personal_info_input"
-                     type="button"
-                     value=" <? echo $TEXTOS[104][2];?>"
-                     onclick="window.location='http://s.oxbridge.es/ox/alumno/menu 01.asp?SESIONID='+sesion_id_vieja+'&UID='+alumno_id;"
-                     >
-                  <div class="p_00961_formulario_personal_info_nombre_input"> <? echo $TEXTOS[103][2];?></div><br>
-								-->
 					</div>
 
             </div>

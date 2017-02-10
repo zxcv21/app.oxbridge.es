@@ -1288,7 +1288,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			parrillas+='<br>';
 		}
 		if(contador>0){
-			document.getElementById("p_00958_formulario_mas_parrillas").innerHTML="<? echo $TEXTOS[133][2];?><br><br>"+parrillas;
+			document.getElementById("p_00958_formulario_mas_parrillas").innerHTML="<? echo $TEXTOS[133][3];?><br><br>"+parrillas;
 		}
 	}
 
