@@ -162,7 +162,7 @@ Pag. ID: 00994
 		//cambiar estilo botón enviar
 		document.getElementById("p_0001851_enviar").style.backgroundColor="white";//#21aed7
 		document.getElementById("p_0001851_enviar").style.color="red";//white
-		document.getElementById("p_0001851_enviar").value="No he asistido a esta clase";//Enviar
+		document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[203][2];?>";//Enviar
 		document.getElementById("p_0001851_enviar").style.width= "237px";//150
 
 		mostrar_valoracion(false, "formulario_valoracion");

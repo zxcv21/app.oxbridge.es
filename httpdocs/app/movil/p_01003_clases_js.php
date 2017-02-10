@@ -78,7 +78,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 		"<div align='center'>"+
 		"	<span style='font-size:1.5em;color:#8C6792;font-family: helveticaneueroman;margin-bottom: 20px;"+
     //"display: block;cursor:pointer' onclick='mover_menu(true,\"p_00987_menu_horario\");p_1003_mostrar_reservas= true; document.getElementById(\"p_00958_horario_clases_reservadas\").style.display=\"inline-block\";'>"+"No tienes clases reservadas próximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
-		"display: block;'>"+"No tienes clases reservadas pr&oacute;ximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
+		"display: block;'>"+TEXTOS[77].text+"</span><br><br>"+
 		"	<div"+
 		"		style='"+
 		"	height: 65px;"+
@@ -98,7 +98,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 	if(clases_anteriores){
 		if(document.getElementById("p_00992_clases_head_horario_clase")){
 			document.getElementById("p_00992_clases_head_horario_clase").innerHTML=""+
-				"<span style='font-size:1em;' onclick='p_00989_quitar_aviso_reservar();'>"+TEXTOS[80].text+"</span><br><br>";
+				"<span style='font-size:1em;' onclick='p_00989_quitar_aviso_reservar(\"mostrar_ultima\");'>"+TEXTOS[80].text+"</span><br><br>";
 		}else{
 			document.getElementById("p_00960_clases_head_horario").innerHTML=""+
 				"<div id='p_00992_clases_head_horario_clase' class='x'>"+
@@ -611,14 +611,15 @@ p_00994_valoracion_voluntaria= false;
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
 /*	if(typeof this.primera_vez== "undefined"){
-//		p_1003_maximo_dias_valorar= 200;
+		p_1003_maximo_dias_valorar= 200;
 		for(i in dia_lectivo){
 			dia_lectivo[i].valoracion="";
 			dia_lectivo[i].incidencia=0;
 		}
 		this.primera_vez= false;
 	}
-*/
+	*/
+
 
 	if(!p_00994_valoracion_voluntaria){
 			//p_1003_maximo_dias_valorar= 28;
@@ -801,7 +802,7 @@ function p_01003_deshacer_estilos_no_asistencia(){
 	//deshacer cambio estilo botón enviar
 	document.getElementById("p_0001851_enviar").style.backgroundColor="#21aed7";
 	document.getElementById("p_0001851_enviar").style.color="white";
-	document.getElementById("p_0001851_enviar").value="Enviar";
+	document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[22][2];?>";
 	document.getElementById("p_0001851_enviar").style.width= "150px";
 
 }

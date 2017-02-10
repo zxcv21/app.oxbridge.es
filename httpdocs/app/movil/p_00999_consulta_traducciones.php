@@ -10,6 +10,7 @@ p_01169_cargar_presonal_datos_info();
 
 function p_00999_corrige($texto){
 	$texto=str_replace("\r","",$texto);
+	$texto=str_replace("\\'","&#39;",$texto);
 	$texto=str_replace("\\","&#92;",$texto);
 	$texto=str_replace("'","&#39;",$texto);
 	$texto=str_replace("<","&lt;",$texto);
@@ -58,7 +59,7 @@ if(!$resultado){
 	echo "TEXTOS=[];\n";
 	while ($fila = mysql_fetch_array($resultado)){
 		$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige($fila[2]));
-		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige($fila[2])."'};\n";  
+		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige($fila[2])."'};\n";
 	}
 }
 

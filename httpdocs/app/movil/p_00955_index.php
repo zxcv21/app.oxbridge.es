@@ -57,7 +57,7 @@ if(!isset($_GET['idioma'])){
 </script>
 <div id="p_00955_div_img_cargando">
 	<img id="p_00955_img_cargando" class="img_cargando" src="<? echo ver_url("images/loading.png","src"); ?>" >
-</div>	
+</div>
 	<? /* if($_GET['VER']=="dev"){?>
 		<a style="z-index:9999999999; position:absolute; top:0; left:0;" href="http://app.oxbridge.es/app/movil/?TIPO=no-login&DEV=<? echo $_GET['VER'];?>">
         	entrar sin login
@@ -361,7 +361,7 @@ if(!isset($_GET['idioma'])){
    <div id="p_00995_firma" style="display:none;">
 
 		<div id="p_00995_alerta_firma_vacia">
-			<span>Debes firmar primero</span>
+			<span><? echo $TEXTOS[212][2];?></span>
 		</div>
 		<div id="p_00995_ventana_alerta">
 			<span id="p_00995_alerta_firmas_pendientes_mensaje"></span>
@@ -372,7 +372,7 @@ if(!isset($_GET['idioma'])){
 
 		   	<? include ver_url("movil/firma/pad/firma.php","");?>
 				<div id="p_00995_fecha_firma">
-					<span>Firma del d&iacute;a: </span>
+					<span><? echo $TEXTOS[206][2];?> </span>
 					<span id="p_00995_fecha_firma_dia_hora"></span>
 					<span id="p_00995_firmas_restantes"></span>
 					<div id="p_00995_cerrar_firma" onClick="p_00989_comprobar_cerrar_firmas();"></div>
@@ -380,7 +380,7 @@ if(!isset($_GET['idioma'])){
 				<div id="p_00995_firma_botones">
 		       <img src="<? echo ver_url("images/firma_borrar.png","src"); ?>" class="p_00995_boton_pad_firma" style=" margin-right:20%;" onclick="signaturePad.clear();" data-action="clear">
 		       <img src="<? echo ver_url("images/firma_ok.png","src"); ?>" class="p_00995_boton_pad_firma" onclick="signaturePadSave(event);" data-action="save">
-					 <div id="p_00989_salir_firmas_div" onclick="p_00989_permitir_cerrar=true;p_00989_cerrar_firmas();">Salir de firmas</div>
+					 <div id="p_00989_salir_firmas_div" onclick="p_00989_permitir_cerrar=true;p_00989_cerrar_firmas();"><? echo $TEXTOS[213][2];?></div>
 		    </div>
 
 		      <form enctype="multipart/form-data" id="firma" action="<? echo ver_url("p_01177_calse_iframe_datos.php","src");?>?consulta=firma&alumno_id=&dia_lectivo=" method="post">

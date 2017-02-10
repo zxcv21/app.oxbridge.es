@@ -380,8 +380,8 @@ Pag. ID: 00992
 				'	<div id="p_00992_print_icon" onclick="p_01003_click_impresora();" >'+
 				'	</div>'+
 				'	<ul id="p_00992_print_icon_ul">'+
-				'		<li onclick="p_01003_imprimir_clase();">Imprimir actividad actual</li>'+
-				'		<li onclick="p_01003_imprimir_vocabulario_dia();">Imprimir vocabulario del d&iacute;a</li>'+
+				'		<li onclick="p_01003_imprimir_clase();">'+TEXTOS[190].text+'</li>'+
+				'		<li onclick="p_01003_imprimir_vocabulario_dia();">'+TEXTOS[191].text+'</li>'+
 				' </ul>'
 				'</div>';
 			}

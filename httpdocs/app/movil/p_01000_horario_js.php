@@ -959,7 +959,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 
 			e_nivel=document.getElementById("p_00995_horario_contenedor_horario_nivel");
 			if(horario_datos[0]){e_nivel.innerHTML ="<span>"+horario_datos[0].abreviatura_nivel+"</span>"+
-				"<span style= 'font-size: 16px; color: lightgray; line-height: 0;'> NIVEL</span>";}
+				"<span style= 'font-size: 16px; color: lightgray; line-height: 0;text-transform: uppercase;'> "+TEXTOS[193].text+"</span>";}
 			//ajusta rel tamaño del horario al alto de la pantalla
 			if(document.getElementById("p_00995_horario_contenido_cuadricula"))contenedor_alto_max=document.getElementById("p_00995_horario_contenido_cuadricula").offsetHeight+82;
 			contenedor_alto_min=349;
@@ -1109,37 +1109,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 				'</div>'+
 
 				'<div id="p_00958_filtros_y_horario">'+
-/*
-				"<span onclick='ocultar_mostrar(\"p_00958_horario_clases_reservadas\",\"inline-block\")' style='"+
-				"	position: fixed;"+
-				"	left: 10px;"+
-				" top: 90px;"+
-				"	border: solid #FF3799;"+
-				"	background-color: #fff;"+
-				"	width: 185px;"+
-				"	margin: 0 10px 0 0;"+
-				"	font-size: 18px;"+
-				"	color: #FF3799;"+
-				"	padding:8px 5px 1px;"+
-				"	font-family: HelveticaNeueRoman;"+
-				" cursor: pointer;"+
-				"'>"+TEXTOS[37].text+"</span>"+
-*/
 				'<div id="p_00958_seleccion_horario">'+
-			/*	'	<p>CLASES</p>'+
-				'<img class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>bars_off.png" title="bar">'+
-				'	<img  class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>bars_on.png" title="bar">'+
-				'	<img  class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>CW_off.png" title="web" onclick="horario_filtrar(\'TIPO\',\'web\');">'+
-				'	<img  class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>CW_on.png" title="web" onclick="horario_filtrar(\'TIPO\',\'web\');">'+
-				'	<img  class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>inperson_off.png" title="presencial" onclick="horario_filtrar(\'TIPO\',\'presencial\');">'+
-				'	<img  class="p_00958_seleccion_horario_img"'+
-				'	src="<? //echo ver_url("images/horario/","src"); ?>inperson_on.png" title="presencial" onclick="horario_filtrar(\'TIPO\',\'presencial\');">'+
-				*/
 				'</div>'+
 
 
@@ -1152,7 +1122,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 
 			document.body.insertAdjacentHTML("beforeEnd",""+
 				'<div id="p_00958_horario_header_filtros" style="display:none;">'+
-				'<p>FILTRO EN HORARIO</p>'+
+				'<p style="text-transform: uppercase;">'+TEXTOS[197].text+'</p>'+
 				'	<!--FILTROS-->'+
 				'	<div id="p_00958_horario_filtros_temario">'+
 				'		<!--PINTAR FILTROS TEMARIO-->'+
@@ -1342,7 +1312,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 //		'document.getElementById(\'p_00958_filtros_y_horario\').style.display=\'none\';'+
 //		'ocultar_mostrar(\'p_00958_horario_clases_reservadas\',\'inline-block\')"'+
 			'p_00989_mostrar_reservas()"'+
-		'	src="<? echo ver_url("images/boton_horario_1.png","src"); ?>" title="clases reservadas">';
+		'	src="<? echo ver_url("images/boton_horario_1.png","src"); ?>" title="'+TEXTOS[196].text+'">';
 
 
 		html+=""+
@@ -1350,8 +1320,8 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 		'		ocultar_mostrar(\'p_00958_formulario_mas_horario_contenedor\');'+
 		'		crear_check_mas_horario();'+
 		'		"'+
-		'	src="<? echo ver_url("images/boton_horario_mas.png","src"); ?>" title="pedir m&aacute;s horarios">'+
-		'	<img id="p_00958_horario_menu_filtros" class="p_00958_horario_menu_boton" onclick="ocultar_mostrar_filtros();" src="<? echo ver_url("images/boton_filtro.png","src"); ?>" title="filtros">';
+		'	src="<? echo ver_url("images/boton_horario_mas.png","src"); ?>" title="'+TEXTOS[195].text+'">'+
+		'	<img id="p_00958_horario_menu_filtros" class="p_00958_horario_menu_boton" onclick="ocultar_mostrar_filtros();" src="<? echo ver_url("images/boton_filtro.png","src"); ?>" title='+TEXTOS[194].text+'>';
 
 		document.getElementById("head_oxbridge_menu_apartados").innerHTML=html;
 
@@ -1390,7 +1360,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 				TEXTOS[35].text+
 		'		<div id="p_00958_formulario_mas_parrillas" style="margin:1em;"></div>'+
 		'		<textarea name="email" class="p_00995_formulario_mail_input" rows="7" cols="40" style="width:96%;padding:2%;"></textarea>'+
-		'		<input name="button" class="boton_normal" type="button" value="Enviar"'+
+		'		<input name="button" class="boton_normal" type="button" value="'+TEXTOS[199].text+'"'+
 		'			style="'+
 		'				 margin: 1em;'+
 		'				float: right;'+

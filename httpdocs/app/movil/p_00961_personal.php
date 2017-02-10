@@ -440,7 +440,7 @@ Pag. ID: 00961
             <div id="p_00961_menu_contenedor_3" class="p_00961_contenedor_seccion">
 				<span style="font-size: 1em; font-family:HelveticaNeueRoman;"><? echo $TEXTOS[75][2]?></span><br><br>
 				<button class="p_00995_formulario_mail_input boton_normal" style="width:5em;font-size: 1em;" onclick="window.location='http://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
-					Salir
+					<? echo $TEXTOS[198][2];?>
 				</button><br><br>
             	<span style="font-size: 0.9em; "><? echo $TEXTOS[76][2]?></span>
             </div>

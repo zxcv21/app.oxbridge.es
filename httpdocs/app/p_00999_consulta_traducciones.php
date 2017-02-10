@@ -4,23 +4,33 @@ id: p_00999
 
 <script>
 <?
+function p_00999_corrige_html($texto){
+	$texto=str_replace("'","&#39;",$texto);
+	$texto=str_replace('"',"&#49;",$texto);
+	return $texto;
+}
 function p_00999_corrige($texto){
-	$texto=str_replace("\r","",$texto);
+/*	$texto=str_replace("\r","",$texto);
 	$texto=str_replace("\\","&#92;",$texto);
 	$texto=str_replace("'","&#39;",$texto);
 	$texto=str_replace("\"","&#49;",$texto);
 	$texto=str_replace("<","&lt;",$texto);
 	$texto=str_replace(">","&gt;",$texto);
 	$texto=str_replace("&lt;p&gt;","<p>",$texto);
-	$texto=str_replace("&lt;/p&gt;","</p>",$texto);	
+	$texto=str_replace("&lt;/p&gt;","</p>",$texto);
 	$texto=str_replace("&lt;br/&gt;","<br/>",$texto);
 	$texto=str_replace("&lt;br&gt;","<br/>",$texto);
 	$texto=str_replace("&lt;","<",$texto);
 	$texto=str_replace("&gt;",">",$texto);
 	$texto=str_replace("&#39;","\'",$texto);
 	$texto=str_replace("&#34;","\"",$texto);
+*/
+	$texto=str_replace("\r","",$texto);
+	$texto=str_replace("'","\'",$texto);
+	$texto=str_replace('"','\"',$texto);
 	return $texto;
 }
+
 function p_00999_corrige_js($texto)
 {
 	$texto=str_replace("\r","",$texto);
@@ -30,7 +40,7 @@ function p_00999_corrige_js($texto)
 	$texto=str_replace("<","&lt;",$texto);
 	$texto=str_replace(">","&gt;",$texto);
 	$texto=str_replace("&lt;p&gt;","<p>",$texto);
-	$texto=str_replace("&lt;/p&gt;","</p>",$texto);	
+	$texto=str_replace("&lt;/p&gt;","</p>",$texto);
 	$texto=str_replace("&lt;br/&gt;","<br/>",$texto);
 	$texto=str_replace("&lt;br&gt;","<br/>",$texto);
 	$texto=str_replace("&lt;","<",$texto);
@@ -50,15 +60,15 @@ switch($IDIOMA){
 	case "esp":{
 		$idioma_sql="`idioma_001_espanyol`";
 	break;}
-	
+
 	case "eng":{
 		$idioma_sql="`idioma_002_english`";
 	break;}
-	
+
 	case "cat":{
 		$idioma_sql="`idioma_003_catala`";
 	break;}
-	
+
 	default:{
 		$idioma_sql="`idioma_001_espanyol`";
 	break;}
@@ -77,8 +87,10 @@ if(!$resultado){
 }else{
 	echo "TEXTOS=[];\n";
 	while ($fila = mysql_fetch_array($resultado)){
-		$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige($fila[2]));
-		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_js($fila[2])."'};\n";  
+		//$TEXTOS[$fila[0]]=array($fila[0],$fila[1],htmlspecialchars($fila[2], ENT_SUBSTITUTE),);
+		$TEXTOS[$fila[0]]=array($fila[0],$fila[1],p_00999_corrige_html($fila[2]),p_00999_corrige($fila[2]));
+		//echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_js($fila[2])."'};\n";
+		echo "TEXTOS['".$fila[0]."']={'id':'".$fila[0]."','pag':'".$fila[1]."','text':'".p_00999_corrige_html($fila[2])."','text2':'".p_00999_corrige($fila[2])."'};\n";
 	}
 }
 
@@ -86,7 +98,6 @@ if(!$resultado){
 include("conn_fin_idiomas_webs.php");
 
 ?>
-
 //array fechas
 month = TEXTOS[16].text.split(",");
 week = TEXTOS[17].text.split(",");

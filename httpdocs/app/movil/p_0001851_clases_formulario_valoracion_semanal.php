@@ -363,7 +363,7 @@
 
 <div id="p_01450_overall_valoracion_semanal" class="overall" style="display:none;">
 	<div id="p_0001851_form_valoracion">
-		<h1>Evaluaci&oacute;n del profesor</h1>
+		<h1><? echo $TEXTOS[200][2];?></h1>
 		<div id="p_00960_clases_head_fecha_valorar">
 			<span id="p_00960_clases_head_fecha_imprimir_valorar" content="telephone=no" >
 			</span>
@@ -371,7 +371,7 @@
 		</div>
 		<div id="p_0001851_boton_incidencia" onclick='p_00994_envio_incidencia();'>
 				<img class="p_0001851_imagen_boton_incidencia" src="<? echo ver_url("images/incidencia.png","src"); ?>">
-				<span>No he asistido a esta clase</span>
+				<span><? echo $TEXTOS[201][2];?></span>
 		</div>
 	<!--	<div id="p_0001851_boton_he_asistido" onclick='p_00994_envio_he_asistido();'>
 				<img class="p_0001851_imagen_boton_incidencia" src="<? echo ver_url("images/incidencia.png","src"); ?>">
@@ -449,7 +449,7 @@
 			</div>
 
 			<div id="p_01450_div_incidencia">
-				<p>Puedes dejar un comentario.</p>
+				<p><? echo $TEXTOS[202][2];?></p>
 			</div>
 
 			<form id="p_01450_from_valoracion_semanal"
@@ -488,7 +488,7 @@
 					p_01003_email_envio_comentario_profesor();
 					p_01169_imprimir_asistencia();
 					">
-					<input id="p_0001851_anular"type="button" value="S&iacute; he asistido a esta clase"
+					<input id="p_0001851_anular"type="button" value="<? echo $TEXTOS[204][2];?>"
 					onclick="
 					p_01003_deshacer_estilos_no_asistencia();
 					">

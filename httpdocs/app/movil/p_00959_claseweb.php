@@ -141,9 +141,8 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 			p_00959_js_f_01_html+= "		<img style=\"height: 266px; margin-left: -43px; cursor: pointer\" src=\"<? echo ver_url("images/nube_cw.png","src"); ?>\" onclick='javascript: p_00959_js_f_04_abrir_ejemplo();'>";
 			p_00959_js_f_01_html+= "	</div>";
 			p_00959_js_f_01_html+= "	<div align=\"center\">";
-			p_00959_js_f_01_html+= "		<span style=\"font-size: 18px\">No te pierdas ni una. Ahora tus clases por videoconferencia o en tu smartphone.</span>";
+			p_00959_js_f_01_html+= "		<span style=\"font-size: 18px\">"+TEXTOS[192].text+"</span>";
 			p_00959_js_f_01_html+= "	</div>";
-			//p_00959_js_f_01_html+= "</div>";
 		} ;
 
 		document.getElementById("p_00959_div_clases_a_distancia").insertAdjacentHTML( "afterBegin" ,p_00959_js_f_01_html );

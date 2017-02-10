@@ -603,8 +603,8 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-	//for(i in dia_lectivo)
-		//dia_lectivo[i].firmado="0";
+//	for(i in dia_lectivo)
+//		dia_lectivo[i].firmado="0";
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -616,6 +616,7 @@ function p_00989_contar_firmas_pendientes(){
 	p_00989_comprobar_firmas_pendientes();
 }
 
+
 function p_00989_comprobar_firmas_pendientes(){
 	if((typeof p_00989_una_vez!='undefined')&&(p_00989_una_vez))
 		return
@@ -623,7 +624,7 @@ function p_00989_comprobar_firmas_pendientes(){
 	if(p_00989_firmas_enviadas>=p_00989_minimo_firmas){
 		//document.getElementById("p_00995_cerrar_firma").style.backgroundImage = "url('<? //echo ver_url("images/close.png","src"); ?>')";
 		document.getElementById("p_00995_alerta_firmas_pendientes").style.backgroundColor="transparent";
-		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML="Ya puedes ir a la aplicaci&oacute;n";
+		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML=TEXTOS[205].text;
 		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").style.padding = "11px 0px 0px 0px";
 		document.getElementById("p_00995_alerta_firmas_pendientes").innerHTML="<img src='<? echo ver_url("images/deshacer.png","src");?>' style='height:54px;cursor:pointer;border-radius: 50%; box-shadow: 4px 4px 10px;background-color: white;'"+
 			" onclick='p_00989_cerrar_firmas();'>";
@@ -636,12 +637,12 @@ function p_00989_comprobar_firmas_pendientes(){
 		var p_00989_numero_firmas_minimo;
 		p_00989_numero_firmas_minimo= ((p_00989_firmas_pendientes-p_00989_firmas_enviadas)<(p_00989_minimo_firmas-p_00989_firmas_enviadas))?(p_00989_firmas_pendientes-p_00989_firmas_enviadas):(p_00989_minimo_firmas-p_00989_firmas_enviadas);
 		if(p_00989_numero_firmas_minimo>1)
-		 p_00989_mensaje_numero_firmas= p_00989_numero_firmas_minimo+ " clases pendientes";
+		 p_00989_mensaje_numero_firmas= p_00989_numero_firmas_minimo+ " "+ TEXTOS[208].text;
 		else
-		 	p_00989_mensaje_numero_firmas= "una clase pendiente";
+		 	p_00989_mensaje_numero_firmas= TEXTOS[209].text;
 
-		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML="Por favor, firma como m&iacute;nimo "+
-			p_00989_mensaje_numero_firmas+" y podr&aacute;s ir a la aplicaci&oacute;n";
+		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML= TEXTOS[210].text+" "+
+			p_00989_mensaje_numero_firmas+" "+TEXTOS[211].text;
 		document.getElementById("p_00995_alerta_firmas_pendientes").innerHTML=	p_00989_numero_firmas_minimo;
 	}
 	/*mensaje junto a la fecha*/
@@ -651,7 +652,7 @@ function p_00989_comprobar_firmas_pendientes(){
 		document.getElementById("p_00995_firmas_restantes").innerHTML="Faltan "+p_00989_numero_a_mostrar+" firmas";
 	}
 	else
-		document.getElementById("p_00995_firmas_restantes").innerHTML="Falta 1 firma";
+		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[207].text;
 
 
 	var p_00989_hora_ultimo_dia= 0;
