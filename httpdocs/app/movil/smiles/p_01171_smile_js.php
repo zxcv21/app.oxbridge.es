@@ -150,7 +150,7 @@ function p_01171_mover_yo(json){
 						"distance":{"text" : "1.497 km","value" : 1497095},
 						"duration":{"text" : "14h 25 min","value" : 51877},
 						"status":"OK"} ]} ], "status" : "OK"};*/
-			if(json.rows[0].elements[0].status=="ZERO_RESULTS")
+			if((json.rows[0].elements[0].status=="ZERO_RESULTS")||(!json.rows[0].elements[0].distance))
 			{
 				smile_datos.alumno.distancia="";
 				personal_datos_info.poblacion="";
