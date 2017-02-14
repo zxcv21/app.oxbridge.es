@@ -25,7 +25,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	position:fixed;
 	width:100%;
 	height:100%;
-	/*z-index:-9999;*/
+	z-index: -1;
 	}
 #contenedor_menu{
 	position:relative;

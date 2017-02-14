@@ -144,6 +144,7 @@
 <!-- *********************** -->
 
 <div id="p_01175_preguntas" class="p_01172_contenedor_preguntas" style='display:none;'></div>
+<div id="p_01175_drag_and_drop_flotante"></div>
 <div id="p_01175_pregunta_write"  class="p_01172_contenedor_preguntas_write" style='display:none;'>
 	<div id="p_01175_preguntas_texto" class="p_01172_contenedor_preguntas_texto">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis tortor ut sem eleifend dapibus. Sed varius magna sed blandit fringilla. Maecenas suscipit venenatis dolor, quis varius dolor imperdiet et. Proin elit arcu, varius vitae elit non, commodo tincidunt sapien. Aliquam id ex ac arcu iaculis vulputate sit amet sed risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ut ligula et felis euismod gravida. Nullam est quam, facilisis non condimentum quis, lacinia et purus. Nullam vestibulum quam vel sem lacinia vulputate vestibulum quis libero. Curabitur rhoncus dapibus velit in efficitur. Aenean et leo id ex iaculis ornare. Donec efficitur diam dapibus eros tempor, et convallis ipsum bibendum. Etiam varius lectus urna, pharetra elementum tellus ultrices quis. Sed malesuada ut massa vitae sollicitudin. Morbi lacus nibh, consequat eget justo in, facilisis tristique odio. Proin ut elementum odio.</p>

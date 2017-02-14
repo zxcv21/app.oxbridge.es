@@ -116,7 +116,7 @@ function p_00989_quitar_aviso_reservar(set){
 	if(document.getElementById("p_00960_clases_head_info"))	document.getElementById("p_00960_clases_head_info").style.display="";
 	if(document.getElementById("p_00960_clases_head_foto"))	document.getElementById("p_00960_clases_head_foto").style.display="";
 	if(document.getElementById("p_00960_clases_head_foto_lupa"))	document.getElementById("p_00960_clases_head_foto_lupa").style.display="";
-	document.getElementById("p_00960_clases_actividades").style.right="initial";
+	document.getElementById("p_00960_clases_actividades").style.right="inherit";//initial
 
 	quitar_aviso_reservar_calse_futura=true;
 	if(set== "mostrar_ultima"){
