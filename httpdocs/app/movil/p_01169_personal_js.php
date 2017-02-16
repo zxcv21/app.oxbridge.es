@@ -132,6 +132,7 @@ function p_01169_cargar_presonal_datos_info_load()
 		}
 		document.getElementById("p_00955_overall_seleccion_nivel").style.display="";
 		document.getElementById("p_00955_form_seleccion_nivel_nombre").value=personal_datos_info.nombre;
+		document.getElementById("p_00955_div_img_cargando").style.display="none";
 	}
 	else
 	{

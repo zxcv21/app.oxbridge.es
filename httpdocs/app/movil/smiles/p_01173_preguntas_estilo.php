@@ -211,6 +211,9 @@
 #contenedorDragDrop{
 	position:relative;
 }
+#p_01175_drag_and_drop_flotante>div{
+  transition: 0.01s ease-out;
+}
 .error {
 	border: 1px solid red;
 }
