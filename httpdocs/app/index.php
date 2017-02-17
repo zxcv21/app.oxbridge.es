@@ -1,9 +1,6 @@
 <?
 session_start();
 ?>
-<script type="text/javascript">
-	console.log("tomas: <? //echo($_SESSION["version__p_php_session"]) ;?>") ;
-</script>
 <!--
 Pag. ID: 00955
 include: 00956-00963

@@ -1,9 +1,6 @@
 <?
 session_start();
 ?>
-<script type="text/javascript">
-	console.log("tomas: <? echo($_SESSION["version__p_php_session"]) ;?>") ;
-</script>
 <!--
 Pag. ID: 00955
 include: 00956-00963
@@ -40,15 +37,15 @@ if(isset($_GET['VER']))
 	{
 		$_GET['VER']="";
 		$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
-		$version_pagina_src="http://app.oxbridge.es/app/";	
+		$version_pagina_src="http://app.oxbridge.es/app/";
 		echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
 	}
 }
 else
 {
 	$_GET['VER']="";
-	$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";	
-	$version_pagina_src="http://app.oxbridge.es/app/";	
+	$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
+	$version_pagina_src="http://app.oxbridge.es/app/";
 	echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
 }
 $VERSION_LISTADO = array();
@@ -57,7 +54,7 @@ include $version_pagina."version_listado.php";
 function ver_url($url,$tipo)
 {
 	global $VERSION_LISTADO, $version_pagina, $version_pagina_src;
-	
+
 	if($_GET['VER']!="")
 	{
 		$version=false;

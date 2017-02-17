@@ -101,9 +101,6 @@
 .text2>div>div{
     cursor: pointer;
 }
-.text2>div>div:hover{
-  transform: scale(1.1);
-}
 .text2Especial{
 	font-size: 2em;
 	border: 2px solid;
@@ -211,8 +208,9 @@
 #contenedorDragDrop{
 	position:relative;
 }
+
 #p_01175_drag_and_drop_flotante>div{
-  transition: 0.01s ease-out;
+  transition: 0.02s ease-out;
 }
 .error {
 	border: 1px solid red;

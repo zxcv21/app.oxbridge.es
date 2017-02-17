@@ -23,9 +23,6 @@
 	if(p_0001854_mostrar_pagina_bienvenida_bool)
 		p_0001854_mostrar_pagina_bienvenida();
 	mover_menu(true,"p_00987_menu_"+GO_TO);
-	<? if( isset($_SESSION['var__return_pago_tarjeta__p_php'])){
-			//unset($_SESSION['var__return_pago_tarjeta__p_php']);
-	}?>
 	orientacion_cambiada();
 	setTimeout(function(){p_00989_resize_menu_apartados();},50);
 
