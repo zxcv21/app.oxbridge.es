@@ -12,7 +12,7 @@ id reservado para paginas:
 	00955-00964
    00-00
 -->
-<?
+
 //PONGO UN QUERYSTRING PARA QUE DELIMITAR LA ENTRADA HASTA QUE TENGAMOS ACTIVADO UN PASSWORD
 if ($_GET['dev']=='monica'){
 

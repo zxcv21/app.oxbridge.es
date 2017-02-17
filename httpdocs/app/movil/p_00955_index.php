@@ -54,6 +54,7 @@ if(!isset($_GET['idioma'])){
 		//p_01003_comprobar_alarma();
 		p_1003_comprobar_valoraciones_pendientes();
 	}
+	console.log("<? echo $var__return_pago_tarjeta__p_php ?>");
 </script>
 <div id="p_00955_div_img_cargando">
 	<img id="p_00955_img_cargando" class="img_cargando" src="<? echo ver_url("images/loading.png","src"); ?>" >

@@ -3,6 +3,35 @@ Pag. ID: p_01168
 -->
 
 <style>
+	#p_00961_pago_realizado{
+		border:3px solid #2dcee4;
+		width: 400px;
+    height: 130px;
+    position: fixed;
+    z-index: 3;
+    background-color: white;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 66px;
+    box-shadow: 5px 5px 20px grey;
+		text-align: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 600;
+	}
+	#p_00961_pago_realizado p{
+		text-shadow: 1px 1px 2px grey;
+	}
+	#p_00961_pago_realizado input{
+		margin-top: 15px;
+    padding: 3px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 4px grey;
+	}
 	#p_00961_info_menu_secciones{
 		margin: auto;
 		width:400px;

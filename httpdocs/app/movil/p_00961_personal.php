@@ -3,7 +3,10 @@ Pag. ID: 00961
 -->
 
 <div id="personal">
-
+  <div id= "p_00961_pago_realizado">
+    <p></p>
+    <input type="button" onclick="p_00961_conforme_pago_realizado();" value= "<? echo $TEXTOS[217][2];?>">
+  </div>
    <div id="p_00961_info_menu_secciones">
 
       <div class="p_00961_info_menu_seccion p_00961_info_menu_seccion_click" id="p_00961_menu_info_primero" onclick="p_01169_seleccionar_seccion(this);">

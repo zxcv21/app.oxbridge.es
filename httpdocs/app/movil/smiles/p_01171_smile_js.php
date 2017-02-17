@@ -205,9 +205,11 @@ function p_01171_mover_yo(json){
 
 			var redondear=smile_datos.alumno.distancia*(proporcion_smiles/100);
 
-			if(smile_datos.smiles_totales.preguntas.totales>0)
-				document.getElementById("p_01171_siguiente_transporte_texto").innerHTML=Math.floor((smile_datos.smiles_totales.preguntas.correctos/smile_datos.smiles_totales.preguntas.totales)*100)+"%";
-			else
+			if(smile_datos.smiles_totales.preguntas.totales>0){
+				if(document.getElementById("p_01171_siguiente_transporte_texto"))
+					document.getElementById("p_01171_siguiente_transporte_texto").innerHTML=Math.floor((smile_datos.smiles_totales.preguntas.correctos/smile_datos.smiles_totales.preguntas.totales)*100)+"%";
+			}
+			else if(document.getElementById("p_01171_siguiente_transporte_texto"))
 				document.getElementById("p_01171_siguiente_transporte_texto").innerHTML="0%";
 
 			var proporcion_smiles=(100/smile_datos.smiles_totales.general.totales)*smile_datos.smiles_totales.general.correctos;
@@ -217,11 +219,13 @@ function p_01171_mover_yo(json){
 				//document.getElementById("p_00962_yo_img").src=p_01171_switch_treansporte(smile_datos.curso.smiles_total,smile_datos.curso.duracion,smile_datos.alumno.sxm,"yo");
 
 			document.getElementById("p_00962_yo_kilometros_actual").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de' style='display:none;'>/"+distancia+"Km</span>";
-			document.getElementById("p_01171_carrera_reducida_km").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de_reducido' style='display:none;'>/"+distancia+"<br>/"+smile_datos.alumno.distancia+"Km</span>";
+			if(document.getElementById("p_01171_carrera_reducida_km"))
+				document.getElementById("p_01171_carrera_reducida_km").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de_reducido' style='display:none;'>/"+distancia+"<br>/"+smile_datos.alumno.distancia+"Km</span>";
 			document.getElementById("p_00962_carrera_km_fin").innerHTML="London<br>"+smile_datos.alumno.distancia+" KM";
 
-			document.getElementById("p_00955_div_img_cargando").style.display="none";
+
 		}
+		document.getElementById("p_00955_div_img_cargando").style.display="none";
 /*	}
 	else
 	{
