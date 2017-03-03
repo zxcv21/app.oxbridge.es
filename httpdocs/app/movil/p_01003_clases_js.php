@@ -77,7 +77,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 	document.getElementById("p_00960_clases_actividades_box").innerHTML=""+
 		"<div align='center'>"+
 		"	<span style='font-size:1.5em;color:#8C6792;font-family: helveticaneueroman;margin-bottom: 20px;"+
-    //"display: block;cursor:pointer' onclick='mover_menu(true,\"p_00987_menu_horario\");p_1003_mostrar_reservas= true; document.getElementById(\"p_00958_horario_clases_reservadas\").style.display=\"inline-block\";'>"+"No tienes clases reservadas próximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
+    //"display: block;cursor:pointer' onclick='mover_menu(true,\"p_00987_menu_horario\");p_1003_mostrar_reservas= true; document.getElementById(\"p_00958_horario_clases_reservadas\").style.display=\"inline-block\";'>"+"No tienes clases reservadas prï¿½ximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
 		"display: block;'>"+TEXTOS[77].text+"</span><br><br>"+
 		"	<div"+
 		"		style='"+
@@ -212,7 +212,7 @@ function p_01003_mostrar_actividad(tipo,d,a,m){
 						'></audio>';
 				for(d in target[c].imagenes){
 					html_target+='<div class="p_00993_clases_contenedor_actividad_target_img"><img src="'+target[c].imagenes[d].ruta+'"></img></div>';
-					//si lo vamos a imprimir, precargar primero imágenes
+					//si lo vamos a imprimir, precargar primero imï¿½genes
 					if(m!=undefined){
 						p_01003_contador_imagenes_imprimir++;
 						p_01003_array_imagenes_imprimir[c+d]= new Image();
@@ -400,7 +400,7 @@ function p_01003_poner_saltos_pagina(p_01003_printWindowBody){
 	console.log("altura: ");
 	console.log(p_01003_altura_pagina);
 
-//printar div que muestra altura calculada para una página
+//printar div que muestra altura calculada para una pï¿½gina
 /*
 	p_01003_salto_pagina= document.createElement("DIV");
 	p_01003_salto_pagina.className= "div_prueba";
@@ -558,8 +558,15 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 	}
 	document.getElementById("p_00960_clases_head_foto_valorar").src=foto_profe_temp;
 	document.getElementById("p_00960_clases_head_nombre_valorar").innerHTML=dia_lectivo[p_01003_clase].profesor.split(" ")[0]+" "+dia_lectivo[p_01003_clase].profesor.split(" ")[1];
-	document.getElementById("p_00960_clases_head_fecha_imprimir_valorar").innerHTML= dia_lectivo[p_01003_clase].fecha_europa;
-	document.getElementById("p_00960_clases_head_horario_valorar").innerHTML=dia_lectivo[p_01003_clase].horaInicio;
+	//	document.getElementById("p_00960_clases_head_fecha_imprimir_valorar").innerHTML= dia_lectivo[p_01003_clase].fecha_europa;
+	//	document.getElementById("p_00960_clases_head_horario_valorar").innerHTML=dia_lectivo[p_01003_clase].horaInicio;
+	document.getElementById("p_00960_clases_head_fecha_imprimir_valorar").innerHTML= ("0" + dia_lectivo[p_01003_clase].date_inicio.getDate()).slice(-2)+"/"+
+									("0" + (dia_lectivo[p_01003_clase].date_inicio.getMonth()+1)).slice(-2)+"/"+
+									dia_lectivo[p_01003_clase].date_inicio.getFullYear();
+	document.getElementById("p_00960_clases_head_horario_valorar").innerHTML=("0" + dia_lectivo[p_01003_clase].date_inicio.getHours()).slice(-2)+":"+
+									("0" + dia_lectivo[p_01003_clase].date_inicio.getMinutes()).slice(-2);
+
+
 
 	document.getElementById("p_0001292_input_dia_lectivo_id").value=p_01003_clase;
 	document.getElementById("p_0001292_input_alumno_id").value=alumno_id;
@@ -567,8 +574,6 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 	document.getElementById("p_0001292_input_dia_lectivo_fecha_dia").value=dia_lectivo[p_01003_clase].fecha.split("/")[2];
 	document.getElementById("p_0001292_input_dia_lectivo_fecha_mes").value=dia_lectivo[p_01003_clase].fecha.split("/")[1];
 	document.getElementById("p_0001292_input_dia_lectivo_fecha_anyo").value=dia_lectivo[p_01003_clase].fecha.split("/")[0];
-	//document.getElementById("p_0001292_input_valoracion").value=dia_lectivo[p_01003_clase].valoracion;
-	//document.getElementById("p_0001292_input_comentario").value=dia_lectivo[DIA_LEC].valoracion_comentario;
 
 	document.getElementById("p_00995_input_form_valoracion_sesion_id").value=document.getElementById('p_0001317_input_sesion_id').value;
 	document.getElementById("p_00995_input_form_valoracion_sesion_uid").value=document.getElementById('p_0001317_input_usuario_id').value;
@@ -590,24 +595,74 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 
 /*guarda en cada clase las horas de inicio y fin en formato Date*/
 function p_1003_guardar_horas_inicio_fin_clases(){
+	<?
+		date_default_timezone_set('Europe/Madrid');
+		$p_01003_server_time_zone= round(date(Z)/3600);
+	?>
+
+	var p_1003_server_time_zone= "<?echo $p_01003_server_time_zone; ?>";
+//	console.log("server time zone: "+p_1003_server_time_zone);
+	var p_1003_local_time_zone= new Date().getTimezoneOffset()/60;
+//	console.log("local time zone: "+p_1003_local_time_zone);
+	var p_1003_diferencia_horaria= -p_1003_server_time_zone-p_1003_local_time_zone;
+//	console.log("diferencia horaria: "+p_1003_diferencia_horaria);
+
 	for(i in dia_lectivo){
 		p_1003_hora_inicio= new Date(dia_lectivo[i].fecha.split("/")[0],
 				dia_lectivo[i].fecha.split("/")[1]-1,
 				dia_lectivo[i].fecha.split("/")[2],
 				dia_lectivo[i].horaInicio.split(":")[0],
 				dia_lectivo[i].horaInicio.split(":")[1]);
+		p_1003_hora_inicio.setTime(p_1003_hora_inicio.getTime()+p_1003_diferencia_horaria*3600000);
 
 		p_1003_hora_final= new Date(dia_lectivo[i].fecha.split("/")[0],
 				dia_lectivo[i].fecha.split("/")[1]-1,
 				dia_lectivo[i].fecha.split("/")[2],
 				dia_lectivo[i].horaFinal.split(":")[0],
 				dia_lectivo[i].horaFinal.split(":")[1]);
+		p_1003_hora_final.setTime(p_1003_hora_final.getTime()+p_1003_diferencia_horaria*3600000);
+
 		dia_lectivo[i].date_inicio= p_1003_hora_inicio;
 		dia_lectivo[i].date_final= p_1003_hora_final;
+
+
+		//testeo monica
+/*		if(i==="369577"){
+		//if(i==="372591"){
+			dia_lectivo[i].historica= 0;
+			//dia_lectivo[i].firmado= "0";
+			console.log("********");
+			//console.log("hora real clase: "+dia_lectivo[i].fecha+" // "+dia_lectivo[i].horaInicio);
+			//console.log("hora local clase: "+dia_lectivo[i].date_inicio);
+			dia_lectivo[i].date_inicio= new Date (Date.now()+2*60000);
+			dia_lectivo[i].date_final= new Date (Date.now()-2*60000);
+			console.log("hora inicio clase: "+dia_lectivo[i].date_inicio);
+			console.log("hora final clase: "+dia_lectivo[i].date_final);
+
+		}
+	*/
+		/////////////////////
+
+		p_1003_poner_alarmas_firma_y_valoracion(i);
+	}
+}
+
+function p_1003_poner_alarmas_firma_y_valoracion(p_1003_dia){
+
+	if(parseInt(dia_lectivo[p_1003_dia].historica)!==1){
+
+		//pedira firma un minuto antes de clase
+		var p_1003_fecha_alarma= new Date (dia_lectivo[i].date_inicio.getTime()-1*60000);
+		p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00989_firmar_antes_clase",p_1003_dia);
+
+		//pedira valoracion 5 min despues clase
+		p_1003_fecha_alarma= new Date (dia_lectivo[i].date_final.getTime()+5*60000);
+		p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00994_valorar_final_clase",p_1003_dia);
 	}
 }
 
 p_00994_valoracion_voluntaria= false;
+
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
 /*	if(typeof this.primera_vez== "undefined"){
@@ -618,7 +673,7 @@ function p_1003_comprobar_valoraciones_pendientes(){
 		}
 		this.primera_vez= false;
 	}
-	*/
+*/
 
 
 	if(!p_00994_valoracion_voluntaria){
@@ -633,7 +688,7 @@ function p_1003_comprobar_valoraciones_pendientes(){
 			p_1003_ayer.setSeconds(0);
 
 			for(i in dia_lectivo){
-				if(dia_lectivo[i].date_final.getTime()+p_01003_diferencia_horaria_servidor>p_1003_ayer.getTime()){
+				if(dia_lectivo[i].date_final.getTime()>p_1003_ayer.getTime()){
 					if((dia_lectivo[i].historica=="0")||(parseInt(dia_lectivo[i].incidencia)==1)||(parseInt(dia_lectivo[i].valoracion)>0)){
 						continue;
 					}
@@ -749,14 +804,10 @@ function p_01003_enviar_valoracion(){
 		nodo.style.display="none";
 		if(!document.getElementById("p_00995_formulario_mail_res"))document.body.appendChild(nodo);
 
-		/*enviarFormularioAJAX("http://app.oxbridge.es/actividades/clases_02_valoracion_01_php_01_modificar.php", "p_00995_formulario_valoracion", "p_00995_formulario_mail_res");*/
-		//document.getElementById("p_00995_formulario_valoracion").submit();
 		document.getElementById("p_01450_from_valoracion_semanal").submit();
-		document.getElementById("p_01450_from_valoracion_semanal").reset();
 		document.getElementById("p_01450_input_valoracion_semanal_puntual").checked= true;
 		document.getElementById("p_01450_input_valoracion_semanal_preparado").checked= true;
 		document.getElementById("p_01450_input_valoracion_semanal_sistema").checked= true;
-		//document.getElementById("p_00960_clases_head_foto_valorar").src = "<? //echo ver_url("images/loading.gif","src"); ?>">;
 		document.getElementById("p_0001851_cargando").style.display = "block";
 		p_01003_deshacer_estilos_no_asistencia();
 		mostrar_valoracion(false,"formulario_valoracion");
@@ -776,7 +827,7 @@ function p_01003_enviar_valoracion(){
 	document.querySelector(".p_01450_div_valoracion_dia").style.display = "block";
 	document.getElementById("p_01450_div_incidencia").style.display = "none";
 	document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display = "none";
-	//document.getElementById("p_0001851_boton_he_asistido").style.display = "none";
+
 	if(parseInt(dia_lectivo[p_1003_clase_formulario_valorar].incidencia)!=1){
 		if(document.getElementById("p_00987_boton_firma_pendiente"))
 			document.getElementById("p_00987_boton_firma_pendiente").style.display = "block";
@@ -799,7 +850,7 @@ function p_01003_deshacer_estilos_no_asistencia(){
 	document.getElementById("p_01450_div_incidencia").style.display="none";
 	document.getElementById("p_0001851_anular").style.display="none";
 
-	//deshacer cambio estilo botón enviar
+	//deshacer cambio estilo botï¿½n enviar
 	document.getElementById("p_0001851_enviar").style.backgroundColor="#21aed7";
 	document.getElementById("p_0001851_enviar").style.color="white";
 	document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[22][3];?>";
@@ -1025,17 +1076,10 @@ function p_01003_valoracion_cambiar_cara()
 	document.getElementById("p_00995_valoracion_cara_"+c).style.display="";
 }
 
-//guarda diferencia horaria local-servidor
-(function() {
-	var p_1003_fecha= datos_servidor.fecha.split("/");
-	var p_1003_horario= datos_servidor.horario.split(":");
-	var p_1003_hora_serv= new Date(p_1003_fecha[0],parseInt(p_1003_fecha[1])-1,p_1003_fecha[2],p_1003_horario[0],p_1003_horario[1],p_1003_horario[2]);
-	p_01003_diferencia_horaria_servidor = Date.now()-p_1003_hora_serv;
-})();
 
 //comprueba cada x minutos todas las alarmas
 //o pone nueva alarma
-/*
+
 function p_01003_comprobar_alarma(p_01003_fecha, p_01003_funcion, p_01003_parametro){
 	if(typeof p_01003_fecha== 'undefined'){
 		if(typeof this.p_01003_array_funciones!='undefined'){
@@ -1047,14 +1091,14 @@ function p_01003_comprobar_alarma(p_01003_fecha, p_01003_funcion, p_01003_parame
 				}
 			});
 		}
-		setTimeout(p_01003_comprobar_alarma, 2*60*1000);
+		setTimeout(p_01003_comprobar_alarma, 1*60*1000);
 	}
 	else{
 		if(typeof this.p_01003_array_funciones=='undefined'){
 				this.p_01003_array_funciones=[];
 		}
-		this.p_01003_array_funciones.push({fecha:(p_01003_fecha+p_01003_diferencia_horaria_servidor), funcion:p_01003_funcion, parametro:p_01003_parametro});
+		this.p_01003_array_funciones.push({fecha:p_01003_fecha, funcion:p_01003_funcion, parametro:p_01003_parametro});
 	}
 }
-*/
+
 </script>

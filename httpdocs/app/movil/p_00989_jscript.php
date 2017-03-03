@@ -649,7 +649,7 @@ function p_00989_comprobar_firmas_pendientes(){
 	var p_00989_numero_a_mostrar= p_00989_firmas_pendientes-p_00989_firmas_enviadas;
 	if(parseInt(p_00989_numero_a_mostrar)>1){
 
-		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[214].text.replace("[firmas]",p_00989_numero_a_mostrar);//"Faltan "+p_00989_numero_a_mostrar+" firmas";
+		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[214].text.replace("[firmas]",p_00989_numero_a_mostrar);
 	}
 	else
 		document.getElementById("p_00995_firmas_restantes").innerHTML=TEXTOS[207].text;
@@ -674,6 +674,9 @@ function p_00989_comprobar_firmas_pendientes(){
 	}
 	if(p_0001854_mostrar_pagina_bienvenida_bool)
 		p_0001854_mostrar_pagina_bienvenida();
+
+	p_01003_comprobar_alarma();
+
 }
 
 function p_00989_comprobar_cerrar_firmas(){
@@ -702,11 +705,6 @@ function p_00989_cerrar_firmas(){
 function p_00989_crear_formulario_firma(p_00989_dia){
 	ocultar_mostrar('p_00995_firma');
 	if((typeof p_00989_una_vez!='undefined')&&(p_00989_una_vez)){
-		//document.getElementById("p_00995_cerrar_firma").style.backgroundImage = "url('<? echo ver_url("images/close.png","src"); ?>')";
-		//document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML="Ya puedes ir a la aplicaci&oacute;n";
-		//document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").style.padding = "11px 0px 0px 0px";
-		//document.getElementById("p_00995_alerta_firmas_pendientes").innerHTML="<img src='<? echo ver_url("images/deshacer.png","src");?>' style='height:54px;cursor:pointer;'"+
-		//	" onclick='p_00989_comprobar_cerrar_firmas();'>";
 		document.getElementById("p_00995_ventana_alerta").style.display="none";
 		document.getElementById("p_00989_salir_firmas_div").style.display="none";
 		document.getElementById("p_00995_firmas_restantes").innerHTML="";
@@ -714,17 +712,23 @@ function p_00989_crear_formulario_firma(p_00989_dia){
 	//app/p_01177.. devuelve script que hace display none de botones
 	document.getElementById("p_00995_firma_botones").style.display="block";
 
-	var p_00989_fecha= dia_lectivo[p_00989_dia].fecha_europa+
-	" "+dia_lectivo[p_00989_dia].horaInicio;
+	//var p_00989_fecha= dia_lectivo[p_00989_dia].fecha_europa+
+	//" "+dia_lectivo[p_00989_dia].horaInicio;
+
+	var p_00989_fecha= ("0" + dia_lectivo[p_00989_dia].date_inicio.getDate()).slice(-2)+"/"+
+										("0" + (dia_lectivo[p_00989_dia].date_inicio.getMonth()+1)).slice(-2)+"/"+
+										dia_lectivo[p_00989_dia].date_inicio.getFullYear()+"   "+
+										("0" + dia_lectivo[p_00989_dia].date_inicio.getHours()).slice(-2)+":"+
+										("0" + dia_lectivo[p_00989_dia].date_inicio.getMinutes()).slice(-2);
+
 	document.getElementById("p_00995_fecha_firma_dia_hora").innerHTML=p_00989_fecha;
-	//document.getElementById("fecha_clase").value=  dia_lectivo[p_00989_dia].date_inicio.getFullYear()+"_"+dia_lectivo[p_00989_dia].date_inicio.getMonth()+"_"+dia_lectivo[p_00989_dia].date_inicio.getDate();
 	resizeCanvas();
 }
 
 //iniciar aviso de firma
 function p_00989_avisos_firmas_set()
 {
-	for(i in dia_lectivo)
+/*	for(i in dia_lectivo)
 	{
 		if(dia_lectivo[i].fecha==datos_servidor.fecha)
 		{
@@ -741,13 +745,13 @@ function p_00989_avisos_firmas_set()
 				p_00989_avisos_firmas_mostrar(i,set_aviso);
 			}
 		}
-	}
+	}*/
 }
 
 //mostrar aviso firmar clase
 function p_00989_avisos_firmas_mostrar(indice,time)
 {
-	console.info("Aviso de firma: "+indice+" en: "+time+"min.");
+/*	console.info("Aviso de firma: "+indice+" en: "+time+"min.");
 	setTimeout(function(){
 		alert("$TEXTOS[141].text");
 		console.info("Firma: "+indice);
@@ -762,7 +766,16 @@ function p_00989_avisos_firmas_mostrar(indice,time)
 
 		//p_00989_crear_formulario_firma(indice);
 		//resizeCanvas();
-	},time*60*1000);
+	},time*60*1000);*/
+}
+
+function p_00989_firmar_antes_clase(p_00989_dia){
+	p_00989_una_vez=true;
+	p_00989_crear_formulario_firma(p_00989_dia);
+	p_00989_clase_para_firma= p_00989_dia;
+	p_00989_permitir_cerrar=true;
+	resizeCanvas();
+	signaturePad.clear();
 }
 
 //entrar sin liogin

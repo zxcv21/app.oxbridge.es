@@ -20,6 +20,7 @@ Pag. ID: p_01168
     box-sizing: border-box;
     font-size: 18px;
     font-weight: 600;
+		display: none;
 	}
 	#p_00961_pago_realizado p{
 		text-shadow: 1px 1px 2px grey;

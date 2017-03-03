@@ -185,12 +185,14 @@ Pag. ID: 00992
 
 
 	//SET DIA ACTUAL
-	ye = new Date(<? echo date('Y,m,d') ?>).getFullYear();
+	/*ye = new Date(<? echo date('Y,m,d') ?>).getFullYear();
 	if(new Date(<? echo date('Y,m,d') ?>).getMonth()<10){mo = "0"+(new Date(<? echo date('Y,m,d') ?>).getMonth()*1+1);}else mo = new Date(<? echo date('Y,m,d') ?>).getMonth()*1+1;
 	if(new Date(<? echo date('Y,m,d') ?>).getDate()<10){da = "0"+new Date(<? echo date('Y,m,d') ?>).getDate();}else da = new Date(<? echo date('Y,m,d') ?>).getDate();
 	if(new Date(<? echo date('Y,m,d') ?>).getHours()<10){ho = "0"+new Date(<? echo date('Y,m,d') ?>).getHours();}else ho = new Date(<? echo date('Y,m,d') ?>).getHours();
 	if(new Date(<? echo date('Y,m,d') ?>).getMinutes()<10){mi = "0"+new Date(<? echo date('Y,m,d') ?>).getMinutes();}else mi = new Date(<? echo date('Y,m,d') ?>).getMinutes();
-
+*/
+	ye= new Date().getFullYear();
+	mo= ("0" + (new Date().getMonth()+2)).slice(-2);
 	//SET VARIABLES DEL CALENDARIO
 	mes_tot = mo;
 	ano_tot = ye;
@@ -248,12 +250,14 @@ Pag. ID: 00992
 					elem.className = "p_00960_clases_head_calendario_contenedor_fiesta";
 			}
 			//PINTA EL DIA DE HOY
-			if(parseInt(i-dia_semana+1)== new Date(<? echo date('Y,m,d') ?>).getDate() && mes_tot*1 == new Date(<? echo date('Y,m,d') ?>).getMonth() && ano_tot == new Date(<? echo date('Y,m,d') ?>).getFullYear())
+			//if(parseInt(i-dia_semana+1)== new Date(<? echo date('Y,m,d') ?>).getDate() && mes_tot*1 == new Date(<? echo date('Y,m,d') ?>).getMonth() && ano_tot == new Date(<? echo date('Y,m,d') ?>).getFullYear())
+			if(parseInt(i-dia_semana+1)== new Date().getDate() && mes_tot*1 == new Date().getMonth() && ano_tot == new Date().getFullYear())
 				elem.className = "p_00960_clases_head_calendario_contenedor_hoy";
 			//PINTA LOS DIAS LECTIVOS INCLUIDA HOY
 			for(j in dia_lectivo){
 				if(parseInt(i-dia_semana+1)<10){dia_compara = "0"+parseInt(i-dia_semana+1);}else dia_compara = parseInt(i-dia_semana+1);
-				if(dia_lectivo[j].fecha==ano_tot+"/"+mes_tot+"/"+dia_compara){
+				//if(dia_lectivo[j].fecha==ano_tot+"/"+mes_tot+"/"+dia_compara){
+				if((dia_lectivo[j].date_inicio.getFullYear()==ano_tot)&&(("0" + (dia_lectivo[j].date_inicio.getMonth()+1)).slice(-2)==mes_tot)&&(("0" + dia_lectivo[j].date_inicio.getDate()).slice(-2)==dia_compara)){
 					//filtros de dias clicables
 					if(dia_lectivo[j].lectivo=="1"){
 					if(dia_lectivo[j].historica=="0"||dia_lectivo[j].asistencia=="1"&&dia_lectivo[j].historica=="1"){
@@ -452,7 +456,8 @@ Pag. ID: 00992
 
 		//cargar clases segun la fecha
 		for(i in dia_lectivo){
-			if(dia_lectivo[i].fecha==ano+"/"+mes+"/"+dia){
+			//if(dia_lectivo[i].fecha==ano+"/"+mes+"/"+dia){
+			if((dia_lectivo[i].date_inicio.getFullYear()==parseInt(ano))&&(dia_lectivo[i].date_inicio.getMonth()+1==parseInt(mes))&&(dia_lectivo[i].date_inicio.getDate()==parseInt(dia))){
 				if(primera_clase==""){
 					cargar_clase(i);
 					primera_clase=i;
@@ -534,19 +539,25 @@ Pag. ID: 00992
 						}
 					}
 				}else{
-					siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
-					clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
-					mes_tot = siguiente[1]*1;
-					ano_tot = siguiente[0]*1;
+					//siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
+					//clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
+					clases_fecha(dia_lectivo[siguiente_clase].date_inicio.getDate(),dia_lectivo[siguiente_clase].date_inicio.getMonth()+1,dia_lectivo[siguiente_clase].date_inicio.getFullYear());
+					//mes_tot = siguiente[1]*1;
+					//ano_tot = siguiente[0]*1;
+					mes_tot = dia_lectivo[siguiente_clase].date_inicio.getMonth()+1;
+					ano_tot = dia_lectivo[siguiente_clase].date_inicio.getFullYear();
 					set_calendario(0,0,0);
 				}
 
 				if(siguiente_clase!=""){
 					if(quitar_aviso_reservar_calse_futura){
-						siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
-						clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
-						mes_tot = siguiente[1]*1;
-						ano_tot = siguiente[0]*1;
+						//siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
+						//clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
+						clases_fecha(dia_lectivo[siguiente_clase].date_inicio.getDate(),dia_lectivo[siguiente_clase].date_inicio.getMonth()+1,dia_lectivo[siguiente_clase].date_inicio.getFullYear());
+						//mes_tot = siguiente[1]*1;
+						//ano_tot = siguiente[0]*1;
+						mes_tot = dia_lectivo[siguiente_clase].date_inicio.getMonth()+1;
+						ano_tot = dia_lectivo[siguiente_clase].date_inicio.getFullYear();
 						set_calendario(0,0,0);
 					}
 				}
@@ -555,10 +566,13 @@ Pag. ID: 00992
 				mover_menu(true,"p_00987_menu_horario");
 			}
 		}else{
-			siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
-			clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
-			mes_tot = siguiente[1]*1;
-			ano_tot = siguiente[0]*1;
+			//siguiente=dia_lectivo[siguiente_clase].fecha.split("/");
+			//clases_fecha(siguiente[2],siguiente[1],siguiente[0]);
+			clases_fecha(dia_lectivo[siguiente_clase].date_inicio.getDate(),dia_lectivo[siguiente_clase].date_inicio.getMonth()+1,dia_lectivo[siguiente_clase].date_inicio.getFullYear());
+			//mes_tot = siguiente[1]*1;
+			//ano_tot = siguiente[0]*1;
+			mes_tot = dia_lectivo[siguiente_clase].date_inicio.getMonth()+1;
+			ano_tot = dia_lectivo[siguiente_clase].date_inicio.getFullYear();
 			set_calendario(0,0,0);
 		}
 
@@ -591,8 +605,10 @@ Pag. ID: 00992
 		//conseguir horarios de la fecha lectiva elegida
 		horarios=[];
 		for(i in dia_lectivo){
-			if(dia_lectivo[i].fecha==ano+"/"+mes+"/"+dia)
-				horarios.push([dia_lectivo[i].horaInicio,i]);
+			//if(dia_lectivo[i].fecha==ano+"/"+mes+"/"+dia)
+			if((dia_lectivo[i].date_inicio.getFullYear()==parseInt(ano))&&(dia_lectivo[i].date_inicio.getMonth()+1==parseInt(mes))&&(dia_lectivo[i].date_inicio.getDate()==parseInt(dia)))
+				//horarios.push([dia_lectivo[i].horaInicio,i]);
+				horarios.push([("0" + dia_lectivo[i].date_inicio.getHours()).slice(-2)+":"+("0" + dia_lectivo[i].date_inicio.getMinutes()).slice(-2),i]);
 		}
 
 		horarios_html="";

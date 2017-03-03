@@ -50,7 +50,6 @@ if(!isset($_GET['idioma'])){
 >
 <script>
 	window.onload=function(){
-		p_1003_guardar_horas_inicio_fin_clases();
 		//p_01003_comprobar_alarma();
 		p_1003_comprobar_valoraciones_pendientes();
 	}

@@ -120,6 +120,7 @@ function mostrar_datos_pendientes(){
 //datos de informacion personal cargados
 function p_01169_cargar_presonal_datos_info_load()
 {
+	p_1003_guardar_horas_inicio_fin_clases();
 	p_01169_pintar_personal_info();
 	document.getElementById("p_00955_form_seleccion_nivel_nombre").addEventListener("input", p_01169_comprobar_nombre_seleccion_nivel);
 	if((personal_datos_info.nivel=="")||(!personal_datos_info.nivel))
@@ -212,7 +213,10 @@ function p_01169_imprimir_asistencia(a){
 				var icono_clase='<img class="p_00961_personal_asistencia_boton" onclick="'+
 											'	mover_menu(true,\'p_00987_menu_clases\');'+
 											'	p_01169_cargar_clase();'+
-											'	clases_fecha(\''+imp_dia.fecha_europa.replace(/\//g,'\',\'')+'\');'+
+											'	clases_fecha('+imp_dia.date_inicio.getDate()+','+
+												(imp_dia.date_inicio.getMonth()+1)+','+
+												imp_dia.date_inicio.getFullYear()+');'+
+											//'	clases_fecha(\''+imp_dia.fecha_europa.replace(/\//g,'\',\'')+'\');'+
 											/*'	actividades(\''+imp_dia.fecha_europa.replace(/\//g,'\',\'')+'\',\''+imp_dia.horaInicio.replace(':','\',\'')+'\');'+*/
 											'"src="<? echo ver_url("images/boton_asistencia_sel.png","src"); ?>">';
 
@@ -232,12 +236,28 @@ function p_01169_imprimir_asistencia(a){
 
 				asistencia.insertAdjacentHTML("afterBegin",""+
 					'<div class="p_00961_personal_asistencia_clase">'+
-					'	<div class="p_00961_personal_asistencia_40 p_00961_personal_asistencia_dia_lectivo">'+imp_dia.fecha_europa+'<br><span style="font-size: 0.85em;">'+imp_dia.horaInicio+' - '+imp_dia.horaFinal+'</span></div>'+
+					'	<div class="p_00961_personal_asistencia_40 p_00961_personal_asistencia_dia_lectivo">'+
+						("0" + imp_dia.date_inicio.getDate()).slice(-2)+"/"+
+						("0" + (imp_dia.date_inicio.getMonth()+1)).slice(-2)+"/"+
+						imp_dia.date_inicio.getFullYear()+
+					//imp_dia.fecha_europa+
+					'<br><span style="font-size: 0.85em;">'+
+					("0" + imp_dia.date_inicio.getHours()).slice(-2)+":"+
+					("0" + imp_dia.date_inicio.getMinutes()).slice(-2)+
+					//imp_dia.horaInicio+
+					' - '+
+					("0" + imp_dia.date_final.getHours()).slice(-2)+":"+
+					("0" + imp_dia.date_final.getMinutes()).slice(-2)+
+					//imp_dia.horaFinal+
+					'</span></div>'+
 					'<img class="p_00961_personal_asistencia_ir_clase" src="<? echo ver_url("images/ir_a.png","src"); ?>"'+
 					' onclick="'+
 												'	mover_menu(true,\'p_00987_menu_clases\');'+
 												'	p_01169_cargar_clase();'+
-												'	clases_fecha(\''+imp_dia.fecha_europa.replace(/\//g,'\',\'')+'\');"'+'>'+
+												//'	clases_fecha(\''+imp_dia.fecha_europa.replace(/\//g,'\',\'')+'\');"'+'>'+
+												'	clases_fecha('+imp_dia.date_inicio.getDate()+','+
+													(imp_dia.date_inicio.getMonth()+1)+','+
+													imp_dia.date_inicio.getFullYear()+');">'+
 					'	<div class="p_00961_personal_asistencia_40 p_00961_personal_asistencia_dia_lectivo ">'+imp_dia.profesor+'</div>'+
 						icono_clase+
 					'</div>'

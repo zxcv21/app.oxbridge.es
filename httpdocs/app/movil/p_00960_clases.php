@@ -21,16 +21,20 @@ var DIA_LEC="";
             <div id="p_00960_clases_head_fecha">
 					<img src="<? echo ver_url("images/desplegable.png","src"); ?>" id="p_00960_clases_head_fecha_desplegable" onclick="calendario_imprime();cargar_tutorial(6);" title="ver m&aacute;s clases" style="height:13px">
                <span id="p_00960_clases_head_fecha_imprimir" onclick="calendario_imprime();cargar_tutorial(6);" content="telephone=no" title="<? echo $TEXTOS[189][2]; ?>">
-                  <?
-                     echo(date(d)); ?>/<?
-                     echo(date(m)); ?>/<?
-                     echo(date(Y));
-                  ?>
+                 <script>
+                  var p_00960_fecha_actual= new Date();
+                  document.getElementById('p_00960_clases_head_fecha_imprimir').innerHTML= ("0" + p_00960_fecha_actual.getDate()).slice(-2)+"/"+("0" + (p_00960_fecha_actual.getMonth()+1)).slice(-2)+"/"+p_00960_fecha_actual.getFullYear();
+                </script>
+                <!--  <?
+                     //echo(date(d)); ?>/<?
+                     //echo(date(m)); ?>/<?
+                     //echo(date(Y));
+                  ?>-->
                </span>
                <!--span id="p_00960_clases_head_horario_imprimir" onclick="ocultar_mostrar('p_00960_clases_head_horario')">
                   <?
-                     echo(date(h)); ?>:<?
-                     echo(date(i));
+                     //echo(date(h)); ?>:<?
+                     //echo(date(i));
                   ?>
                </span-->
 
