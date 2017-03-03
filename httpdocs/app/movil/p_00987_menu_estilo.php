@@ -255,7 +255,7 @@ function mover_menu(reves,clic,true_click){
 								document.getElementById("head_oxbridge_menu_apartados").innerHTML=html;
 
 								P_00992_mostrar_firma();
-								document.getElementById("p_00960_clases_head").style.cssFloat="left";
+								//document.getElementById("p_00960_clases_head").style.cssFloat="left";
 					 		break;
 						}
 				 case "p_00987_menu_claseweb":{

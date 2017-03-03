@@ -438,6 +438,7 @@ Pag. ID: 00992
 
 		document.getElementById('p_00960_clases_contenedor_actividad_cabecera').style.display = "none" ;
 		document.getElementById('p_00960_clases_contenedor_actividad_contenido').style.display = "none" ;
+		document.getElementById("p_00960_clases_head").style.cssFloat="left";
 
 		var primera_clase="";
 
