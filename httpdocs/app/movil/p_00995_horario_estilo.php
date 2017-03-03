@@ -305,20 +305,6 @@ Pag. ID: p_00995
 		#p_00958_horario_contenedor::-webkit-scrollbar-track {
 			background: #eee;
 			}
-		#p_00996_mensaje_huso_horario{
-				height: 200px;
-		    width: 398px;
-		    position: absolute;
-		    background: white;
-		    z-index: 99;
-		    left: 0;
-		    right: 0;
-		    margin: auto;
-		    top: 148px;
-		    border: 4px solid #21aed7;
-		    border-radius: 10px;
-				animation: mensaje_huso 4s;
-			}
 #p_00958_filtros_y_horario{
 	white-space: nowrap;
 	display: inline-block;

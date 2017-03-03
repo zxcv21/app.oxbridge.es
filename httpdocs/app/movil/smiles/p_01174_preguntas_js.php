@@ -2363,10 +2363,6 @@ function p_01174_drag_touch(e){
 			p_01174_clon = p_01174_selectores_palabras[i].cloneNode(true);
 
 			p_01174_selectores_palabras[i].style.opacity="0";
-			/*testeo*/
-			//p_01174_selectores_palabras[i].children[0].style.opacity="0";
-			//p_01174_selectores_palabras[i].style.border="1px solid";
-			/********/
 			p_01174_clon.style.left= p_01174_pos_inicio_dragdrop[i][0]+"px";
 			p_01174_clon.style.top= p_01174_pos_inicio_dragdrop[i][1]+"px";
 			p_01174_clon.style.position= "fixed";

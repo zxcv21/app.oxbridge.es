@@ -396,8 +396,6 @@ DIA="<? echo date("Y/m/d"); ?>";
 			}
 
 		}else{
-			//ocultar_mostrar('p_00958_formulario_mas_horario_contenedor');
-			//document.getElementById("p_00958_horario_contenedor").innerHTML="<div style='text-align: center;padding: 2em;font-size: 4em;font-family: helveticaneueroman;color: #888;'>"+TEXTOS[93].text+"<br><br><img src='<? echo ver_url("images/boton_horario_mas.png","src"); ?>' onclick='ocultar_mostrar(\"p_00958_formulario_mas_horario_contenedor\");'></div>";
 			document.getElementById("p_00958_horario_contenedor").innerHTML="<div style='text-align: center;padding: 2em;font-family: helveticaneueroman;color: #888;'>"+TEXTOS[93].text+"<br><br><img src='<? echo ver_url("images/boton_horario_mas.png","src"); ?>' onclick='ocultar_mostrar(\"p_00958_formulario_mas_horario_contenedor\");'></div>";
 		}
 	}
@@ -969,7 +967,8 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			else
 				contenedor_alto=contenedor_alto_min;
 
-			if(document.getElementById('p_00958_horario_contenedor'))document.getElementById('p_00958_horario_contenedor').style.height=(contenedor_alto-20)+"px";
+			if(document.getElementById('p_00958_horario_contenedor'))//document.getElementById('p_00958_horario_contenedor').style.height=(contenedor_alto-20)+"px";
+				document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
 
 			//alto para lineas de mes
 			if(typeof RANGO_DIAS !="undefined"){
@@ -1067,6 +1066,15 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			}
 		}
 	}
+
+window.addEventListener("resize", function(){
+		if(document.getElementById('p_00958_horario_contenedor')){
+			document.getElementById('contenedor').style.height= "100%";
+			document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
+			document.getElementById('p_00995_horario_contenedor_horario_linea_0').style.height=(window.innerHeight-132)+"px";
+		}
+});
+
 
 	//formulario de pedir mas horarios
 	function html_boton_mas_horario(){
