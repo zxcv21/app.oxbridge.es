@@ -26,13 +26,13 @@
             p_01447_oponentes_listar();
         "
     >
-        <div id="p_00962_carrera_km_fin" style="position: absolute;font-size: 14px;text-align: center;right: -27px;top: 108%;"></div>
+        <div id="p_00962_carrera_km_fin" style="position: absolute;font-size: 14px;text-align: center;right: -61px;top: 49%;"></div>
 <!-- smiles/962 -->
 		<img src="<? echo ver_url("images/boton_mas_amigo_2.png","src");?>"
         	style="
                 position: absolute;
                 width: 28px;
-                left: 100px;
+                left: 73px;
                 top: 53px;
                 z-index: 100;
 								cursor: pointer;

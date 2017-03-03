@@ -157,8 +157,8 @@
 	height: 150%;
 	z-index: 3;
 	position: absolute;
-	text-align: center;
-	width: 12em;
+	/*text-align: center;*/
+	/*width: 12em;*/
 	}
 	#p_00962_yo_posicion{
 		}
@@ -175,7 +175,7 @@
 		#p_00962_yo_kilometros_actual{
 			font-size: 1.2em;
 			font-family: helveticaneueroman;
-			width:100%;
+			/*width:100%;*/
 			/*border-bottom:solid #2DCEE4;*/
 			text-decoration:underline;
 			height:1em;

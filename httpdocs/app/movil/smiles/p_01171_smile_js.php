@@ -213,7 +213,7 @@ function p_01171_mover_yo(json){
 				document.getElementById("p_01171_siguiente_transporte_texto").innerHTML="0%";
 
 			var proporcion_smiles=(100/smile_datos.smiles_totales.general.totales)*smile_datos.smiles_totales.general.correctos;
-			document.getElementById("p_00962_yo").style.left=(proporcion_smiles-12)+"%";
+			document.getElementById("p_00962_yo").style.left=(proporcion_smiles*0.98)+"%";
 
 			//comprovar transporte
 				//document.getElementById("p_00962_yo_img").src=p_01171_switch_treansporte(smile_datos.curso.smiles_total,smile_datos.curso.duracion,smile_datos.alumno.sxm,"yo");
@@ -222,6 +222,7 @@ function p_01171_mover_yo(json){
 			if(document.getElementById("p_01171_carrera_reducida_km"))
 				document.getElementById("p_01171_carrera_reducida_km").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de_reducido' style='display:none;'>/"+distancia+"<br>/"+smile_datos.alumno.distancia+"Km</span>";
 			document.getElementById("p_00962_carrera_km_fin").innerHTML="London<br>"+smile_datos.alumno.distancia+" KM";
+			document.getElementById("p_00962_yo_kilometros_actual").style.marginLeft= (-document.getElementById("p_00962_yo_kilometros_actual").clientWidth/2+12)+"px";
 
 
 		}
