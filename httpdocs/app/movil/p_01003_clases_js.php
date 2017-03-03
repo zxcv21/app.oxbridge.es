@@ -397,16 +397,6 @@ function p_01003_poner_saltos_pagina(p_01003_printWindowBody){
 	var p_01003_salto_pagina;
 
 	p_01003_altura_pagina= p_01003_printWindowBody.ownerDocument.querySelector(".p_01003_print_layout").offsetHeight;
-	console.log("altura: ");
-	console.log(p_01003_altura_pagina);
-
-//printar div que muestra altura calculada para una p�gina
-/*
-	p_01003_salto_pagina= document.createElement("DIV");
-	p_01003_salto_pagina.className= "div_prueba";
-	p_01003_printWindowBody.insertBefore(p_01003_salto_pagina, p_01003_printWindowBody.children[0]);
-	p_01003_printWindowBody.children[0].style="background:lightgray;width:200px;height:"+p_01003_altura_pagina+"px;border:2px solid;";
-*/
 
 	for(var j=0; j<p_01003_printWindowBody.children.length; j++){
 		p_01003_hijos= p_01003_printWindowBody.children[j].children;

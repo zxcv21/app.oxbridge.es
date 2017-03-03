@@ -30,7 +30,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 			{
 				$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_01_material_01_asp_02_select_02_actividades_de_la_clase.asp?p_0001271_get_curso_clase_ids=".$_GET["curso_clase_ids"]."&p_0001270_get_alumno_id=".$_GET["alumno_id"]);
 				echo "window.parent.dia_lectivo[".$_GET["id_dia"]."].actividad=".$actualizar.";";
-				echo "console.info('LOAD DAY ".$_GET["id_dia"].".');";
+				//echo "console.info('LOAD DAY ".$_GET["id_dia"].".');";
 				echo "window.parent.cargar_clase_cargada(".$_GET["id_dia"].");";
 				break;
 			}
@@ -165,7 +165,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 				}
 
-				if (file_exists($destino)) 
+				if (file_exists($destino))
         	unlink($destino);
 
 				break;

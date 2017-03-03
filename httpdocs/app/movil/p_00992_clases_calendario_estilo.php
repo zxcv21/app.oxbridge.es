@@ -395,6 +395,7 @@ Pag. ID: 00992
 			html_actividades = '<div id="p_00992_clases_actividades_sinactividad" style="margin-left: 32px;">A&uacute;n no se han asignado actividades</div>';
 		document.getElementById("p_00960_clases_actividades_box").innerHTML= html_actividades;
 		document.getElementById('p_00960_clases_contenedor_actividad_cabecera').innerHTML= html_actividades_cabeceras;
+		document.getElementById('p_00960_clases_contenedor_actividad_contenido').innerHTML="";
 
 		//MOSTRAR LA #1 ACTIVIDAD DEL DIA_LEC
 		imprime_actividad(DIA_LEC,0);
