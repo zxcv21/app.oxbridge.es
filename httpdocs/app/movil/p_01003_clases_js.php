@@ -619,18 +619,22 @@ function p_1003_guardar_horas_inicio_fin_clases(){
 		//testeo monica
 /*		if(i==="369577"){
 		//if(i==="372591"){
-			dia_lectivo[i].historica= 0;
-			//dia_lectivo[i].firmado= "0";
+			dia_lectivo[i].historica= 1;
+			//dia_lectivo[i].valoracion= "";
+			dia_lectivo[i].incidencia= "0";
+			dia_lectivo[i].firmado= "0";
 			console.log("********");
 			//console.log("hora real clase: "+dia_lectivo[i].fecha+" // "+dia_lectivo[i].horaInicio);
 			//console.log("hora local clase: "+dia_lectivo[i].date_inicio);
-			dia_lectivo[i].date_inicio= new Date (Date.now()+2*60000);
-			dia_lectivo[i].date_final= new Date (Date.now()-2*60000);
+			//dia_lectivo[i].date_inicio= new Date (Date.now()+2*60000);
+			dia_lectivo[i].date_inicio= new Date (Date.now()-22*3600000);
+			dia_lectivo[i].date_final= new Date (Date.now()-22*3600000);
+			//dia_lectivo[i].date_final= new Date (Date.now()-2*60000);
 			console.log("hora inicio clase: "+dia_lectivo[i].date_inicio);
 			console.log("hora final clase: "+dia_lectivo[i].date_final);
-
+			console.log("ahora: "+new Date (Date.now()-24*3600000));
 		}
-	*/
+*/
 		/////////////////////
 
 		p_1003_poner_alarmas_firma_y_valoracion(i);

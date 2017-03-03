@@ -139,7 +139,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 				echo "///////\n".$actualizar."\n/////////\n";
 
 				echo "window.parent.dia_lectivo[".$_GET['dia_lectivo']."].firmado='1';\n";
-				echo "window.parent.console.info('FIRMA DIA:".$_GET['dia_lectivo']." FIRMADO');\n";//FIRMA
+				//echo "window.parent.console.info('FIRMA DIA:".$_GET['dia_lectivo']." FIRMADO');\n";//FIRMA
 				echo "window.parent.p_01169_imprimir_asistencia()\n;";
 
 				echo "if(window.parent.document.getElementById('p_00987_boton_firma')){\n";

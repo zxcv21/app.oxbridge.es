@@ -400,7 +400,7 @@ Pag. ID: p_00995
 		}
 		.p_00995_horario_contenedor_horario_horas,
 		.p_00995_horario_contenedor_horario_horas_separador{
-			height: <? echo $set_cuarto_hora_alto-1;?>px;
+			height: <? echo $set_cuarto_hora_alto-0.9;?>px;
 			width: 100%;
 			background-color: #fff;
 			border: solid #fff;

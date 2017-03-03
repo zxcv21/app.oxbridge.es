@@ -349,7 +349,7 @@ DIA="<? echo date("Y/m/d"); ?>";
 				//set anchos CANVAS
 				for(j in cuadricula_canvas[bucle03]){
 					if(ajuste[bucle03]!=0)
-						cuadricula_canvas[bucle03][j][1]=ajuste[bucle03]*(capsula_ancho+set_margen_extra_capsulas*2+0.7);//1-0.2 ajustes de encuadre
+						cuadricula_canvas[bucle03][j][1]=ajuste[bucle03]*(capsula_ancho+set_margen_extra_capsulas*2)+1;
 					else
 						cuadricula_canvas[bucle03][j][1]=cuarto_hora_ancho+set_margen_extra_capsulas*2+0.2;//0.2 ajustes de encuadre
 					if(typeof x_pos_anterior =="undefined")
@@ -364,7 +364,7 @@ DIA="<? echo date("Y/m/d"); ?>";
 			//CAMBIAR TAMAÑO SEGUN HORARIO
 			document.getElementById("p_00958_horario_contenedor_horario_dias").style.width = (RANGO_DIAS*(cuarto_hora_ancho+set_margen_extra_capsulas*2)+cambio)+"px";
 			document.getElementById("p_00958_horario_contenedor_horario_cuerpo_datos").style.width = (RANGO_DIAS*cuarto_hora_ancho+set_ancho_horas_titulo+cambio)*1.01+"px";
-			document.getElementById("p_00995_horario_contenedor_clases").style.marginTop="-"+cuadricula_alto-1+"px";
+			document.getElementById("p_00995_horario_contenedor_clases").style.marginTop="-"+(cuadricula_alto-2)+"px";
 
 			//PINTAR CUADRICULA
 			var c = document.getElementById("p_00995_horario_contenido_cuadricula");
@@ -712,7 +712,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			"<div class='p_00995_horario_contenido_clases_fondo' "+
 				"style='height:"+(caja_tamano*1+4)+"px; "+
 				"top:"+caja_top+"px; "+
-				"left:"+(caja_left[capsula.dia_lectivo_id])+"px; "+
+				"left:"+(caja_left[capsula.dia_lectivo_id]+1.5)+"px; "+
 				"margin-left:-"+(capsula_ancho*1+set_margen_extra_capsulas*2)+"px;'>"+
 
 			//ESTILO DE CAJA
