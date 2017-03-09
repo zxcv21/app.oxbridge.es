@@ -86,6 +86,12 @@
     transform: rotate(720deg);
   }
 }
+
+@media screen and (max-width: 767px) {
+  #p_0001854_logo{
+    height: 50px;
+  }
+}
 </style>
 
 

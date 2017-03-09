@@ -51,6 +51,8 @@ if(!isset($_GET['idioma'])){
 <script>
 	window.onload=function(){
 		//p_01003_comprobar_alarma();
+		if(!dia_lectivo[Object.keys(dia_lectivo)[0]].date_inicio)
+			p_1003_guardar_horas_inicio_fin_clases();
 		p_1003_comprobar_valoraciones_pendientes();
 	}
 </script>

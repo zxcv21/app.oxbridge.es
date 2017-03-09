@@ -78,7 +78,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 		"<div align='center'>"+
 		"	<span style='font-size:1.5em;color:#8C6792;font-family: helveticaneueroman;margin-bottom: 20px;"+
     //"display: block;cursor:pointer' onclick='mover_menu(true,\"p_00987_menu_horario\");p_1003_mostrar_reservas= true; document.getElementById(\"p_00958_horario_clases_reservadas\").style.display=\"inline-block\";'>"+"No tienes clases reservadas pr�ximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
-		"display: block;'>"+TEXTOS[77].text+"</span><br><br>"+
+		"display: block;'>"+TEXTOS[77].text+"</span><br>"+
 		"	<div"+
 		"		style='"+
 		"	height: 65px;"+
@@ -130,6 +130,7 @@ function p_00989_quitar_aviso_reservar(set){
 
 //funcion para mostrar actividad
 function p_01003_mostrar_actividad(tipo,d,a,m){
+	document.getElementById('p_00960_clases_contenedor_actividad').style.display="block";
 	document.getElementById('p_00960_clases_contenedor_actividad_cabecera').style.display = "block" ;
 	document.getElementById('p_00960_clases_contenedor_actividad_contenido').style.display = "block" ;
 	var actividades=dia_lectivo[d].actividad[a];
@@ -237,10 +238,11 @@ function p_01003_mostrar_actividad(tipo,d,a,m){
 
 			document.getElementById("p_00960_clases_contenedor_actividad_contenido").innerHTML=html_target;
 
-			setTimeout(function(){
-				p_01003_igualar_altura_contenedores_hijos(document.getElementById("p_00960_clases_contenedor_actividad_contenido"))
-			},100);
-
+			if(window.innerWidth>=p_00956_ancho_movil){
+				setTimeout(function(){
+					p_01003_igualar_altura_contenedores_hijos(document.getElementById("p_00960_clases_contenedor_actividad_contenido"))
+				},100);
+			}
 		break;}
 		default:{break;}
 	}
@@ -475,12 +477,15 @@ function p_01003_imprimir_vocabulario_dia(){
 
 //ocultar_mostrar_actividades
 function p_01003_ocultar_mostrar_actividad(ele){
-
+	console.log("p_01003_ocultar_mostrar_actividad");
 	for(var i=0; i<document.getElementById("p_00960_clases_contenedor_actividad_cabecera").children.length; i++){
 		var hijo = document.getElementById("p_00960_clases_contenedor_actividad_cabecera").children[i];
-		if(hijo.style.display!="none")
-			hijo.style.display="none";
+			if(hijo.style.display!="none")
+				hijo.style.display="none";
 	}
+	document.getElementById('p_00992_cerrar_actividad').style.display="block";
+	document.getElementById('p_00960_clases_contenedor_actividad_contenido').style.display="block";
+	document.getElementById('p_00960_clases_contenedor_actividad_cabecera').style.display="block";
 	document.getElementById(ele).style.display="inline-block";
 	p_01003_marcar_enlace_actividad(document.getElementById(ele).children[0]);
 }
@@ -661,14 +666,21 @@ p_00994_valoracion_voluntaria= false;
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
 /*	if(typeof this.primera_vez== "undefined"){
-		p_1003_maximo_dias_valorar= 200;
+		p_1003_maximo_dias_valorar= 1000;
 		for(i in dia_lectivo){
-			dia_lectivo[i].valoracion="";
-			dia_lectivo[i].incidencia=0;
+			if(typeof this.primera_vez== "undefined"){
+				dia_lectivo[i].valoracion="";
+				dia_lectivo[i].incidencia=0;
+				dia_lectivo[i].asistencia="1";
+				this.primera_vez= false;
+			}
+			else{
+				dia_lectivo[i].incidencia=1;
+			}
 		}
 		this.primera_vez= false;
-	}
-*/
+	}*/
+
 
 
 	if(!p_00994_valoracion_voluntaria){

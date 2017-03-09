@@ -63,10 +63,8 @@ include: 00986-01005
 	p_1003_maximo_dias_valorar= 14;
 	p_0001854_mostrar_pagina_bienvenida_bool= true;
 
-	function borrar(){
-		document.getElementById("p_00995_firma").style.display="none";
-		document.getElementById("p_01450_overall_valoracion_semanal").style.display="none";
-	}
+	p_00956_ancho_movil= 767;
+	
 	<?
 	echo "</script>";
 

@@ -238,5 +238,31 @@ Pag. ID: p_00991
 	#p_01003_contenedor_actividad{
 		font-size:16px;
 		}
+@media screen and (max-width: 767px) {
+	#p_00960_clases_head{
+		width: 100%;
+		padding: 3px;
+		box-sizing: border-box;
+	}
+	#p_00960_clases_head_profe{
+		width: 100%;
+	}
+	#p_00960_clases_head_fecha{
+		margin-top: 14px;
+	}
+	#p_00960_clases_head_foto{
+		height: 120px;
+		width: 120px;
+	}
+	#p_00960_clases_head_foto_lupa{
+		left: 120px;
+	}
+	#p_00992_imprimir{
+		right: -100px;
+	}
+	#p_01003_contenedor_actividad{
+		padding: 2px;
+	}
+}
 
 </style>

@@ -404,7 +404,7 @@ DIA="<? echo date("Y/m/d"); ?>";
 	function set_horario(){
 		if( document.getElementById('p_0001317_input_sesion_id') )
 		{
-			document.getElementById("contenedor").style.height=window.innerHeight+"px";
+			//document.getElementById("contenedor").style.height=window.innerHeight+"px";
 			document.getElementById("horario").style.cursor="progress";
 			horario_pintar();
 			////////DBB
@@ -1069,9 +1069,10 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 
 window.addEventListener("resize", function(){
 		if(document.getElementById('p_00958_horario_contenedor')){
-			document.getElementById('contenedor').style.height= "100%";
+			//document.getElementById('contenedor').style.height= "100%";
 			document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
-			document.getElementById('p_00995_horario_contenedor_horario_linea_0').style.height=(window.innerHeight-132)+"px";
+			if(document.getElementById('p_00995_horario_contenedor_horario_linea_0'))
+				document.getElementById('p_00995_horario_contenedor_horario_linea_0').style.height=(window.innerHeight-132)+"px";
 		}
 });
 

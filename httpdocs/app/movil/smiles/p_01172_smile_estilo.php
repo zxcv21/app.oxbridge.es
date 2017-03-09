@@ -460,18 +460,13 @@
 	width:1em;
 }
 
-/*
-@media (max-height: 80em){
- 	#p_00962_carrera{
-		display:none;
+@media screen and (max-width: 767px) {
+	#p_00962_contenedor_smile{
+		width: 100%;
 	}
-	#p_01171_carrera_reducida{
-		display:inherit;
-	}
-	.p_00962_separador{
-		margin-top:1em;
+	.p_00962_start{
+		font-size: 16px;
 	}
 }
-*/
 
 </style>

@@ -174,6 +174,31 @@ Pag. ID: 00992
 					z-index:9002;
 					cursor: pointer;
 					}
+				#p_00992_cerrar_actividad{
+					display: none;
+				}
+	@media screen and (max-width: 767px) {
+		.p_00960_clases_head_calendario_contenedor_dia,.p_00960_clases_head_calendario_contenedor_fiesta,
+		.p_00960_clases_head_calendario_contenedor_box,.p_00960_clases_head_calendario_contenedor_hoy,
+		.p_00960_clases_head_calendario_contenedor_lectivo{
+			font-size: 20px;
+			width: 12.6%;
+		}
+		#p_00960_clases_head_calendario{
+			width: 100%;
+		}
+		#p_00992_cerrar_actividad{
+			display: block;
+			position:absolute;
+			height: 30px;
+			width: 30px;
+			top: 2px;
+			right: 0px;
+			background-image:url(<? echo ver_url("images/close.png","src"); ?>);
+			background-repeat:no-repeat;
+			background-size:100%;
+		}
+	}
 </style>
 
 
@@ -380,6 +405,7 @@ Pag. ID: 00992
 					html_actividades_cabeceras=html_actividades_cabeceras+'</div>';
 				}
 				html_actividades_cabeceras=html_actividades_cabeceras+
+				'<div id="p_00992_cerrar_actividad" onClick="p_00992_cerrar_ventana_actividades();"></div>'+
 				'<div id="p_00992_imprimir">'+
 				'	<div id="p_00992_print_icon" onclick="p_01003_click_impresora();" >'+
 				'	</div>'+
@@ -396,6 +422,9 @@ Pag. ID: 00992
 		document.getElementById("p_00960_clases_actividades_box").innerHTML= html_actividades;
 		document.getElementById('p_00960_clases_contenedor_actividad_cabecera').innerHTML= html_actividades_cabeceras;
 		document.getElementById('p_00960_clases_contenedor_actividad_contenido').innerHTML="";
+		document.getElementById('p_00960_clases_contenedor_actividad_contenido').style.display="none";
+		document.getElementById('p_00960_clases_contenedor_actividad_cabecera').style.display="none";
+
 
 		//MOSTRAR LA #1 ACTIVIDAD DEL DIA_LEC
 		imprime_actividad(DIA_LEC,0);
@@ -638,6 +667,8 @@ var BUFER_CARGA_ACTIVIDADES=[];
 
 ////FUNCION DE CARGA CLASES
 	function cargar_clase(id_dia){
+		if(window.innerWidth<p_00956_ancho_movil)
+			p_00992_cerrar_ventana_actividades();
 		if(dia_lectivo[id_dia].actividades_cargadas=="1"){
 			actividades(
 				dia_lectivo[id_dia].fecha.split("/")[2],
@@ -754,5 +785,9 @@ var BUFER_CARGA_ACTIVIDADES=[];
 			p_00989_aviso_reservar();
 	}
 
+function p_00992_cerrar_ventana_actividades(){
+	document.getElementById('p_00960_clases_contenedor_actividad_contenido').innerHTML="";
+	document.getElementById('p_00960_clases_contenedor_actividad').style.display="none";
+}
 
 </script>

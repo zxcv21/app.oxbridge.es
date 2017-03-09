@@ -360,7 +360,7 @@ function p_0100_contenedor_resize(){
 }
 
 //variable anti bloqueo de orientacion
-p_00989_BLOQUEAR_ORIENTACION=true;
+p_00989_BLOQUEAR_ORIENTACION=false;
 
 //corregir orientacion
 function orientacion_cambiada(){
@@ -417,6 +417,7 @@ function p_00989_escuchar_texto(txt) {
 
 // cargar nueva clase
 function p_01169_cargar_clase(){
+
 	document.getElementById("p_00960_clases_head_foto").style.display="none";
 	document.getElementById("p_00960_clases_head_foto_lupa").style.display="none";
 	document.getElementById("p_00960_clases_head_valoracion").style.visibility="hidden";
@@ -603,8 +604,11 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-	//for(i in dia_lectivo)
-	//	dia_lectivo[i].firmado="0";
+/*	for(i in dia_lectivo){
+		dia_lectivo[i].firmado="0";
+		dia_lectivo[i].incidencia="0";
+		break;
+	}*/
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -672,8 +676,8 @@ function p_00989_comprobar_firmas_pendientes(){
 		p_00989_crear_formulario_firma(p_00989_ultimo_dia);
 		return;
 	}
-	if(p_0001854_mostrar_pagina_bienvenida_bool)
-		p_0001854_mostrar_pagina_bienvenida();
+	//if(p_0001854_mostrar_pagina_bienvenida_bool)
+		//p_0001854_mostrar_pagina_bienvenida();
 
 	p_01003_comprobar_alarma();
 

@@ -26,6 +26,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	width:100%;
 	height:100%;
 	z-index: -1;
+	background-color: white;
 	}
 #contenedor_menu{
 	position:relative;
@@ -36,6 +37,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	-webkit-transition:0.5s;
 	transition:0.5s;
 	float: left;
+	height: inherit;
 	}
 
 #horario, #claseweb, #clases, #personal, #smile{
@@ -168,9 +170,9 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	background-color: white;
 	}
 	#head_oxbridge_img{
-		height:65px;
+		/*height:65px;*/
+		height: 100%;
 		width:auto;
-		/*float:left;*/
 		float:right;
 		margin-left: 10px;
 		}
@@ -385,13 +387,13 @@ h4{
 .p_00986_div_nivel_seleccion_nivel_redondo_select
 {
 	height: 200px;
-    width: 200px;
-    border: solid 3px #1ABC9C;
+  width: 200px;
+  border: solid 3px #1ABC9C;
 	background:#1ABC9C;
-    border-radius: 100%;
-    margin: 0 auto 30px auto;
-    font-size: 100px;
-    color: #F6F6F6;
+  border-radius: 100%;
+  margin: 0 auto 30px auto;
+  font-size: 100px;
+  color: #F6F6F6;
 }
 #p_00955_cargando_seleccion_nivel{
 	position: absolute;
@@ -402,7 +404,46 @@ h4{
   margin: auto;
   margin-top: 54px;
 }
+@media screen and (max-width: 767px) {
+	#contenedor_menu{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	height:8%;
+	float: none;
+	}
+	#head_oxbridge{
+		/*height: 60px;*/
+		height: 8vh;
+		padding: 0;
+	}
+	#horario, #claseweb, #clases, #personal, #smile{
+		padding-top: 70px;
+		padding-bottom: 10%;
+	}
+	#head_oxbridge_menu_apartados{
+		margin-left: 3px;
+	}
+	.contenedores_formularios{
+		width: 100%;
+	}
+}
 
+@media screen and (max-width: 767px) and (orientation:landscape){
+	#contenedor_menu{
+		position:relative;
+		-moz-transition:0.5s;
+		-webkit-transition:0.5s;
+		transition:0.5s;
+		float: left;
+		height: initial;
+		width: initial;
+		}
+		#head_oxbridge{
+			/*height: 60px;*/
+			height: 8vw;
+		}
+}
 </style>
 
 <link rel="stylesheet" href='<? ver_url("firma/pad/css/signature-pad.css","");?>'>

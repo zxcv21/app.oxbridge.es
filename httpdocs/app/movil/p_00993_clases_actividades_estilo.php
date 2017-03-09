@@ -6,9 +6,6 @@ Pag. ID: p_00993
 
 /*///////////////////////////////////////////ACTIVIDADES*/
 #p_00960_clases_actividades{
-	/*height:30%;
-	width:100%;
-	float:left;*/
 	position: absolute;
 	width: 405px;
 	top: 309px;
@@ -306,6 +303,55 @@ display:inline-block;
 /*	page-break-before: always;*/
 }
 
+@media screen and (max-width: 767px) {
+	#p_00960_clases_actividades{
+		top: 220px;
+		width: initial;
+	}
+	.p_00992_clases_actividades_actividad{
+		width: 100%;
+		padding: 9px 3px 0;
+		margin: 0 0 2px 2px;
+		box-sizing: border-box;
+		position: relative;
+	}
+	#p_00992_clases_actividades_actividad_titulo{
+		padding-left: 24px;
+	}
+	#p_00960_clases_contenedor_actividad_cabecera{
+		left: 0;
+		top: 59px;
+		background: #f3f3f3;
+		z-index: 1;
+	}
+	#p_00960_clases_contenedor_actividad_contenido{
+		position: fixed;
+		left: 0;
+		top: 108px;
+		background-color: white;
+		z-index: 1;
+		width: 100%;
+		overflow: auto;
+		bottom: 10%;
+	}
+	#p_00960_clases_contenedor_actividad{
+		width: 100%;
+	}
+	.p_00993_clases_contenedor_actividad_target{
+		width: 99%;
+		box-sizing: border-box;
+		margin: auto;
+		margin-bottom: 2px;
+	}
+	.p_00993_clases_contenedor_actividad_target_img{
+		text-align: center;
+	}
+	#p_00992_clases_actividades_actividad_globo{
+		position: absolute;
+		float: none;
+		top: calc(50% - 9px);
+	}
+}
 </style>
 
 

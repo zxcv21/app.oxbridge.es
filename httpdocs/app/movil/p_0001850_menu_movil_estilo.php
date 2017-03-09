@@ -75,6 +75,7 @@ foreach ($p_0001850_PHP_MENU_MOVIL as $i){
 		background-image:url(<? echo ver_url("images/icono-smile.png","src"); ?>)
 		;
 		}
+
 </style>
 
 
