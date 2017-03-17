@@ -459,14 +459,45 @@
 	height:1em;
 	width:1em;
 }
-
+#p_00962_img_mas{
+	position: absolute;
+	width: 28px;
+	left: 73px;
+	top: 53px;
+	z-index: 100;
+	cursor: pointer;
+}
+#p_00962_carrera_km_fin{
+	position: absolute;
+	font-size: 14px;
+	text-align: center;
+	right: -61px;
+	top: 49%;
+}
+#p_00962_carrera_km_fin span{
+	display: block;
+}
 @media screen and (max-width: 767px) {
+	.p_00962_separador{
+		padding-top: 133px;
+	}
 	#p_00962_contenedor_smile{
 		width: 100%;
 	}
 	.p_00962_start{
 		font-size: 16px;
+		top: 76px;
+		left: 41px;
+		width: 80%;
 	}
+	#p_00962_img_mas{
+		top: 87px;
+		left: 5px;
+	}
+	#p_00962_carrera_km_fin span{
+		display: inline;
+	}
+
 }
 
 </style>

@@ -13,6 +13,7 @@ Pag. ID: p_00993
 	left: 0;
 	margin: auto;
 	right: 0;
+	overflow: auto;
 }
 #p_00960_clases_actividades_sinactividad{
 	float:left;
@@ -108,8 +109,6 @@ Pag. ID: p_00993
 
 }
 #p_01003_contenedor_actividad img{
-	/*width: 100% !important;
-	height: 100% !important;*/
 	max-width: 100%;
 	height: auto;
 }
@@ -305,8 +304,10 @@ display:inline-block;
 
 @media screen and (max-width: 767px) {
 	#p_00960_clases_actividades{
-		top: 220px;
+		top: 160px;
 		width: initial;
+		bottom: 0;
+		overflow: visible;
 	}
 	.p_00992_clases_actividades_actividad{
 		width: 100%;
@@ -320,21 +321,28 @@ display:inline-block;
 	}
 	#p_00960_clases_contenedor_actividad_cabecera{
 		left: 0;
-		top: 59px;
+		top: 0;
 		background: #f3f3f3;
 		z-index: 1;
+		position: absolute;
 	}
 	#p_00960_clases_contenedor_actividad_contenido{
-		position: fixed;
+		position: absolute;
 		left: 0;
-		top: 108px;
+		top: 54px;
 		background-color: white;
 		z-index: 1;
 		width: 100%;
 		overflow: auto;
-		bottom: 10%;
+		bottom: 0;
+		padding-bottom: 16vh;
 	}
 	#p_00960_clases_contenedor_actividad{
+		/*top: 0;
+		left:780px;*/
+		position: initial;
+	}
+	#p_01003_contenedor_actividad img{
 		width: 100%;
 	}
 	.p_00993_clases_contenedor_actividad_target{
@@ -351,6 +359,8 @@ display:inline-block;
 		float: none;
 		top: calc(50% - 9px);
 	}
+}
+@media screen and (max-width: 767px) and (orientation:landscape){
 }
 </style>
 

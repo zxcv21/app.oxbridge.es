@@ -26,18 +26,9 @@
             p_01447_oponentes_listar();
         "
     >
-        <div id="p_00962_carrera_km_fin" style="position: absolute;font-size: 14px;text-align: center;right: -61px;top: 49%;"></div>
+    <!--<div id="p_00962_carrera_km_fin" style="position: absolute;font-size: 14px;text-align: center;right: -61px;top: 49%;"></div>-->
 <!-- smiles/962 -->
-		<img src="<? echo ver_url("images/boton_mas_amigo_2.png","src");?>"
-        	style="
-                position: absolute;
-                width: 28px;
-                left: 73px;
-                top: 53px;
-                z-index: 100;
-								cursor: pointer;
-        	"
-        >
+		<img id="p_00962_img_mas" src="<? echo ver_url("images/boton_mas_amigo_2.png","src");?>" >
         <iframe id="p_00962_carrera_add_amigo_iframe" name="p_00962_carrera_add_amigo_iframe" style="display:none;"></iframe>
         <script>
 
@@ -125,17 +116,18 @@
         <div id="p_00962_carrera_pista">
             <div id="p_00962_yo" style="left:-12%">
                 <div id="p_00962_yo_posicion"></div>
-                    <img id="p_00962_yo_img" src="<? echo ver_url("images/yo.png","src"); ?>"/><br>
-                  <!--  <img class="p_00962_yo_puntero" src="<?// echo ver_url("images/yo_puntero.png","src"); ?>"/> -->
-                    <div id="p_00962_yo_kilometros">
-                    <div id="p_00962_yo_kilometros_actual"></div>
-                    <?
+                <img id="p_00962_yo_img" src="<? echo ver_url("images/yo.png","src"); ?>"/><br>
+                <!--  <img class="p_00962_yo_puntero" src="<?// echo ver_url("images/yo_puntero.png","src"); ?>"/> -->
+                <div id="p_00962_yo_kilometros">
+	                <div id="p_00962_yo_kilometros_actual"></div>
+                    	<?
                     	/*div id="p_00962_tras_kilometros" class="p_00962_kilometros_cercanos">9999</div>
                     	<div id="p_00962_delante_kilometros" class="p_00962_kilometros_cercanos">9999</div> */
-					?>
+											?>
                 </div>
             </div>
         </div>
+				<div id="p_00962_carrera_km_fin" ></div>
 	</div>
 
 	<div class="p_00962_separador">

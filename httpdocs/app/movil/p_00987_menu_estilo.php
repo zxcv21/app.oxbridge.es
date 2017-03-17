@@ -33,18 +33,20 @@ clicado=0;
 </script>
 <style type="text/css">
 
-<?
+<?/*
 foreach ($MENU as $i){
 	if( $i == $MENU[count($MENU)-1]){
 		echo("#".$i);
 	}else{
 		echo("#".$i.", ");
 	}
-}
-?>{
+}*/
+?>
+.p_00957_elemento_del_menu{
 	float:left;
-	height:<? echo($ALTO); ?>px;
-	width: <? echo($ANCHO); ?>px;
+	/*height:<?// echo($ALTO); ?>px;
+	width: <? //echo($ANCHO); ?>px;*/
+	height: 65px;
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size:50%;
@@ -61,15 +63,16 @@ foreach ($MENU as $i){
 }
 
 
-<?
+<?/*
 foreach ($MENU as $i){
 	if( $i == $MENU[count($MENU)-1]){
 		echo("#".$i.":hover");
 	}else{
 		echo("#".$i.":hover, ");
 	}
-}
-?>{
+}*/
+?>
+.p_00957_elemento_del_menu:hover{
 	opacity: 0.9;
 }
 
@@ -127,17 +130,18 @@ foreach ($MENU as $i){
 
 /*******************************************************************************/
 @media screen and (max-width: 767px) {
-	<?
+	<?/*
 	foreach ($MENU as $i){
 		if( $i == $MENU[count($MENU)-1]){
 			echo("#".$i);
 		}else{
 			echo("#".$i.", ");
 		}
-	}
-	?>{
+	}*/
+	?>
+	.p_00957_elemento_del_menu{
 		height:100%;
-		width: <? echo (100-($TOTAL*0.14))/$TOTAL; ?>%;
+		/*width: <?// echo (100-($TOTAL*0.14))/$TOTAL; ?>%;*/
    	border-radius: 19% 19% 0 0;
 		background-repeat:no-repeat;
 		background-position: center;
@@ -156,18 +160,19 @@ foreach ($MENU as $i){
 	}
 }
 @media screen and (max-width: 767px) and (orientation:landscape){
-	<?
+	<?/*
 	foreach ($MENU as $i){
 		if( $i == $MENU[count($MENU)-1]){
 			echo("#".$i);
 		}else{
 			echo("#".$i.", ");
 		}
-	}
-	?>{
+	}*/
+	?>
+	.p_00957_elemento_del_menu{
 		float:left;
-		height:60px;
-		width: 60px;
+		height:8vw;
+		/*width: 60px;*/
 		background-repeat:no-repeat;
 		background-position: center;
 		background-size:50%;
@@ -217,24 +222,24 @@ function p_00987_adaptar_menu_al_ancho(){
 
 	if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
 		p_00987_menu_movil= true;
-		ALTO = 100;
-		ANCHO = 100;
+		ALTO = "100%";
+		ANCHO = window.innerWidth/6.05;//(100-(TOTAL*0.14))/TOTAL+"%";
 		SEPARACION = 10;
 	}
 	else{
 		p_00987_menu_movil= false;
 		if(window.innerWidth<p_00956_ancho_movil){
 			//ALTO = 60;
-			ALTO = 60;
+			ALTO = "8vw";
 			ANCHO = 60;
 			//SEPARACION = 4;
 		}
 		else{
-			ALTO = 65;
+			ALTO = "65px";
 			ANCHO = 65;
 		}
 		SEPARACION = 8;
-
+	}
 		var p_00987_elementos_del_menu= document.querySelectorAll(".p_00957_elemento_del_menu");
 
 		if(window.innerWidth>=p_00956_ancho_movil){
@@ -253,14 +258,19 @@ function p_00987_adaptar_menu_al_ancho(){
 				p_00987_mouseover_on= false;
 			}
 		}
-
+		console.log("ALTO: "+ALTO);
+		console.log("ANCHO: "+ANCHO);
+		for(var i=0; i<p_00987_elementos_del_menu.length; i++){
+			p_00987_elementos_del_menu[i].style.height= ALTO;
+			p_00987_elementos_del_menu[i].style.width= ANCHO+"px";
+		}
 
 		if(document.getElementById(menu[0][2])){
 			for(i in menu){
 				document.getElementById(menu[i][2]).style.height="";
 			}
 		}
-	}
+	//}
 	set_menu();
 	mover_menu(true,0);
 }

@@ -82,7 +82,7 @@ var DIA_LEC="";
 		"
    ><? //echo $TEXTOS[101][2];?></div>
 
-   <div id="p_00960_clases_actividades" style="overflow: auto; padding-right: 12px">
+   <div id="p_00960_clases_actividades" style="padding-right: 12px">
 		<div id="p_00960_clases_actividades_box"></div>
 	</div>
 

@@ -49,10 +49,32 @@
 #p_00959_espera_clase img{
 	height: 266px;
 }
+#p_00959_div_clases_a_distancia{
+	padding: 0em 1em 1em 1em;
+}
+#p_00959_img_nube{
+	height: 266px;
+	margin-left: -43px;
+	cursor: pointer;
+}
+@media screen and (max-width: 767px){
+	#p_00959_div_clases_a_distancia{
+		padding: 0;
+		padding-bottom: 16vh;
+	}
+	#p_00959_img_nube{
+		height: initial;
+		margin-left: 0;
+		width: 100%;
+		max-width: 353px;
+	}
+
+
+}
 </style>
 
 <div id="claseweb">
-	<div id="p_00959_div_clases_a_distancia" align="center" style="font-size: 3em;padding: 0em 1em 1em 1em;font-family: HelveticaNeueRoman;color: #888; margin-top: 50px">
+	<div id="p_00959_div_clases_a_distancia" align="center" style="font-size: 3em;font-family: HelveticaNeueRoman;color: #888; margin-top: 50px">
 	</div>
 	<!--div id="p_00959_sin_clase">
 		<div align="center">
@@ -138,7 +160,7 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 		{
 			//p_00959_js_f_01_html+= "<div id=\"p_00959_sin_clase\">";
 			p_00959_js_f_01_html+= "	<div align=\"center\">";
-			p_00959_js_f_01_html+= "		<img style=\"height: 266px; margin-left: -43px; cursor: pointer\" src=\"<? echo ver_url("images/nube_cw.png","src"); ?>\" onclick='javascript: p_00959_js_f_04_abrir_ejemplo();'>";
+			p_00959_js_f_01_html+= "		<img id='p_00959_img_nube' src=\"<? echo ver_url("images/nube_cw.png","src"); ?>\" onclick='javascript: p_00959_js_f_04_abrir_ejemplo();'>";
 			p_00959_js_f_01_html+= "	</div>";
 			p_00959_js_f_01_html+= "	<div align=\"center\">";
 			p_00959_js_f_01_html+= "		<span style=\"font-size: 18px\">"+TEXTOS[192].text+"</span>";

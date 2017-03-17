@@ -76,8 +76,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 
 	document.getElementById("p_00960_clases_actividades_box").innerHTML=""+
 		"<div align='center'>"+
-		"	<span style='font-size:1.5em;color:#8C6792;font-family: helveticaneueroman;margin-bottom: 20px;"+
-    //"display: block;cursor:pointer' onclick='mover_menu(true,\"p_00987_menu_horario\");p_1003_mostrar_reservas= true; document.getElementById(\"p_00958_horario_clases_reservadas\").style.display=\"inline-block\";'>"+"No tienes clases reservadas pr�ximamente"/*TEXTOS[77].text*/+"</span><br><br>"+
+		"	<span style='font-size:1.5em;color:#8C6792;font-family: helveticaneueroman;"+
 		"display: block;'>"+TEXTOS[77].text+"</span><br>"+
 		"	<div"+
 		"		style='"+
@@ -91,7 +90,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 		"background-image: url(<? echo ver_url("images/icono-horario.png","src"); ?>);"+
 		"cursor:pointer'"+
 		"		onclick='mover_menu(true,\"p_00987_menu_horario\");'"+
-		"	></div><br>"+
+		"	></div>"+
 		"	<span style='border-bottom:solid #888;color:#888; font-size:18px;cursor:pointer;' onclick='mover_menu(true,\"p_00987_menu_horario\");'>"+TEXTOS[87].text+"</span>"+
 		"</div>";
 
@@ -102,7 +101,7 @@ function p_00989_aviso_reservar(clases_anteriores){
 		}else{
 			document.getElementById("p_00960_clases_head_horario").innerHTML=""+
 				"<div id='p_00992_clases_head_horario_clase' class='x'>"+
-				"	<span style='font-size:12px;' onclick='p_00989_quitar_aviso_reservar(\"mostrar_ultima\");document.getElementById(\"p_00960_clases_head\").style.cssFloat=\"left\";'>"+TEXTOS[80].text+"</span>"+
+				"	<span onclick='p_00989_quitar_aviso_reservar(\"mostrar_ultima\");document.getElementById(\"p_00960_clases_head\").style.cssFloat=\"left\";'>"+TEXTOS[80].text+"</span>"+
 				"</div>";
 		}
 	}else{
@@ -247,6 +246,7 @@ function p_01003_mostrar_actividad(tipo,d,a,m){
 		default:{break;}
 	}
 	p_01003_calcular_posicion_actividades();
+	document.getElementById("p_00960_clases_contenedor_actividad_contenido").scrollTop = 0;
 }
 
 window.addEventListener('resize', p_01003_calcular_posicion_actividades);

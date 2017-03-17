@@ -147,8 +147,7 @@ Pag. ID: p_00991
 			width:100%;
 			}
 
-		#p_00960_clases_actividades_box{
-			}
+
 			.p_00992_clases_actividades_pestanas{
 				/*width: 100%;
 				clear: both;*/
@@ -183,6 +182,7 @@ Pag. ID: p_00991
 				position: absolute;
 				top: 0;
 				right: 0;
+				z-index: 0;
 			}
 			#p_00992_imprimir ul{
 				position: absolute;
@@ -238,7 +238,18 @@ Pag. ID: p_00991
 	#p_01003_contenedor_actividad{
 		font-size:16px;
 		}
+	#p_00960_clases_actividades_box>div[align="center"]>span{
+		margin-bottom: 20px;
+	}
+	#p_00992_clases_head_horario_clase span{
+		font-size: 12px;
+	}
+
 @media screen and (max-width: 767px) {
+	#p_00960_clases_head{
+		margin-top: 20px;
+	}
+
 	#p_00960_clases_head{
 		width: 100%;
 		padding: 3px;
@@ -248,7 +259,7 @@ Pag. ID: p_00991
 		width: 100%;
 	}
 	#p_00960_clases_head_fecha{
-		margin-top: 14px;
+		margin-top: 0;
 	}
 	#p_00960_clases_head_foto{
 		height: 120px;
@@ -258,10 +269,30 @@ Pag. ID: p_00991
 		left: 120px;
 	}
 	#p_00992_imprimir{
-		right: -100px;
+		display: none !important;
 	}
 	#p_01003_contenedor_actividad{
 		padding: 2px;
+	}
+	#p_00960_clases_actividades_box>div[align="center"]{
+		position: fixed;
+    top: 40%;
+    /* bottom: 0; */
+    left: 0;
+    right: 0;
+	}
+	#p_00960_clases_actividades_box>div[align="center"]>span{
+		margin-bottom: 0;
+	}
+	#p_00992_clases_head_horario_clase span{
+		font-size: 14px;
+	}
+	.p_00992_clases_head_horario_clase span{
+		font-size: 14px;
+	}
+	#p_00960_clases_actividades_box>div:last-child{
+		margin-bottom: 100px;
+		/*margin-bottom: 16vh;*/
 	}
 }
 
