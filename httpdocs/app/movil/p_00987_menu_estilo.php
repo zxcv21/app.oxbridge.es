@@ -240,37 +240,35 @@ function p_00987_adaptar_menu_al_ancho(){
 		}
 		SEPARACION = 8;
 	}
-		var p_00987_elementos_del_menu= document.querySelectorAll(".p_00957_elemento_del_menu");
+	var p_00987_elementos_del_menu= document.querySelectorAll(".p_00957_elemento_del_menu");
 
-		if(window.innerWidth>=p_00956_ancho_movil){
-			if((p_00987_elementos_del_menu.length)&&(!p_00987_mouseover_on)){
-				for(var i=0; i<p_00987_elementos_del_menu.length; i++)
-					p_00987_elementos_del_menu[i].addEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
-				document.getElementById("p_00987_menu_out").addEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
-				p_00987_mouseover_on= true;
-			}
+	if(window.innerWidth>=p_00956_ancho_movil){
+		if((p_00987_elementos_del_menu.length)&&(!p_00987_mouseover_on)){
+			for(var i=0; i<p_00987_elementos_del_menu.length; i++)
+				p_00987_elementos_del_menu[i].addEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
+			document.getElementById("p_00987_menu_out").addEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
+			p_00987_mouseover_on= true;
 		}
-		else{
-			if((p_00987_elementos_del_menu.length)&&(p_00987_mouseover_on)){
-				for(var i=0; i<p_00987_elementos_del_menu.length; i++)
-					p_00987_elementos_del_menu[i].removeEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
-				document.getElementById("p_00987_menu_out").removeEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
-				p_00987_mouseover_on= false;
-			}
+	}
+	else{
+		if((p_00987_elementos_del_menu.length)&&(p_00987_mouseover_on)){
+			for(var i=0; i<p_00987_elementos_del_menu.length; i++)
+				p_00987_elementos_del_menu[i].removeEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
+			document.getElementById("p_00987_menu_out").removeEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
+			p_00987_mouseover_on= false;
 		}
-		console.log("ALTO: "+ALTO);
-		console.log("ANCHO: "+ANCHO);
-		for(var i=0; i<p_00987_elementos_del_menu.length; i++){
-			p_00987_elementos_del_menu[i].style.height= ALTO;
-			p_00987_elementos_del_menu[i].style.width= ANCHO+"px";
-		}
+	}
+	for(var i=0; i<p_00987_elementos_del_menu.length; i++){
+		p_00987_elementos_del_menu[i].style.height= ALTO;
+		p_00987_elementos_del_menu[i].style.width= ANCHO+"px";
+	}
 
-		if(document.getElementById(menu[0][2])){
-			for(i in menu){
-				document.getElementById(menu[i][2]).style.height="";
-			}
+	if(document.getElementById(menu[0][2])){
+		for(i in menu){
+			document.getElementById(menu[i][2]).style.height="";
 		}
-	//}
+	}
+//}
 	set_menu();
 	mover_menu(true,0);
 }

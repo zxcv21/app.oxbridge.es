@@ -125,7 +125,7 @@
 </div>
 
 <div id="p_01175_smile_estructura_trinity" style='display:none;'>
-	<div id="trinity" class="preguntas p_01175_pregunta_trinity" style="margin-left:1.2em;display:none;">
+	<div id="trinity" class="preguntas p_01175_pregunta_trinity" style="display:none;">
 	<div id="texto_trinity" class="text3"></div>
 	  <div id="pestanas" class="pestanas" style="margin-left:7%;">
             <ul id="lista">

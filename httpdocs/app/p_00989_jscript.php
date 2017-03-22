@@ -14,7 +14,7 @@
 		else if(navigator.userAgent.search("Safari") != -1) NAV = "Safari";
 		else NAV = "Ie";
 	}
-	
+
 	//REDIRECCION SEGUN DISPOSITIVO
 	if(NAV=="movil"){
 		document.location = 'http://app.oxbridge.es/app/movil';
@@ -54,14 +54,14 @@ function imprimir_banderas(e,menos){
 		else document.getElementById(elemento).style.display=disp;
 		return(document.getElementById(elemento).style.display);
 	}
-	
+
 	function getPosi(elemento)
 	{
 	elemento = document.getElementById(elemento);
-	
+
     var xPosi = 0;
     var yPosi = 0;
-  
+
     while(elemento) {
         xPosi += (elemento.offsetLeft - elemento.scrollLeft + elemento.clientLeft);
         yPosi += (elemento.offsetTop - elemento.scrollTop + elemento.clientTop);
@@ -87,7 +87,7 @@ function numToDate(dia){
 function reSize(){
     var w = window.outerWidth;
     var h = window.outerHeight;
-	 
+
 	 //funciones
 	 horario_filtro_width();
 }

@@ -144,8 +144,8 @@
 .p_01171_carrera_vs{
 	position: absolute;
 	height: 100%;
-	margin-left: -15%;
-	width: 12em;s
+	/*margin-left: -15%;
+	width: 12em;*/
 	text-align: center;
 	}
 	.p_01171_carrera_vs img{
@@ -180,7 +180,7 @@
 			text-decoration:underline;
 			height:1em;
 			background-color: transparent;
-			margin-top: 8px;
+			margin-top: 9px;
 			}
 		.p_00962_kilometros_cercanos{
 			width:45%;
@@ -206,8 +206,15 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 999;
+  z-index: 9;
   background-color: rgba(0,0,0,0.8);
+/*	-webkit-transform:translateZ(10px);
+	-moz-transform:translateZ(10px);
+	-o-transform:translateZ(10px);
+	transform:translateZ(10px);
+	position: absolute;
+	z-index: 1;
+	transform:translateY(-20px);*/
 }
 #p_00962_preguntas_y_botones_contenedor{
 	position: relative;
@@ -277,7 +284,7 @@
 			cursor: pointer;
 		}
 	#p_00962_grafico_progreso_detalle{
-		width: 434px;
+		max-width: 434px;
 		margin: auto;
 		/*max-height: 400px;
 		margin-top: -7em;*/
@@ -339,6 +346,7 @@
 		top: 0;
 		padding-top: 40px;
 		z-index:-1;
+		border-radius: 20px 20px 0 0;
 	}
 	.p_01172_torta_titulo{
 		text-transform: uppercase;
@@ -477,27 +485,154 @@
 #p_00962_carrera_km_fin span{
 	display: block;
 }
+#p_00962_carrera_add_amigo_email{
+	width:25em;
+	vertical-align:middle;
+}
+.p_01175_pregunta_trinity{
+	margin-left:1.2em;
+}
 @media screen and (max-width: 767px) {
 	.p_00962_separador{
 		padding-top: 133px;
+		overflow: visible;
 	}
 	#p_00962_contenedor_smile{
 		width: 100%;
+		overflow: auto;
 	}
 	.p_00962_start{
 		font-size: 16px;
 		top: 76px;
 		left: 41px;
-		width: 80%;
+		width: calc(100% - 82px);
 	}
 	#p_00962_img_mas{
-		top: 87px;
-		left: 5px;
+		top: 84px;
+		left: 3px;
+		width: 34px;
+	}
+	#p_00962_carrera_km_fin{
+		text-align: right;
+		right: 2px;
+		top: 58px;
 	}
 	#p_00962_carrera_km_fin span{
 		display: inline;
 	}
+	#p_00962_carrera_pista {
+		left: 5%;
+		width: calc(95% - 28px);
+	}
+	.p_00962_bandera_start{
+		left: 5%;
+		margin: 0;
+	}
+	#p_00962_yo_kilometros{
+		position: absolute;
+		left: 7px;
+	}
+	#p_00962_yo_kilometros_actual{
+		margin-top: 5px;
+		margin-left: 0 !important;
+	}
+	#p_00962_grafico_progreso_detalle{
+		width: 100%;
+		padding: 120px 3px 16vh;
+		bottom: initial;
+		bottom: initial;
+	}
+	#p_00962_grafico_progreso{
+		transform: scale(0.8);
+		z-index: 1;
+	}
+	#p_00962_grafico_leyenda{
+		position: relative;
+		vertical-align: super;
+	}
+	.p_00962_bandera_end{
+		right: 0;
+	}
+	#p_00962_grafico_progreso_detalle_close{
+		right: calc(50% - 202px);
+		margin-top: 0;
+	}
+	#p_00962_carrera_add_amigo_email{
+		width: 99%;
+		box-sizing: border-box;
+		margin-bottom: 5px;
+	}
+	.p_01172_oponente_quitar_img{
+		right: 1px;
+    height: 100%;
+    top: 0;
+	}
+	#p_01171_siguiente_transporte_smile_div{
+		width: 100%;
+		max-width: 596px;
+		top: calc(8vh + 42px);
+	}
+	#p_00962_preguntas_y_botones_contenedor{
+		max-width: 595px;
+		width: initial;
+	}
+	#p_01175_preguntas{
+		width: 100%;
+		max-width: 596px;
+		top: calc(8vh + 42px);
+	}
+	#p_01171_siguiente_transporte_texto{
+		left: calc(50% + 17px);
+		top: calc(8vh + 47px);
+	}
+	#p_00987_boton_stop{
+		left: initial;
+		right: 3px;
+	}
+	.p_01171_menu_botones_smile{
+		top: calc(8vh + 45px);
+	}
+}
+@media screen and (max-width: 767px) and (orientation: landscape){
+	#p_01175_preguntas{
+		top: calc(8vw + 42px);
+	}
+	#p_01171_siguiente_transporte_smile_div{
+		top: calc(8vw + 42px);
+	}
+	.p_01171_menu_botones_smile{
+		top: calc(8vw + 45px);
+	}
+	#p_01171_siguiente_transporte_texto{
+		top: calc(8vw + 47px);
+	}
 
+}
+@media screen and (max-width: 400px) {
+	#p_00962_grafico_progreso {
+    transform: scale(0.7);
+	}
+	#p_00962_grafico_progreso_detalle_close{
+		right: 0;
+	}
+
+	.text3{
+		margin-left: 5px !important;
+		margin-right: 5px !important;
+	}
+	.p_01175_pregunta_trinity .contenedor_pestanas{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.estiloBoton input{
+		margin-right: 0 !important;
+	}
+	.pestanas{
+		margin-left: 5px !important;
+	}
+	.estilo_palabra{
+		width: 100% !important;
+	}
 }
 
 </style>

@@ -623,12 +623,12 @@ function p_01174_redimensionar_imagen_pregunta_IMG(id_imagen) //función que me 
 		if(resultado_division_imagen>resultado_division_div)
 		{
 			document.getElementById(id_imagen).style.width="100%";
-			document.getElementById(id_imagen).style.height="auto";
+			document.getElementById(id_imagen).style.height="100%";
 		}
 		else
 		{
 			document.getElementById(id_imagen).style.height="100%";
-			document.getElementById(id_imagen).style.width="auto";
+			document.getElementById(id_imagen).style.width="100%";
 		}
 }
 
@@ -2591,11 +2591,56 @@ function p_01174_resize_preguntas() {
 		if((p_01174_tipo_pregunta=="trinity"))
 			p_01174_resize_preguntas_trinity();
 		else if(p_01174_tipo_pregunta!="ordenar_frase"){
-			var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
-			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale(1)";
-			if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
-				var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
-				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
+			/*			var p_01174_conten_preguntas= document.getElementById("p_01175_preguntas");
+						document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale(1)";
+						if(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight>window.innerHeight){
+							var p_01174_escalar= window.innerHeight/(p_01174_conten_preguntas.offsetTop+p_01174_conten_preguntas.offsetHeight);
+							document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="scale("+p_01174_escalar+")";
+						}*/
+
+			//colocamos contenedor en su posicion inicial
+			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
+
+			var p_01174_contenedor_pregunta= document.getElementById("p_01175_preguntas");
+			var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
+
+			if(p_01174_tipo_pregunta==="fotos"){
+				var p_01174_fotos= document.getElementById("p_01175_preguntas").children[0].children[1].children;
+				for(var i=0; i<p_01174_fotos.length; i++){
+					p_01174_fotos[i].style.height= "";
+					p_01174_fotos[i].style.width= "";
+					p_01174_fotos[i].style.margin="";
+				}
+
+				if(window.innerWidth>window.innerHeight){
+					if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]+60){
+						var p_01174_ancho_imagen= (document.getElementById("p_01175_preguntas").offsetWidth)/6;
+						for(var i=0; i<p_01174_fotos.length; i++){
+							p_01174_fotos[i].style.height= (p_01174_ancho_imagen*1.25)+"px";
+							p_01174_fotos[i].style.width= p_01174_ancho_imagen+"px";
+							p_01174_fotos[i].style.margin="5px";
+						}
+					}
+				}
+				else{
+//					if(p_01174_contenedor_pregunta.offsetWidth>=p_01174_espacio_disponible[0]){
+						//var p_01174_altura_imagen= (window.innerHeight- document.getElementById("p_01175_preguntas").children[0].children[1].offsetTop)/2.8;
+						var p_01174_ancho_imagen= (document.getElementById("p_01175_preguntas").offsetWidth)/3;
+						for(var i=0; i<p_01174_fotos.length; i++){
+							p_01174_fotos[i].style.height= (p_01174_ancho_imagen*1.25)+"px";
+							p_01174_fotos[i].style.width= p_01174_ancho_imagen+"px";
+							p_01174_fotos[i].style.margin="5px";
+						}
+	//				}
+
+				}
+			}
+			//subimos contenedor de preguntas si no cabe
+			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
+				var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
+				if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
+					p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
+				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+p_01174_diferencia_alturas+"px)";
 			}
 		}
 	}
@@ -2603,7 +2648,8 @@ function p_01174_resize_preguntas() {
 
 function p_01174_resize_preguntas_trinity() {
 	var p_01174_contenedor= document.getElementById("p_01175_preguntas");
-	var p_01174_altura_disponible= window.innerHeight-80;
+	//var p_01174_altura_disponible= window.innerHeight-80;
+	var p_01174_altura_disponible= document.getElementById("smile").offsetHeight-document.getElementById("head_oxbridge").offsetHeight;
 	//resetear altura por si crece ventana
 	var p_01174_texto= document.querySelectorAll(".text3");
 	for(var i=0; i<p_01174_texto.length; i++){

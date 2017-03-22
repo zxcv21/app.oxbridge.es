@@ -70,6 +70,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	}
 	#smile{
 		padding-top: 86px;
+		overflow: initial;
 	}
 .manito{
 	cursor:pointer;
@@ -168,6 +169,16 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	/*max-height:10%;*/
 	z-index:999;
 	background-color: white;
+	}
+	#p_00955_testeo{
+		position: fixed;
+		z-index: 999;
+		border: red solid 1px;
+		right: 0;
+		top: 0;
+		padding: 5px;
+		background-color: whitesmoke;
+		display: none;
 	}
 	#head_oxbridge_img{
 		/*height:65px;*/

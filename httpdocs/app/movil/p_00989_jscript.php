@@ -800,5 +800,12 @@ function validar_email( email ) {
 	return r;
 }
 
+//funcion para testear valores en movil
+function testeo(res){
+	document.getElementById("p_00955_testeo").style.display="block";
+	document.getElementById("p_00955_testeo").innerHTML= res;
+}
+
+
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR0VydWbzvb4GgecypsSlVm_cQVf-If3w&callback=initMap"></script>

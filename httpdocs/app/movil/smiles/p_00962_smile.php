@@ -61,7 +61,7 @@
 			'			name="p_0001438_post_email" '+
 			'			placeholder="E-M@il" '+
 			'			required '+
-			'			style="width:25em; vertical-align:middle;"'+
+			//'			style="width:25em; vertical-align:middle;"'+
 			'		>'+
 			'		<input name="p_0001438_post_alumno_id" type="hidden" value="'+alumno_id+'">'+
 			'		<input name="p_0001438_post_usuario_id" type="hidden" value="'+alumno_id_nuevo+'">'+

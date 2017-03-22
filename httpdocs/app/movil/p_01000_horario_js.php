@@ -956,7 +956,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			document.getElementById("p_00958_horario_cargando").style.display="none";
 
 			e_nivel=document.getElementById("p_00995_horario_contenedor_horario_nivel");
-			if(horario_datos[0]){e_nivel.innerHTML ="<span>"+horario_datos[0].abreviatura_nivel+"</span>"+
+			if(horario_datos[0]){e_nivel.innerHTML ="<span>"+personal_datos_info.nivel+"</span>"+
 				"<span style= 'font-size: 16px; color: lightgray; line-height: 0;text-transform: uppercase;'> "+TEXTOS[193].text+"</span>";}
 			//ajusta rel tamaño del horario al alto de la pantalla
 			if(document.getElementById("p_00995_horario_contenido_cuadricula"))contenedor_alto_max=document.getElementById("p_00995_horario_contenido_cuadricula").offsetHeight+82;

@@ -221,7 +221,7 @@ function p_01171_mover_yo(json){
 			document.getElementById("p_00962_yo_kilometros_actual").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de' style='display:none;'>/"+distancia+"Km</span>";
 			if(document.getElementById("p_01171_carrera_reducida_km"))
 				document.getElementById("p_01171_carrera_reducida_km").innerHTML=Math.floor(redondear)+"Km<span id='p_00962_yo_kilometros_actual_de_reducido' style='display:none;'>/"+distancia+"<br>/"+smile_datos.alumno.distancia+"Km</span>";
-			document.getElementById("p_00962_carrera_km_fin").innerHTML="<span>London</span><span>"+smile_datos.alumno.distancia+" KM</span>";
+			document.getElementById("p_00962_carrera_km_fin").innerHTML="<span>London </span><span>"+smile_datos.alumno.distancia+" KM</span>";
 			document.getElementById("p_00962_yo_kilometros_actual").style.marginLeft= (-document.getElementById("p_00962_yo_kilometros_actual").clientWidth/2+12)+"px";
 
 
@@ -255,7 +255,7 @@ function p_01171_cargar_oponentes(){
 		var oponente=document.createElement("div");
 		oponente.id="p_01171_vs_"+vs.alumno_id;
 		oponente.className="p_01171_carrera_vs";
-		oponente.style.left=Math.round(vs.smiles_conseguidos_en_porcentaje)+"%";
+		oponente.style.left=Math.round(vs.smiles_conseguidos_en_porcentaje*0.98)+"%";
 		if(vs.es_competidor!="1")
 			oponente.style.display="none";
 		oponente.innerHTML="<img src='"+p_01171_switch_treansporte(smile_datos.curso.smiles_total,smile_datos.curso.duracion,vs.sxm,"otro")+"'></img>";

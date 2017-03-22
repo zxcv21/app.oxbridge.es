@@ -409,4 +409,12 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     padding: 15% 5% 5% 5%;
     z-index: 9999;
 }
+
+@media screen and (max-width: 400px) {
+  .preguntas{
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+}
 </style>
