@@ -172,7 +172,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	}
 	#p_00955_testeo{
 		position: fixed;
-		z-index: 999;
+		z-index: 99999;
 		border: red solid 1px;
 		right: 0;
 		top: 0;

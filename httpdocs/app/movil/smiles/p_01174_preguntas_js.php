@@ -731,7 +731,6 @@ function mostrar_pregunta_actual()
 	}
 	if(typo_de_pregunta=="trinity"){
 		p_01174_resize_preguntas_trinity();
-		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";
 	}
 	else if(typo_de_pregunta!="ordenar_frase")
 		p_01174_resize_preguntas();
@@ -818,58 +817,6 @@ function p_01174_mostra_preguntas_normal()
 		p_01174_pregunta_vista_usuario(); //llamamos a el formulario que envia la pregunta vista por el usuario.
 }
 
-/*
-function p_01174_ocultar_preguntas_almacenadas() //funcion que me permite ocultar las preguntas en el div p_01175_preguntas como un buffer y me muestra la primera del div p_01175_preguntas
-{
-	//contador_entrando_en_funcion++;
-    var id_primer_div = document.getElementById("p_01175_preguntas").getElementsByTagName('div')[0].id;
-	//$("#"+id_primer_div).show("clip").delay(3000);
-	typo_de_pregunta = id_primer_div.replace(/^n[0-9]*_/,"");
-	 if(typo_de_pregunta=="trinity")
-	 {
-		p_01174_mostrar_preguntas_trinity();
-	 }
-	 else
-	 {
-		document.getElementById(id_primer_div).style.display="";
-
-		var auxiliar_id_primer_div = id_primer_div; //pasamos el tipo de pregunta a una variable auxiliar
-		var posicion_de_la_barra_baja = id_primer_div.indexOf('_'); //obtenemos la posicion del _
-		auxiliar_id_primer_div = auxiliar_id_primer_div.slice(posicion_de_la_barra_baja+1,auxiliar_id_primer_div.length); //recortamos el div y nos quedamos con el tipo de pregunta. Ejemplo: fotos
-		if(auxiliar_id_primer_div=="dragdrop")
-		{
-			//e_start();
-		}
-		//console.log(auxiliar_id_primer_div);
-		numero_pregunta = parseInt(p_01174_obtener_numero_pregunta(id_primer_div));
-		//p_01174_pregunta_actual = parseInt(numero_pregunta); //pasamos el numero de pregunta a la variable p_01174_pregunta_actual
-		divs_imagenes = document.getElementById('n'+numero_pregunta+'_imagenes');
-		//console.info(id_primer_div);
-		if(auxiliar_id_primer_div=="fotos")
-		{
-			for (i in divs_imagenes.childNodes)
-			{
-				var hijo=divs_imagenes.childNodes[i];
-					if(hijo.nodeType=="1")
-					{
-						p_01174_comprobacion_tamanios_div_imagen(document.getElementById(hijo.id).childNodes[1].id);
-					}
-			}
-		}
-
-		if(contador_entrando_en_funcion==5)
-		{
-			smile_datos.pregunta_vista.push(numero_pregunta);
-			p_01174_pregunta_vista_usuario(); //llamamos a el formulario que envia la pregunta vista por el usuario.
-		}
-		else if(contador_entrando_en_funcion>=6)
-		{
-			smile_datos.pregunta_vista.push(numero_pregunta);
-			p_01174_pregunta_vista_usuario(); //llamamos a el formulario que envia la pregunta vista por el usuario.
-		}
-	 }
-}
-*/
 
 function p_01174_comprobacion_tamanios_div_imagen(id_imagen)
 {
@@ -2452,7 +2399,9 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 		var p_01174_totalmente_a_drcha= false;
 		if(p_01174_elemento_drcha=== p_01174_elementos_en_la_fila[1]+1)
 			p_01174_totalmente_a_drcha= true;
+		//desplazar los que estan a la izquierda
 		p_01174_desplazar_izquierda(p_01174_drag_move_x,p_01174_elementos_en_la_fila[0],p_01174_elemento_drcha, p_01174_totalmente_a_drcha);
+		//desplazar los que estan a la drcha
 		p_01174_desplazar_derecha(p_01174_drag_move_x,p_01174_drag_node.getBoundingClientRect().right,p_01174_elemento_drcha,p_01174_elementos_en_la_fila[1]);
 	}
 }
@@ -2475,7 +2424,7 @@ function p_01174_detectar_elementos_de_fila(p_01174_drag_move_y){
 	return p_01174_elementos_en_la_fila;
 }
 
-
+//desplazar las palabras que estan a la izquierda
 function p_01174_desplazar_izquierda(p_01174_drag_move_x,p_01174_elemento_izquierda,p_01174_elemento_drcha, p_01174_totalmente_a_drcha){
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 	p_01174_elemento_drcha--;
@@ -2497,6 +2446,7 @@ function p_01174_separacion_izquierda(p_01174_drag_move_x, p_01174_elemento_deba
 	return (p_01174_drag_move_x-p_01174_pos_inicio_dragdrop[p_01174_elemento_debajo][0])/2;
 }
 
+//desplazar las palabras que estan a la drcha
 var p_01174_cajas_a_siguiente_fila=[];
 function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_elemento_izquierda,p_01174_elemento_drcha){
 	p_01174_cajas_a_siguiente_fila.length= 0;
@@ -2588,6 +2538,11 @@ window.addEventListener('resize', p_01174_resize_preguntas);
 function p_01174_resize_preguntas() {
 	if((document.getElementById("p_00962_preguntas_contenedor"))&&(document.getElementById("p_00962_preguntas_contenedor").style.display!="none")){
 		var p_01174_tipo_pregunta= document.getElementById("p_01175_preguntas").getElementsByTagName('div')[0].id.replace(/^n[0-9]*_/,"");
+		var p_01174_contenedor_pregunta= document.getElementById("p_01175_preguntas");
+		var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
+
+
 		if((p_01174_tipo_pregunta=="trinity"))
 			p_01174_resize_preguntas_trinity();
 		else if(p_01174_tipo_pregunta!="ordenar_frase"){
@@ -2601,8 +2556,8 @@ function p_01174_resize_preguntas() {
 			//colocamos contenedor en su posicion inicial
 			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
 
-			var p_01174_contenedor_pregunta= document.getElementById("p_01175_preguntas");
-			var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
+			//var p_01174_contenedor_pregunta= document.getElementById("p_01175_preguntas");
+			//var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
 
 			if(p_01174_tipo_pregunta==="fotos"){
 				var p_01174_fotos= document.getElementById("p_01175_preguntas").children[0].children[1].children;
@@ -2635,14 +2590,17 @@ function p_01174_resize_preguntas() {
 
 				}
 			}
-			//subimos contenedor de preguntas si no cabe
-			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
-				var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
-				if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
-					p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
-				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+p_01174_diferencia_alturas+"px)";
-			}
+
 		}
+		//subimos contenedor de preguntas si no cabe
+		if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
+			var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
+			if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
+				p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
+			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+p_01174_diferencia_alturas+"px)";
+		}
+
+
 	}
 }
 
@@ -2650,8 +2608,10 @@ function p_01174_resize_preguntas_trinity() {
 	var p_01174_contenedor= document.getElementById("p_01175_preguntas");
 	//var p_01174_altura_disponible= window.innerHeight-80;
 	var p_01174_altura_disponible= document.getElementById("smile").offsetHeight-document.getElementById("head_oxbridge").offsetHeight;
+	var p_01174_altura_pantalla= document.getElementById("smile").offsetHeight;
 	//resetear altura por si crece ventana
 	var p_01174_texto= document.querySelectorAll(".text3");
+	document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
 	for(var i=0; i<p_01174_texto.length; i++){
 		if(p_01174_texto[i].offsetHeight){
 			p_01174_texto[i].style.height= "";
@@ -2659,7 +2619,8 @@ function p_01174_resize_preguntas_trinity() {
 		}
 	}
 	if(p_01174_contenedor.offsetHeight>p_01174_altura_disponible){
-		var p_01174_altura_texto= p_01174_texto[i].offsetHeight- (p_01174_contenedor.offsetHeight-p_01174_altura_disponible);
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+(p_01174_altura_pantalla-p_01174_altura_disponible)+"px)";
+		var p_01174_altura_texto= p_01174_texto[i].offsetHeight- (p_01174_contenedor.offsetHeight-p_01174_altura_pantalla);
 		p_01174_altura_texto= p_01174_altura_texto>100?p_01174_altura_texto:100;
 		p_01174_texto[i].style.height= p_01174_altura_texto+"px";
 	}

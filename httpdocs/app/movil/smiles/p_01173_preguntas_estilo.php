@@ -94,7 +94,7 @@
     padding-right: 1%;
     text-align: left;
     word-wrap: break-word;
-    max-height: 10.4em;
+    /*max-height: 10.4em;*/
     background-color: #f5f5f5;
     box-shadow: 0 0 15px #555;
 }
