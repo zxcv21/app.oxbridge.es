@@ -2357,29 +2357,8 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 	//poner en posicion inicial
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
-	console.log("p_01174_desplazar_piezas_fila");
-	console.log("en la fila "+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]);
-	console.log("pos x: "+p_01174_drag_move_x);
-	console.log("ultima caja: "+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]);
-	if(p_01174_elementos_en_la_fila[0])
-		console.log("pos parte drcha ultima ("+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]+") caja: "+p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]);
-	else {
-		console.log("no hay ultimo de fila->"+p_01174_elementos_en_la_fila[0]);
-	}
-
-	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del último de la fila o estoy fuera del contenedor
-	if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((typeof p_01174_elementos_en_la_fila[0]!=='undefined')&&(p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))||p_01174_drag_fuera){
-//=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del último de la fila
-	//if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((!p_01174_drag_fuera)&&(p_01174_elementos_en_la_fila[0]&&p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))){
-//>>>>>>> Stashed changes
+	if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((!p_01174_drag_fuera)&&(p_01174_elementos_en_la_fila[0]&&p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))){
 		for (var i=0; i<p_01174_padre_nodos_movibles.children.length;i++){
 			p_01174_padre_nodos_movibles.children[i].style.transform="";
 		}
@@ -2524,20 +2503,6 @@ var p_01174_cajas_a_siguiente_fila=[];
 var p_01174_ultimas_cajas_a_siguiente_fila=[];
 
 function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_elemento_izquierda,p_01174_elemento_drcha){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
-	////////testeo
-	console.log("******************************************************************************************************************");
-	////////////
-	console.log("desplazar_derecha cajas "+p_01174_elemento_izquierda+" a "+p_01174_elemento_drcha);
-
-//=======
-//>>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	p_01174_cajas_a_siguiente_fila.length= 0;
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 	if(p_01174_elemento_izquierda<=p_01174_elemento_drcha){
@@ -2567,7 +2532,6 @@ function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_
 	}
 }
 
-
 function p_01174_separacion_derecha(p_01174_drag_move_x, p_01174_elemento_debajo){
 	return (p_01174_pos_inicio_dragdrop[p_01174_elemento_debajo][2]-p_01174_drag_move_x)/2;
 }
@@ -2581,6 +2545,7 @@ function p_01174_pasar_a_siguiente_fila(){
 		var p_01174_desplazamiento_x= p_01174_pos_inicio_dragdrop[p_01174_cajas_a_siguiente_fila[0]][0]-p_01174_pos_inicio_dragdrop[0][0];
 		var p_01174_desplazamiento_y=p_01174_pos_inicio_dragdrop[0][1]-p_01174_pos_inicio_dragdrop[0][3];
 		var p_01174_desplazamiento_total= 0;
+
 
 		//colocar los que desbordan
 		for(var i=0; i<p_01174_cajas_a_siguiente_fila.length; i++){
@@ -2596,34 +2561,7 @@ function p_01174_pasar_a_siguiente_fila(){
 			}
 		}
 		//agrandar contenedor para que no queden palabras fuera (si necesario)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
-		//var p_01174_altura_caja= p_01174_padre_nodos_movibles.children[0].getBoundingClientRect().height;
-		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos_movibles.children[p_01174_padre_nodos_movibles.children.length-1];
-		console.log("mirar contenedor");
-/*		if(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]==p_01174_padre_nodos_movibles.children.length-1)
-			console.log("pasa ultima caja");
-		if(!p_01174_padre_nodos.style.height)
-			console.log("conten corto");
-		else
-			console.log("conten largo");
-		if((p_01174_padre_nodos.getBoundingClientRect().bottom-p_01174_altura_caja)>p_01174_padre_nodos_movibles.children[p_01174_padre_nodos_movibles.children.length-1].getBoundingClientRect().bottom){
-			console.log("se puede encoger");
-		}
-		else{
-			console.log("no se puede encoger");
-		}*/
-
-//=======
-		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
-//>>>>>>> Stashed changes
-=======
 		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
-=======
-		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
 
 		if((p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]==p_01174_padre_nodos_movibles.children.length-1)
 			&&(!p_01174_padre_nodos.style.height))
@@ -2631,33 +2569,10 @@ function p_01174_pasar_a_siguiente_fila(){
 			p_01174_padre_nodos.style.height= (p_01174_padre_nodos.getBoundingClientRect().height+p_01174_altura_caja)+"px";
 		}
 
-		if(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]<p_01174_pos_inicio_dragdrop.length-1){
-			console.log("comprobar_fila_desborda con: "+p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]);
+		if(p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1]){
 			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1,p_01174_desplazamiento_total);
 		}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
-		else{
-			console.log("comprobar_fila_desborda alternativa con: "+p_01174_cajas_a_siguiente_fila[0]);
-			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[0],-p_01174_desplazamiento_x);
-		}
-
-//		if(p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1]){
-//			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1,p_01174_desplazamiento_total);
-//		}
-//		else{
-//		}
 	}
-//	else{
-//=======
-//>>>>>>> Stashed changes
-//	}
-=======
-=======
->>>>>>> Stashed changes
-	}
->>>>>>> Stashed changes
 }
 
 function p_01174_comprobar_fila_desborda(p_01174_primer_elemento_de_la_fila, p_01174_desplazamiento_total){

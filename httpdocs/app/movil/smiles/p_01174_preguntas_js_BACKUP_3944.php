@@ -2357,8 +2357,6 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 	//poner en posicion inicial
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 //<<<<<<< Updated upstream
 	console.log("p_01174_desplazar_piezas_fila");
 	console.log("en la fila "+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]);
@@ -2373,10 +2371,6 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del último de la fila o estoy fuera del contenedor
 	if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((typeof p_01174_elementos_en_la_fila[0]!=='undefined')&&(p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))||p_01174_drag_fuera){
 //=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del último de la fila
 	//if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((!p_01174_drag_fuera)&&(p_01174_elementos_en_la_fila[0]&&p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))){
 //>>>>>>> Stashed changes
@@ -2524,8 +2518,6 @@ var p_01174_cajas_a_siguiente_fila=[];
 var p_01174_ultimas_cajas_a_siguiente_fila=[];
 
 function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_elemento_izquierda,p_01174_elemento_drcha){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 //<<<<<<< Updated upstream
 	////////testeo
 	console.log("******************************************************************************************************************");
@@ -2534,10 +2526,6 @@ function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_
 
 //=======
 //>>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	p_01174_cajas_a_siguiente_fila.length= 0;
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 	if(p_01174_elemento_izquierda<=p_01174_elemento_drcha){
@@ -2596,8 +2584,6 @@ function p_01174_pasar_a_siguiente_fila(){
 			}
 		}
 		//agrandar contenedor para que no queden palabras fuera (si necesario)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 //<<<<<<< Updated upstream
 		//var p_01174_altura_caja= p_01174_padre_nodos_movibles.children[0].getBoundingClientRect().height;
 		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos_movibles.children[p_01174_padre_nodos_movibles.children.length-1];
@@ -2618,12 +2604,6 @@ function p_01174_pasar_a_siguiente_fila(){
 //=======
 		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
 //>>>>>>> Stashed changes
-=======
-		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
-=======
-		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
 
 		if((p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]==p_01174_padre_nodos_movibles.children.length-1)
 			&&(!p_01174_padre_nodos.style.height))
@@ -2635,8 +2615,6 @@ function p_01174_pasar_a_siguiente_fila(){
 			console.log("comprobar_fila_desborda con: "+p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]);
 			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1,p_01174_desplazamiento_total);
 		}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 //<<<<<<< Updated upstream
 		else{
 			console.log("comprobar_fila_desborda alternativa con: "+p_01174_cajas_a_siguiente_fila[0]);
@@ -2653,11 +2631,6 @@ function p_01174_pasar_a_siguiente_fila(){
 //=======
 //>>>>>>> Stashed changes
 //	}
-=======
-=======
->>>>>>> Stashed changes
-	}
->>>>>>> Stashed changes
 }
 
 function p_01174_comprobar_fila_desborda(p_01174_primer_elemento_de_la_fila, p_01174_desplazamiento_total){

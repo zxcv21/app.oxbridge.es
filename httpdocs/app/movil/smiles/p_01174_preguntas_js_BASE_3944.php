@@ -56,8 +56,8 @@ function p_01174_carga_pregunta()
 		//console.info(indice_preguntas);
 
 		//monica-testeo
-		while(smile_datos.preguntas[indice_preguntas].categoria=="trinity")
-			indice_preguntas++;
+		//while(smile_datos.preguntas[indice_preguntas].categoria!="trinity")
+		//	indice_preguntas++;
 
 		if(smile_datos.preguntas[indice_preguntas].categoria!="trinity")
 		{
@@ -640,8 +640,10 @@ function p_01174_redimensionar_imagen_pregunta_IMG(id_imagen) //funci√≥n que me 
 
 function p_01174_creacion_imagen(id_div,url_imagen,x) //funci√≥n que me permite crear las imagenes en la pregunta de tipo fotos
 {
+		//alert(id_div);
 		var ancho_div = document.getElementById(id_div).offsetWidth; //ancho div
 		var alto_div = document.getElementById(id_div).offsetHeight; //ancho div
+		//console.log("ancho div: "+ ancho_div + " alto div: " + alto_div);
 		var resultado_division_div =  ancho_div/alto_div;
 
 		imagen_creada = document.createElement("IMG");
@@ -736,8 +738,15 @@ function mostrar_pregunta_actual()
 	if(typo_de_pregunta=="trinity"){
 		p_01174_resize_preguntas_trinity();
 	}
+	/*else if(typo_de_pregunta!="ordenar_frase")
+		p_01174_resize_preguntas();
+	else
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";
+*/
 	else{
 		p_01174_resize_preguntas();
+		if(typo_de_pregunta=="ordenar_frase")
+			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform="";
 	}
 }
 
@@ -2251,17 +2260,16 @@ function p_01174_mousemove(event){
 
 /*
 globales:
+p_01174_drag_node
+p_01174_padre_nodos
+p_01174_index_of_drag
+p_01174_pos_inicio_dragdrop
+p_01174_pos_dragdrop
+p_01174_drag_fuera
+p_01174_haciendo_drag
+p_01174_primer_elemento_fila //detectar cambio de fila
+p_01174_altura_caja
 */
-var p_01174_drag_node
-var p_01174_padre_nodos
-var p_01174_index_of_drag
-var p_01174_pos_inicio_dragdrop
-var p_01174_pos_dragdrop
-var p_01174_drag_fuera
-var p_01174_haciendo_drag
-var p_01174_primer_elemento_fila //detectar cambio de fila
-var p_01174_altura_caja
-
 var p_01174_haciendo_drag= false;
 var p_01174_posicion_fila= 0;
 
@@ -2282,11 +2290,14 @@ function p_01174_drag_touch(e){
 		p_01174_pos_Y= e.pageY;
 	}
 
+	//var p_01174_div_clon= e.target.parentNode.cloneNode(true);
+	//p_01174_div_clon.style.opacity="0";
  	p_01174_padre_nodos= e.target.id.slice(0,e.target.id.indexOf("_")+1)+"texto_ordenar_frase";
 	p_01174_padre_nodos= document.getElementById(p_01174_padre_nodos);
 	e.target.style.position= "fixed";
 	e.target.style.zIndex= "10";
 	p_01174_index_of_drag = Array.prototype.indexOf.call(p_01174_padre_nodos.children, e.target.parentNode);
+	//p_01174_padre_nodos.insertBefore(p_01174_div_clon, e.target.parentNode);
 	e.target.style.top= (p_01174_pos_Y-parseInt(e.target.clientHeight)-5)+"px";
 	e.target.style.left= (p_01174_pos_X-2)+"px";
 	e.target.style.color="#DC7633";
@@ -2299,6 +2310,7 @@ function p_01174_drag_touch(e){
 
 	for(var i=0; i<p_01174_selectores_palabras.length; i++){
 
+		//if(p_01174_selectores_palabras[i].id!==e.target.id){
 		var p_01174_clon;
 		if(	p_01174_index_of_drag!==i){
 			var p_01174_dimensiones= p_01174_selectores_palabras[i].getBoundingClientRect();
@@ -2316,6 +2328,7 @@ function p_01174_drag_touch(e){
 			p_01174_clon.style.position= "fixed";
 			document.getElementById("p_01175_drag_and_drop_flotante").appendChild(p_01174_clon);
 		}
+		//}
 	}
 	p_01174_pos_inicio_dragdrop.splice(p_01174_index_of_drag, 1);
 	p_01174_altura_caja= document.getElementById("p_01175_drag_and_drop_flotante").children[0].getBoundingClientRect().height;
@@ -2345,6 +2358,7 @@ function p_01174_drag_move_touch(e){
 		p_01174_drag_node.style.left= (p_01174_pos_X-10)+"px";
 		p_01174_drag_node.style.top= (p_01174_pos_Y-parseInt(p_01174_drag_node.clientHeight))+"px";
 	}
+	console.log("EVENTO");
 	p_01174_desplazar_piezas_fila(e, p_01174_pos_X, p_01174_pos_Y);
 
 	e.preventDefault();
@@ -2357,35 +2371,16 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 	//poner en posicion inicial
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
 	console.log("p_01174_desplazar_piezas_fila");
 	console.log("en la fila "+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]);
-	console.log("pos x: "+p_01174_drag_move_x);
-	console.log("ultima caja: "+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]);
-	if(p_01174_elementos_en_la_fila[0])
-		console.log("pos parte drcha ultima ("+p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]+") caja: "+p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]);
-	else {
-		console.log("no hay ultimo de fila->"+p_01174_elementos_en_la_fila[0]);
-	}
-
-	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del ˙ltimo de la fila o estoy fuera del contenedor
-	if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((typeof p_01174_elementos_en_la_fila[0]!=='undefined')&&(p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))||p_01174_drag_fuera){
-//=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	//vuelvo a posicion inicial si cambio de fila o paso a la derecha del ˙ltimo de la fila
-	//if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((!p_01174_drag_fuera)&&(p_01174_elementos_en_la_fila[0]&&p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))){
-//>>>>>>> Stashed changes
+	if((p_01174_posicion_fila!==p_01174_elementos_en_la_fila[0])||((!p_01174_drag_fuera)&&(p_01174_elementos_en_la_fila[0]&&p_01174_drag_move_x>p_01174_pos_inicio_dragdrop[p_01174_elementos_en_la_fila[p_01174_elementos_en_la_fila.length-1]][2]))){
 		for (var i=0; i<p_01174_padre_nodos_movibles.children.length;i++){
 			p_01174_padre_nodos_movibles.children[i].style.transform="";
 		}
 		p_01174_posicion_fila=p_01174_elementos_en_la_fila[0];
 	}
-	//ninguna caja en la linea horizontal
+
 	if((!p_01174_elementos_en_la_fila.length)||(typeof p_01174_elementos_en_la_fila== 'undefined')){
 		p_01174_drag_fuera= false;
 		p_01174_drag_node.style.color="#DC7633";
@@ -2433,6 +2428,7 @@ function p_01174_desplazar_piezas_fila(e, p_01174_drag_move_x, p_01174_drag_move
 			p_01174_totalmente_a_drcha= true;
 		//desplazar los que estan a la izquierda
 		p_01174_desplazar_izquierda(p_01174_drag_move_x,p_01174_elementos_en_la_fila[0],p_01174_elemento_drcha, p_01174_totalmente_a_drcha);
+		console.log("ENTRA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		//desplazar los que estan a la drcha
 		p_01174_desplazar_derecha(p_01174_drag_move_x,p_01174_drag_node.getBoundingClientRect().right,p_01174_elemento_drcha,p_01174_elementos_en_la_fila[1]);
 	}
@@ -2472,7 +2468,6 @@ function p_01174_detectar_elementos_de_fila(p_01174_drag_move_y){
 }
 
 //detecta que intervalo de cajas flotantes se encuentran en esta fila
-/*
 function p_01174_detectar_elementos_de_fila_flotante(p_01174_primer_elemento_de_la_fila){
 	var p_01174_elementos_en_la_fila_flotante=[];
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
@@ -2494,8 +2489,20 @@ function p_01174_detectar_elementos_de_fila_flotante(p_01174_primer_elemento_de_
 	}
 	console.log(fin);
 	p_01174_elementos_en_la_fila_flotante[1]= (p_01174_padre_nodos_movibles.children.length<=i)?p_01174_padre_nodos_movibles.children.length-1:i-2;
+	////////////////////testeo
+/*	var x=p_01174_elementos_en_la_fila_flotante.concat();
+	if(p_01174_elementos_en_la_fila_flotante[0]=== p_01174_index_of_drag)
+		x[0]++;
+	else if((p_01174_elementos_en_la_fila_flotante[0]< p_01174_index_of_drag)&&(p_01174_elementos_en_la_fila_flotante[1]>= p_01174_index_of_drag))
+		x[1]++;
+	var p_01174_selectores_palabras= "#"+p_01174_padre_nodos.id+">div";
+	p_01174_selectores_palabras= document.querySelectorAll(p_01174_selectores_palabras);
+	var a="["+p_01174_selectores_palabras[x[0]].children[0].innerText+", "+p_01174_selectores_palabras[x[1]].children[0].innerText+"]";
+	testeo(a);
+*/
+	/////////////////////
 	return p_01174_elementos_en_la_fila_flotante;
-}*/
+}
 
 
 //desplazar las palabras que estan a la izquierda
@@ -2509,7 +2516,8 @@ function p_01174_desplazar_izquierda(p_01174_drag_move_x,p_01174_elemento_izquie
 			var p_01174_pos_left_dragdrop;
 			var p_01174_cont= p_01174_elemento_drcha-p_01174_elemento_izquierda;
 			for(var i=p_01174_elemento_izquierda; i<=p_01174_elemento_drcha; i++,p_01174_cont--){
-				p_01174_padre_nodos_movibles.children[i].style.transform= "translateX("+(-(p_01174_desplazamiento-10*p_01174_cont))+"px)";
+					//p_01174_pos_left_dragdrop= p_01174_pos_inicio_dragdrop[i][0]- p_01174_desplazamiento;
+					p_01174_padre_nodos_movibles.children[i].style.transform= "translateX("+(-(p_01174_desplazamiento-10*p_01174_cont))+"px)";
 			}
 		}
 	}
@@ -2524,20 +2532,11 @@ var p_01174_cajas_a_siguiente_fila=[];
 var p_01174_ultimas_cajas_a_siguiente_fila=[];
 
 function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_elemento_izquierda,p_01174_elemento_drcha){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
 	////////testeo
 	console.log("******************************************************************************************************************");
 	////////////
-	console.log("desplazar_derecha cajas "+p_01174_elemento_izquierda+" a "+p_01174_elemento_drcha);
+	console.log("desplazar_derecha");
 
-//=======
-//>>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 	p_01174_cajas_a_siguiente_fila.length= 0;
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
 	if(p_01174_elemento_izquierda<=p_01174_elemento_drcha){
@@ -2547,26 +2546,35 @@ function p_01174_desplazar_derecha(p_01174_cursor_x, p_01174_final_caja,p_01174_
 		var p_01174_cont= 0;
 		var p_01174_limite_derecho_conten= p_01174_padre_nodos.getBoundingClientRect().right;
 		for(var i=p_01174_elemento_izquierda; i<=p_01174_elemento_drcha; i++,p_01174_cont++){
-			//si no cabe en la fila && no est· en la ultima fila
-			if((p_01174_pos_inicio_dragdrop[i][2]+(p_01174_desplazamiento-9*p_01174_cont))>p_01174_limite_derecho_conten){
-					p_01174_cajas_a_siguiente_fila.push(i);
-			}
-			else
-				p_01174_padre_nodos_movibles.children[i].style.transform= "translateX("+(p_01174_desplazamiento-9*p_01174_cont)+"px)";
+				//si no cabe en la fila && no est· en la ultima fila
+				//if(((p_01174_pos_inicio_dragdrop[i][2]+(p_01174_desplazamiento-9*p_01174_cont))>p_01174_limite_derecho_conten) && (p_01174_pos_inicio_dragdrop[i][3]<p_01174_pos_inicio_dragdrop[p_01174_pos_inicio_dragdrop.length-1][3])){
+				if((p_01174_pos_inicio_dragdrop[i][2]+(p_01174_desplazamiento-9*p_01174_cont))>p_01174_limite_derecho_conten){
+						p_01174_cajas_a_siguiente_fila.push(i);
+						console.log("PUSH: (para siguiente fila)"+i);
+				}
+				else
+					p_01174_padre_nodos_movibles.children[i].style.transform= "translateX("+(p_01174_desplazamiento-9*p_01174_cont)+"px)";
 		}
+		console.log("a la drcha: "+p_01174_elemento_izquierda+" - "+p_01174_elemento_drcha);
+		console.log("a siguiente: "+JSON.stringify(p_01174_cajas_a_siguiente_fila));
+		console.log("a siguiente anterior: "+JSON.stringify(p_01174_ultimas_cajas_a_siguiente_fila));
 
 		//si las cajas desbordadas han cambiado
 		if(!((p_01174_cajas_a_siguiente_fila.length==p_01174_ultimas_cajas_a_siguiente_fila.length) && (p_01174_cajas_a_siguiente_fila.every(function(v,i) { return v === p_01174_ultimas_cajas_a_siguiente_fila[i]})))){
 			for(var i=p_01174_elemento_drcha+1; i<p_01174_padre_nodos_movibles.children.length; i++){
 				p_01174_padre_nodos_movibles.children[i].style.transform="";
+				console.log(i+" al estado inicial");
 			}
+			console.log("PASAR");
 			//copiar array
 			p_01174_ultimas_cajas_a_siguiente_fila = p_01174_cajas_a_siguiente_fila.slice();
 			p_01174_pasar_a_siguiente_fila();
 		}
+		else{
+			console.log("NO PASAR");
+		}
 	}
 }
-
 
 function p_01174_separacion_derecha(p_01174_drag_move_x, p_01174_elemento_debajo){
 	return (p_01174_pos_inicio_dragdrop[p_01174_elemento_debajo][2]-p_01174_drag_move_x)/2;
@@ -2575,32 +2583,47 @@ function p_01174_separacion_derecha(p_01174_drag_move_x, p_01174_elemento_debajo
 
 function p_01174_pasar_a_siguiente_fila(){
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
+	console.log("pasar_a_siguiente_fila");
+	console.log("las cajas: "+JSON.stringify(p_01174_cajas_a_siguiente_fila));
 
 	if(p_01174_cajas_a_siguiente_fila.length){
+
+
 		var p_01174_primero_siguiente_fila= p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1;
 		var p_01174_desplazamiento_x= p_01174_pos_inicio_dragdrop[p_01174_cajas_a_siguiente_fila[0]][0]-p_01174_pos_inicio_dragdrop[0][0];
+		//var p_01174_desplazamiento_x= p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[0]].getBoundingClientRect().left -p_01174_pos_inicio_dragdrop[0][0];
 		var p_01174_desplazamiento_y=p_01174_pos_inicio_dragdrop[0][1]-p_01174_pos_inicio_dragdrop[0][3];
+		/*if(p_01174_pos_inicio_dragdrop[p_01174_primero_siguiente_fila])
+			p_01174_desplazamiento_y= p_01174_pos_inicio_dragdrop[p_01174_primero_siguiente_fila-1][1]-p_01174_pos_inicio_dragdrop[p_01174_primero_siguiente_fila][1];
+		else
+			p_01174_desplazamiento_y=-p_01174_padre_nodos.children[0].getBoundingClientRect().height;
+			*/
 		var p_01174_desplazamiento_total= 0;
+
 
 		//colocar los que desbordan
 		for(var i=0; i<p_01174_cajas_a_siguiente_fila.length; i++){
+		/*	if(i==0){
+				console.log("translate: "+p_01174_desplazamiento_x);
+			}*/
+			//p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[i]].style.transform= "";
 			p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[i]].style.transform= "translate("+(-p_01174_desplazamiento_x)+"px, "+(-p_01174_desplazamiento_y)+"px)";
 			p_01174_desplazamiento_total+=p_01174_pos_inicio_dragdrop[p_01174_cajas_a_siguiente_fila[i]][2]-p_01174_pos_inicio_dragdrop[p_01174_cajas_a_siguiente_fila[i]][0];
 		}
 		//colocar los que habÌa en la fila
 		var i=p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1;
 		if(i<p_01174_pos_inicio_dragdrop.length){
+			//var p_01174_elementos_fila= p_01174_detectar_elementos_de_fila_flotante(i);
 			var p_01174_elementos_fila= p_01174_detectar_elementos_de_fila((p_01174_pos_inicio_dragdrop[i][3]+p_01174_pos_inicio_dragdrop[i][1])/2);
+			console.log("elem fila: "+p_01174_elementos_fila[0]+" - "+p_01174_elementos_fila[1]);
 			for(; i<=p_01174_elementos_fila[1]; i++){
 				p_01174_padre_nodos_movibles.children[i].style.transform= "translateX("+p_01174_desplazamiento_total+"px)";
 			}
+			//console.log("desplazados: "+p_01174_desplazamiento_total);
 		}
 		//agrandar contenedor para que no queden palabras fuera (si necesario)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
 		//var p_01174_altura_caja= p_01174_padre_nodos_movibles.children[0].getBoundingClientRect().height;
-		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos_movibles.children[p_01174_padre_nodos_movibles.children.length-1];
+		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
 		console.log("mirar contenedor");
 /*		if(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]==p_01174_padre_nodos_movibles.children.length-1)
 			console.log("pasa ultima caja");
@@ -2615,65 +2638,71 @@ function p_01174_pasar_a_siguiente_fila(){
 			console.log("no se puede encoger");
 		}*/
 
-//=======
-		//var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
-//>>>>>>> Stashed changes
-=======
-		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
-=======
-		var p_01174_ultimo_elemento_contenedor= p_01174_padre_nodos.children[p_01174_padre_nodos.children.length-1];
->>>>>>> Stashed changes
 
 		if((p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]==p_01174_padre_nodos_movibles.children.length-1)
+			//&&(p_01174_padre_nodos.getBoundingClientRect().bottom<(p_01174_ultimo_elemento_contenedor.getBoundingClientRect().bottom+p_01174_ultimo_elemento_contenedor.getBoundingClientRect().height)))
 			&&(!p_01174_padre_nodos.style.height))
 		{
+			console.log("agrandar contenedor");
 			p_01174_padre_nodos.style.height= (p_01174_padre_nodos.getBoundingClientRect().height+p_01174_altura_caja)+"px";
 		}
 
-		if(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]<p_01174_pos_inicio_dragdrop.length-1){
-			console.log("comprobar_fila_desborda con: "+p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]);
+		if(p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1]){
 			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1,p_01174_desplazamiento_total);
 		}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//<<<<<<< Updated upstream
 		else{
-			console.log("comprobar_fila_desborda alternativa con: "+p_01174_cajas_a_siguiente_fila[0]);
-			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[0],-p_01174_desplazamiento_x);
 		}
-
-//		if(p_01174_padre_nodos_movibles.children[p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1]){
-//			p_01174_comprobar_fila_desborda(p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1]+1,p_01174_desplazamiento_total);
-//		}
-//		else{
-//		}
 	}
-//	else{
-//=======
-//>>>>>>> Stashed changes
-//	}
-=======
-=======
->>>>>>> Stashed changes
+	else{
 	}
->>>>>>> Stashed changes
 }
 
 function p_01174_comprobar_fila_desborda(p_01174_primer_elemento_de_la_fila, p_01174_desplazamiento_total){
 	var p_01174_padre_nodos_movibles= document.getElementById("p_01175_drag_and_drop_flotante");
+	///testeo
+	/*var res= p_01174_padre_nodos_movibles.children[p_01174_primer_elemento_de_la_fila].getBoundingClientRect().top;
+	//var res=mi_testeo(p_01174_primer_elemento_de_la_fila);
+	console.log("entra comprobar_fila_desborda:"+res);
+	*/
+	//////
+	//var p_01174_elementos_fila;//= p_01174_detectar_elementos_de_fila_flotante(p_01174_primer_elemento_de_la_fila);
+	//setTimeout(function(){p_01174_elementos_fila= p_01174_detectar_elementos_de_fila_flotante(p_01174_primer_elemento_de_la_fila);},0);
+	//var p_01174_elementos_fila= p_01174_detectar_elementos_de_fila_flotante(p_01174_primer_elemento_de_la_fila);
 	var p_01174_elementos_fila= p_01174_detectar_elementos_de_fila(p_01174_pos_inicio_dragdrop[p_01174_primer_elemento_de_la_fila][1]+5);
 	var p_01174_limite_derecho_conten= p_01174_padre_nodos.getBoundingClientRect().right;
 	p_01174_cajas_a_siguiente_fila.length= 0;
+	console.log("comprobar_fila_desborda");
+	console.log("p_01174_limite_derecho_conten: "+p_01174_limite_derecho_conten);
 	for(var i=p_01174_elementos_fila[0]; i<=p_01174_elementos_fila[1]; i++){
+		//console.log("elem: "+i+" pos: "+p_01174_padre_nodos_movibles.children[i].getBoundingClientRect().right);
+		console.log("elem: "+i+" pos: "+(p_01174_pos_inicio_dragdrop[i][2]+p_01174_desplazamiento_total));
 		//si no cabe en la fila
+		//if(p_01174_padre_nodos_movibles.children[i].getBoundingClientRect().right>p_01174_limite_derecho_conten){
 		if((p_01174_pos_inicio_dragdrop[i][2]+p_01174_desplazamiento_total)>p_01174_limite_derecho_conten){
 			p_01174_cajas_a_siguiente_fila.push(i);
 		}
 	}
 	if(p_01174_cajas_a_siguiente_fila.length){
+		///testeo
+/*		var res=p_01174_cajas_a_siguiente_fila[0]+" - "+p_01174_cajas_a_siguiente_fila[p_01174_cajas_a_siguiente_fila.length-1];
+		console.log("llama pasar_a_siguiente_fila desde comprobar_fila_desborda:"+res);*/
+		//////
+
 		p_01174_pasar_a_siguiente_fila();
 	}
+	else{
+//		for(var i=p_01174_elementos_fila[1]+1;i<p_01174_padre_nodos_movibles.children.length; i++ )
+//			p_01174_padre_nodos_movibles.children[i].style.transform= "";
+	}
+}
+
+//monica testeo
+function mi_testeo(ind){
+	if(ind>=p_01174_index_of_drag)
+		ind++;
+	var p_01174_selectores_palabras= "#"+p_01174_padre_nodos.id+">div";
+	p_01174_selectores_palabras= document.querySelectorAll(p_01174_selectores_palabras);
+	return p_01174_selectores_palabras[ind].children[0].innerText;
 }
 
 function p_01174_drag_drop_touch(e){
@@ -2727,7 +2756,7 @@ function p_01174_resize_preguntas() {
 		var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
 		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
 		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.top="";
-		//document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="";
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="";
 
 
 
@@ -2779,25 +2808,23 @@ function p_01174_resize_preguntas() {
 				}
 			}
 			//subimos contenedor de preguntas si no cabe
-/*			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
-				testeo("translate");
+			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
 				var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
 				if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
 					p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
 				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+p_01174_diferencia_alturas+"px)";
-			}*/
+			}
 		}
-//		else{
-			testeo("top");
+		else{
 			//subimos contenedor de preguntas si no cabe
 			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
 				var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
 				if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
 					p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
 				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.top=-p_01174_diferencia_alturas+"px";
-				//document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="100%";
+				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="100%";
 			}
-//		}
+		}
 
 
 	}
