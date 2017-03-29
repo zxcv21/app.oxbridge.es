@@ -56,8 +56,8 @@ function p_01174_carga_pregunta()
 		//console.info(indice_preguntas);
 
 		//monica-testeo
-		while(smile_datos.preguntas[indice_preguntas].categoria=="trinity")
-			indice_preguntas++;
+		//while(smile_datos.preguntas[indice_preguntas].categoria=="trinity")
+		//	indice_preguntas++;
 
 		if(smile_datos.preguntas[indice_preguntas].categoria!="trinity")
 		{
