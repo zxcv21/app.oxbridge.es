@@ -71,13 +71,11 @@ Pag. ID: p_00995
 	#p_00958_horario_header_filtros{
 		display: none;
 		width: 100%;
-		/*height: 100%;*/
 		height: 148px;
 		top: 0;
 		position: fixed;
 		z-index: 9001;
 		font-size: 25px;
-		/*padding: 15% 5%;*/
 		overflow-y: auto;
 		background-color: rgba(0,0,0,0.7);
 		text-align: center;
@@ -313,9 +311,7 @@ Pag. ID: p_00995
 
 }
 	#p_00958_seleccion_horario{
-		/*width: 80px;*/
     margin-top: 50px;
-    /*padding: 0 30px;*/
     display: inline-block;
     white-space: pre-wrap;
     text-align: center;
@@ -325,10 +321,8 @@ Pag. ID: p_00995
 	#p_00995_horario_contenedor_horario_nivel{
 		vertical-align:middle;
 		z-index:900;
-		/*float:left;*/
 		height:47px;
 		width:<? echo $set_ancho_horas_titulo;?>px;
-		/*position:absolute;*/
 		position:fixed;
 		font-size:18px;
 		padding-bottom: 16px;
@@ -670,7 +664,8 @@ Pag. ID: p_00995
 
 	#p_00958_formulario_mas_horario_contenedor{
 		position: absolute;
-		height: 100%;
+		/*height: 100%;*/
+		min-height: 100%;
 		width: 100%;
 		background-color: rgba(0,0,0,0.75);
 		z-index: 9003;
@@ -821,8 +816,78 @@ Pag. ID: p_00995
 	100%{transform:rotate(360deg)}
 }
 @media screen and (max-width: 767px) {
+	.p_00958_horario_menu_boton{
+		height: 100%;
+		margin-top: 2px;
+		margin-right: 4px;
+	}
+	#p_00958_horario_contenedor {
+		/*overflow-y: visible;*/
+	}
+	#p_00958_horario_contenedor_horario_dias{
+		padding-left: 62px;
+	}
+	#p_00995_horario_contenedor_horario_nivel{
+		width: 60px;
+	}
 	#p_00995_horario_contenedor_horario_horas{
-		/*padding-left: 0;*/
+		padding-left: 0;
+	}
+	#p_00958_horario_header_filtros{
+		padding-left: 5px;
+	}
+	#p_00958_horario_filtros_temario{
+		width: 95%;
+    margin: 0;
+	}
+	#p_00958_horario_header_filtros{
+		padding-left: 5px;
+	}
+	#p_00958_filtros_echo{
+		right: 5px;
+	}
+	#p_00958_horario_header_filtros{
+		height: initial;
+	}
+	#p_00958_horario_filtros_tipo {
+		margin-top: 5px;
+	}
+	#p_00958_horario_filtros_temario_select{
+		width: 35px;
+    height: 32px;
+	}
+	#p_00958_horario_filtros_temario_select_options{
+		padding-left: 5px;
+    margin: 0px;
+    position: absolute;
+    left: 5px;
+    width: calc(95% - 25px);
+    box-sizing: border-box;
+	}
+	#p_00995_horario_contenido_clases_qwest{
+		max-width: 424px;
+    width: 100%;
+    box-sizing: border-box;
+	}
+	#p_00990_over_all_contenedor{
+		padding-right: 0;
+		padding-left: 0;
+		width: initial;
+	}
+	#p_00990_over_all_cerrar_reservas{
+		top: 5px;
+		right: 5px;
+	}
+	#p_00958_horario_reserva_nueva{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	#p_00958_horario_reserva_nueva{
+		margin: 20px auto;
+	}
+	.p_00958_horario_clases_reservadas_fecha{
+		margin: 5px;
+    transform: scale(0.8);
 	}
 }
 

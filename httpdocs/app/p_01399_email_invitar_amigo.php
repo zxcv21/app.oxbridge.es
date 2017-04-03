@@ -74,8 +74,11 @@ require("enviomail\class.phpmailer.php");
 $mail = new PHPMailer();
 $mail->IsSMTP();                                // send via SMTP
 
-include('enviomail\oxico.php');
-//include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
+//include('enviomail\oxico.php');
+require_once( $_SERVER['DOCUMENT_ROOT']."/navegacion_dominio_01_conseguir_ruta_carpetas.php" ) ;
+$var__ruta_protegida_dominio__p_0001958 = f_01__conseguir_ruta_carpetas__p_0001958_php() ;
+$var__url__p_0001958_php = $var__ruta_protegida_dominio__p_0001958."gertrudis/mail/oxmail.php" ;
+include( $var__url__p_0001958_php );
 
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)

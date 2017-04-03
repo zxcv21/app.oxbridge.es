@@ -128,7 +128,8 @@ function p_01174_carga_pregunta()
 						{
 							document.getElementById("p_01175_respuesta_m_option").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_m_option"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 16px'>"+
+								//"<label style='font-size: 16px'>"+
+								"<label>"+
 								"<div class='style_checkbox_redondo'>"+
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
@@ -150,7 +151,8 @@ function p_01174_carga_pregunta()
 					{
 							document.getElementById("p_01175_respuesta_true_false").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_tf"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 16px'>"+
+								//"<label style='font-size: 16px'>"+
+								"<label>"+
 								"<div class='style_checkbox_redondo'>"+
 								"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 								"</div>"+
@@ -377,7 +379,8 @@ function p_01174_carga_pregunta()
 						{
 							document.getElementById("p_01175_respuesta_m_option").insertAdjacentHTML('beforeEnd',""+
 							"<div id=respuestas_m_option"+i+" class='style_divs_respuestas'>"+
-								"<label style='font-size: 16px'>"+
+								//"<label style='font-size: 16px'>"+
+								"<label>"+
 								"<div class='style_checkbox_redondo'>"+
 								"<input onclick='p_01174_comprobarMarcaOpcionM0(this);' type='checkbox' class='checkboxMultioption' style='float: left' id=checkbox"+i+" name='gruupPreguntasMulti' value="+i+">"+
 								"</div>"+
@@ -401,7 +404,8 @@ function p_01174_carga_pregunta()
 						{
 								document.getElementById("p_01175_respuesta_true_false").insertAdjacentHTML('beforeEnd',""+
 								"<div id=respuestas_tf"+i+" class='style_divs_respuestas'>"+
-									"<label style='font-size: 16px'>"+
+									//"<label style='font-size: 16px'>"+
+									"<label>"+
 									"<div class='style_checkbox_redondo'>"+
 									"<input onclick='p_01174_comprobarMarcaOpcionTF(this);' type='checkbox' class='checkboxMultioption' style='float: left;' id=acepto"+i+" name='gruupPreguntas' value="+i+">"+
 									"</div>"+
@@ -2616,7 +2620,7 @@ function p_01174_pasar_a_siguiente_fila(){
 //		}
 //		else{
 //		}
-	}
+//	}
 //	else{
 //=======
 //	}
@@ -2705,7 +2709,7 @@ function p_01174_resize_preguntas() {
 						}*/
 
 			//colocamos contenedor en su posicion inicial
-			document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
+			//document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
 
 			//var p_01174_contenedor_pregunta= document.getElementById("p_01175_preguntas");
 			//var p_01174_espacio_disponible= [window.innerWidth, window.innerHeight-document.getElementById("head_oxbridge").offsetHeight];
@@ -2751,17 +2755,18 @@ function p_01174_resize_preguntas() {
 			}*/
 		}
 //		else{
-			testeo("top");
-			//subimos contenedor de preguntas si no cabe
-			if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
-				var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
-				if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
-					p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
-				document.getElementById("p_00962_preguntas_y_botones_contenedor").style.top=-p_01174_diferencia_alturas+"px";
-				//document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="100%";
-			}
 //		}
+if((p_01174_tipo_pregunta!="trinity")){
+	//subimos contenedor de preguntas si no cabe
+	if(p_01174_contenedor_pregunta.offsetHeight>p_01174_espacio_disponible[1]){
+		var p_01174_diferencia_alturas= p_01174_contenedor_pregunta.offsetHeight-p_01174_espacio_disponible[1];
+		if(p_01174_diferencia_alturas>document.getElementById("head_oxbridge").offsetHeight)
+			p_01174_diferencia_alturas=document.getElementById("head_oxbridge").offsetHeight;
+		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.top=-p_01174_diferencia_alturas+"px";
+		//document.getElementById("p_00962_preguntas_y_botones_contenedor").style.width="100%";
+	}
 
+}
 
 	}
 }
@@ -2769,8 +2774,8 @@ function p_01174_resize_preguntas() {
 function p_01174_resize_preguntas_trinity() {
 	var p_01174_contenedor= document.getElementById("p_01175_preguntas");
 	//var p_01174_altura_disponible= window.innerHeight-80;
-	var p_01174_altura_disponible= document.getElementById("smile").offsetHeight-document.getElementById("head_oxbridge").offsetHeight;
-	var p_01174_altura_pantalla= document.getElementById("smile").offsetHeight;
+	var p_01174_altura_disponible= window.innerHeight-document.getElementById("head_oxbridge").offsetHeight;//document.getElementById("smile").offsetHeight-document.getElementById("head_oxbridge").offsetHeight;
+	var p_01174_altura_pantalla= window.innerHeight;//document.getElementById("smile").offsetHeight;
 	//resetear altura por si crece ventana
 	var p_01174_texto= document.querySelectorAll(".text3");
 	document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"";
@@ -2783,7 +2788,7 @@ function p_01174_resize_preguntas_trinity() {
 	if(p_01174_contenedor.offsetHeight>p_01174_altura_disponible){
 		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+(p_01174_altura_pantalla-p_01174_altura_disponible)+"px)";
 		var p_01174_altura_texto= p_01174_texto[i].offsetHeight- (p_01174_contenedor.offsetHeight-p_01174_altura_pantalla);
-		p_01174_altura_texto= p_01174_altura_texto>100?p_01174_altura_texto:100;
+		p_01174_altura_texto= p_01174_altura_texto>120?p_01174_altura_texto:120;
 		p_01174_texto[i].style.height= p_01174_altura_texto+"px";
 	}
 }

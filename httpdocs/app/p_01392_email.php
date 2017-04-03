@@ -156,12 +156,14 @@ $mail = new PHPMailer();
 
 $mail->IsSMTP();                                // send via SMTP
 
+require_once( $_SERVER['DOCUMENT_ROOT']."/navegacion_dominio_01_conseguir_ruta_carpetas.php" ) ;
+$var__ruta_protegida_dominio__p_0001958 = f_01__conseguir_ruta_carpetas__p_0001958_php() ;
+$var__url__p_0001958_php = $var__ruta_protegida_dominio__p_0001958."gertrudis/mail/oxmail.php" ;
+include( $var__url__p_0001958_php );
 
-//$mail->Host     = "smtp.oxbridge.es"; // SMTP servers
-//$mail->Username = "len323c";   // SMTP username
-//$mail->Password = "Oxbridg3"; // SMTP password
-//$mail->From     = "mail@oxbridge.es";
-include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
+//include $_SERVER['DOCUMENT_ROOT']."..\includes\conn_mail\mail.php";
+//include( $_SERVER['DOCUMENT_ROOT']."/includes/conn_mail/oxmail.php" ) ;
+//echo "server: ".$_SERVER['DOCUMENT_ROOT'];
 
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
@@ -213,7 +215,8 @@ else
 $mail->Body     =  $body_mensaje;
 
 $mail->AltBody  =  $body_sin_mensaje;
-@$mail->Send();
+
+$mail->Send();
 
 
 

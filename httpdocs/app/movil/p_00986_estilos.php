@@ -434,6 +434,9 @@ h4{
 		padding-bottom: 8%;
 		position: relative;
 	}
+	#smile{
+		padding-bottom: calc(8vh + 45px);
+	}
 	#head_oxbridge_menu_apartados{
 		margin-left: 3px;
 	}
@@ -458,6 +461,9 @@ h4{
 		}
 		#horario, #claseweb, #clases, #personal, #smile{
 			padding-bottom: 0;
+		}
+		#head_oxbridge_menu_apartados{
+			margin-left: 106px;
 		}
 }
 </style>

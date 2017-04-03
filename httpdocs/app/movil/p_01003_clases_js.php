@@ -679,8 +679,8 @@ function p_1003_comprobar_valoraciones_pendientes(){
 			}
 		}
 		this.primera_vez= false;
-	}*/
-
+	}
+*/
 
 
 	if(!p_00994_valoracion_voluntaria){

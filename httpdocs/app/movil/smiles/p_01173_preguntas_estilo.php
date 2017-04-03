@@ -163,6 +163,7 @@
 .p_01175_pregunta_trinity .dragdrop{
   margin-left: 0;
   margin-right: 0;
+  font-size: 16px;
 }
 .resp{
 	display: inline-block;
@@ -174,6 +175,7 @@
 .p_01175_pregunta_trinity .resp{
   margin-right: 0;
   margin-left: 0;
+  font-size: initial;
 }
 .checkboxMultioption{
 	width: 18px; /*Desired width*/
@@ -342,7 +344,9 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
   font-size: 16px;
   margin-bottom: 5px;
 }
-
+.style_divs_respuestas>label{
+  font-size: 16px;
+}
 .p_01172_contenedor_preguntas_write
 {
 	width:100%;

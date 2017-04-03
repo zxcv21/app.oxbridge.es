@@ -11,6 +11,7 @@ id: p_01000
 		e_scroller=document.getElementById('p_00958_horario_contenedor');
 		var e_scroller_top=e_scroller.scrollTop;
 		var e_scroller_left=e_scroller.scrollLeft;
+
 		if( scroller_top != e_scroller_top )
 		{
 			scroller_top=e_scroller_top;
@@ -635,11 +636,16 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 
 
 			//monica
-			if(this.primera_posicion== undefined)
-				this.primera_posicion= document.getElementById("p_00995_horario_contenedor_horario_dia_D"+id_dia).offsetLeft;
+		//	if(this.primera_posicion== undefined)
+		//		this.primera_posicion= document.getElementById("p_00995_horario_contenedor_horario_dia_D"+id_dia).offsetLeft;
 
 			caja_left[capsula.dia_lectivo_id]=caja_left[capsula.dia_lectivo_id]+document.getElementById("p_00995_horario_contenedor_horario_dia_D"+id_dia).offsetLeft*1-set_ancho_horas_titulo;
 			//caja_left[capsula.dia_lectivo_id]=2*caja_left[capsula.dia_lectivo_id]+document.getElementById("p_00995_horario_contenedor_horario_dia_D"+id_dia).offsetLeft*1-this.primera_posicion-set_ancho_horas_titulo;
+
+			//al pegar a la izq hay que modificar para que encaje
+			if(window.innerWidth<=p_00956_ancho_movil){
+				caja_left[capsula.dia_lectivo_id]+=22;
+			}
 
 
 			//si la capsula esta reservada
@@ -967,8 +973,19 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 			else
 				contenedor_alto=contenedor_alto_min;
 
-			if(document.getElementById('p_00958_horario_contenedor'))//document.getElementById('p_00958_horario_contenedor').style.height=(contenedor_alto-20)+"px";
-				document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
+			if(document.getElementById('p_00958_horario_contenedor')){
+				if(window.innerWidth<=p_00956_ancho_movil){
+					document.getElementById('p_00958_horario_contenedor').style.height=window.innerHeight+"px";
+					if(window.innerWidth>window.innerHeight){
+						document.getElementById('p_00958_horario_contenedor').style.paddingBottom="calc(8vw + 45px)";
+					}
+					else{
+						document.getElementById('p_00958_horario_contenedor').style.paddingBottom="calc(8vh + 45px)";
+					}
+				}
+				else
+					document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
+			}
 
 			//alto para lineas de mes
 			if(typeof RANGO_DIAS !="undefined"){
@@ -988,9 +1005,6 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 				borrar.parentNode.removeChild(borrar);
 			}
 			document.getElementById("horario").style.cursor="progress";
-			//document.getElementById("p_00958_horario_header_act").style.display="none";
-			//document.getElementById("p_00958_horario_header_act_div").style.backgroundImage="url(images/recarga2.gif)";
-			//document.getElementById("p_00958_horario_header_act").setAttribute("onclick","");
 			document.getElementById("p_00958_horario_clases_reservadas").style.display="none";
 			document.getElementById("p_00958_horario_cargando").style.display="inline";
 			cerrar_over_all();
@@ -1069,10 +1083,26 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 
 window.addEventListener("resize", function(){
 		if(document.getElementById('p_00958_horario_contenedor')){
-			//document.getElementById('contenedor').style.height= "100%";
-			document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
-			if(document.getElementById('p_00995_horario_contenedor_horario_linea_0'))
-				document.getElementById('p_00995_horario_contenedor_horario_linea_0').style.height=(window.innerHeight-132)+"px";
+			if(window.innerWidth<=p_00956_ancho_movil){
+				document.getElementById('p_00958_horario_contenedor').style.height=window.innerHeight+"px";
+				if(window.innerWidth>window.innerHeight){
+					document.getElementById('p_00958_horario_contenedor').style.paddingBottom="calc(8vw + 45px)";
+				}
+				else{
+					document.getElementById('p_00958_horario_contenedor').style.paddingBottom="calc(8vh + 45px)";
+				}
+			}
+			else
+				document.getElementById('p_00958_horario_contenedor').style.height=(window.innerHeight-102)+"px";
+
+			//if(document.getElementById('p_00995_horario_contenedor_horario_linea_0'))
+			//	document.getElementById('p_00995_horario_contenedor_horario_linea_0').style.height=(window.innerHeight-132)+"px";
+			var i=0;
+			while(document.getElementById("p_00995_horario_contenedor_horario_linea_"+i)){
+				//document.getElementById("p_00995_horario_contenedor_horario_linea_"+i).style.height=e_horario_contenedor.style.height-10+"px";
+				document.getElementById("p_00995_horario_contenedor_horario_linea_"+(i++)).style.height=e_horario_contenedor.offsetHeight-10+"px";
+			}
+
 		}
 });
 

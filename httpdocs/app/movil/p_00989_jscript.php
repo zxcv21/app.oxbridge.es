@@ -267,8 +267,13 @@ function ocultar_mostrar(elemento,disp){
 function ocultar_mostrar_filtros(){
 	if(document.getElementById('p_00958_horario_header_filtros').style.display=="none")
 		document.getElementById("horario").style.paddingTop= "120px";
-	else
-		document.getElementById("horario").style.paddingTop= "60px";
+	else{
+		if(window.innerWidth<=p_00956_ancho_movil){
+			document.getElementById("horario").style.paddingTop= "";
+		}
+		else
+			document.getElementById("horario").style.paddingTop= "60px";
+	}
 
 	ocultar_mostrar('p_00958_horario_header_filtros');
 }
@@ -327,27 +332,22 @@ function p_00989_resize_menu_apartados(){
 }
 
 
-//window.addEventListener("resize",p_0100_contenedor_resize,false);
-
 function p_0100_contenedor_resize(){
 	//acomodar tamaño contenedor horario y posicion
 
 	e_horario_contenedor=document.getElementById(ESTOY);
-	//e_horario_contenedor.style.height=document.getElementById("contenedor").offsetHeight+"px";
 	e_head_ox=document.getElementById("head_oxbridge");
-	//e_horario_contenedor.style.marginTop=e_head_ox.offsetHeight+e_head_ox.offsetTop*1.5+"px";
 
 	//tamaño no deformado de los botones
 	document.getElementById("head_oxbridge_img").style.width="1px";
 	setTimeout(function(){document.getElementById("head_oxbridge_img").style.width="auto";},1);
 	document.getElementById("p_00955_head_oxbridge_idioma").childNodes[1].style.width="1px";
 	setTimeout(function(){document.getElementById("p_00955_head_oxbridge_idioma").childNodes[1].style.width="auto";},1);
-	//document.getElementById("head_oxbridge_mail").style.width="1px";
-	//setTimeout(function(){document.getElementById("head_oxbridge_mail").style.width="auto";},1);
 	// redimencionar lineas horario
 	i=0;
 	while(document.getElementById("p_00995_horario_contenedor_horario_linea_"+i)){
-		document.getElementById("p_00995_horario_contenedor_horario_linea_"+i).style.height=e_horario_contenedor.style.height-10+"px";
+		//document.getElementById("p_00995_horario_contenedor_horario_linea_"+i).style.height=e_horario_contenedor.style.height-10+"px";
+		document.getElementById("p_00995_horario_contenedor_horario_linea_"+i).style.height=e_horario_contenedor.offsetHeight-10+"px";
 		i++;
 	}
 	switch(ESTOY){
