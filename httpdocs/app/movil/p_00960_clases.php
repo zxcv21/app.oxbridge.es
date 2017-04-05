@@ -62,6 +62,7 @@ var DIA_LEC="";
             </div>
 			</div>
          <img id="p_00960_clases_head_foto" onclick="p_01003_zoom_profesor();" src="<? echo ver_url("images/perfil.png","src"); ?>">
+         <div id="p_00960_clases_head_id_profesor"></div>
          <img id="p_00960_clases_head_foto_lupa" onclick="p_01003_zoom_profesor();" src="<? echo ver_url("images/lupa.png","src"); ?>">
       </div>
    </div>

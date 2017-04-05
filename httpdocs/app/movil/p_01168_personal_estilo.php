@@ -209,9 +209,91 @@ Pag. ID: p_01168
 			color: #333;
 			position: relative;
 			cursor: pointer;
+			box-sizing: border-box;
 			}
 		.p_00961_personal_asistencia_dia_lectivo{
 			font-size:16px;
+			}
+			@media screen and (max-width: 767px) {
+				.p_00961_formulario_personal_info{
+					/*min-width: 274px;*/
+					padding-right: initial;
+					margin: auto;
+    			width: 100%;
+    			max-width: 334px;
+				}
+				.p_00961_contenedor_seccion{
+					padding-left: 0;
+					padding-right: 0;
+					padding-bottom: 20px;
+					width: calc(100vw - 46px);
+					min-width: 274px;
+					/*max-height: 83vh;*/ /*no funciona en IOS*/
+					min-height: 266px;
+				}
+				.p_00961_menu_seccion_titulo{
+					margin: auto;
+					left: 0;
+			    right: 0;
+			    width: initial;
+				}
+				.p_00961_formulario_personal_info_nombre_input {
+					margin-top: 4px;
+				}
+				#p_00961_info_menu_secciones{
+					margin: 5px;
+					width: initial;
+				}
+				input[type="submit"]{
+					float: none;
+    			margin-right: calc(50% - 85px);
+				}
+				#p_00961_personal_info_respuesta{
+					float: none;
+				}
+				.p_00961_personal_asistencia_boton{
+					position: absolute;
+    			right: 12px;
+				}
+				.p_00961_personal_asistencia_ir_clase{
+					right: 41px;
+					left: initial;
+					height: 1.1em;
+				}
+				#p_00961_formulario_personal_banco{
+					box-sizing: border-box;
+					padding-left: 5px;
+				}
+				#p_00982_boton_guardar_matricula_2{
+					margin-right: initial;
+				}
+				#p_00961_formulario_personal_banco>div{
+					/*float: left;*/
+					margin: auto;
+				}
+				.p_00961_titular_datos_bancarios{
+					display:inline-block;
+					width:49%;
+					min-width:200px;
+					text-align:center;
+				}
+				.p_00961_titular_datos_bancarios .p_00961_formulario_personal_info_nombre_input{
+					display: block !important;
+					width: initial;
+					text-align: center;
+				}
+				.p_00961_titular_datos_bancarios .p_00961_titular_datos_bancarios {
+					display:block;
+				}
+
+				.p_00961_formulario_personal_info_input{
+					width: 158px;
+				}
+			}
+			@media screen and (max-width: 767px) and (orientation:landscape){
+				#p_00961_menu_contenedor_1{
+					max-height: calc(100vh - 9vw);
+				}
 			}
 
 </style>

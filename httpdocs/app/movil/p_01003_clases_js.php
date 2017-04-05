@@ -503,6 +503,7 @@ function p_01003_zoom_profesor(){
 		foto.style.borderRadius="100%";
 		foto.setAttribute("zoom","0");
 		document.getElementById("p_00960_clases_head_foto_lupa").style.display="inline";
+		document.getElementById("p_00960_clases_head_id_profesor").style.display="none";
 	}else{
 		foto.style.MozTransform="scale(3) translate(32%, 45%)";
 		foto.style.WebkitTransform="scale(3) translate(32%, 45%)";
@@ -510,6 +511,7 @@ function p_01003_zoom_profesor(){
 		foto.style.borderRadius="6%";
 		foto.setAttribute("zoom","1");
 		document.getElementById("p_00960_clases_head_foto_lupa").style.display="none";
+		document.getElementById("p_00960_clases_head_id_profesor").style.display="block";
 	}
 }
 

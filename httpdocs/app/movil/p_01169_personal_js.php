@@ -30,13 +30,6 @@ function p_01169_seleccionar_seccion(ele){
 }
 
 function p_01169_personal_girar(){
-	/*if(window.orientation%180==0){
-		P_01169_ORIENTACION="vertical";
-		document.getElementById("p_00961_info_menu_secciones").style.width="88%";
-	}else{
-		P_01169_ORIENTACION="orizontal";
-		document.getElementById("p_00961_info_menu_secciones").style.width="80%";
-	}*/
 	info_menu=document.getElementById("p_00961_info_menu_secciones");
 	for(i in info_menu.childNodes){
 		if(info_menu.childNodes[i].nodeType==1){
@@ -298,5 +291,20 @@ function p_00961_conforme_pago_realizado(){
 	    }
 	}
 	p_00961_http.send(p_00961_params);
+}
+
+
+window.addEventListener("resize", function(){
+	if(document.getElementById("personal").style.display!=="none"){
+		p_01169_resize_contenedor_personal_data();
+	}
+});
+
+//en IOS vh es demasiado alto, asi que se calcula la altura del contenedor con javascript
+function p_01169_resize_contenedor_personal_data(){
+	var p_01169_contenedores= document.querySelectorAll(".p_00961_contenedor_seccion");
+	for(var p_01169_conten of p_01169_contenedores){
+		p_01169_conten.style.maxHeight= (window.innerHeight-document.getElementById("head_oxbridge").offsetHeight-document.getElementById("contenedor_menu").offsetHeight)+"px";
+	}
 }
 </script>

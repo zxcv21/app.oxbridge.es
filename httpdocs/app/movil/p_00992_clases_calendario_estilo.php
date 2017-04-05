@@ -335,6 +335,7 @@ Pag. ID: 00992
 				}
 				document.getElementById("p_00960_clases_head_foto").src=foto_profe_temp;
 				document.getElementById("p_00960_clases_head_nombre").innerHTML=dia_lectivo[i].profesor.split(" ")[0]+" "+dia_lectivo[i].profesor.split(" ")[1];
+				document.getElementById("p_00960_clases_head_id_profesor").innerHTML="<span>C&oacute;digo: "+p_00992_codificar_id_profesor(i)+"</span>";
 
 				mostrar_valoracion(true);
 
@@ -429,6 +430,19 @@ Pag. ID: 00992
 		//MOSTRAR LA #1 ACTIVIDAD DEL DIA_LEC
 		imprime_actividad(DIA_LEC,0);
 	}
+
+
+
+//codificar identificador de profesor
+	function p_00992_codificar_id_profesor(p_00992_dia_lectivo){
+		var p_00992_id_profesor= parseInt(dia_lectivo[p_00992_dia_lectivo].profesor_id);
+		var p_00992_llave = dia_lectivo[p_00992_dia_lectivo].fecha_europa.slice(0,5);
+		p_00992_llave= (parseInt(p_00992_llave[0])+parseInt(p_00992_llave[1])+parseInt(p_00992_llave[3])+parseInt(p_00992_llave[4])).toString().slice(-1);
+
+		return (p_00992_id_profesor+(1111*p_00992_llave))*10+parseInt(p_00992_llave);
+
+	}
+
 
 // fucntion comprobar si hay que mostrar firma
 	function P_00992_mostrar_firma(){

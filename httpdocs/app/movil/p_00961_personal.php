@@ -378,25 +378,25 @@ Pag. ID: 00961
                      <? echo $TEXTOS[73][2]; ?>:
                   </div>
 
-                  <div>
+                  <div class="p_00961_titular_datos_bancarios">
                     <div class="p_00961_formulario_personal_info_nombre_input"><? echo $TEXTOS[25][2]; ?>*</div>
                     <input class="p_00961_formulario_personal_info_input" name="p_0001315_input_cc_titular_nombre" id="p_00961_input_cc_titular_nombre" maxlength="50" type="text" value="">
                   </div>
 
-                  <div>
+                  <div class="p_00961_titular_datos_bancarios">
                     <div class="p_00961_formulario_personal_info_nombre_input"><? echo $TEXTOS[44][2]; ?>*</div>
                     <input class="p_00961_formulario_personal_info_input" name="p_0001315_input_cc_titular_apellido_1" id="p_00961_input_cc_titular_apellido_1" maxlength="50" type="text" value="">
                   </div>
-                  <div>
+                  <div class="p_00961_titular_datos_bancarios">
                     <div class="p_00961_formulario_personal_info_nombre_input"><? echo $TEXTOS[45][2]; ?>*</div>
                     <input class="p_00961_formulario_personal_info_input" name="p_0001315_input_cc_titular_apellido_2" id="p_00961_input_cc_titular_apellido_2" maxlength="50" type="text" value="">
                   </div>
-                  <div>
+                  <div class="p_00961_titular_datos_bancarios">
                     <div class="p_00961_formulario_personal_info_nombre_input"><? echo $TEXTOS[50][2]; ?>*</div>
                     <input class="p_00961_formulario_personal_info_input" name="p_0001315_input_cc_titular_nif" id="p_00961_input_cc_titular_nif" maxlength="9" type="text" value="">
                   </div>
 
-                  <div style="width:100%; text-align:center;clear:both; font-size:0.75em; padding-top:1em; ">
+                  <div style="width:100%; text-align:left;clear:both; font-size:0.75em; padding-top:1em; ">
                      <input style="font-size:1.5em; height:1em; width:1em; float:left;" type="checkbox" id="p_00982_checkbox_aviso_de_baja_aceptado_id" >
                      <? echo $TEXTOS[97][2];?> <a style="text-decoration:underline; color:#000;" onclick="over_all('');document.getElementById('p_00990_over_all_contenedor').innerHTML=document.getElementById( TEXTOS[95].text.replace(/http.*:\/\/.*\.{0,1}oxbridge.es\/app\//g,'') ).innerHTML;"><? echo $TEXTOS[98][2];?></a> <? echo $TEXTOS[99][2];?>
                   </div>

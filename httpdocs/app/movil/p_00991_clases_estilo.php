@@ -42,6 +42,25 @@ Pag. ID: p_00991
 				opacity: 0.4;
 				cursor: pointer;
 				}
+				#p_00960_clases_head_id_profesor{
+					background-color: whitesmoke;
+			    text-align: center;
+			    font-size: 20px;
+			    color: black;
+
+			    height: 30px;
+			    position: absolute;
+			    z-index: 2;
+					top: 42px;
+					left: -5px;
+					border-radius: 20px 0px 0px 0px;
+					box-sizing: border-box;
+					display: none;
+				}
+				#p_00960_clases_head_id_profesor>span{
+					padding: 4px;
+					display: block;
+				}
 			#p_00960_clases_head_info{
 				float:left;
 				position:absolute;
