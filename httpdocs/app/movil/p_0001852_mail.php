@@ -13,7 +13,7 @@
        <input id="p_00955_formulario_mail_input_telefono" class="p_00995_formulario_mail_input" name="form_telefono" type=hidden value="">
        <input id="p_00955_formulario_mail_input_empresa" class="p_00995_formulario_mail_input" name="nombre_empresa" type=hidden value="">
 
-   <div class=p_00995_formulario_mail_div style="width:45%">
+   <div class=p_00995_formulario_mail_div >
      <? echo $TEXTOS[28][2];?>:<br>
 
      <select class=p_00995_formulario_mail_input name="departamento" id="departamento">

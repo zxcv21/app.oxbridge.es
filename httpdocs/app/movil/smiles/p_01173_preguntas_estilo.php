@@ -421,4 +421,10 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
   }
 
 }
+
+/* Addresses a Mobile Safari issue with text resizing*/
+@media only screen and (min-width : 320px) and (max-width : 560px) {
+  body {-webkit-text-size-adjust: none;}
+}
+
 </style>

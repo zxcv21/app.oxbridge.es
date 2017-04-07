@@ -1,3 +1,5 @@
+
+
 #p_00995_firma{
   height:100%;
   width:100%;
@@ -115,7 +117,7 @@
  }
  #p_00995_alerta_firma_vacia{
    display: none;
-   background-color: rgba(53, 89, 167, 0.08);
+   background-color: #eff2f8;
    width: 234px;
    height: 109px;
    position: absolute;
@@ -141,4 +143,69 @@
   width: 200px;
   top: 88px;
  }
+
+ @media screen and (max-width: 767px) { /**********************************************/
+   #p_00995_firma{
+     height:100vmin;
+     width:100vmax;
+     position:fixed;
+     top:0;
+     margin:0;
+     padding:0;
+     /*box-sizing:border-box;*/
+   }
+   #p_00995_firma #p_00995_firma_contenedor {
+     height:100%;
+     width:100%;
+     top: 0;
+     left: 0;
+     z-index: 999;
+     margin:0;
+     padding:0;
+     /*box-sizing:border-box;*/
+   }
+   #p_00995_fecha_firma{
+     padding: 5px;
+      padding-right: 34px;
+      width: 100%;
+      box-sizing: border-box;
+   }
+   #p_00995_ventana_alerta{
+     z-index: 1000;
+     top: 20%;
+   }
+   #p_00995_cerrar_aviso_minimo{
+     position: absolute;
+    height: 25px;
+    width: 25px;
+    right: -12px;
+    top: -11px;
+    background-image:url(<? echo ver_url("images/close.png","src"); ?>);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+   }
+   #p_00995_alerta_firma_vacia{
+     z-index: 9999;
+     top: 20%;
+     padding: 5px;
+     height: initial;
+   }
+ }
+
+ @media only screen and (max-width: 767px) and (orientation:portrait){
+   #p_00995_firma{
+     transform: rotate(90deg) translateY(-100%);
+     transform-origin: 0 0;
+   }
+
+ }
+
+ @media only screen and (max-width: 767px) and (orientation:landscape){
+   #p_00995_firma{
+     transform: rotate(0deg);
+   }
+ }
+
+
  <? include ver_url("movil/firma/pad/css/signature-pad.css","");?>

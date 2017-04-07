@@ -293,6 +293,7 @@ if(!isset($_GET['idioma'])){
 			<span><? echo $TEXTOS[212][2];?></span>
 		</div>
 		<div id="p_00995_ventana_alerta">
+			<div id="p_00995_cerrar_aviso_minimo" onclick="p_00989_cerrar_firmas_minimas();"></div>
 			<span id="p_00995_alerta_firmas_pendientes_mensaje"></span>
 			<div id="p_00995_alerta_firmas_pendientes">
 			</div>

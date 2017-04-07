@@ -44,7 +44,6 @@ function signaturePadSave(event){
       setTimeout(function(){
         document.getElementById("p_00995_alerta_firma_vacia").style.display="none";
       },1500);
-		    //alert("Please provide signature first.");
     } else {
 
 

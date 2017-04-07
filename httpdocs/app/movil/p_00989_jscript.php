@@ -607,6 +607,7 @@ function p_00989_contar_firmas_pendientes(){
 /*	for(i in dia_lectivo){
 		dia_lectivo[i].firmado="0";
 		dia_lectivo[i].incidencia="0";
+		dia_lectivo[i].asistencia="1";
 		break;
 	}*/
 
@@ -697,6 +698,9 @@ function p_00989_comprobar_cerrar_firmas(){
 
 	p_00989_permitir_cerrar= false;
 }
+function p_00989_cerrar_firmas_minimas(){
+	document.getElementById("p_00995_ventana_alerta").style.display="none";
+}
 
 function p_00989_cerrar_firmas(){
 		document.getElementById("p_00995_firma").style.display="none";
@@ -708,6 +712,7 @@ function p_00989_cerrar_firmas(){
 
 function p_00989_crear_formulario_firma(p_00989_dia){
 	ocultar_mostrar('p_00995_firma');
+
 	if((typeof p_00989_una_vez!='undefined')&&(p_00989_una_vez)){
 		document.getElementById("p_00995_ventana_alerta").style.display="none";
 		document.getElementById("p_00989_salir_firmas_div").style.display="none";
@@ -727,6 +732,7 @@ function p_00989_crear_formulario_firma(p_00989_dia){
 
 	document.getElementById("p_00995_fecha_firma_dia_hora").innerHTML=p_00989_fecha;
 	resizeCanvas();
+	p_00989_resize_firmas();
 }
 
 //iniciar aviso de firma
@@ -798,6 +804,37 @@ function validar_email( email ) {
 		r=false;
 	}
 	return r;
+}
+
+window.addEventListener("resize",p_00989_resize_firmas);
+
+//vh no funciona bien en ios
+function p_00989_resize_firmas(){
+	if(document.getElementById("p_00995_firma").style.display!=="none"){
+		if(window.innerWidth<p_00956_ancho_movil){
+				if(window.innerWidth>window.innerHeight){
+					document.getElementById("p_00995_firma_contenedor").style.width=window.innerWidth+"px";
+					document.getElementById("p_00995_firma_contenedor").style.height=window.innerHeight+"px";
+				}
+				else{
+					document.getElementById("p_00995_firma_contenedor").style.width=window.innerHeight+"px";
+					document.getElementById("p_00995_firma_contenedor").style.height=window.innerWidth+"px";
+				}
+			//	document.getElementById("p_00995_firma").scrollTop = 0;
+				document.body.scrollTop = 0;
+				window.scroll(0,0);
+/*				if(window.innerWidth>window.innerHeight){
+					document.getElementById("p_00995_firma").style.width=window.innerWidth+"px";
+					document.getElementById("p_00995_firma").style.height=window.innerHeight+"px";
+				}
+				else{
+					document.getElementById("p_00995_firma").style.width=window.innerHeight+"px";
+					document.getElementById("p_00995_firma").style.height=window.innerWidth+"px";
+				}
+				document.getElementById("p_00995_firma").scrollTop = 0;
+				document.body.scrollTop = 0;*/
+		}
+	}
 }
 
 //funcion para testear valores en movil
