@@ -407,7 +407,7 @@
     box-sizing: border-box;
     top: 0;
     z-index: 1;
-		padding-top: 5px;
+		padding-top: 15px;
 
 	}
 	#p_01450_div_incidencia p:last-of-type{
@@ -418,7 +418,7 @@
 	}
 	.p_01450_div_valoracion_dia{
 		margin: auto;
-		max-width: 250px;
+		max-width: 270px;
 	}
 	.p_01450_div_formulario_titulos_check{
 		text-align: center;
@@ -430,6 +430,16 @@
 		margin: 0 5px;
 		text-align: center;
 
+	}
+	.p_01450_div_check_smile{
+		display:inline-block;
+		margin-bottom: 5px;
+	}
+	.p_01450_div_formulario_titulos_check{
+		width: 217px;
+	}
+	.p_01450_label_smiles{
+		float: left;
 	}
 }
 
