@@ -26,7 +26,7 @@
   right: 0;
   margin: auto;
 	top: 160px;
-
+	padding-bottom: 20px;
 }
 #p_01450_overall_valoracion_semanal h1{
 	position: absolute;
@@ -54,12 +54,9 @@
 }
 .p_01450_div_check_smile
 {
-	text-align: center;
 	font:helveticaneueroman;
 	color:#555;
-	/*min-height:1em;
-	min-height: 1em;*/
-	/*margin: 0 0 1em 0;*/
+	margin-bottom: 5px;
 }
 .p_01450_label_smiles
 {
@@ -71,6 +68,13 @@
 	cursor: pointer;
 	border: 2px solid darkgray;
   background-color: #eee;
+}
+.p_0001851_switch
+{
+	height:40px;
+	width:40px;
+	display:inline-block;
+	cursor: pointer;
 }
 .p_01450_div_check_smile input[type='checkbox']:checked + label{
 	background-position: center left;
@@ -135,7 +139,8 @@
 .p_01450_div_inputs_valoracion
 {
 	float:left;
-	width: 100%;
+	width: 800px;
+	box-sizing: border-box;
 }
 .p_01450_div_input_textarea
 {
@@ -180,6 +185,7 @@
 	text-align: left;
 	padding-left: 20px;
 	display: inline-block;
+	vertical-align: top;
 }
 .p_01450_div_valoracion_dia
 {
@@ -187,6 +193,15 @@
 	display: inline-block;
 	margin-bottom:1em;
 	margin-left: 170px;
+}
+#p_0001851_etiqueta_si_no{
+	width: 100%;
+	text-align: left;
+}
+#p_0001851_etiqueta_si_no span{
+	font-size: 18px;
+  margin-right: 28px;
+  font-weight: bold;
 }
 /*************************/
 #p_01450_overall_valoracion_semanal_profesor{
@@ -360,6 +375,59 @@
 	-webkit-animation:mover_flecha 0.3s ease-in alternate infinite;
 	animation: mover_flecha 0.3s ease-in alternate infinite;
 }
+.p_0001851_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.p_0001851_switch input {display:none;}
+
+/* The slider */
+.p_0001851_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+	background-color: #EB4B3D;
+  -webkit-transition: .4s;
+  transition: .4s;
+	border-radius: 34px;
+}
+
+.p_0001851_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  right: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+	border-radius: 50%;
+}
+
+input:checked + .p_0001851_slider {
+  background-color: #50BD65;
+}
+
+input:focus + .p_0001851_slider {
+  box-shadow: 0 0 1px #50BD65;
+}
+
+input:checked + .p_0001851_slider:before {
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
+}
+#p_0001851_boton_volver{
+	display: none;
+}
 
 @media screen and (max-width: 767px) { /**********************************************/
 	#p_0001851_form_valoracion{
@@ -408,6 +476,7 @@
     top: 0;
     z-index: 1;
 		padding-top: 15px;
+		position: absolute;
 
 	}
 	#p_01450_div_incidencia p:last-of-type{
@@ -422,7 +491,7 @@
 	}
 	.p_01450_div_formulario_titulos_check{
 		text-align: center;
-    width: 100%;
+    width: 204px;
     margin: 0;
     padding: 3px 3px 10px;
 	}
@@ -435,11 +504,18 @@
 		display:inline-block;
 		margin-bottom: 5px;
 	}
-	.p_01450_div_formulario_titulos_check{
-		width: 217px;
-	}
-	.p_01450_label_smiles{
+	.p_01450_label_smiles,.p_0001851_switch{
 		float: left;
+	}
+	#p_0001851_boton_volver{
+		display: block;
+		position: absolute;
+		right: 8px;
+		top: 0;
+		cursor: pointer;
+	}
+	#p_0001851_boton_volver>img{
+		height: 45px;
 	}
 }
 
@@ -468,6 +544,7 @@
 </style>
 
 <div id="p_01450_overall_valoracion_semanal" class="overall" style="display:none;">
+
 	<div id="p_0001851_form_valoracion">
 		<h1><? echo $TEXTOS[200][2];?></h1>
 		<div id="p_00960_clases_head_fecha_valorar">
@@ -514,6 +591,9 @@
 			</div>
 		</div>
 		<div id="p_01450_overall_valoracion_inputs" class="p_01450_div_inputs_valoracion">
+			<div onclick="p_0001851_volver_atras_valoracion();" id="p_0001851_boton_volver" >
+				<img src="<? echo ver_url("images/back.png","src");?>" >
+			</div>
 			<div id="p_0001851_valoracion_recibida">
 				<p>Valoraci&oacute;n recibida.</p>
 				<p>Gracias</p>
@@ -530,23 +610,37 @@
 			"></iframe>-->
 			<!--/**********************************************************************************/-->
 			<div class="p_01450_div_valoracion_dia">
-
+				<div id="p_0001851_etiqueta_si_no"><span><? echo $TEXTOS[219][2];?></span><span><? echo $TEXTOS[220][2];?></span></div>
 				<div id="p_01450_overall_valoracion_inputs_puntual" class="p_01450_div_check_smile">
-					<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual" style="display:none;" checked>
+					<!--<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual" style="display:none;" checked>
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_puntual">
+					</label>-->
+					<label class="p_0001851_switch">
+					  <input type="checkbox" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual" checked>
+					  <div class="p_0001851_slider round"></div>
 					</label>
 					<div class="p_01450_div_check_smile p_01450_div_formulario_titulos_check"><? echo $TEXTOS[157][2];?></div>
 				</div>
 				<div id="p_01450_overall_valoracion_inputs_preparado" class="p_01450_div_check_smile">
-					<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_preparado" name="p_0001292_input_preparado" value="" style="display:none;" checked>
+				<!--	<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_preparado" name="p_0001292_input_preparado" value="" style="display:none;" checked>
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_preparado">
+					</label>-->
+					<label class="p_0001851_switch">
+						<input type="checkbox" id="p_01450_input_valoracion_semanal_preparado" name="p_0001292_input_preparado" checked>
+						<div class="p_0001851_slider round"></div>
 					</label>
+
 					<div class="p_01450_div_check_smile p_01450_div_formulario_titulos_check"><? echo $TEXTOS[158][2];?></div>
 				</div>
 				<div id="p_01450_overall_valoracion_inputs_sistema" class="p_01450_div_check_smile">
-					<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_sistema" name="p_0001292_input_sistema" style="display:none;" checked>
+				<!--	<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_sistema" name="p_0001292_input_sistema" style="display:none;" checked>
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_sistema">
+					</label>-->
+					<label class="p_0001851_switch">
+						<input type="checkbox" id="p_01450_input_valoracion_semanal_sistema" name="p_0001292_input_sistema" checked>
+						<div class="p_0001851_slider round"></div>
 					</label>
+
 					<div class="p_01450_div_check_smile p_01450_div_formulario_titulos_check"><? echo $TEXTOS[159][2];?></div>
 				</div>
 			</div>

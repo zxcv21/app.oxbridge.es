@@ -83,8 +83,8 @@ Pag. ID: 00994
 			if(window.innerWidth>=p_00956_ancho_movil)
 				document.getElementById("p_0001851_form_valoracion").style.height = "610px";
 			document.getElementById("p_01450_overall_valoracion_inputs").style.display = "block";
-			if(window.innerWidth<p_00956_ancho_movil)
-				document.getElementById("p_01450_overall_valoracion_inputs").style.position="absolute";
+			//if(window.innerWidth<p_00956_ancho_movil)
+			//	document.getElementById("p_01450_overall_valoracion_inputs").style.position="absolute";
 			document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display = "block";
 
 			document.getElementById("p_0001851_anular").style.display = "none";
@@ -168,7 +168,7 @@ Pag. ID: 00994
 		}
 		else{
 			document.getElementById("p_0001851_form_valoracion").style.height="200px";
-			document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+			//document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
 		}
 		document.getElementById("p_01450_overall_valoracion_inputs").style.border="2px solid #21aed7";
 		document.getElementById("p_01450_overall_valoracion_inputs").style.borderRadius="10px";
@@ -199,6 +199,7 @@ function p_00994_resize_valoracion(){
 		if(window.innerWidth<p_00956_ancho_movil){
 			document.getElementById("p_0001851_form_valoracion").style.height="";
 			document.getElementById("p_01450_overall_valoracion_inputs").style.width="100%";
+				document.getElementById("p_01450_overall_valoracion_inputs").style.position="absolute";
 			if(	document.getElementById("p_00960_clases_head_info_valorar").getBoundingClientRect().top>document.getElementById("p_00960_clases_head_foto_valorar").getBoundingClientRect().bottom){
 				document.getElementById("p_0001851_boton_incidencia").style.width="150px";
 				document.getElementById("p_0001851_boton_incidencia").style.top="120px";
@@ -211,10 +212,22 @@ function p_00994_resize_valoracion(){
 		}
 		else{
 			document.getElementById("p_0001851_form_valoracion").style.height="200px";
-			document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+			//document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
 			document.getElementById("p_0001851_boton_incidencia").style.width="";
 			document.getElementById("p_0001851_boton_incidencia").style.top="";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.width="";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.position="initial";
 		}
 	}
+}
+
+function p_0001851_volver_atras_valoracion(){
+	mostrar_valoracion(false,"formulario_valoracion");
+	p_01003_deshacer_estilos_no_asistencia();
+	document.getElementById("p_01450_overall_valoracion_inputs").style.display="none";
+	document.getElementById("p_01450_input_valoracion_semanal_puntual").checked= true;
+	document.getElementById("p_01450_input_valoracion_semanal_preparado").checked= true;
+	document.getElementById("p_01450_input_valoracion_semanal_sistema").checked= true;
+
 }
 </script>

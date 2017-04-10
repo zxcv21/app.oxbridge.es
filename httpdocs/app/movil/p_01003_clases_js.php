@@ -858,7 +858,8 @@ function p_01003_deshacer_estilos_no_asistencia(){
 	p_01003_anular_no_asistencia_variable_local.style.border="none";
 	p_01003_anular_no_asistencia_variable_local.style.borderRadius= "0";
 	p_01003_anular_no_asistencia_variable_local.style.padding="0";
-	p_01003_anular_no_asistencia_variable_local.style.position="initial";
+	if(window.innerWidth>=p_00956_ancho_movil)
+		p_01003_anular_no_asistencia_variable_local.style.position="initial";
 	p_01003_anular_no_asistencia_variable_local.style.width="100%";
 	p_01003_anular_no_asistencia_variable_local.style.boxShadow= "none";
 	p_01003_anular_no_asistencia_variable_local.style.display= "none";
