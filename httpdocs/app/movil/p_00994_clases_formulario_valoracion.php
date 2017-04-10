@@ -80,11 +80,15 @@ Pag. ID: 00994
 			document.getElementById("p_01450_div_incidencia").style.display = "none";
 			//document.getElementById("p_0001851_boton_incidencia").style.display = "block";
 
+			if(window.innerWidth>=p_00956_ancho_movil)
 				document.getElementById("p_0001851_form_valoracion").style.height = "610px";
-				document.getElementById("p_01450_overall_valoracion_inputs").style.display = "block";
-				document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display = "block";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.display = "block";
+			if(window.innerWidth<p_00956_ancho_movil)
+				document.getElementById("p_01450_overall_valoracion_inputs").style.position="absolute";
+			document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display = "block";
 
-				document.getElementById("p_0001851_anular").style.display = "none";
+			document.getElementById("p_0001851_anular").style.display = "none";
+
 
 	//	if(document.getElementById("p_00960_clases_head_valoracion_s"+val+'_valorar').style.backgroundImage!="")
 	//		val=0;
@@ -93,6 +97,10 @@ Pag. ID: 00994
 
 		//document.getElementById("p_0001292_input_finalizador").value="";
 		document.getElementById("p_00960_clases_head_flecha_valorar").style.display = "none";
+		if(	document.getElementById("p_00960_clases_head_info_valorar").getBoundingClientRect().top>document.getElementById("p_00960_clases_head_foto_valorar").getBoundingClientRect().bottom){
+			document.getElementById("p_0001851_boton_incidencia").style.width="150px";
+			document.getElementById("p_0001851_boton_incidencia").style.top="120px";
+		}
 		mostrar_valoracion(true, "formulario_valoracion");
 		//document.getElementById('p_01450_overall_valoracion_semanal').style.display='block';
 }
@@ -154,12 +162,19 @@ Pag. ID: 00994
 		document.querySelector(".p_01450_div_valoracion_dia").style.display = "none";
 		document.getElementById("p_01450_div_incidencia").style.display = "block";
 
-		document.getElementById("p_0001851_form_valoracion").style.height="200px";
+		if(window.innerWidth<p_00956_ancho_movil){
+			document.getElementById("p_0001851_form_valoracion").style.height="";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.width="100%";
+		}
+		else{
+			document.getElementById("p_0001851_form_valoracion").style.height="200px";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+		}
 		document.getElementById("p_01450_overall_valoracion_inputs").style.border="2px solid #21aed7";
 		document.getElementById("p_01450_overall_valoracion_inputs").style.borderRadius="10px";
 		document.getElementById("p_01450_overall_valoracion_inputs").style.padding="20px";
 		document.getElementById("p_01450_overall_valoracion_inputs").style.position="fixed";
-		document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+		//document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
 		document.getElementById("p_01450_overall_valoracion_inputs").style.boxShadow="5px 5px 20px grey";
 
 		document.getElementById("p_0001851_anular").style.display="inline-block";
@@ -170,8 +185,36 @@ Pag. ID: 00994
 		document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[203][3];?>";//Enviar
 		document.getElementById("p_0001851_enviar").style.width= "237px";//150
 
+		document.getElementById("p_0001851_boton_incidencia").style.width="";
+		document.getElementById("p_0001851_boton_incidencia").style.top="";
+
 		mostrar_valoracion(false, "formulario_valoracion");
 		dia_lectivo[p_1003_clase_formulario_valorar].valoracion="";
 	}
 
+window.addEventListener("resize", p_00994_resize_valoracion);
+
+function p_00994_resize_valoracion(){
+	if(document.getElementById("p_01450_overall_valoracion_semanal_profesor").style.display!=="none"){
+		if(window.innerWidth<p_00956_ancho_movil){
+			document.getElementById("p_0001851_form_valoracion").style.height="";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.width="100%";
+			if(	document.getElementById("p_00960_clases_head_info_valorar").getBoundingClientRect().top>document.getElementById("p_00960_clases_head_foto_valorar").getBoundingClientRect().bottom){
+				document.getElementById("p_0001851_boton_incidencia").style.width="150px";
+				document.getElementById("p_0001851_boton_incidencia").style.top="120px";
+			}
+			else{
+				document.getElementById("p_0001851_boton_incidencia").style.width="";
+				document.getElementById("p_0001851_boton_incidencia").style.top="";
+			}
+
+		}
+		else{
+			document.getElementById("p_0001851_form_valoracion").style.height="200px";
+			document.getElementById("p_01450_overall_valoracion_inputs").style.width="604px";
+			document.getElementById("p_0001851_boton_incidencia").style.width="";
+			document.getElementById("p_0001851_boton_incidencia").style.top="";
+		}
+	}
+}
 </script>

@@ -297,16 +297,24 @@
 	height: 25px;
   width: 217px;
   position: absolute;
-  right: 23px;
-  top: 157px;
+/*  right: 23px;
+  top: 157px;*/
+	right: -364px;
+	top: 141px;
   border-radius: 10px;
   border: 2px solid #f25b07;
   cursor: pointer;
+	color: black;
+	text-transform: none;
+
 }
 .p_0001851_imagen_boton_incidencia{
-	height: 26px;
+/*	height: 26px;*/
   width: 14px;
   margin-left: 2px;
+	height: 100%;
+  position: relative;
+  display: table-cell;
 }
 #p_0001851_boton_incidencia span{/*, #p_0001851_boton_he_asistido span{*/
 	display: block;
@@ -342,19 +350,107 @@
 }
 #p_00960_clases_head_flecha_valorar{
 	position: absolute;
-  right: 36px;
+/*  right: 36px;
   top: 78px;
-  height: 37px;
+  height: 37px;*/
+	bottom: -8px;
+  right: -31px;
+	height: 37px;
+	transform:translateX(5px);
 	-webkit-animation:mover_flecha 0.3s ease-in alternate infinite;
 	animation: mover_flecha 0.3s ease-in alternate infinite;
 }
+
+@media screen and (max-width: 767px) { /**********************************************/
+	#p_0001851_form_valoracion{
+		width: 100%;
+    height: initial;
+		top: 0;
+		padding: 5px 5px 10px;
+    box-sizing: border-box;
+	}
+	#p_01450_overall_valoracion_semanal_profesor{
+		margin: 53px 0 0;
+		width: 100%;
+	}
+	#p_00960_clases_head_foto_valorar{
+		float: none;
+		display: inline-block;
+		margin: 5px;
+    position: initial;
+	}
+	#p_00960_clases_head_info_valorar{
+		float: none;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+		margin-bottom: 40px;
+		vertical-align: bottom;
+		margin-right: 30px;
+		bottom: initial;
+	}
+	#p_0001851_boton_incidencia{
+		bottom: 5px;
+    top: initial;
+    right: 5px;
+		display: table;
+	}
+	#p_0001851_boton_incidencia span{
+		position: relative;
+    display: table-cell;
+    top: 0px;
+    vertical-align: middle;
+		left: 4px;
+	}
+	#p_01450_overall_valoracion_inputs{
+		width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    z-index: 1;
+		padding-top: 5px;
+
+	}
+	#p_01450_div_incidencia p:last-of-type{
+		margin-top: 0;
+	}
+	#p_0001851_enviar{
+		margin-bottom: 3px;
+	}
+	.p_01450_div_valoracion_dia{
+		margin: auto;
+		max-width: 250px;
+	}
+	.p_01450_div_formulario_titulos_check{
+		text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 3px 3px 10px;
+	}
+	#p_01450_div_incidencia p{
+		margin: 0 5px;
+		text-align: center;
+
+	}
+}
+
+@media only screen and (max-width: 767px) and (orientation:portrait){
+}
+
+@media only screen and (max-width: 767px) and (orientation:landscape){
+		.p_01450_div_input_textarea textarea{
+			height: 100px;
+		}
+}
+/*0%{right: 36px;}
+100%{right: 41px;}*/
+
 @-webkit-keyframes mover_flecha {
-	0%{right: 36px;}
-	100%{right: 41px;}
+	0%{transform:translateX(0);}
+	100%{transform:translateX(5);}
 }
 @keyframes mover_flecha {
-	0%{right: 36px;}
-	100%{right: 41px;}
+	0%{transform:translateX(0);}
+	100%{transform:translateX(5);}
 }
 
 }
@@ -369,12 +465,12 @@
 			</span>
 			<div id="p_00960_clases_head_horario_valorar"></div>
 		</div>
-		<div id="p_0001851_boton_incidencia" onclick='p_00994_envio_incidencia();'>
-				<img class="p_0001851_imagen_boton_incidencia" src="<? echo ver_url("images/incidencia.png","src"); ?>">
-				<span><? echo $TEXTOS[201][2];?></span>
-		</div>
+<!--		<div id="p_0001851_boton_incidencia" onclick='p_00994_envio_incidencia();'>
+				<img class="p_0001851_imagen_boton_incidencia" src="<? //echo ver_url("images/incidencia.png","src"); ?>">
+				<span><? //echo $TEXTOS[201][2];?></span>
+		</div>-->
 	<!--	<div id="p_0001851_boton_he_asistido" onclick='p_00994_envio_he_asistido();'>
-				<img class="p_0001851_imagen_boton_incidencia" src="<? echo ver_url("images/incidencia.png","src"); ?>">
+				<img class="p_0001851_imagen_boton_incidencia" src="<? //echo ver_url("images/incidencia.png","src"); ?>">
 				<span>Sí he asistido a esta clase</span>
 		</div>
 -->
@@ -389,12 +485,7 @@
 			 src="<? echo ver_url("images/loading.png","src"); ?>">
 	</div>
 		<div id="p_01450_overall_valoracion_semanal_profesor" class="p_01450_div_valoracion_profesor">
-<!--			<div id="p_00960_clases_head_fecha_valorar">
-				<span id="p_00960_clases_head_fecha_imprimir_valorar" content="telephone=no" >
-				</span>
-				<div id="p_00960_clases_head_horario_valorar"></div>
-			</div>
-	-->
+			<img id="p_00960_clases_head_foto_valorar" src="<? echo ver_url("images/perfil.png","src"); ?>">
 			<div id="p_00960_clases_head_info_valorar">
 				<div id="p_00960_clases_head_info_titulo_valorar"><? echo $TEXTOS[100][2]; ?>:</div>
 				<div id="p_00960_clases_head_nombre_valorar"></div>
@@ -405,11 +496,13 @@
 					<div onClick="formulario_valoracion(4);" id="p_00960_clases_head_valoracion_s4_valorar"></div>
 					<div onClick="formulario_valoracion(5);" id="p_00960_clases_head_valoracion_s5_valorar"></div>
 				</div>
+				<img id="p_00960_clases_head_flecha_valorar" src="<? echo ver_url("images/arrow_left.png","src"); ?>">
 			</div>
-			<img id="p_00960_clases_head_foto_valorar" src="<? echo ver_url("images/perfil.png","src"); ?>">
-			<img id="p_00960_clases_head_flecha_valorar" src="<? echo ver_url("images/arrow_left.png","src"); ?>">
+			<div id="p_0001851_boton_incidencia" onclick='p_00994_envio_incidencia();'>
+					<img class="p_0001851_imagen_boton_incidencia" src="<? echo ver_url("images/incidencia.png","src"); ?>">
+					<span><? echo $TEXTOS[201][2];?></span>
+			</div>
 		</div>
-
 		<div id="p_01450_overall_valoracion_inputs" class="p_01450_div_inputs_valoracion">
 			<div id="p_0001851_valoracion_recibida">
 				<p>Valoraci&oacute;n recibida.</p>

@@ -579,7 +579,10 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 	document.getElementById("p_00995_input_form_valoracion_disparador_js").value="window.parent.ocultar_mostrar('p_00995_formulario_valoracion_contenedor');"+
 		"window.parent.p_01003_enviar_comentario();";
 
-	document.getElementById("p_0001851_form_valoracion").style.height = "200px";
+	if(window.innerWidth<p_00956_ancho_movil)
+		document.getElementById("p_0001851_form_valoracion").style.height = "";
+	else
+		document.getElementById("p_0001851_form_valoracion").style.height = "200px";
 	document.getElementById("p_01450_overall_valoracion_inputs").style.display = "none";
 	document.querySelector(".p_01450_div_valoracion_dia").style.display = "block";
 	document.getElementById("p_01450_div_incidencia").style.display = "none";
@@ -667,22 +670,20 @@ p_00994_valoracion_voluntaria= false;
 
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
-/*	if(typeof this.primera_vez== "undefined"){
+	if(typeof this.primera_vez== "undefined"){
 		p_1003_maximo_dias_valorar= 1000;
-		for(i in dia_lectivo){
-			if(typeof this.primera_vez== "undefined"){
-				dia_lectivo[i].valoracion="";
-				dia_lectivo[i].incidencia=0;
-				dia_lectivo[i].asistencia="1";
-				this.primera_vez= false;
-			}
-			else{
-				dia_lectivo[i].incidencia=1;
+		if(typeof this.primera_vez== "undefined"){
+			for(i in dia_lectivo){
+
+					dia_lectivo[i].valoracion="";
+					dia_lectivo[i].incidencia=0;
+					dia_lectivo[i].asistencia="1";
+					this.primera_vez= false;
 			}
 		}
 		this.primera_vez= false;
 	}
-*/
+
 
 
 	if(!p_00994_valoracion_voluntaria){
@@ -831,7 +832,10 @@ function p_01003_enviar_valoracion(){
 		}
 		, 500);
 	};
-	document.getElementById("p_0001851_form_valoracion").style.height = "200px";
+	if(window.innerWidth<p_00956_ancho_movil)
+		document.getElementById("p_0001851_form_valoracion").style.height = "";
+	else
+		document.getElementById("p_0001851_form_valoracion").style.height = "200px";
 	document.getElementById("p_01450_overall_valoracion_inputs").style.display = "none";
 	document.querySelector(".p_01450_div_valoracion_dia").style.display = "block";
 	document.getElementById("p_01450_div_incidencia").style.display = "none";
@@ -845,6 +849,8 @@ function p_01003_enviar_valoracion(){
 		if(document.getElementById("p_00987_boton_firma_pendiente"))
 			document.getElementById("p_00987_boton_firma_pendiente").style.display = "none";
 	}
+	document.getElementById("p_0001851_boton_incidencia").style.width="";
+	document.getElementById("p_0001851_boton_incidencia").style.top="";
 }
 
 function p_01003_deshacer_estilos_no_asistencia(){
