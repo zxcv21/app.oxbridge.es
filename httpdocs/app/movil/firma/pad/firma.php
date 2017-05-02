@@ -1,4 +1,6 @@
-
+<?
+session_start();
+?>
 <div id="signature-pad" class="m-signature-pad">
     <div class="m-signature-pad--body">
       <canvas id="mi_firma"></canvas>
@@ -16,6 +18,12 @@
     <div class="m-signature-pad--footer">
     </div>
 </div>
+
+<script type="text/javascript">
+	//console.log("tomas 0001: <? echo ver_url("movil/firma/pad/js/app.js","src"); ?>") ;
+	var version_pagina = "<? echo($_SESSION["version__p_php_session"]) ; ?>" ;
+	//console.log("tomas 0002: "+version_pagina) ;
+</script>
 
 <script src="<? echo ver_url("movil/firma/pad/js/signature_pad.js","src"); ?>"></script>
 <script src="<? echo ver_url("movil/firma/pad/js/app.js","src"); ?>"></script>

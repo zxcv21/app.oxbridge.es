@@ -780,12 +780,14 @@ function p_00989_avisos_firmas_mostrar(indice,time)
 }
 
 function p_00989_firmar_antes_clase(p_00989_dia){
-	p_00989_una_vez=true;
-	p_00989_crear_formulario_firma(p_00989_dia);
-	p_00989_clase_para_firma= p_00989_dia;
-	p_00989_permitir_cerrar=true;
-	resizeCanvas();
-	signaturePad.clear();
+	if(dia_lectivo[p_00989_dia].firmado=="0"){
+		p_00989_una_vez=true;
+		p_00989_crear_formulario_firma(p_00989_dia);
+		p_00989_clase_para_firma= p_00989_dia;
+		p_00989_permitir_cerrar=true;
+		resizeCanvas();
+		signaturePad.clear();
+	}
 }
 
 //entrar sin liogin
@@ -821,8 +823,6 @@ function p_00989_resize_firmas(){
 					document.getElementById("p_00995_firma_contenedor").style.height=window.innerWidth+"px";
 				}
 			//	document.getElementById("p_00995_firma").scrollTop = 0;
-				document.body.scrollTop = 0;
-				window.scroll(0,0);
 /*				if(window.innerWidth>window.innerHeight){
 					document.getElementById("p_00995_firma").style.width=window.innerWidth+"px";
 					document.getElementById("p_00995_firma").style.height=window.innerHeight+"px";
@@ -835,6 +835,11 @@ function p_00989_resize_firmas(){
 				document.body.scrollTop = 0;*/
 		}
 	}
+
+	//window.location.hash = "p_00955_body";
+		document.body.scrollTop = 0;
+	//	window.scroll(0,0);
+
 }
 
 //funcion para testear valores en movil

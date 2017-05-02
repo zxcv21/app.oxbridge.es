@@ -311,7 +311,7 @@ Pag. ID: 00992
 		for(i in dia_lectivo){
 			if(dia_lectivo[i].fecha==ac_ano+"/"+ac_mes+"/"+ac_dia&&dia_lectivo[i].horaInicio==ac_hor+":"+ac_min){
 				DIA_LEC=i;
-
+				p_00992_clase_cargada= i;
 				if(document.getElementById("p_00992_clases_head_horario_clase_"+i)){
 					actual=document.getElementById("p_00992_clases_head_horario_clase_"+i);
 					var padre=actual.parentNode;

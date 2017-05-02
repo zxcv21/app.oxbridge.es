@@ -1,7 +1,12 @@
 <?
 // Bucket Name
 //$bucket=$_POST['bucket'];
-if (!class_exists('S3'))require_once($_SERVER['DOCUMENT_ROOT']."/app/aws-s3/S3.php");
+if (!class_exists('S3')){
+  if(require_once("S3.php"))
+    echo "incluido S3";
+  else
+    echo "no incluido S3";
+}
 
 //instantiate the class
 $s3 = new S3(awsAccessKey, awsSecretKey);

@@ -110,7 +110,7 @@
 <div id="p_01175_smile_estructura_ordenar_frase" style='display:none;'>
 	<div id="ordenar_frase" class="preguntas" style="display:none;">
 		<div id="titulo_ordenar_frase" class="text"></div>
-		<div id="texto_ordenar_frase" class="text2" ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);'></div>
+		<div id="texto_ordenar_frase" class="text2" ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);' style='padding:0;'></div>
 		<div class="p_01175_zona_crear_frase">
 			<div id="frase_formada_usuario" class="estilo_frase_usuario"></div>
 			<div id="frase_correcta" class="estilo_frase_usuario_correcta"></div>

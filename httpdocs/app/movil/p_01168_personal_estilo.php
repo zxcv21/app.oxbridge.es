@@ -5,7 +5,8 @@ Pag. ID: p_01168
 <style>
 	#p_00961_pago_realizado{
 		border:3px solid #2dcee4;
-		width: 400px;
+		width: 100%;
+		max-width: 400px;
     height: 130px;
     position: fixed;
     z-index: 3;

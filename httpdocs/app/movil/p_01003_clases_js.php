@@ -628,24 +628,25 @@ function p_1003_guardar_horas_inicio_fin_clases(){
 
 
 		//testeo monica
-/*		if(i==="369577"){
+	/*	if(i==="369577"){
 		//if(i==="372591"){
-			dia_lectivo[i].historica= 1;
-			//dia_lectivo[i].valoracion= "";
+			dia_lectivo[i].historica= "0";
+			dia_lectivo[i].valoracion= "";
 			dia_lectivo[i].incidencia= "0";
 			dia_lectivo[i].firmado= "0";
 			console.log("********");
 			//console.log("hora real clase: "+dia_lectivo[i].fecha+" // "+dia_lectivo[i].horaInicio);
 			//console.log("hora local clase: "+dia_lectivo[i].date_inicio);
-			//dia_lectivo[i].date_inicio= new Date (Date.now()+2*60000);
-			dia_lectivo[i].date_inicio= new Date (Date.now()-22*3600000);
-			dia_lectivo[i].date_final= new Date (Date.now()-22*3600000);
+			dia_lectivo[i].date_inicio= new Date (Date.now()+(1.5*60000));
+			dia_lectivo[i].date_final= new Date (Date.now()-4*60000);
+			//dia_lectivo[i].date_inicio= new Date (Date.now()-22*3600000);
+			//dia_lectivo[i].date_final= new Date (Date.now()-22*3600000);
 			//dia_lectivo[i].date_final= new Date (Date.now()-2*60000);
 			console.log("hora inicio clase: "+dia_lectivo[i].date_inicio);
 			console.log("hora final clase: "+dia_lectivo[i].date_final);
-			console.log("ahora: "+new Date (Date.now()-24*3600000));
-		}
-*/
+			console.log("ahora: "+new Date (Date.now()));
+		}*/
+
 		/////////////////////
 
 		p_1003_poner_alarmas_firma_y_valoracion(i);
@@ -655,14 +656,16 @@ function p_1003_guardar_horas_inicio_fin_clases(){
 function p_1003_poner_alarmas_firma_y_valoracion(p_1003_dia){
 
 	if(parseInt(dia_lectivo[p_1003_dia].historica)!==1){
+		var p_1003_now=new Date ();
+		if(p_1003_now<dia_lectivo[p_1003_dia].date_final){
+			//pedira firma un minuto antes de clase
+			var p_1003_fecha_alarma= new Date (dia_lectivo[p_1003_dia].date_inicio.getTime()-1*60000);
+			p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00989_firmar_antes_clase",p_1003_dia);
 
-		//pedira firma un minuto antes de clase
-		var p_1003_fecha_alarma= new Date (dia_lectivo[i].date_inicio.getTime()-1*60000);
-		p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00989_firmar_antes_clase",p_1003_dia);
-
-		//pedira valoracion 5 min despues clase
-		p_1003_fecha_alarma= new Date (dia_lectivo[i].date_final.getTime()+5*60000);
-		p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00994_valorar_final_clase",p_1003_dia);
+			//pedira valoracion 5 min despues clase
+			p_1003_fecha_alarma= new Date (dia_lectivo[p_1003_dia].date_final.getTime()+5*60000);
+			p_01003_comprobar_alarma(p_1003_fecha_alarma,"p_00994_valorar_final_clase",p_1003_dia);
+		}
 	}
 }
 
@@ -670,11 +673,10 @@ p_00994_valoracion_voluntaria= false;
 
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
-	if(typeof this.primera_vez== "undefined"){
+/*	if(typeof this.primera_vez== "undefined"){
 		p_1003_maximo_dias_valorar= 1000;
 		if(typeof this.primera_vez== "undefined"){
 			for(i in dia_lectivo){
-
 					dia_lectivo[i].valoracion="";
 					dia_lectivo[i].incidencia=0;
 					dia_lectivo[i].asistencia="1";
@@ -682,7 +684,7 @@ function p_1003_comprobar_valoraciones_pendientes(){
 			}
 		}
 		this.primera_vez= false;
-	}
+	}*/
 
 
 
@@ -1104,6 +1106,7 @@ function p_01003_comprobar_alarma(p_01003_fecha, p_01003_funcion, p_01003_parame
 				if(p_01003_ahora>=item.fecha){
 					window[item.funcion](item.parametro);
 					this.p_01003_array_funciones.splice(index,1);
+					//console.log("llamada "+item.funcion);
 				}
 			});
 		}
@@ -1115,6 +1118,15 @@ function p_01003_comprobar_alarma(p_01003_fecha, p_01003_funcion, p_01003_parame
 		}
 		this.p_01003_array_funciones.push({fecha:p_01003_fecha, funcion:p_01003_funcion, parametro:p_01003_parametro});
 	}
+/*
+	for(var i of this.p_01003_array_funciones){
+		console.log("date: "+i.fecha+"\nfuncion: "+i.funcion);
+	}
+	if(!this.p_01003_array_funciones.length)
+		console.log("FIN**************")
+	else {
+		console.log("***************");
+	}*/
 }
 
 </script>

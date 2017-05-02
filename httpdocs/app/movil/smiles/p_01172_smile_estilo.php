@@ -575,6 +575,7 @@
 	#p_00962_preguntas_y_botones_contenedor{
 		max-width: 595px;
 		width: initial;
+
 	}
 	#p_01175_preguntas{
 		width: 100%;
@@ -591,6 +592,12 @@
 	}
 	.p_01171_menu_botones_smile{
 		top: calc(8vh + 45px);
+	}
+	.p_01172_makeScrollable{
+		-webkit-overflow-scrolling: touch;
+	}
+	#p_00962_preguntas_contenedor{
+		-webkit-overflow-scrolling: touch;
 	}
 }
 @media screen and (max-width: 767px) and (orientation: landscape){

@@ -490,10 +490,10 @@ input:checked + .p_0001851_slider:before {
 		max-width: 270px;
 	}
 	.p_01450_div_formulario_titulos_check{
-		text-align: center;
     width: 204px;
     margin: 0;
     padding: 3px 3px 10px;
+		font-size: 17px;
 	}
 	#p_01450_div_incidencia p{
 		margin: 0 5px;
@@ -516,6 +516,10 @@ input:checked + .p_0001851_slider:before {
 	}
 	#p_0001851_boton_volver>img{
 		height: 45px;
+	}
+	.p_01450_div_input_textarea textarea{
+		width: 85%;
+		height: 160px;
 	}
 }
 

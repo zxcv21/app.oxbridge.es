@@ -265,13 +265,11 @@ Pag. ID: p_00991
 	}
 
 @media screen and (max-width: 767px) {
-	#p_00960_clases_head{
-		margin-top: 20px;
-	}
 
 	#p_00960_clases_head{
+		margin-top: 20px;
 		width: 100%;
-		padding: 3px;
+		padding: 3px 6px;
 		box-sizing: border-box;
 	}
 	#p_00960_clases_head_profe{

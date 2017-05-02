@@ -310,9 +310,10 @@ display:inline-block;
 		overflow: visible;
 	}
 	.p_00992_clases_actividades_actividad{
-		width: 100%;
+		width: 95%;
 		padding: 9px 3px 0;
-		margin: 0 0 2px 2px;
+		margin: 0 0 2px 0;
+		margin-left: calc(2.5% + 6px);
 		box-sizing: border-box;
 		position: relative;
 	}
@@ -334,7 +335,7 @@ display:inline-block;
 		z-index: 1;
 		width: 100%;
 		overflow: auto;
-		bottom: 0;
+		/*bottom: 0;*/
 		padding-bottom: 16vh;
 	}
 	#p_00960_clases_contenedor_actividad{

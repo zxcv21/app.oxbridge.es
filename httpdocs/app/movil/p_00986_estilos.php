@@ -447,17 +447,25 @@ h4{
 	.contenedores_formularios{
 		width: 100%;
 	}
+	.p_00986_div_nivel{
+		top: 0;
+		margin-top: 0;
+	}
+	#p_00986_div_nivel_seleccion{
+		overflow: hidden;
+		margin: auto;
+	}
 }
 
 @media screen and (max-width: 767px) and (orientation:landscape){
-	#contenedor_menu{
-		position:relative;
-		-moz-transition:0.5s;
-		-webkit-transition:0.5s;
-		transition:0.5s;
-		float: left;
-		height: initial;
-		width: initial;
+		#contenedor_menu{
+			position:relative;
+			-moz-transition:0.5s;
+			-webkit-transition:0.5s;
+			transition:0.5s;
+			float: left;
+			height: initial;
+			width: initial;
 		}
 		#head_oxbridge{
 			/*height: 60px;*/
@@ -469,6 +477,17 @@ h4{
 		#head_oxbridge_menu_apartados{
 			margin-left: 106px;
 		}
+}
+@media screen and (max-width: 767px) and (orientation:portrait){
+	#p_00986_div_nivel_seleccion{
+		  width: 280px;
+	}
+	#p_00955_div_nombre_seleccion_nivel{
+		text-align: center !important;
+	}
+	#p_00955_div_seleccion_nivel>p{
+		text-align: center !important;
+	}
 }
 </style>
 

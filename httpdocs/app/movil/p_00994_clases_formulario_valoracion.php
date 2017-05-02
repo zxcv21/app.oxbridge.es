@@ -67,9 +67,11 @@ Pag. ID: 00994
 	}
 
 	function p_00994_valorar_final_clase(p_00994_dia){
-		p_1003_clase_formulario_valorar= p_00994_dia;
-		p_1003_crear_formulario_valoracion(p_00994_dia);
-		p_00994_valoracion_voluntaria=true;
+		if(((dia_lectivo[p_00994_dia].valoracion=="")||(parseInt(dia_lectivo[p_00994_dia].valoracion)<1))&&(parseInt(dia_lectivo[p_00994_dia].incidencia)!=1)){
+			p_1003_clase_formulario_valorar= p_00994_dia;
+			p_1003_crear_formulario_valoracion(p_00994_dia);
+			p_00994_valoracion_voluntaria=true;
+		}
 	}
 
 	function formulario_valoracion(val){

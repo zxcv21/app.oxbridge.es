@@ -209,7 +209,12 @@ window.addEventListener("load",function() {
 });
 
 //poner menú adecuado
-window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
+//safari tiene problemas con resize
+if(window.innerWidth<p_00956_ancho_movil)
+	window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
+else
+	window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
+
 //p_00987_adaptar_menu_al_ancho();
 if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
 	p_00987_menu_movil= true;
@@ -217,8 +222,6 @@ if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidt
 else{
 	p_00987_menu_movil= false;
 }
-//window.addEventListener("load", p_00987_adaptar_menu_al_ancho);
-//p_00987_adaptar_menu_al_ancho();
 
 var p_00987_mouseover_on= false;
 
