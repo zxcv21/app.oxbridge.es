@@ -279,21 +279,6 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     border: solid 0.1em #eee;
 }
 
-/*h1{
-	font-family:Helvetica, Arial, sans-serif;
-	font-size: 14px/22px;
-	font-size:24px;
-	color:#999;
-	letter-spacing: 6px;
-	}
-h2{
-	}
-h3{
-	}
-h4{
-	}*/
-
-
 #p_00955_click_out_idioma{
 	position:fixed;
 	height:100%;
@@ -441,11 +426,17 @@ h4{
 		/*height: 84vh;*/
 		padding-bottom: calc(8vh + 45px);
 	}
+	#clases{
+		height: calc(100% - 8vmax);
+	}
 	#head_oxbridge_menu_apartados{
 		margin-left: 3px;
 	}
 	.contenedores_formularios{
 		width: 100%;
+	}
+	#mail{
+		overflow: auto;
 	}
 	.p_00986_div_nivel{
 		top: 0;
@@ -490,6 +481,9 @@ h4{
 	}
 	#p_00955_div_seleccion_nivel>p{
 		text-align: center !important;
+	}
+	#clases{
+		height: calc(100% - 16vh);
 	}
 }
 </style>

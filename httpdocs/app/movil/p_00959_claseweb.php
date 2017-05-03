@@ -49,19 +49,31 @@
 #p_00959_espera_clase img{
 	height: 266px;
 }
+#p_00959_div_clases_a_distancia{
+	padding: 0em 1em 1em 1em;
+}
+#p_00959_img_nube{
+	height: 266px;
+	margin-left: -43px;
+	cursor: pointer;
+}
+@media screen and (max-width: 767px){
+	#p_00959_div_clases_a_distancia{
+		padding: 0;
+		padding-bottom: 16vh;
+	}
+	#p_00959_img_nube{
+		height: initial;
+		margin-left: 0;
+		width: 200px;
+		max-width: 353px;
+	}
+}
 </style>
 
 <div id="claseweb">
-	<div id="p_00959_div_clases_a_distancia" align="center" style="font-size: 3em;padding: 0em 1em 1em 1em;font-family: HelveticaNeueRoman;color: #888; margin-top: 50px">
-	</div>
-	<!--div id="p_00959_sin_clase">
-		<div align="center">
-			<p>No te pierdas ni una. Ahora tus clases por videoconferencia o en tu smartphone.</p>
-		</div>
-		<div align="center">
-			<img style="height: 266px;" src="<? echo ver_url("images/nube_cw.png","src"); ?>">
-		</div>
-	</div-->
+	<div id="p_00959_div_clases_a_distancia" align="center" style="font-size: 3em;font-family: HelveticaNeueRoman;color: #888; margin-top: 50px">
+</div>
 	<div id="p_00959_espera_clase">
 		<div>
 				<p id="p_00959_falta_inicio">00:00:00</p>
@@ -136,9 +148,8 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 
 		if( parseInt(p_00959_js_f_01_contador) == parseInt(0) )
 		{
-			//p_00959_js_f_01_html+= "<div id=\"p_00959_sin_clase\">";
 			p_00959_js_f_01_html+= "	<div align=\"center\">";
-			p_00959_js_f_01_html+= "		<img style=\"height: 266px; margin-left: -43px; cursor: pointer\" src=\"<? echo ver_url("images/nube_cw.png","src"); ?>\" onclick='javascript: p_00959_js_f_04_abrir_ejemplo();'>";
+			p_00959_js_f_01_html+= "		<img id='p_00959_img_nube' src=\"<? echo ver_url("images/nube_cw.png","src"); ?>\" onclick='javascript: p_00959_js_f_04_abrir_ejemplo();'>";
 			p_00959_js_f_01_html+= "	</div>";
 			p_00959_js_f_01_html+= "	<div align=\"center\">";
 			p_00959_js_f_01_html+= "		<span style=\"font-size: 18px\">"+TEXTOS[192].text+"</span>";
@@ -151,7 +162,6 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	function p_00959_js_f_02_abrir_clase_por_telefono( p_00959_js_f_02_dia_lectivo_id )
 	{
 
-		//var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_interactiva/alumno_100_1_html_telefono.asp?p_0000100_dia_lectivo_id="+p_00959_js_f_02_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id;
 		var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_sin_videconferencia/videoconf_5_sin_video/pag_alumno__p_0001841_php.php?p_0000100_dia_lectivo_id="+p_00959_js_f_02_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id+"&get__parametro_videoconferencia_id__p_0000100=produccion";
 		window.open( p_00959_js_f_02_url, "_blank" );
 
@@ -160,7 +170,6 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	function p_00959_js_f_03_abrir_clase_por_videoconferencia( p_00959_js_f_03_dia_lectivo_id )
 	{
 
-		//var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_interactiva/alumno_100_1_html_telefono.asp?p_0000100_dia_lectivo_id="+p_00959_js_f_03_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id;
 		var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_sin_videconferencia/videoconf_5_sin_video/pag_alumno__p_0001841_php.php?p_0000100_dia_lectivo_id="+p_00959_js_f_03_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id+"&get__parametro_videoconferencia_id__p_0000100=produccion";
 		window.open( p_00959_js_f_02_url, "_blank" );
 
