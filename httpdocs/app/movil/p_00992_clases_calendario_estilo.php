@@ -352,6 +352,9 @@ Pag. ID: 00992
 						case "VOCABULARY":color="#04F7EF";break;
 						default: color="#ccc";break;
 					}
+					var p_00992_titulo_actividad= acti.titulo;
+					if(!acti.titulo)
+						p_00992_titulo_actividad= acti.type.toUpperCase();
 
 					//ACTIVIDAD
 					html_actividades=html_actividades+
@@ -366,7 +369,7 @@ Pag. ID: 00992
 					'	">'+
 					'	<div id="p_00992_clases_actividades_actividad_globo" style="background-color:'+color+';"></div>'+
 					'	<div id="p_00992_clases_actividades_actividad_bloque">'+
-					'		<span id="p_00992_clases_actividades_actividad_titulo">'+acti.titulo+'</span>'+
+					'		<span id="p_00992_clases_actividades_actividad_titulo">'+p_00992_titulo_actividad+'</span>'+
 					'	</div>'+
 					'</div>'+
 					'</div>';
