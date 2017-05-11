@@ -100,6 +100,7 @@
 }
 .text2>div>div{
     cursor: pointer;
+    float: right;
 }
 .text2Especial{
 	font-size: 2em;
@@ -431,6 +432,9 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     height:calc(100vw * 0.42);
     width: calc(100vw / 3);
     margin: 5px;
+  }
+  .p_01175_contenedor_palabras{
+    margin-top: 50px;
   }
 
 }

@@ -492,6 +492,23 @@
 .p_01175_pregunta_trinity{
 	margin-left:1.2em;
 }
+#p_01175_posicion_dedo{
+	display: none;
+	position: fixed;
+	height: 16px;
+}
+#p_01175_flecha_posicion{
+		display: none;
+	  position: fixed;
+    transform: rotate(-90deg);
+    width: 24px;
+    height: 17px;
+    animation: indicar_flecha 0.3s ease-in alternate infinite;
+ }
+ @keyframes indicar_flecha {
+    0% {transform: rotate(-90deg) translateX(0);}
+    100% {transform: rotate(-90deg) translateX(5px);}
+}
 @media screen and (max-width: 767px) {
 	.p_00962_separador{
 		padding-top: 133px;

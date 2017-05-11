@@ -110,7 +110,7 @@
 <div id="p_01175_smile_estructura_ordenar_frase" style='display:none;'>
 	<div id="ordenar_frase" class="preguntas" style="display:none;">
 		<div id="titulo_ordenar_frase" class="text"></div>
-		<div id="texto_ordenar_frase" class="text2" ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);' style='padding:0;'></div>
+		<div id="texto_ordenar_frase" class="text2 p_01175_contenedor_palabras" ondrop='p_01174_drop(event)' ondragover='p_01174_allowDrop(event);' style='padding:0;'></div>
 		<div class="p_01175_zona_crear_frase">
 			<div id="frase_formada_usuario" class="estilo_frase_usuario"></div>
 			<div id="frase_correcta" class="estilo_frase_usuario_correcta"></div>
@@ -144,7 +144,9 @@
 <!-- *********************** -->
 
 <div id="p_01175_preguntas" class="p_01172_contenedor_preguntas" style='display:none;'></div>
-<div id="p_01175_drag_and_drop_flotante"></div>
+<img id='p_01175_flecha_posicion' src='<? echo ver_url("images/arrow_left.png","src"); ?>'>
+<img id='p_01175_posicion_dedo' src='<? echo ver_url("images/triangulo.png","src"); ?>'>
+<!--<div id="p_01175_drag_and_drop_flotante"></div>-->
 <div id="p_01175_pregunta_write"  class="p_01172_contenedor_preguntas_write" style='display:none;'>
 	<div id="p_01175_preguntas_texto" class="p_01172_contenedor_preguntas_texto">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis tortor ut sem eleifend dapibus. Sed varius magna sed blandit fringilla. Maecenas suscipit venenatis dolor, quis varius dolor imperdiet et. Proin elit arcu, varius vitae elit non, commodo tincidunt sapien. Aliquam id ex ac arcu iaculis vulputate sit amet sed risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ut ligula et felis euismod gravida. Nullam est quam, facilisis non condimentum quis, lacinia et purus. Nullam vestibulum quam vel sem lacinia vulputate vestibulum quis libero. Curabitur rhoncus dapibus velit in efficitur. Aenean et leo id ex iaculis ornare. Donec efficitur diam dapibus eros tempor, et convallis ipsum bibendum. Etiam varius lectus urna, pharetra elementum tellus ultrices quis. Sed malesuada ut massa vitae sollicitudin. Morbi lacus nibh, consequat eget justo in, facilisis tristique odio. Proin ut elementum odio.</p>

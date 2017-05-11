@@ -10,7 +10,7 @@
 <script src='<? ver_url("jquery-ui-1.11.4/jquery-1.11.2.js","");?>'></script>
 <script src='<? ver_url("jquery-ui-1.11.4/jquery-ui.js","");?>'></script>
 
-<script  type = "text/javascript"  src = "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script> 
+<script  type = "text/javascript"  src = "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
 <script  type = "text/javascript"  src = "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
 <script  type = "text/javascript"  src = "//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" ></script>
 <script>
