@@ -23,7 +23,7 @@ smile_datos={
 	"preguntas_enviadas":[],
 	"pregunta_vista":[],
 	"pregunta_vista_subida":[],
-	
+
 	/*,
 		//rigting
 		//quess
@@ -68,9 +68,9 @@ function p_1176_contar_array_smiles(vector)
 	var correctos=0;
 	var errores=0;
 	var vacios=0;
-	
+
 	for(i=0;i<4;i++)
-	{	
+	{
 		switch(vector[i])
 		{
 			case 1:{correctos++;break;}
@@ -79,7 +79,7 @@ function p_1176_contar_array_smiles(vector)
 			default:{vacios++;break;}
 		}
 	}
-	
+
 	return {"correctos":correctos,"errores":errores,"vacios":vacios,"totales":cant};
 }
 
@@ -89,17 +89,17 @@ function p_1176_contar_smiles()
 {
 	document.getElementById("p_00962_grafico_progreso_detalle_vocabulario").innerHTML="";
 	document.getElementById("p_00962_grafico_progreso_detalle_estructura").innerHTML="";
-	
+
 	if(personal_datos_info.trinity==1)
 	{
 		var e_tnt=document.getElementById("p_00962_grafico_progreso_detalle_trinity");
 		e_tnt.innerHTML='<div class="p_01172_detalle_seccion_titulo" style="background:#cfc !important">TRINITY</div>';
 		e_tnt.style.fontSize="1em";
 	}
-			
+
 	//cantidad de smiles por tema-subtema
 	var cant=8;
-	
+
 	//definicion contadores
 	smile_datos.smiles_totales={}
 	smile_datos.smiles_totales.general={
@@ -122,49 +122,64 @@ function p_1176_contar_smiles()
 			"totales":0
 		}
 		var tema=smile_datos.smiles[bucle_1].temas;
-	
+
+		///////////////////////
+		var seccion= bucle_1;
+		switch(seccion){
+			case "vocabulario":{var titulo=TEXTOS[130].text.toUpperCase();var color="#ccf";break;}
+			case "estructura":{var titulo=TEXTOS[131].text.toUpperCase();var color="#fcc";break;}
+			case "tnt":{var titulo=TEXTOS[132].text.toUpperCase();var color="#cfc";break;}
+			default:{var titulo='';var color="";break;}
+		}
+
+		document.getElementById("p_00962_grafico_progreso_detalle_"+seccion).insertAdjacentHTML("beforeEnd",""+
+			"<div class='p_01172_detalle_seccion_titulo' style='background:"+color+"'>"+titulo+"</div>"+
+			"<div id='p_01172_contenido_seccion_"+seccion+"' class='p_01172_contenido_seccion'></div>"+
+		"");
+		////////////////////////////
+
 		for(k in tema)
 		{
 			var subtema=tema[k].subtemas;
 			for(l in subtema)
-			{				
+			{
 				smile_datos.smiles_totales.preguntas.correctos+=subtema[l].smiles_preguntas_correctos;
 				smile_datos.smiles_totales.preguntas.totales+=subtema[l].smiles_preguntas_hechos;
-				
+
 				smile_datos.smiles_totales[bucle_1].errores+=subtema[l].smiles_totales_hechos-subtema[l].smiles_totales_correctos;
 				smile_datos.smiles_totales.general.errores+=subtema[l].smiles_totales_hechos-subtema[l].smiles_totales_correctos;
-				
+
 				smile_datos.smiles_totales[bucle_1].correctos+=subtema[l].smiles_totales_correctos;
 				smile_datos.smiles_totales.general.correctos+=subtema[l].smiles_totales_correctos;
-				
+
 				smile_datos.smiles_totales[bucle_1].vacios+=cant-subtema[l].smiles_totales_hechos;
 				smile_datos.smiles_totales.general.vacios+=cant-subtema[l].smiles_totales_hechos;
-				
+
 				smile_datos.smiles_totales[bucle_1].totales+=cant;
 				smile_datos.smiles_totales.general.totales+=cant;
-				
+
 				var smiles_correctos=subtema[l].smiles_totales_correctos;
 				var smiles_errores=subtema[l].smiles_totales_hechos-subtema[l].smiles_totales_correctos;
 				var smiles_vacios=cant-subtema[l].smiles_totales_hechos;
-				
+
 				if(subtema[l].smiles_totales_hechos<=cant){
 					smiles_errores=subtema[l].smiles_totales_hechos-subtema[l].smiles_preguntas_correctos-subtema[l].smiles_asistencia_correctos;
 					if(smiles_errores<0)smiles_errores=0;
 					smiles_vacios=cant-smiles_errores-subtema[l].smiles_totales_correctos;
 				}
-					
+
 				p_01176_seccion_tema(k,bucle_1,smiles_correctos,smiles_errores,smiles_vacios,tema[k].titulo,subtema[l].subtema);
 			}
 		}
 	}
-	
+
 }
 
 //lista por temario
 function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrectos,smiles_vacios,tema,subtema){
 	//smiles x tema
 	var cant=4;
-	
+
 	//titulo
 	switch(seccion){
 		case "vocabulario":{var titulo=TEXTOS[130].text.toUpperCase();var color="#ccf";break;}
@@ -172,17 +187,28 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 		case "tnt":{var titulo=TEXTOS[132].text.toUpperCase();var color="#cfc";break;}
 		default:{var titulo='';var color="";break;}
 	}
-	
-	if(!document.getElementById("p_00962_detalle_"+seccion+"_"+tema_id))
+
+
+	if(!document.getElementById("p_00962_detalle_"+seccion+"_"+tema_id)){
+		document.getElementById("p_01172_contenido_seccion_"+seccion).insertAdjacentHTML("beforeEnd",""+
+			"<div class='p_01172_progreso_detalle_tema' id='p_00962_detalle_"+seccion+"_"+tema_id+"'>"+
+			"<div class='p_01172_progreso_detalle_tema_titulo'>"+tema+"</div>"+
+			"</div>"+
+		"");
+	}
+
+////////////////////////////////////////////////
+/*	if(!document.getElementById("p_00962_detalle_"+seccion+"_"+tema_id)){
 		document.getElementById("p_00962_grafico_progreso_detalle_"+seccion).insertAdjacentHTML("beforeEnd",""+
 			"<div class='p_01172_detalle_seccion_titulo' style='background:"+color+"'>"+titulo+"</div><div class='p_01172_progreso_detalle_tema' id='p_00962_detalle_"+seccion+"_"+tema_id+"'>"+
 			"<div class='p_01172_progreso_detalle_tema_titulo'>"+tema+"</div>"+
 			"</div>"+
 		"");
-	
+	}*/
+
 	var restar=0;
 	var html_smiles="<div class='p_01172_progreso_detalle_subtema_titulo'>"+subtema+"</div>";
-	
+
 	for(i=smiles_correctos;i>0;i--){
 		if(i>=2)
 		{
@@ -201,9 +227,9 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 				html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_green_gery.png'>";
 			}
 		}
-		
+
 	}
-	
+
 	for(i=smiles_incorrectos-restar;i>0;i--){
 		if(i>=2)
 		{
@@ -216,13 +242,13 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 			restar+=1;
 		}
 	}
-	
+
 	for(i=smiles_vacios-restar;i>0;i--)
 	{
 		html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_grey.png'>";
 		i--;
 	}
-	
+
 	document.getElementById("p_00962_detalle_"+seccion+"_"+tema_id).insertAdjacentHTML("beforeEnd","<div class='p_01172_progreso_detalle_subtema'>"+html_smiles+"</div>");
 }
 
@@ -281,7 +307,7 @@ smile_datos.preguntas=[
 			"respuestas":["smiles/images/tree.jpg","smiles/images/jacket.jpg","smiles/images/car.jpg","smiles/images/house.gif"],
 			"correcta":[0,0,1,0],
 			"resultado":""
-		},	
+		},
 		//tf
 		{
 			"id_preguinta":"000000001",
@@ -292,7 +318,7 @@ smile_datos.preguntas=[
 			"respuestas":["mpregunta1","nunca","el año pasado","a fin de año"],
 			"correcta":1,
 			"resultado":""
-		},	
+		},
 		//tf
 		{
 			"id_preguinta":"987654321",
@@ -325,7 +351,7 @@ smile_datos.preguntas=[
 			"respuestas":["mpregunta2","nunca","el año pasado","a fin de año"],
 			"correcta":2,
 			"resultado":""
-		},	
+		},
 		//tf
 		{
 			"id_preguinta":"000000003",
@@ -336,7 +362,7 @@ smile_datos.preguntas=[
 			"respuestas":["mpregunta3","nunca","el año pasado","a fin de año"],
 			"correcta":3,
 			"resultado":""
-		},	
+		},
 		//tf
 		{
 			"id_preguinta":"000000004",

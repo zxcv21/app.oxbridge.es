@@ -590,6 +590,7 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 //	document.getElementById("p_0001851_boton_he_asistido").style.display = "none";
 
 	document.getElementById("p_01450_overall_valoracion_semanal").style.display="block";
+	p_00994_resize_valoracion();
 
 
 }
@@ -685,8 +686,6 @@ function p_1003_comprobar_valoraciones_pendientes(){
 		}
 		this.primera_vez= false;
 	}*/
-
-
 
 	if(!p_00994_valoracion_voluntaria){
 			//p_1003_maximo_dias_valorar= 28;
@@ -873,6 +872,10 @@ function p_01003_deshacer_estilos_no_asistencia(){
 	document.getElementById("p_0001851_enviar").style.color="white";
 	document.getElementById("p_0001851_enviar").value="<? echo $TEXTOS[22][3];?>";
 	document.getElementById("p_0001851_enviar").style.width= "150px";
+
+	document.getElementById("p_0001851_form_valoracion").style.border= "2px solid rgb(33, 174, 215)";
+
+	p_00994_resize_valoracion();
 
 }
 ////CORREGIR ENLACES

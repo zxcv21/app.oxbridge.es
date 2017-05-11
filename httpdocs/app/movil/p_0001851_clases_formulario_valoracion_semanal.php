@@ -436,6 +436,7 @@ input:checked + .p_0001851_slider:before {
 		top: 0;
 		padding: 5px 5px 10px;
     box-sizing: border-box;
+		border: 2px solid rgb(33, 174, 215);
 	}
 	#p_01450_overall_valoracion_semanal_profesor{
 		margin: 53px 0 0;
@@ -452,7 +453,7 @@ input:checked + .p_0001851_slider:before {
     display: inline-block;
     margin: 5px;
     position: relative;
-		margin-bottom: 40px;
+		margin-bottom: 52px;
 		vertical-align: bottom;
 		margin-right: 30px;
 		bottom: initial;
@@ -476,8 +477,9 @@ input:checked + .p_0001851_slider:before {
     top: 0;
     z-index: 1;
 		padding-top: 15px;
-		position: absolute;
-
+		position: absolute !important;
+		border-radius: 10px !important;
+		border: 2px solid rgb(33, 174, 215) !important;
 	}
 	#p_01450_div_incidencia p:last-of-type{
 		margin-top: 0;
@@ -524,6 +526,9 @@ input:checked + .p_0001851_slider:before {
 }
 
 @media only screen and (max-width: 767px) and (orientation:portrait){
+	#p_0001851_form_valoracion{
+		top: 8vh;
+	}
 }
 
 @media only screen and (max-width: 767px) and (orientation:landscape){

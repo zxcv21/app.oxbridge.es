@@ -140,7 +140,6 @@ function p_01171_ganar_smile_animacion(smile,numero_pregunta){
 function p_01171_mover_yo(json){
 
 /*	if(ESTOY=="smile"){*/
-
 		if(typeof json !="undefined")
 		{
 			/*//resultado google API
@@ -176,6 +175,7 @@ function p_01171_mover_yo(json){
 
 		if(distancia=="")
 		{
+
 			if(poblacion!="")
 			{
 				var service = new google.maps.DistanceMatrixService();
@@ -214,6 +214,7 @@ function p_01171_mover_yo(json){
 
 			var proporcion_smiles=(100/smile_datos.smiles_totales.general.totales)*smile_datos.smiles_totales.general.correctos;
 			document.getElementById("p_00962_yo").style.left=(proporcion_smiles*0.98)+"%";
+
 
 			//comprovar transporte
 				//document.getElementById("p_00962_yo_img").src=p_01171_switch_treansporte(smile_datos.curso.smiles_total,smile_datos.curso.duracion,smile_datos.alumno.sxm,"yo");
@@ -369,7 +370,8 @@ function p_01171_boton_start(){
 		}
 
 		document.getElementById('p_00962_start').style.display="none";
-		document.getElementById('p_00962_preguntas_contenedor').style.display="inline";
+		//document.getElementById('p_00962_preguntas_contenedor').style.display="inline";
+		document.getElementById('p_00962_preguntas_contenedor').style.display="block";
 		//document.getElementById('p_00962_start_config').style.display="none";
 		//document.getElementById('p_00987_boton_amigo').style.display="none";
 		document.getElementById('p_00987_boton_stop').style.display="";
@@ -382,14 +384,18 @@ function p_01171_boton_start(){
 
 		document.getElementById('p_01171_carrera_reducida').style.display="";
 		//document.getElementById('p_00962_carrera').style.display="";
+		document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="auto";
+		document.getElementById('p_00962_contenedor_smile').style.overflow= "initial";
 
 		if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="";
+
+		document.getElementById("contenedor").style.height="100%";//"100%";
 }
 function p_01171_boton_stop(){
 	document.getElementById('head_oxbridge').style.zIndex="999";
 	document.getElementById('p_00962_carrera').style.display="block";
 	document.getElementById('p_00962_start').style.display="inline-block";
-	ocultar_mostrar('p_00962_preguntas_contenedor');
+	ocultar_mostrar('p_00962_preguntas_contenedor',"block");
 	//ocultar_mostrar('p_00962_start_config');
 	//document.getElementById('p_00987_boton_amigo').style.display="";
 	document.getElementById('p_00962_start').style.display="";
@@ -412,10 +418,14 @@ function p_01171_boton_stop(){
 	$('#p_01174_imagen_sin_conexion').hide();
 
 	if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="none";
+	document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="touch";
+	document.getElementById('p_00962_contenedor_smile').style.overflow= "auto";
 	//personal_datos_info.ultimapregunta = smile_datos.preguntas[p_01174_pregunta_actual];
 	//smile_datos.preguntas.unshift(personal_datos_info.ultimapregunta);
 	p_1176_contar_smiles();
 	p_01171_actualizar_progreso();
+
+	document.getElementById("contenedor").style.height="101vh";
 }
 
 

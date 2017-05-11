@@ -422,14 +422,23 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 
 }
 
-/* Addresses a Mobile Safari issue with text resizing*/
-/*@media only screen and (min-width : 320px) and (max-width : 560px) {*/
+
 @media screen and (max-width: 767px) {
   body {
     -webkit-text-size-adjust: none;
   }
+  .estiloFotoDiv{
+    height:calc(100vw * 0.42);
+    width: calc(100vw / 3);
+    margin: 5px;
+  }
 
 }
-/*}*/
+@media screen and (max-width: 767px) and (orientation: landscape){
+  .estiloFotoDiv{
+    height:calc(100vw * 0.2);
+    width: calc(100vw / 6);
+  }
+}
 
 </style>

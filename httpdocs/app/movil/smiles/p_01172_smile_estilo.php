@@ -470,8 +470,8 @@
 #p_00962_img_mas{
 	position: absolute;
 	width: 28px;
-	left: 73px;
-	top: 53px;
+	left: 69px;
+	top: 57px;
 	z-index: 100;
 	cursor: pointer;
 }
@@ -499,13 +499,14 @@
 	}
 	#p_00962_contenedor_smile{
 		width: 100%;
-		overflow: auto;
+	/*	overflow: auto;
+		-webkit-overflow-scrolling: touch;*/
 	}
 	.p_00962_start{
 		font-size: 16px;
 		top: 76px;
-		left: 41px;
-		width: calc(100% - 82px);
+		left: 70px;
+		width: calc(100% - 140px);
 	}
 	#p_00962_img_mas{
 		top: 84px;
@@ -538,7 +539,7 @@
 	}
 	#p_00962_grafico_progreso_detalle{
 		width: 100%;
-		padding: 120px 3px 16vh;
+		padding: 83px 3px 0;
 		bottom: initial;
 		bottom: initial;
 	}
@@ -597,7 +598,19 @@
 		-webkit-overflow-scrolling: touch;
 	}
 	#p_00962_preguntas_contenedor{
-		-webkit-overflow-scrolling: touch;
+		/*-webkit-overflow-scrolling: touch;*/
+		height: 100%;
+		overflow-y: scroll;
+		/*height: initial;*/
+		/*barras navegador IOS*/
+	/*	margin-bottom: 5px;*/
+	}
+	.p_01172_detalle_seccion_titulo{
+		padding-top: 36px;
+	}
+	*{
+		/* To smooth any scrolling behavior (IOS)*/
+		/*-webkit-overflow-scrolling: touch;*/
 	}
 }
 @media screen and (max-width: 767px) and (orientation: landscape){
@@ -613,7 +626,35 @@
 	#p_01171_siguiente_transporte_texto{
 		top: calc(8vw + 47px);
 	}
+	#p_00962_contenedor_smile{
+		width: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		height: 85%;
+	}
 
+}
+@media screen and (max-width: 767px) and (orientation: portrait){
+/*	#p_00962_grafico_progreso_detalle{
+		overflow: auto;
+		height: calc(100% - 200px);
+	}*/
+	.p_01172_grafico_progreso_detalle_seccion{
+		/*overflow: auto;*/
+		height: calc(110vh - 283px - 16vh);
+		/*-webkit-overflow-scrolling: touch;*/
+	}
+	/*.p_01172_detalle_seccion_titulo{
+		-webkit-transform: translate3d(0,0,0);
+		position: absolute !important;
+		overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+	}*/
+	.p_01172_contenido_seccion{
+		overflow: auto;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
 }
 @media screen and (max-width: 400px) {
 	#p_00962_grafico_progreso {

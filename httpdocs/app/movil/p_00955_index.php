@@ -34,7 +34,7 @@ if(!isset($_GET['idioma'])){
 			//?><meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.37, maximum-scale=0.37, user-scalable=no"><?
 		}
 	?>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 
 
@@ -49,11 +49,16 @@ if(!isset($_GET['idioma'])){
 	onresize="reSize();"
 >
 <script>
-	window.onload=function(){
-		//p_01003_comprobar_alarma();
-		if(!dia_lectivo[Object.keys(dia_lectivo)[0]].date_inicio)
-			p_1003_guardar_horas_inicio_fin_clases();
-		p_1003_comprobar_valoraciones_pendientes();
+	window.onload= p_00955_antes_inicio;
+
+	function p_00955_antes_inicio(){
+		if(!dia_lectivo)
+			setTimeout(p_00955_antes_inicio, 1000);
+		else{
+			//if(!dia_lectivo[Object.keys(dia_lectivo)[0]].date_inicio)
+				p_1003_guardar_horas_inicio_fin_clases();
+			p_1003_comprobar_valoraciones_pendientes();
+		}
 	}
 </script>
 <div id="p_00955_div_img_cargando">

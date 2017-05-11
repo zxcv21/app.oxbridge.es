@@ -844,10 +844,17 @@ function p_00989_resize_firmas(){
 
 //funcion para testear valores en movil
 function testeo(res){
+	if(typeof this.cont=='undefined')
+		this.cont= 0;
+	this.cont++;
 	document.getElementById("p_00955_testeo").style.display="block";
-	document.getElementById("p_00955_testeo").innerHTML= res;
+	document.getElementById("p_00955_testeo").innerHTML= res+"<br>"+this.cont;
 }
-
-
+//mostrar errores en movil
+/*window.onerror = function (msg, url, lineNo, columnNo, error) {
+  var mens= msg+"\n"+url+"\n"+lineNo+"\n"+columnNo+"\n"+error.stack;
+	alert(mens);
+  return false;
+}*/
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR0VydWbzvb4GgecypsSlVm_cQVf-If3w&callback=initMap"></script>

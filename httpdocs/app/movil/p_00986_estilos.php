@@ -173,7 +173,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	#p_00955_testeo{
 		position: fixed;
 		z-index: 99999;
-		border: red solid 1px;
+		border: red solid 2px;
 		right: 0;
 		top: 0;
 		padding: 5px;
@@ -420,10 +420,9 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 		position: relative;
 	}
 	#smile{
-		padding-bottom: calc(8vh + 45px);
+		padding-bottom: 16vh;
 	}
 	#personal{
-		/*height: 84vh;*/
 		padding-bottom: calc(8vh + 45px);
 	}
 	#clases{
@@ -448,6 +447,13 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	}
 	#p_00995_formulario_mail_iframe{
 		transform: none;
+	}
+	#contenedor{
+		height: 101vh;/*calc(100vh + 1px) !important;
+		/*overflow: visible !important;*/
+		/*height: 100%;*/
+		overflow: hidden  !important;
+		position: absolute;
 	}
 }
 
@@ -484,6 +490,19 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 	}
 	#clases{
 		height: calc(100% - 16vh);
+	}
+	#smile{
+/*		z-index: 999;*/
+		height: calc(100% - 16vh);
+		padding-bottom: 0;
+	}
+/*	#p_00962_img_mas{
+		position: fixed !important;
+		top: 6px !important;
+		left: 5px !important;
+	}*/
+	#p_00962_grafico_progreso_detalle{
+		border-bottom: none !important;
 	}
 }
 </style>
