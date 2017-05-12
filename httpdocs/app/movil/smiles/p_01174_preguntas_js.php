@@ -480,7 +480,7 @@ function p_01174_drop(e, p_01174_drag_, p_01174_drop_id_, p_01174_posx_, p_01174
 	var p_01174_posy;
 
 	//e.preventDefault();
-	//tactil
+	//raton
 	if(typeof p_01174_drop_id_=='undefined'){
 		//e.preventDefault();
 		//e.stopPropagation();
@@ -488,10 +488,12 @@ function p_01174_drop(e, p_01174_drag_, p_01174_drop_id_, p_01174_posx_, p_01174
 		p_01174_padre_nodos= e.dataTransfer.getData("text").slice(0,e.target.id.indexOf("_")+1)+"texto_ordenar_frase";
 		p_01174_padre_nodos= document.getElementById(p_01174_padre_nodos);
 		p_01174_nodo_drag= document.getElementById(e.dataTransfer.getData("text"));
+		document.getElementById("p_01175_posicion_dedo").style.display="none";
+
 		p_01174_posx= e.clientX;
 		p_01174_posy= e.clientY;
 	}
-	//raton
+	//tactil
 	else{
 		p_01174_receptor_drop= p_01174_drop_id_;
 		p_01174_nodo_drag= p_01174_drag_;
@@ -499,14 +501,20 @@ function p_01174_drop(e, p_01174_drag_, p_01174_drop_id_, p_01174_posx_, p_01174
 		p_01174_padre_nodos= document.getElementById(p_01174_padre_nodos);
 		p_01174_posx= p_01174_posx_;
 		p_01174_posy= p_01174_posy_;
-	}
 
-	document.getElementById("p_01175_flecha_posicion").style.display="none";
-	document.getElementById("p_01175_posicion_dedo").style.display="none";
-	//hubo error y ya no se arrastra un nodo.
-	if(p_01174_nodo_drag.className!="p_01174_div_palabras_dragdrop"){
-		return;
+		document.getElementById("p_01175_posicion_dedo").style.display="none";
+		$("#"+p_01174_padre_nodos.id).removeClass('mover_contenedor_palabras');
+		document.querySelector("#p_01175_preguntas .text").style.opacity="1";
+
 	}
+	document.getElementById("p_01175_flecha_posicion").style.display="none";
+//	document.getElementById("p_01175_posicion_dedo").style.display="none";
+	p_01174_drag_node.parentNode.style.width="";
+
+	//hubo error y ya no se arrastra un nodo.
+	//if(p_01174_nodo_drag.className!="p_01174_div_palabras_dragdrop"){
+	//	return;
+	//}
 	//recuadro contenedor se adapta otra vez a contenido
 	//p_01174_padre_nodos.style.height="";
 
@@ -2284,6 +2292,7 @@ var p_01174_nodo_drag_color_inicial;
 
 var p_01174_haciendo_drag= false;
 var p_01174_posicion_fila= 0;
+var p_01174_acaba_entrar= false;
 
 function p_01174_drag_touch(e){
 	p_01174_haciendo_drag= true;
@@ -2318,6 +2327,7 @@ function p_01174_drag_touch(e){
 	p_01174_nodo.style.top= (p_01174_pos_Y-parseInt(p_01174_nodo.clientHeight)-5)+"px";
 	p_01174_nodo.style.left= (p_01174_pos_X-2)+"px";
 	p_01174_nodo.style.color="#DC7633";
+	p_01174_nodo.parentNode.style.width="0";
 	e.preventDefault();
 	p_01174_pos_inicio_dragdrop=[];
 	var p_01174_selectores_palabras= "#"+p_01174_padre_nodos.id+">div";
@@ -2351,28 +2361,44 @@ function p_01174_drag_touch(e){
 	//p_01174_pos_inicio_dragdrop.splice(p_01174_index_of_drag, 1);
 	//p_01174_altura_caja= document.getElementById("p_01175_drag_and_drop_flotante").children[0].getBoundingClientRect().height;
 	p_01174_altura_caja= p_01174_selectores_palabras[0].getBoundingClientRect().height;
-	p_01174_drag_move_touch(e);
 	if(e.changedTouches){
 		document.getElementById("p_01175_posicion_dedo").style.display="block";
-		p_01174_padre_nodos.style.marginTop="0";
+		$("#"+p_01174_padre_nodos.id).addClass('mover_contenedor_palabras');
+		document.querySelector("#p_01175_preguntas .text").style.opacity="0";
+		//p_01174_padre_nodos.style.marginTop="0";
 	}
+	p_01174_acaba_entrar= true;
+	setTimeout(function(){p_01174_drag_move_touch(e);},250);
 	return false;
 }
 
 function p_01174_getOffsetTop (p_01174_elem){
-    var p_01174_yPos = p_01174_elem.offsetTop;
-    var p_01174_tempEl = p_01174_elem.offsetParent;
+  var p_01174_yPos = p_01174_elem.offsetTop;
+  var p_01174_tempEl = p_01174_elem.offsetParent;
 
-    while ( p_01174_tempEl != null )
-    {
-        p_01174_yPos += p_01174_tempEl.offsetTop;
-        p_01174_tempEl = p_01174_tempEl.offsetParent;
-    }
-    return p_01174_yPos;
+  while ( p_01174_tempEl != null )
+  {
+      p_01174_yPos += p_01174_tempEl.offsetTop;
+      p_01174_tempEl = p_01174_tempEl.offsetParent;
+  }
+  return p_01174_yPos;
 }
 
-
 function p_01174_drag_move_touch(e){
+	var p_01174_offset_movil= 0;
+	//guardo algunos valores que no cambian entre llamadas
+	if(p_01174_acaba_entrar){
+		this.p_01174_posicion_contenedor= p_01174_getOffsetTop(p_01174_padre_nodos)-50;
+		this.p_01174_izq_contenedor=p_01174_padre_nodos.offsetLeft+document.getElementById("p_01175_preguntas").offsetLeft;
+		this.p_01174_izq_contenedor=p_01174_padre_nodos.getBoundingClientRect().left;
+		this.p_01174_last_element_over= "0";
+		this.p_01174_altura_caja= parseInt(p_01174_drag_node.clientHeight);
+		this.p_01174_scroll= parseInt(document.querySelector("body").scrollTop);
+		p_01174_acaba_entrar= false;
+	}
+
+
+
 	var p_01174_puntero_dedo= document.getElementById("p_01175_posicion_dedo");
 	e.preventDefault();
 	if(!p_01174_haciendo_drag)
@@ -2383,55 +2409,65 @@ function p_01174_drag_move_touch(e){
 	if(e.changedTouches){
 		var p_01174_touchobj = e.changedTouches[0];
 		p_01174_pos_X= parseInt(p_01174_touchobj.clientX);
-		p_01174_pos_Y= parseInt(p_01174_touchobj.clientY);
+		p_01174_pos_Y= parseInt(p_01174_touchobj.clientY)-50;
 		//colocar caja palabra que se mueve
-		p_01174_drag_node.style.left= (p_01174_pos_X+15)+"px";
-		//p_01174_drag_node.style.top= (p_01174_pos_Y-parseInt(p_01174_drag_node.clientHeight)-15)+"px";
-		p_01174_drag_node.style.top= ( p_01174_pos_Y-parseInt(p_01174_drag_node.clientHeight)-25+document.querySelector("body").scrollTop)+"px";
+		p_01174_drag_node.style.left= (p_01174_pos_X-this.p_01174_izq_contenedor+40)+"px";
+		p_01174_drag_node.style.top= ( p_01174_pos_Y+this.p_01174_altura_caja-this.p_01174_posicion_contenedor+this.p_01174_scroll-10)+"px";
+
+		//p_01174_drag_node.style.top= ( p_01174_pos_Y+document.querySelector("body").scrollTop)+"px";
 		//colocar puntero dedo
 		p_01174_puntero_dedo.style.left= (p_01174_pos_X-9)+"px";
-		p_01174_puntero_dedo.style.top= ( p_01174_pos_Y-50+document.querySelector("body").scrollTop)+"px";
-		p_01174_pos_Y-= 52;
+		p_01174_puntero_dedo.style.top= ( p_01174_pos_Y+2+this.p_01174_scroll)+"px";
+		//testeo("nodo: "+p_01174_drag_node.style.top+" punt: "+p_01174_puntero_dedo.style.top+" pos cont: "+this.p_01174_posicion_contenedor);
+		//p_01174_pos_Y-= 52;
+		p_01174_offset_movil= 50;
 	}
 	//raton
 	else{
 		p_01174_pos_X= e.pageX;
 		p_01174_pos_Y= e.pageY;
 		//colocar caja palabra que se mueve
-		p_01174_drag_node.style.left= (p_01174_pos_X-10)+"px";
-		p_01174_drag_node.style.top= (p_01174_pos_Y-parseInt(p_01174_drag_node.clientHeight))+"px";
-		//colocar puntero dedo
-	//	p_01174_puntero_dedo.style.left= p_01174_pos_X+"px";
-	//	p_01174_puntero_dedo.style.top= ( p_01174_pos_Y-15)+"px";
-
+		p_01174_drag_node.style.left= (p_01174_pos_X+10)+"px";
+		p_01174_drag_node.style.top= (p_01174_pos_Y-this.p_01174_altura_caja+35)+"px";
 	}
-	//p_01174_desplazar_piezas_fila(e, p_01174_pos_X, p_01174_pos_Y);
-	//if (this.p_01174_last_element_over)
-		//this.p_01174_last_element_over.style.background="white";
-
 	var p_01174_element_over = document.elementFromPoint(p_01174_pos_X, p_01174_pos_Y);
-	console.log(p_01174_element_over.id);
-	if(p_01174_element_over.parentNode.className=="p_01174_div_palabras_dragdrop")
+	if(p_01174_element_over.parentNode.className=="p_01174_div_palabras_dragdrop"){
 		p_01174_element_over=p_01174_element_over.parentNode;
-	if(p_01174_element_over.className=="p_01174_div_palabras_dragdrop"){
-
+	}
+	if(p_01174_element_over.className.includes("p_01174_div_palabras_dragdrop")){
 		if(!this.p_01174_last_element_over || this.p_01174_last_element_over!=p_01174_element_over){
-			document.getElementById("p_01175_flecha_posicion").style.display="block";
-			document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_element_over)-7)+"px";
+			document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_element_over)-7-p_01174_offset_movil)+"px";
 			document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_element_over.getBoundingClientRect().left-6)+"px";
-			//p_01174_element_over.style.width= (p_01174_element_over.clientWidth+50)+"px";
-			if(this.p_01174_last_element_over){
-				//this.p_01174_last_element_over.style.width= (this.p_01174_last_element_over.offsetWidth-50)+"px";
-				console.log("***************");
-				console.log(p_01174_element_over.id+" - "+this.p_01174_last_element_over.id);
-			}
+			document.getElementById("p_01175_flecha_posicion").style.display="block";
 			this.p_01174_last_element_over= p_01174_element_over;
-
 		}
 	}
+	//al mover sobre contenedor señala final de linea
+	else if (p_01174_element_over.className.includes("p_01175_contenedor_palabras")) {
 
-
-
+		var p_01174_ultima_caja="";
+		var p_01174_elemento_izq="";
+		var p_01174_pos_ultimo_fila= p_01174_pos_X;
+		while(p_01174_pos_ultimo_fila){
+			p_01174_elemento_izq= document.elementFromPoint(p_01174_pos_ultimo_fila--, p_01174_pos_Y);
+			if(p_01174_elemento_izq.id!=p_01174_padre_nodos.id)
+				break;
+		}
+		if((p_01174_elemento_izq)&&(p_01174_elemento_izq.className=="p_01174_div_palabras_dragdrop")){
+			p_01174_ultima_caja= p_01174_elemento_izq.id;
+			if(!this.p_01174_last_element_over || this.p_01174_last_element_over!="fin_"+p_01174_elemento_izq.id){
+				document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_elemento_izq)-7-p_01174_offset_movil)+"px";
+				document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_elemento_izq.getBoundingClientRect().right)+"px";
+				document.getElementById("p_01175_flecha_posicion").style.display="block";
+				this.p_01174_last_element_over= "fin_"+p_01174_elemento_izq.id;
+			}
+		}
+	}
+	//fuera contenedor
+	else{
+		document.getElementById("p_01175_flecha_posicion").style.display="none";
+		this.p_01174_last_element_over= "fuera";
+	}
 	return false;
 }
 
@@ -2682,7 +2718,7 @@ function p_01174_drag_drop_touch(e){
 	if(e.changedTouches){
 		var p_01174_touchobj = e.changedTouches[0];
 		p_01174_pos_X= parseInt(p_01174_touchobj.clientX);
-		p_01174_pos_Y= parseInt(p_01174_touchobj.clientY);
+		p_01174_pos_Y= parseInt(p_01174_touchobj.clientY)-52;
 	}
 	else{
 		p_01174_pos_X= e.pageX;
@@ -2782,6 +2818,7 @@ function p_01174_resize_preguntas_trinity() {
 		}
 	}
 	if(p_01174_contenedor.offsetHeight>p_01174_altura_disponible){
+
 		document.getElementById("p_00962_preguntas_y_botones_contenedor").style.transform=	"translateY(-"+(p_01174_altura_pantalla-p_01174_altura_disponible)+"px)";
 		var p_01174_altura_texto= p_01174_texto[i].offsetHeight- (p_01174_contenedor.offsetHeight-p_01174_altura_pantalla);
 		p_01174_altura_texto= p_01174_altura_texto>120?p_01174_altura_texto:120;

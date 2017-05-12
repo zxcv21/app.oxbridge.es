@@ -97,6 +97,14 @@
     /*max-height: 10.4em;*/
     background-color: #f5f5f5;
     box-shadow: 0 0 15px #555;
+    margin-top: 0;
+    transition: 0.2s ease;
+}
+.text2.mover_contenedor_palabras{
+    transform: translateY(-50px);
+    /*margin-top: -20px;*/
+    box-shadow: 0 15px 50px 10px #555;
+
 }
 .text2>div>div{
     cursor: pointer;
@@ -434,7 +442,7 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
     margin: 5px;
   }
   .p_01175_contenedor_palabras{
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
 }
