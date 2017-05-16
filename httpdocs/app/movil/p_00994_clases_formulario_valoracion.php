@@ -226,20 +226,9 @@ function p_00994_resize_valoracion(){
 			document.getElementById("p_01450_overall_valoracion_inputs").style.position="initial";
 		}
 	}
-	//////////////////////////testeo
-//	var n=document.getElementById("p_01450_overall_valoracion_semanal");
-//	setTimeout(function(){scroll_test(n);},2000);
+	setTimeout(function(){document.querySelector("body").scrollTop = 0;},100);
 }
 
-/*function scroll_test(n){
-	if(n){
-		n.scrollTop = 0;
-		testeo(n.id);
-		setTimeout(function(){scroll_test(n.parentNode);},2000);
-	}
-	return false;
-}*/
-//////////////////////////////////
 
 function p_0001851_volver_atras_valoracion(){
 	mostrar_valoracion(false,"formulario_valoracion");

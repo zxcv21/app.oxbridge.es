@@ -13,7 +13,8 @@
 .overall
 {
 	position: absolute;
-	height: 100%;
+	/*height: 100%;*/
+	height: 100vh;
 	width: 100%;
 	background: rgba(0,0,0,0.75);
 	z-index: 999;

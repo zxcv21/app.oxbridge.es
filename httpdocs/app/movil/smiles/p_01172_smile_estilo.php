@@ -558,7 +558,6 @@
 		width: 100%;
 		padding: 83px 3px 0;
 		bottom: initial;
-		bottom: initial;
 	}
 	#p_00962_grafico_progreso{
 		transform: scale(0.8);
@@ -649,7 +648,9 @@
 		-webkit-overflow-scrolling: touch;
 		height: 85%;
 	}
-
+	.p_01172_contenido_seccion{
+		height: calc(100% - 8vh);
+	}
 }
 @media screen and (max-width: 767px) and (orientation: portrait){
 /*	#p_00962_grafico_progreso_detalle{
@@ -658,7 +659,7 @@
 	}*/
 	.p_01172_grafico_progreso_detalle_seccion{
 		/*overflow: auto;*/
-		height: calc(110vh - 283px - 16vh);
+		/*height: calc(110vh - 283px - 16vh);*/
 		/*-webkit-overflow-scrolling: touch;*/
 	}
 	/*.p_01172_detalle_seccion_titulo{
@@ -670,6 +671,11 @@
 	.p_01172_contenido_seccion{
 		overflow: auto;
 		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	#p_00962_grafico_progreso_detalle{
+		overflow: auto;
+		bottom: 0;
 		-webkit-overflow-scrolling: touch;
 	}
 }
