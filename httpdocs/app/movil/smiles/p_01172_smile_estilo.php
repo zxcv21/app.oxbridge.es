@@ -501,9 +501,16 @@
 		display: none;
 	  position: fixed;
     transform: rotate(-90deg);
-    width: 24px;
-    height: 17px;
+    /*width: 35px;
+    height: 22px;*/
+		width: 70px;
+		height: 44px;
     animation: indicar_flecha 0.3s ease-in alternate infinite;
+ }
+ #p_01175_forbidden{
+ 		display: none;
+	 	position: fixed;
+	  height: 35px;
  }
  @keyframes indicar_flecha {
     0% {transform: rotate(-90deg) translateX(0);}

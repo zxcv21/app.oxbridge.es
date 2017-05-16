@@ -145,7 +145,8 @@
 
 <div id="p_01175_preguntas" class="p_01172_contenedor_preguntas" style='display:none;'></div>
 <img id='p_01175_flecha_posicion' src='<? echo ver_url("images/arrow_left.png","src"); ?>'>
-<img id='p_01175_posicion_dedo' src='<? echo ver_url("images/triangulo.png","src"); ?>'>
+<img id='p_01175_forbidden' src='<? echo ver_url("images/forbidden.png","src"); ?>'>
+<!--<img id='p_01175_posicion_dedo' src='<? //echo ver_url("images/triangulo.png","src"); ?>'>-->
 <!--<div id="p_01175_drag_and_drop_flotante"></div>-->
 <div id="p_01175_pregunta_write"  class="p_01172_contenedor_preguntas_write" style='display:none;'>
 	<div id="p_01175_preguntas_texto" class="p_01172_contenedor_preguntas_texto">
