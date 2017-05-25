@@ -172,8 +172,8 @@
 	</div>
 </div>
 <div id="p_01175_preguntas_media" style='display:none;'>
-	<audio id="p_01175_preguntas_media_ganar_smile" src="http://app.oxbridge.es/app/media/ganar_smile.mp3">
-	<audio id="p_01175_preguntas_media_perder_smile" src="http://app.oxbridge.es/app/media/perder_smile.mp3">
+	<audio id="p_01175_preguntas_media_ganar_smile" src="https://app.oxbridge.es/app/media/ganar_smile.mp3">
+	<audio id="p_01175_preguntas_media_perder_smile" src="https://app.oxbridge.es/app/media/perder_smile.mp3">
 </div>
 <!--<div id="p_00987_boton_stop" style='display:none;'><input style="width:15%;position: fixed; bottom: 4em; left: 4em;" id="boton_stop" type="image" src="smiles/images/pause_blueapp_70.png" onclick="p_01171_boton_stop()"></div>-->
 <!-- ESTILO BOTONES GRIS Y VERDE POSICION FIJA

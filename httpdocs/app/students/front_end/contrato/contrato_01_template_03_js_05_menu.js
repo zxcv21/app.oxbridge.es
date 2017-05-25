@@ -272,11 +272,11 @@ function p_0010163_js_f_08_obtener_pagina_a_llamar(p_0010163_js_id)
 		case 'datos': console.info("En desarrollo datos!! :)");
 			break;
 		case 'observaciones':
-			var p_0010163_js_url="http://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_08_observaciones_01_html_01_template.php";
+			var p_0010163_js_url="https://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_08_observaciones_01_html_01_template.php";
 			p_0010163_js_f_01_cambia_pestana(p_0010163_js_id,0,p_0010163_js_url);
 			break;
 		case 'pagadores': 
-			var p_0010163_js_url="http://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_02_datos_generales_01_html_01_template.php";
+			var p_0010163_js_url="https://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_02_datos_generales_01_html_01_template.php";
 			p_0010163_js_f_01_cambia_pestana(p_0010163_js_id,0,p_0010163_js_url);
 			break;
 		case 'alumnos':  console.info("En desarrollo alumnos!! :)");

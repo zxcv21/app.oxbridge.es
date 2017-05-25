@@ -3,7 +3,7 @@ Page ID: p_0010196
 File: /utilities/js/match_03_documento_identificacion_01_validar_03.js
 */
 /*
-http://www.planetacodigo.com/recortex/recorte/243
+https://www.planetacodigo.com/recortex/recorte/243
 
 A - Sociedades Anónimas
 B - Sociedades de responsabilidad limitada

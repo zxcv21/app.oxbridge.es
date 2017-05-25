@@ -1,6 +1,6 @@
 <%response.Buffer=true%>
 
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_01_generador_01_html_01_template.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_01_generador_01_html_01_template.asp-->
 
 <html>
 
@@ -8,10 +8,10 @@
 
 <head>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<meta http-equiv="content-language" content="es" />
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta https-equiv="content-language" content="es" />
 	<title>0001556 Generador sql</title>
-	<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
+	<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
 
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
@@ -20,28 +20,28 @@
 	'Response.Expires = 0
 	'Response.ExpiresAbsolute = #1/5/2000 12:12:12#%>
 
-	<script language="javascript" src="http://sb.oxbridge.es/utilities/asp/mostrar_sql/dimensionar_divs_01_js_funciones.js"></script>
+	<script language="javascript" src="https://sb.oxbridge.es/utilities/asp/mostrar_sql/dimensionar_divs_01_js_funciones.js"></script>
 
 </head>
 
 <body style="margin: 0px 0px 0px 0px">
 
-<!--1.- Comprobar permisos de la página -inicio-->
-<!--1.- Comprobar permisos de la página -fin-->
+<!--1.- Comprobar permisos de la pï¿½gina -inicio-->
+<!--1.- Comprobar permisos de la pï¿½gina -fin-->
 
-<!--2.- datos necesarios para la página -inicio-->
-<!--2.- datos necesarios para la página -fin-->
+<!--2.- datos necesarios para la pï¿½gina -inicio-->
+<!--2.- datos necesarios para la pï¿½gina -fin-->
 
-<!--3.- calculos necesarios para la página -inicio-->
-<!--3.- calculos necesarios para la página -fin-->
+<!--3.- calculos necesarios para la pï¿½gina -inicio-->
+<!--3.- calculos necesarios para la pï¿½gina -fin-->
 
 <!--4.- Verificar datos -inicio-->
 <!--4.- Verificar datos -fin-->
 
-<!--5.- Encabezado de página -inicio-->
-<!--5.- Encabezado de página -fin-->
+<!--5.- Encabezado de pï¿½gina -inicio-->
+<!--5.- Encabezado de pï¿½gina -fin-->
 
-<!--7.- Html de la página -inicio-->
+<!--7.- Html de la pï¿½gina -inicio-->
 
 	<input type="hidden" value="0" id="p_0001556_input_ancho_navegador">
 	<input type="hidden" value="0" id="p_0001556_input_alto_navegador">
@@ -156,9 +156,9 @@
 
 	</div>
 
-<!--7.- Html de la página -fin-->
+<!--7.- Html de la pï¿½gina -fin-->
 
-<!--8.- Pie de página -inicio-->
+<!--8.- Pie de pï¿½gina -inicio-->
 
 <!--include virtual="/ox/estructura_web/codigo/material_clases/class_plan/class_plan_03_gestion_03_js_01_template_01_generales.asp"-->
 
@@ -172,7 +172,7 @@
 	
 </script>
 
-<!--8.- Pie de página -fin-->
+<!--8.- Pie de pï¿½gina -fin-->
 
 <!--9.- redirigir -inicio-->
 <!--9.- redirigir -fin-->

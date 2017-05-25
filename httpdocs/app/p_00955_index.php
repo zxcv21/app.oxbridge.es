@@ -10,14 +10,14 @@
 	<!-- no aplicar meta a navegador: vanilla android,. -->
 	<?
 		$buscar="/iphone|ipod|ipad|windows/";
-		$navegador=strtolower($_SERVER['HTTP_USER_AGENT']);
+		$navegador=strtolower($_SERVER['https_USER_AGENT']);
 
    	if( preg_match($buscar,$navegador)!=0){
 			?><meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.37, maximum-scale=0.37, user-scalable=no"><?
 		}
 	?>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta https-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>app</title>
 	<link rel="shortcut icon" href="../images/favicon.ico">
 
@@ -48,7 +48,7 @@
 	<div id="bloquear_giro" style="display:none;">
    	<br>
    	<span><? echo $TEXTOS[94][2];?></span><br><br>
-      <img style="height: 40%;" src="http://app.oxbridge.es/app/images/orientacion4.png">
+      <img style="height: 40%;" src="https://app.oxbridge.es/app/images/orientacion4.png">
    </div>
 	<?
 		/*include("./p_01300_formulario_login.php");*///formulario loguin local
@@ -66,7 +66,7 @@
         	method="post"
         	id="p_00995_preguntas_insidencias_formulario"
             target="p_00995_preguntas_insidencias_iframe"
-        	action="http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_02_pregunta_incidentada.php"
+        	action="https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_02_pregunta_incidentada.php"
         >
         	/!\ insidencia en la pregunta:<br><br>
         	<input id="p_00995_preguntas_insidencias_formulario_esta" type="radio" name="p_0001405_input_pregunta_id"> Esta pregunta<br>
@@ -92,7 +92,7 @@
 
 <? if($_GET["tipo"]!="no-login"){?>
    <script>
-		$("#p_00995_reloguin").load("http://app.oxbridge.es/sesiones/sesion_04_comprobacion_01_html_01_estructura.php"+
+		$("#p_00995_reloguin").load("https://app.oxbridge.es/sesiones/sesion_04_comprobacion_01_html_01_estructura.php"+
 			"?p_0001319_get_sesion_id=<? echo $sesion_id;?>"+
 			"&p_0001319_get_usuario_id=<? echo $alumno_id_nuevo;?>"+
 			"&p_0001319_get_alumno_id=<? echo $alumno_id;?>"+
@@ -112,7 +112,7 @@
 		<form
 			id="p_00995_formulario_mail"
 			method="POST"
-			action='http://app.oxbridge.es/inc/valida_form_contacta.php'
+			action='https://app.oxbridge.es/inc/valida_form_contacta.php'
 			target="p_00995_formulario_mail_iframe"
 		>
          	<input id="p_00955_formulario_mail_input_nombre" class="p_00995_formulario_mail_input" name="nombre" type=hidden value="">
@@ -138,7 +138,7 @@
 			</div>
 
 			<div class="p_00995_formulario_mail_div" style="float:right;clear:both;">
-				<img id="p_00995_formulario_mail_img_cargando" class="img_cargando" src="http://app.oxbridge.es/app/images/loading.png" style=" height:2em;display:none">
+				<img id="p_00995_formulario_mail_img_cargando" class="img_cargando" src="https://app.oxbridge.es/app/images/loading.png" style=" height:2em;display:none">
             <input
 					class="p_00995_formulario_mail_input boton_normal"
 					name=button
@@ -164,7 +164,7 @@
    <div id="p_00995_formulario_logout_contenedor" align="center" class="contenedores_formularios" style="display:none;background-color: rgba(0,0,0,0.8);">
    	<div id="p_00990_over_all_cerrar_mail" onclick="ocultar_mostrar('p_00995_formulario_logout_contenedor');"></div>
       <span style="font-size:5em; font-family:HelveticaNeueRoman;"><? echo $TEXTOS[75][2];?></span><br><br><br>
-     	<button class="p_00995_formulario_mail_input boton_normal" style="width:auto;font-size:5em" onClick="window.location='http://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
+     	<button class="p_00995_formulario_mail_input boton_normal" style="width:auto;font-size:5em" onClick="window.location='https://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
 			<? echo $TEXTOS[74][2];?>
       </button><br><br><br>
       <span style="font-size:4em; "><? echo $TEXTOS[76][2];?></span>
@@ -177,7 +177,7 @@
       <form
       	id="p_00995_formulario_valoracion"
       	method="POST" target="p_00995_formulario_valoracion_enviar"
-         action="http://app.oxbridge.es/actividades/clases_02_valoracion_01_php_01_modificar.php"
+         action="https://app.oxbridge.es/actividades/clases_02_valoracion_01_php_01_modificar.php"
       >
          <div class="p_00995_formulario_mail_div">
 				<? echo $TEXTOS[29][2];?>:<br>
@@ -223,8 +223,8 @@
 	<div id="contenedor" >
     	<!--//////////////////////////////////logotipo y email//////////////////////////////////-->
       <div id="head_oxbridge">
-		<img id="head_oxbridge_img" src="http://app.oxbridge.es/app/images/OXBRIDGE-logo_2.png" onClick="">
-         <img id="head_oxbridge_beta_img" style="height:50%;position: absolute; z-index:-1;" src="http://app.oxbridge.es/app/images/beta2.png">
+		<img id="head_oxbridge_img" src="https://app.oxbridge.es/app/images/OXBRIDGE-logo_2.png" onClick="">
+         <img id="head_oxbridge_beta_img" style="height:50%;position: absolute; z-index:-1;" src="https://app.oxbridge.es/app/images/beta2.png">
          <div id="p_00955_click_logout_idioma" style="display:none" onClick="ocultar_mostrar('p_00955_head_oxbridge_idiomas');ocultar_mostrar('p_00955_click_out_idioma');">
          </div>
          <div id="p_00955_head_oxbridge_idioma">
@@ -234,8 +234,8 @@
             </div>
          </div>
          <div style="height:100%; display:inline-block; float:right;">
-            <img id="head_send_email_img" src="http://app.oxbridge.es/app/images/send_email.png" style="display:none;position:absolute;">
-            <img id="head_oxbridge_mail" src="http://app.oxbridge.es/app/images/boton_mail.png"
+            <img id="head_send_email_img" src="https://app.oxbridge.es/app/images/send_email.png" style="display:none;position:absolute;">
+            <img id="head_oxbridge_mail" src="https://app.oxbridge.es/app/images/boton_mail.png"
                onClick="ocultar_mostrar('p_00995_formulario_mail_contenedor');">
          </div>
 			<div id="head_oxbridge_menu_apartados"></div>
@@ -285,8 +285,8 @@
 			user-select: none;
   		"
    >
-      <img src="http://app.oxbridge.es/app/images/firma_borrar.png" class="p_00995_boton_pad_firma" style=" margin-right:20%;" onclick="signaturePad.clear();" data-action="clear">
-      <img src="http://app.oxbridge.es/app/images/firma_ok.png" class="p_00995_boton_pad_firma" onclick="signaturePadSave(event);" data-action="save">
+      <img src="https://app.oxbridge.es/app/images/firma_borrar.png" class="p_00995_boton_pad_firma" style=" margin-right:20%;" onclick="signaturePad.clear();" data-action="clear">
+      <img src="https://app.oxbridge.es/app/images/firma_ok.png" class="p_00995_boton_pad_firma" onclick="signaturePadSave(event);" data-action="save">
    </div>
 
    <div id="p_00995_firma" style="display:none;">

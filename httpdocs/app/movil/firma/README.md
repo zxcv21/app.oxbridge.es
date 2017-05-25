@@ -1,16 +1,16 @@
 Signature Pad [![Code Climate](https://codeclimate.com/github/szimek/signature_pad.png)](https://codeclimate.com/github/szimek/signature_pad)
 =============
 
-Signature Pad is a JavaScript library for drawing smooth signatures. It's HTML5 canvas based and uses variable width Bézier curve interpolation based on [Smoother Signatures](http://corner.squareup.com/2012/07/smoother-signatures.html) post by [Square](https://squareup.com).
+Signature Pad is a JavaScript library for drawing smooth signatures. It's HTML5 canvas based and uses variable width Bézier curve interpolation based on [Smoother Signatures](https://corner.squareup.com/2012/07/smoother-signatures.html) post by [Square](https://squareup.com).
 It works in all modern desktop and mobile browsers and doesn't depend on any external libraries.
 
 ![Example](https://f.cloud.github.com/assets/9873/268046/9ced3454-8efc-11e2-816e-a9b170a51004.png)
 
 ## Demo
-[Demo](http://szimek.github.io/signature_pad) works in desktop and mobile browsers. You can check out its [source code](https://github.com/szimek/signature_pad/blob/gh-pages/js/app.js) for some tips on how to handle window resize and high DPI screens. You can also find more about the latter in [HTML5 Rocks tutorial](http://www.html5rocks.com/en/tutorials/canvas/hidpi).
+[Demo](https://szimek.github.io/signature_pad) works in desktop and mobile browsers. You can check out its [source code](https://github.com/szimek/signature_pad/blob/gh-pages/js/app.js) for some tips on how to handle window resize and high DPI screens. You can also find more about the latter in [HTML5 Rocks tutorial](https://www.html5rocks.com/en/tutorials/canvas/hidpi).
 
 ## Installation
-You can install the latest release using [Bower](http://bower.io/) - `bower install signature_pad`.
+You can install the latest release using [Bower](https://bower.io/) - `bower install signature_pad`.
 
 You can also download the latest release from GitHub [releases page](https://github.com/szimek/signature_pad/releases) or go to the latest release tag (e.g. [v1.2.4](https://github.com/szimek/signature_pad/tree/v1.2.4)) and download  `signature_pad.js` or `signature_pad.min.js` files directly.
 
@@ -77,7 +77,7 @@ signaturePad.penColor = "rgb(66, 133, 244)";
 
 
 ### Handling data URI encoded images on the server side
-If you are not familiar with data URI scheme, you can read more about it on [Wikipedia](http://en.wikipedia.org/wiki/Data_URI_scheme).
+If you are not familiar with data URI scheme, you can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Data_URI_scheme).
 
 There are 2 ways you can handle data URI encoded images.
 
@@ -87,7 +87,7 @@ You could simply store it in your database as a string and display it in HTML li
 <img src="data:image/png;base64,iVBORw0K..." />
 ```
 
-but this way has many disadvantages - it's not easy to get image dimensions, you can't manipulate it e.g. to create a thumbnail and it also [has some performance issues on mobile devices](http://www.mobify.com/blog/data-uris-are-slow-on-mobile/).
+but this way has many disadvantages - it's not easy to get image dimensions, you can't manipulate it e.g. to create a thumbnail and it also [has some performance issues on mobile devices](https://www.mobify.com/blog/data-uris-are-slow-on-mobile/).
 
 Thus, more common way is to decode it and store as a file. Here's an example in Ruby:
 
@@ -153,4 +153,4 @@ file_put_contents( "signature.png",$decoded_image);
 * Fix passing arguments to canvas element on `SignaturePad#toDataURL()`.
 
 ## License
-Released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Released under the [MIT License](https://www.opensource.org/licenses/MIT).

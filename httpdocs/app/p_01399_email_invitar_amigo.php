@@ -2,10 +2,10 @@
 -ID Pag: p_01399 para email_invitar_amigo
 -NAME: p_01399_email_invitar_amigo.php
 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Invitar Amigo</title>
 </head>
 
@@ -29,7 +29,7 @@ $enlace=str_replace(" ","%20",$enlace);
 $invitador= trim($invitador);
 $invitador= utf8_encode($invitador);
 $p_01399_invitador_codif_url= urlencode($invitador);
-$txt=file_get_contents("http://app.oxbridge.es/app/p_01400_email_invitar_amigo_html2.php?invitador=".$p_01399_invitador_codif_url."&enlace=".$enlace);
+$txt=file_get_contents("https://app.oxbridge.es/app/p_01400_email_invitar_amigo_html2.php?invitador=".$p_01399_invitador_codif_url."&enlace=".$enlace);
 
 $error="";
 

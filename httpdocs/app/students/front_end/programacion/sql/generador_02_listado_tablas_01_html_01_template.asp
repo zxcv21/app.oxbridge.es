@@ -2,15 +2,15 @@
 
 <!--#include virtual="/back_end/bbdd/bbdd_01_conexiones_11.asp"-->
 
-<!--http://sb.oxbridge.es/front_end/programacion/sql/generador_02_listado_tablas_01_html_01_template.asp-->
+<!--https://sb.oxbridge.es/front_end/programacion/sql/generador_02_listado_tablas_01_html_01_template.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>0010211 mostrar tablas</title>
-	<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/front_end/programacion/sql/generador_01_menu_02_css_00_global..css">
+	<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/front_end/programacion/sql/generador_01_menu_02_css_00_global..css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
 	' Selecciona una de las tres opciones siguientes
@@ -117,7 +117,7 @@
 					Listado de las tablas de "<%=conexion%>"
 					<%if len(filtro)>0 THEN%>
                     	<br>
-						Sólo se listarán tablas y consultas con la expresión "<%=filtro%>"
+						Sï¿½lo se listarï¿½n tablas y consultas con la expresiï¿½n "<%=filtro%>"
                     <%end if%>
 				</font>
 			</td>
@@ -126,7 +126,7 @@
 			<tr>
 				<td colspan="7">
 					<font class="FUENTEGRANDECOLORINCORRECTOBOLD">
-							No has seleccionado ningún odbc
+							No has seleccionado ningï¿½n odbc
 					</font>
 				</td>
 			</tr>
@@ -149,7 +149,7 @@
 				tdstyle=tdstyle & """"%>
 				<td align="center" valign="bottom" <%=tdstyle%> class="BORDE01BSOLIDOCOLORBORDE01">
 					<font class="FUENTEESTANDARCOLORNORMALBOLD">
-						Nombre para el código
+						Nombre para el cï¿½digo
 					</font>
 				</td>
 				<%tdstyle="style="""
@@ -158,7 +158,7 @@
 				tdstyle=tdstyle & """"%>
 				<td colspan="4" align="center" valign="bottom" <%=tdstyle%> class="BORDE01BSOLIDOCOLORBORDE01">
 					<font class="FUENTEESTANDARCOLORNORMALBOLD">
-						Tipo de código a generar
+						Tipo de cï¿½digo a generar
 					</font>
 				</td>
 			</tr>
@@ -192,7 +192,7 @@
                         <tr bgcolor="<%=trbgcolor%>">
                             <%PAGINAGENERARCODIGO="sb.oxbridge.es/front_end/programacion/sql/generador_03_campos_tabla_01_html_01_template.asp"
 							IF LEN(PAGINAGENERARCODIGO)>0 THEN
-                                IRGENERARCODIGO="http://"&PAGINAGENERARCODIGO
+                                IRGENERARCODIGO="https://"&PAGINAGENERARCODIGO
 								IRGENERARCODIGO=IRGENERARCODIGO & "?conexion="&conexion
 								IRGENERARCODIGO=IRGENERARCODIGO & "&conexiondelasentenciasql="&conexiondelasentenciasql
                             END IF%>

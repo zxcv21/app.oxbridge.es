@@ -13,7 +13,7 @@
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>00749 codigo sql</title>
 	<link rel="stylesheet" type="text/css" href="../oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
@@ -31,9 +31,9 @@
 <%
 	'0.1.- DATOS PAGINA ACTUAL -INICIO
 
-	'Página 00749
+	'Pï¿½gina 00749
 	PAGINACODIGO="00749"
-	PAGINADESCRIPCION="Genera el código sql para la tabla y campos seleccionados"
+	PAGINADESCRIPCION="Genera el cï¿½digo sql para la tabla y campos seleccionados"
 	
 	DIRECCIONPAGINACODIGO=PAGINACODIGO
 	CALL DIRECCIONPAGINA( DIRECCIONPAGINAIP, DIRECCIONPAGINACODIGO, DIRECCIONPAGINARUTA, DIRECCIONPAGINASERVIDOR, CONEXIONOFICINA, ANCHOEXPLORER, ANCHOFIREFOX, ANCHOSAFARI, ALTOEXPLORER, ALTOFIREFOX, ALTOSAFARI )
@@ -174,7 +174,7 @@ IF SESIONID>0 THEN
 	INFORMACIONPAGINA=INFORMACIONPAGINA & "&ANCHONAVEGADOR="&ANCHONAVEGADOR
 	INFORMACIONPAGINA=INFORMACIONPAGINA & "&ANCHO="&ANCHO
 
-		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEÑA -INICIO
+		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEï¿½A -INICIO
 
 		ESNECESARIOVERIFICARACCESO="NO"
 
@@ -182,7 +182,7 @@ IF SESIONID>0 THEN
 			CALL VERIFICARACCESO( ESNECESARIOVERIFICARACCESO, MINUTOSPARAVERIFICARCONTRASENYA, SESIONID, SESIONFECHADIA, SESIONFECHAMES, SESIONFECHAANYO, SESIONHORARIOHORA, SESIONHORARIOMINUTO, CONEXIONSERVER, INFORMACIONTRASPASADA, INFORMACIONPAGINA, INFORMACIONNOTRASPASADA, PAGINA, IP, ANCHO, ALTO, REDIRECCION, REDIRECCIONAR, REDIRECCIONARPRIORITARIO, REDIRECCIONOBJETIVO )
 		END IF
 
-		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEÑA -FIN
+		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEï¿½A -FIN
 
 	'0.5.- ACTUALIZAR INFORMACION DE LA SESION -FIN
 
@@ -315,9 +315,9 @@ END IF
                     <td <%=tdstyle%>>
                         <font class="FUENTEGRANDECOLORINCORRECTOBOLD">
                             <%if IDIOMA="CATALAN" THEN%>
-                            	Has de seleccionar camps del quadre de l'esquerra o prémer el botó "TODOS LOS CAMPOS"
+                            	Has de seleccionar camps del quadre de l'esquerra o prï¿½mer el botï¿½ "TODOS LOS CAMPOS"
                             <%else%>
-                            	Has de seleccionar campos del cuadro de la izquierda o pulsar el botón "TODOS LOS CAMPOS"
+                            	Has de seleccionar campos del cuadro de la izquierda o pulsar el botï¿½n "TODOS LOS CAMPOS"
                             <%end if%>
                         </font>
                     </td>

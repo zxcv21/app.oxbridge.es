@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -514,7 +514,7 @@ CKEDITOR.tools.extend( CKEDITOR.dom.node.prototype, {
 			previous = previous.previousSibling;
 
 			// Avoid returning the doc type node.
-			// http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-412266927
+			// https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-412266927
 			retval = previous && previous.nodeType != 10 && new CKEDITOR.dom.node( previous );
 		}
 		while ( retval && evaluator && !evaluator( retval ) );

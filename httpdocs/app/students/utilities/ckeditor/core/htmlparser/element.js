@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -470,7 +470,7 @@ CKEDITOR.htmlParser.cssStyle = function() {
 				return;
 
 			// We can safely assume that className won't break regexp.
-			// http://stackoverflow.com/questions/448981/what-characters-are-valid-in-css-class-names
+			// https://stackoverflow.com/questions/448981/what-characters-are-valid-in-css-class-names
 			classes = CKEDITOR.tools.trim( classes.replace( new RegExp( '(?:\\s+|^)' + className + '(?:\\s+|$)' ), ' ' ) );
 
 			if ( classes )

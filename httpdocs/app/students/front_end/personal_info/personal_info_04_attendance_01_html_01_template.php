@@ -5,7 +5,7 @@ File: /front_end/personal_info/personal_info_04_attendance_01_html_01_template.p
 
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta https-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title> Attendance Template</title> 
 		<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/dev/dani/front_end/personal_info/personal_info_04_attendance_02_css_01_template.css"/>
     <? include($_SERVER['DOCUMENT_ROOT']."/utilities/librerias_10_php_01_basicas.php");  ?>

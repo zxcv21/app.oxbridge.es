@@ -174,7 +174,7 @@ window.ToolbarConfigurator = {};
 	};
 
 	/**
-	 * Simplified http://underscorejs.org/#map functionality
+	 * Simplified https://underscorejs.org/#map functionality
 	 *
 	 * @param {Array | Object} enumerable
 	 * @param {Function} modifier

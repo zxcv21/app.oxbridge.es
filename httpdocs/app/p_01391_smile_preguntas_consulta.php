@@ -11,11 +11,11 @@
 		
 		if( $_POST['alumno_id'] == 22618 )
 		{
-			$p_01391_php_url='http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_02_select_01_preguntas_por_hacer_trinity.php';
+			$p_01391_php_url='https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_02_select_01_preguntas_por_hacer_trinity.php';
 		}
 		else
 		{
-			$p_01391_php_url='http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_02_select_01_preguntas_por_hacer.php';
+			$p_01391_php_url='https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_02_select_01_preguntas_por_hacer.php';
 		};
 		$p_01391_php_url.='?p_0001401_get_alumno_id='.$_POST['alumno_id'];
 		$p_01391_php_url.='&p_0001401_get_bd='.$_POST['bd'];

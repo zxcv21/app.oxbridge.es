@@ -27,5 +27,5 @@ if($p_0010243_carga_inicial!=0) include($_SERVER['DOCUMENT_ROOT']."/utilities/li
 <div id="p_0010243_div_carrera">
 <img src="https://app.oxbridge.es/app/images/bandera_start.png"/>
 <div id="carrera_pista" style="position: relative;border-bottom: solid #2DCEE4;z-index: 2;margin:0 10 0 10;"></div>
-<img style="height:60;float: right;"src="http://app.oxbridge.es/app/images/bandera_end.png" />
+<img style="height:60;float: right;"src="https://app.oxbridge.es/app/images/bandera_end.png" />
 </div>

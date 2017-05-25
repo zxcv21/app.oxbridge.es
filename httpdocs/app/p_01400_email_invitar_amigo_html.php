@@ -9,10 +9,10 @@
 	$_GET['enlace']=$a[1];*/
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta https-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Oxbridge</title>
 <style>
 body{
@@ -62,7 +62,7 @@ body{
 
 	<div class="alingl">
     	Equipo de Oxbridge<br>
-    	<img class="avion alingl" src="http://app.oxbridge.es/app/images/OXBRIDGE-logo_avio.png">
+    	<img class="avion alingl" src="https://app.oxbridge.es/app/images/OXBRIDGE-logo_avio.png">
      </div>
 
     <br>
@@ -70,7 +70,7 @@ body{
     <br>
 	<p class="alingl firma">
         Oxbridge English Teaching System, SL<br>
-        <img src="http://app.oxbridge.es/images/firma-oxbridge-oscura.png"><br>
+        <img src="https://app.oxbridge.es/images/firma-oxbridge-oscura.png"><br>
         B66446741 Avda. Diagonal 534 2º2ª<br>
         08006 Barcelona<br>
         Telf. 935327565 / 915234243 /+44 20 8133 0043

@@ -118,7 +118,7 @@ function p_0010172_js_f_06_comprueba_estado_inputs_fechas()
 
 function p_0010172_js_f_07_error(id)
 {
-	document.getElementById('p_0010170_img_imagen_guardado').src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
+	document.getElementById('p_0010170_img_imagen_guardado').src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
 	document.getElementById(id).className="p_0010171_css_input p_0010171_css_input_invalid";
 }
 
@@ -158,7 +158,7 @@ function p_0010172_js_f_08_comprueba_existe_fecha(p_0010172_js_valor_value,p_001
 	}
 	else
 	{
-		document.getElementById('p_0010170_img_imagen_guardado').src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar.png';
+		document.getElementById('p_0010170_img_imagen_guardado').src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar.png';
 		document.getElementById('p_0010170_img_imagen_guardado').setAttribute('onclick','p_0010172_js_f_11_enviar_formulario_pagadores()');
 		document.getElementById(p_0010172_js_valor_id).className="p_0010171_css_input";
 	}
@@ -194,7 +194,7 @@ function p_0010172_js_f_10_mostrar_boton_guardar_deshabilitado(p_0010172_js_valo
 		if(p_0010172_js_valor_value.length==0)
 			p_0010172_js_f_06_comprueba_estado_inputs_fechas();	
 		else if(p_0010172_js_valor_value.length<7)
-			document.getElementById('p_0010170_img_imagen_guardado').src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
+			document.getElementById('p_0010170_img_imagen_guardado').src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
 		
 	}
 	else
@@ -202,7 +202,7 @@ function p_0010172_js_f_10_mostrar_boton_guardar_deshabilitado(p_0010172_js_valo
 	if(p_0010172_js_valor_value.length==0)
 		p_0010172_js_f_06_comprueba_estado_inputs_fechas();
 	else if(p_0010172_js_valor_value.length<10)
-		document.getElementById('p_0010170_img_imagen_guardado').src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
+		document.getElementById('p_0010170_img_imagen_guardado').src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png';
 }
 
 function p_0010172_js_f_10_comprueba_fecha_inicio_mayor_o_igual_fecha_actual(p_0010172_js_valor_value,p_0010172_js_id)
@@ -239,7 +239,7 @@ function p_0010172_js_f_11_enviar_formulario_pagadores()
 		document.getElementById('p_0010170_div_respuuesta_ajax').innerHTML='';
 		ajax_load_page
 		(
-			"http://sb.oxbridge.es/dev/migue/front_end/contrato/update_contrato_02_datos_generales.php",
+			"https://sb.oxbridge.es/dev/migue/front_end/contrato/update_contrato_02_datos_generales.php",
 			"p_0010170_div_respuuesta_ajax",
 			"p_0010172_f_alta="+document.getElementById('p_0010170_input_fecha_inicio').value+"&"+
 			"p_0010172_f_baja="+document.getElementById('p_0010170_input_fecha_fin').value+"&"+

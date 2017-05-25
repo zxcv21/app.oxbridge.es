@@ -28,19 +28,21 @@ if(!isset($_GET['idioma'])){
 	<!-- no aplicar meta a navegador: vanilla android,. -->
 	<?
 		$version="/iphone|ipod|ipad|windows/";
-		$navegador=strtolower($_SERVER['HTTP_USER_AGENT']);
+		$navegador=strtolower($_SERVER['https_USER_AGENT']);
 
    	if( preg_match($version,$navegador)!=0){
 			//?><meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.37, maximum-scale=0.37, user-scalable=no"><?
 		}
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 
 
 	<title>app <? echo $_GET['VER'];?></title>
-	<link rel="shortcut icon" type="image/x-icon" href="<? echo ver_url("images/favicon.ico","src"); ?>">
-    <link rel="apple-touch-icon" href="<? echo ver_url("images/favicon.ico","src"); ?>">
+		<link rel="shortcut icon" type="image/x-icon" href="<? echo ver_url("images/favicon.ico","src"); ?>">
+	  <link rel="apple-touch-icon" href="<? echo ver_url("images/favicon.ico","src"); ?>">
+
+
 	<? include ver_url("movil/p_00956_head.php","");?>
 </head>
 
@@ -65,7 +67,7 @@ if(!isset($_GET['idioma'])){
 	<img id="p_00955_img_cargando" class="img_cargando" src="<? echo ver_url("images/loading.png","src"); ?>" >
 </div>
 	<? /* if($_GET['VER']=="dev"){?>
-		<a style="z-index:9999999999; position:absolute; top:0; left:0;" href="http://app.oxbridge.es/app/movil/?TIPO=no-login&DEV=<? echo $_GET['VER'];?>">
+		<a style="z-index:9999999999; position:absolute; top:0; left:0;" href="https://app.oxbridge.es/app/movil/?TIPO=no-login&DEV=<? echo $_GET['VER'];?>">
         	entrar sin login
         </a>
 	<? }*/?>
@@ -149,7 +151,7 @@ if(!isset($_GET['idioma'])){
       <!--      <br>
             <img
             	style=" height:150px;position: fixed;bottom: 50px;right: 50px;"
-                src="http://app.oxbridge.es/app/images/ok_nivel.png"
+                src="https://app.oxbridge.es/app/images/ok_nivel.png"
                 onClick="
                 	document.getElementById('p_00955_form_seleccion_nivel').setAttribute('onSubmit','');
                     document.getElementById('p_00955_form_seleccion_nivel').submit();
@@ -180,7 +182,7 @@ if(!isset($_GET['idioma'])){
         	method="post"
         	id="p_00995_preguntas_insidencias_formulario"
             target="p_00995_preguntas_insidencias_iframe"
-        	action="http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_02_pregunta_incidentada.php"
+        	action="https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_02_pregunta_incidentada.php"
         >
         	/!\ insidencia en la pregunta:<br><br>
         	<input id="p_00995_preguntas_insidencias_formulario_esta" type="radio" name="p_0001405_input_pregunta_id"> Esta pregunta<br>
@@ -207,7 +209,7 @@ if(!isset($_GET['idioma'])){
     <? include ver_url('movil/p_0001851_clases_formulario_valoracion_semanal.php','');?>
 
    <script>
-		$("#p_00995_reloguin").load("http://app.oxbridge.es/sesiones/sesion_04_comprobacion_01_html_01_estructura.php"+
+		$("#p_00995_reloguin").load("https://app.oxbridge.es/sesiones/sesion_04_comprobacion_01_html_01_estructura.php"+
 			"?p_0001319_get_sesion_id=<? echo $sesion_id;?>"+
 			"&p_0001319_get_usuario_id=<? echo $alumno_id_nuevo;?>"+
 			"&p_0001319_get_alumno_id=<? echo $alumno_id;?>"+
@@ -229,7 +231,7 @@ if(!isset($_GET['idioma'])){
    <div id="p_00995_formulario_logout_contenedor" align="center" class="contenedores_formularios" style="display:none;background-color: rgba(0,0,0,0.8);">
    	<div id="p_00990_over_all_cerrar_mail" onclick="ocultar_mostrar('p_00995_formulario_logout_contenedor');"></div>
       <span style="font-size:5em; font-family:HelveticaNeueRoman;"><? echo $TEXTOS[75][2];?></span><br><br><br>
-     	<button class="p_00995_formulario_mail_input boton_normal" style="width:auto;font-size:5em" onClick="window.location='http://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
+     	<button class="p_00995_formulario_mail_input boton_normal" style="width:auto;font-size:5em" onClick="window.location='https://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
 			<? echo $TEXTOS[74][2];?>
       </button><br><br><br>
       <span style="font-size:4em; "><? echo $TEXTOS[76][2];?></span>
@@ -348,7 +350,7 @@ if(!isset($_GET['idioma'])){
 		font-size:5em;
         bottom:50%;z
 	"
-      onClick="var a=new Image(); a.src='http://app.oxbridge.es/app/DEV/images/boton_key.png';"
+      onClick="var a=new Image(); a.src='https://app.oxbridge.es/app/DEV/images/boton_key.png';"
    >TEST</button>
 
 

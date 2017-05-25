@@ -24,30 +24,30 @@ if ($_GET['dev']=='monica'){
 			if(substr(strtolower($_GET['VER']),0,1)!="#")
 			{
 				$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/DEV/".$_GET['VER']."/";
-				$version_pagina_src="http://app.oxbridge.es/app/DEV/".$_GET['VER']."/";
-				echo "<script>var version_pagina='http://app.oxbridge.es/app/DEV/".$_GET['VER']."/';</script>";
+				$version_pagina_src="https://app.oxbridge.es/app/DEV/".$_GET['VER']."/";
+				echo "<script>var version_pagina='https://app.oxbridge.es/app/DEV/".$_GET['VER']."/';</script>";
 			}
 			else
 			{
 				$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/VERSIONS/".$_GET['VER']."/";
-				$version_pagina_src="http://app.oxbridge.es/app/VERSIONS/".$_GET['VER']."/";
-				echo "<script>var version_pagina='http://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/'</script>";
+				$version_pagina_src="https://app.oxbridge.es/app/VERSIONS/".$_GET['VER']."/";
+				echo "<script>var version_pagina='https://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/'</script>";
 			}
 		}
 		else
 		{
 			$_GET['VER']="";
 			$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
-			$version_pagina_src="http://app.oxbridge.es/app/";
-			echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
+			$version_pagina_src="https://app.oxbridge.es/app/";
+			echo "<script>var version_pagina='https://app.oxbridge.es/app/';</script>";
 		}
 	}
 	else
 	{
 		$_GET['VER']="";
 		$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
-		$version_pagina_src="http://app.oxbridge.es/app/";
-		echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
+		$version_pagina_src="https://app.oxbridge.es/app/";
+		echo "<script>var version_pagina='https://app.oxbridge.es/app/';</script>";
 	}
 
 	$VERSION_LISTADO = array();
@@ -80,7 +80,7 @@ if ($_GET['dev']=='monica'){
 				$r=$_SERVER['DOCUMENT_ROOT']."/app/".$url;
 				if($tipo=="src")
 				{
-					$r="http://app.oxbridge.es/app/".$url;
+					$r="https://app.oxbridge.es/app/".$url;
 				}
 			}
 		}
@@ -89,7 +89,7 @@ if ($_GET['dev']=='monica'){
 			$r=$_SERVER['DOCUMENT_ROOT']."/app/".$url;
 			if($tipo=="src")
 			{
-				$r="http://app.oxbridge.es/app/".$url;
+				$r="https://app.oxbridge.es/app/".$url;
 			}
 		}
 		return $r;

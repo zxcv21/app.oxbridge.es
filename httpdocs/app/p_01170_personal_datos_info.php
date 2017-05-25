@@ -15,7 +15,7 @@ if( $p_0001326_php_sesion_correcta == "si" && $p_0001326_php_usuario_correcto ==
 	switch($_GET['consulta']){
 
 		case "imprimir":{
-			$datos = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion%20personal%2001%20_datos_presonales_01_asp_02_select.asp?p_0001207_get_alumno_id=".$_GET['alumno_id']);
+			$datos = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion%20personal%2001%20_datos_presonales_01_asp_02_select.asp?p_0001207_get_alumno_id=".$_GET['alumno_id']);
 			$datos= utf8_encode($datos);
 			echo "window.parent.personal_datos_info=".$datos."\n";
 			echo "window.parent.p_01169_cargar_presonal_datos_info_load();\n";

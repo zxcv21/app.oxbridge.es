@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -625,7 +625,7 @@
 						// * we don't compare them,
 						// * there's a chance that DOM has been changed since
 						// locked (e.g. fake) selection was made, so createBookmark2 could fail.
-						// http://dev.ckeditor.com/ticket/11027#comment:3
+						// https://dev.ckeditor.com/ticket/11027#comment:3
 						var imageBefore = new Image( this.editor, true );
 
 						// If current editor content matches the tip of snapshot stack,
@@ -885,7 +885,7 @@
 		// That will tell us if any printable data was inserted.
 		// On `input` event we'll increase input fired counter for proper key code.
 		// Eventually it might be canceled by paste/drop using `ignoreInputEvent` flag.
-		// Order of events can be found in http://www.w3.org/TR/DOM-Level-3-Events/
+		// Order of events can be found in https://www.w3.org/TR/DOM-Level-3-Events/
 
 		/**
 		 * An undo manager instance owning the editing handler.

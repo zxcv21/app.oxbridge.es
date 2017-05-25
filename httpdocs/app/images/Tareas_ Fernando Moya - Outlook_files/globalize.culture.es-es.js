@@ -1,5 +1,5 @@
 /*! Note:  Microsoft Corporation is not the original author of these script files. Microsoft obtained
-the original file from http://github.com/jquery/globalize under the license that is referred to below. That
+the original file from https://github.com/jquery/globalize under the license that is referred to below. That
 license and the other notices below are provided for informational purposes only and are not
 the license terms under which Microsoft distributes the files.  Microsoft grants you the right
 to use the files for the sole purpose of using the files in conjunction with the Microsoft
@@ -10,7 +10,7 @@ not expressly granted by Microsoft, whether by implication, estoppel or otherwis
 /*!
 * Globalize Culture es-ES
 *
-* http://github.com/jquery/globalize
+* https://github.com/jquery/globalize
 *
 * Copyright Software Freedom Conservancy, Inc.
 * ------------------------------------------------------------------------------------

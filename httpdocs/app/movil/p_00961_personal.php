@@ -20,7 +20,7 @@ Pag. ID: 00961
                	id="p_00961_formulario_personal_info"
                	method="post"
                	class="p_00961_formulario_personal_info"
-                  action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 01 _datos_presonales_01_asp_01_modificar.asp"
+                  action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 01 _datos_presonales_01_asp_01_modificar.asp"
                   target="p_00961_guardar_personal_info"
                   onsubmit="p_00989_cargando('p_00961_personal_info_respuesta');"
                   style="display:none;"
@@ -91,7 +91,7 @@ Pag. ID: 00961
             	<form
                	method="post"
                	class="p_00961_formulario_personal_info"
-                  action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 02 _contrasenya_01_asp_01_modificar.asp"
+                  action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 02 _contrasenya_01_asp_01_modificar.asp"
                   target="p_00961_guardar_personal_pass"
                   onsubmit="p_00989_cargando('p_00961_personal_pass_respuesta');"
                   id="p_00961_formulario_personal_pass"
@@ -140,7 +140,7 @@ Pag. ID: 00961
                   "
 
                ><? echo $TEXTOS[70][2];?></div>
-               <form id="p_00961_recover_pass_form" target="p_00961_recover_pass_iframe" method="post" action="http://s.oxbridge.es/ox/principal/inc_verificar_usuario_envio_contrasenya_previo_TEFL.asp?">
+               <form id="p_00961_recover_pass_form" target="p_00961_recover_pass_iframe" method="post" action="https://s.oxbridge.es/ox/principal/inc_verificar_usuario_envio_contrasenya_previo_TEFL.asp?">
                	<input type="hidden" id="p_00961_recover_pass_email" name="email" value="">
                </form>
                <iframe name="p_00961_recover_pass_iframe" id="p_00961_recover_pass_iframe" style="display:none;"></iframe>
@@ -177,7 +177,7 @@ Pag. ID: 00961
 					<form
                	method="post"
                	class="p_00961_formulario_personal_info"
-                  action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 03 _settigs_01_asp_01_modificar.asp"
+                  action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 03 _settigs_01_asp_01_modificar.asp"
                   target="p_00961_guardar_personal_setting"
                   onsubmit="p_00989_cargando('p_00961_personal_info_seting');"
                   id="p_00961_formulario_personal_seting"
@@ -347,7 +347,7 @@ Pag. ID: 00961
                <form
                   id="p_00961_formulario_personal_banco"
                   method="post"
-                  action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 04_datos_bancarios_01_asp_01_modificar.asp"
+                  action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion personal 04_datos_bancarios_01_asp_01_modificar.asp"
                   target="p_00961_formulario_personal_banco_iframe"
                   style="font-size: 16px;"
                >
@@ -398,7 +398,7 @@ Pag. ID: 00961
 
                   <div style="width:100%; text-align:left;clear:both; font-size:0.75em; padding-top:1em; ">
                      <input style="font-size:1.5em; height:1em; width:1em; float:left;" type="checkbox" id="p_00982_checkbox_aviso_de_baja_aceptado_id" >
-                     <? echo $TEXTOS[97][2];?> <a style="text-decoration:underline; color:#000;" onclick="over_all('');document.getElementById('p_00990_over_all_contenedor').innerHTML=document.getElementById( TEXTOS[95].text.replace(/http.*:\/\/.*\.{0,1}oxbridge.es\/app\//g,'') ).innerHTML;"><? echo $TEXTOS[98][2];?></a> <? echo $TEXTOS[99][2];?>
+                     <? echo $TEXTOS[97][2];?> <a style="text-decoration:underline; color:#000;" onclick="over_all('');document.getElementById('p_00990_over_all_contenedor').innerHTML=document.getElementById( TEXTOS[95].text.replace(/https.*:\/\/.*\.{0,1}oxbridge.es\/app\//g,'') ).innerHTML;"><? echo $TEXTOS[98][2];?></a> <? echo $TEXTOS[99][2];?>
                   </div>
                   <br>
                   <div style="width:100%; text-align:center;clear: both;">
@@ -424,7 +424,7 @@ Pag. ID: 00961
          <div class="p_00961_menu_texto" style="display:none;">
             <div id="p_00961_menu_contenedor_3" class="p_00961_contenedor_seccion">
 				<span style="font-size: 1em; font-family:HelveticaNeueRoman;"><? echo $TEXTOS[75][2]?></span><br><br>
-				<button class="p_00995_formulario_mail_input boton_normal" style="width:5em;font-size: 1em;" onclick="window.location='http://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
+				<button class="p_00995_formulario_mail_input boton_normal" style="width:5em;font-size: 1em;" onclick="window.location='https://app.oxbridge.es/sesiones/sesion_04_comprobacion_04_php_06_otros_04_cerrar_sesion.php?p_0001327_get_sesion_id=<? echo $sesion_id;?>';">
 					<? echo $TEXTOS[198][2];?>
 				</button><br><br>
             	<span style="font-size: 0.9em; "><? echo $TEXTOS[76][2]?></span>

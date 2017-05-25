@@ -19,7 +19,7 @@
 	<div id="contenido" style="overflow: auto;height: 300px;"></div>
 
 	<h2>Rutas: </h2>
-	<form enctype="multipart/form-data" action="http://app.oxbridge.es/app/admin/ADMIN/control_versiones.php" method="post">
+	<form enctype="multipart/form-data" action="https://app.oxbridge.es/app/admin/ADMIN/control_versiones.php" method="post">
 	<input type="hidden" name="MAX_FILE_SIZE" value="99999999" />
 	<div>Ruta Origen: <input id="ruta_origen" name="ruta_origen" type="text" size="50" onFocus="this.blur();" style="border:0";/></div><br>
 	<div>Ruta Destino: <div style="display:inline-block;" id="directorio_trabajo">/DEV/DANI</div><input style="border:0" onFocus="this.blur();" id="ruta_destino" name="ruta_destino" type="text" size="50"/></div><br>

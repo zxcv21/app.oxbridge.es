@@ -376,7 +376,7 @@ DIA="<? echo date("Y/m/d"); ?>";
 		iframe_datos.style.display="none";
 		
 		//CONSULTA CROS DOMINE
-		iframe_datos.setAttribute("src","http://app.oxbridge.es/app/p_00996_horario_datos.php");
+		iframe_datos.setAttribute("src","https://app.oxbridge.es/app/p_00996_horario_datos.php");
 		//--------------/
 		
 		document.body.appendChild(iframe_datos);
@@ -889,7 +889,7 @@ DIA="<? echo date("Y/m/d"); ?>";
 		
 		
 			document.getElementById("horario").innerHTML=""+
-				'<img id="p_00958_horario_cargando" src="http://app.oxbridge.es/app/images/loading.png">'+
+				'<img id="p_00958_horario_cargando" src="https://app.oxbridge.es/app/images/loading.png">'+
 				
 				'<div id="p_00958_horario_header_filtros">'+
 				

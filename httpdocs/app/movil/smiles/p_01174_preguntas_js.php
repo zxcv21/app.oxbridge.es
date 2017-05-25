@@ -568,7 +568,7 @@ function recargar_preguntas()
 	var p_01176_recarga_smile_preguntas_iframe = document.createElement("iframe");
 	p_01176_recarga_smile_preguntas_iframe.id="p_01176_recarga_smile_preguntas_iframe";
 	p_01176_recarga_smile_preguntas_iframe.name="p_01176_recarga_smile_preguntas_iframe";
-	p_01176_recarga_smile_preguntas_iframe.src="http://app.oxbridge.es/app/DEV/MIGUE/movil/smiles/smiles_datos_preguntas_recarga_preguntas.php";
+	p_01176_recarga_smile_preguntas_iframe.src="https://app.oxbridge.es/app/DEV/MIGUE/movil/smiles/smiles_datos_preguntas_recarga_preguntas.php";
 	p_01176_recarga_smile_preguntas_iframe.style.display="none";
 	if(!document.getElementById("p_01176_recarga_smile_preguntas_iframe"))
 	{
@@ -1340,7 +1340,7 @@ function p_01174_pregunta_vista_usuario() //formulario que se envia una vez la p
 			{
 
 					var texto="<iframe name=\"pregunta_vista\" id=\"pregunta_vista\" style=\"display:none;\"></iframe>";
-					texto+="<form target=\"pregunta_vista\"  id=formulario_pregunta_cargada action=http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_03_insert_01_pregunta_mostrada.php method=post>";
+					texto+="<form target=\"pregunta_vista\"  id=formulario_pregunta_cargada action=https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_03_insert_01_pregunta_mostrada.php method=post>";
 					texto+="<input type=\"hidden\" name=\"p_0001402_input_alumno_id\" value=\""+alumno_id+"\">";
 					texto+="<input type=\"hidden\" name=\"p_0001402_input_bd\" value=\""+personal_datos_info.bd+"\">";
 					texto+="<input type=\"hidden\" name=\"p_0001402_input_pregunta_id\" value=\""+smile_datos.preguntas[smile_datos.pregunta_vista[0]].id_preguinta+"\">";
@@ -1386,7 +1386,7 @@ function p_01174_subir_pregunta() //función envia lo que ha contestado el usuar
 			if(navigator.onLine)
 			{
 					var texto="<iframe name=\"pregunta_contestada\" id=\"pregunta_contestada\" style=\"display:none;\"></iframe>";
-					texto+="<form target=\"pregunta_contestada\"  id=\"formulario_pregunta_contestada\" action=\"http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_01_respuesta_alumno.php\" method=\"post\">";
+					texto+="<form target=\"pregunta_contestada\"  id=\"formulario_pregunta_contestada\" action=\"https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_01_preguntas_04_php_04_update_01_respuesta_alumno.php\" method=\"post\">";
 					texto+="<input type=\"hidden\" name=\"p_0001403_input_alumno_id\" value=\""+alumno_id+"\">";
 					texto+="<input type=\"hidden\" name=\"p_0001403_input_bd\" value=\""+personal_datos_info.bd+"\">";
 					texto+="<input type=\"hidden\" name=\"p_0001403_input_pregunta_id\" value=\""+smile_datos.preguntas[smile_datos.preguntas_contestadas[0]].id_preguinta+"\">";
@@ -1811,7 +1811,7 @@ function func(valor)  //función que se ejecuta cuando le damos a el icono para 
 	*/
 	/**comprobar con api de google**/
 	//valorPalabrapronunciar = smile_datos.preguntas[3].pregunta;
-	//value = "http://translate.google.com/translate_tts?tl=en&q="+valorPalabrapronunciar;
+	//value = "https://translate.google.com/translate_tts?tl=en&q="+valorPalabrapronunciar;
 	//document.getElementById("sound_word").style.display="none";
 	//document.getElementById("reproduccionWord").style.display="inline";
 	//$("#reproduccionWord").attr("src",value);
@@ -2401,7 +2401,7 @@ function p_01174_drag_move_touch(e){
 			this.p_01174_last_element_over= p_01174_element_over;
 		}
 	}
-	//al mover sobre contenedor se�ala final de linea
+	//al mover sobre contenedor se�ala final de linea
 	else if (p_01174_element_over.className.includes("p_01175_contenedor_palabras")) {
 
 		var p_01174_ultima_caja="";

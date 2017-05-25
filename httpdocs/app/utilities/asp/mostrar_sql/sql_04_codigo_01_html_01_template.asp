@@ -2,15 +2,15 @@
 
 <!--#include virtual="/utilities/asp/mostrar_sql/conexion_asp.asp"-->
 
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_04_codigo_01_html_01_template.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_04_codigo_01_html_01_template.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>00749 codigo sql</title>
-	<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
+	<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
 	' Selecciona una de las tres opciones siguientes
@@ -199,9 +199,9 @@
                     <td <%=tdstyle%>>
                         <font class="FUENTEGRANDECOLORINCORRECTOBOLD">
                             <%if IDIOMA="CATALAN" THEN%>
-                            	Has de seleccionar camps del quadre de l'esquerra o prémer el botó "TODOS LOS CAMPOS"
+                            	Has de seleccionar camps del quadre de l'esquerra o prï¿½mer el botï¿½ "TODOS LOS CAMPOS"
                             <%else%>
-                            	Has de seleccionar campos del cuadro de la izquierda o pulsar el botón "TODOS LOS CAMPOS"
+                            	Has de seleccionar campos del cuadro de la izquierda o pulsar el botï¿½n "TODOS LOS CAMPOS"
                             <%end if%>
                         </font>
                     </td>

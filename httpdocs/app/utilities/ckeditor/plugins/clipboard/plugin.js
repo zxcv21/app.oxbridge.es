@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -1524,7 +1524,7 @@
 		/**
 		 * Returns `true` if it is expected that a browser provides HTML data through the Clipboard API.
 		 * If not, this method returns `false` and as a result CKEditor will use the paste bin. Read more in
-		 * the [Clipboard Integration](http://docs.ckeditor.com/#!/guide/dev_clipboard-section-clipboard-api) guide.
+		 * the [Clipboard Integration](https://docs.ckeditor.com/#!/guide/dev_clipboard-section-clipboard-api) guide.
 		 *
 		 * @since 4.5.2
 		 * @returns {Boolean}
@@ -1830,7 +1830,7 @@
 			}
 			// IEs 9+.
 			// We check if editable is focused to make sure that it's an internal DnD. External DnD must use the second
-			// mechanism because of http://dev.ckeditor.com/ticket/13472#comment:6.
+			// mechanism because of https://dev.ckeditor.com/ticket/13472#comment:6.
 			else if ( CKEDITOR.env.ie && CKEDITOR.env.version > 8 && defaultRange && editor.editable().hasFocus ) {
 				// On IE 9+ range by default is where we expected it.
 				// defaultRange may be undefined if dragover was canceled (file drop).
@@ -2246,7 +2246,7 @@
 				data = '';
 			}
 
-			// Some browsers add <meta http-equiv="content-type" content="text/html; charset=utf-8"> at the begging of the HTML data
+			// Some browsers add <meta https-equiv="content-type" content="text/html; charset=utf-8"> at the begging of the HTML data
 			// or surround it with <html><head>...</head><body>(some content)<!--StartFragment--> and <!--EndFragment-->(some content)</body></html>
 			// This code removes meta tags and returns only the contents of the <body> element if found. Note that
 			// some significant content may be placed outside Start/EndFragment comments so it's kept.

@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -9,7 +9,7 @@
  * of the content between a pair of boundary-points.
  *
  * This class shares much of the W3C
- * [Document Object Model Range](http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html)
+ * [Document Object Model Range](https://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html)
  * ideas and features, adding several range manipulation tools to it, but it's
  * not intended to be compatible with it.
  *

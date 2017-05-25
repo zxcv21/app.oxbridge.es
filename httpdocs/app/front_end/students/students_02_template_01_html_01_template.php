@@ -21,30 +21,30 @@ if(isset($_GET['VER']))
 		if(substr(strtolower($_GET['VER']),0,1)!="#")
 		{
 			$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/DEV/".$_GET['VER']."/";
-			$version_pagina_src="http://app.oxbridge.es/app/DEV/".$_GET['VER']."/";
-			echo "<script>var version_pagina='http://app.oxbridge.es/app/DEV/".$_GET['VER']."/';</script>";
+			$version_pagina_src="https://app.oxbridge.es/app/DEV/".$_GET['VER']."/";
+			echo "<script>var version_pagina='https://app.oxbridge.es/app/DEV/".$_GET['VER']."/';</script>";
 		}
 		else
 		{
 			$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/";
-			$version_pagina_src="http://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/";
-			echo "<script>var version_pagina='http://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/'</script>";
+			$version_pagina_src="https://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/";
+			echo "<script>var version_pagina='https://app.oxbridge.es/app/VERSIONS/".substr(strtolower($_GET['VER']),1)."/'</script>";
 		}
 	}
 	else
 	{
 		$_GET['VER']="";
 		$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";
-		$version_pagina_src="http://app.oxbridge.es/app/";	
-		echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
+		$version_pagina_src="https://app.oxbridge.es/app/";	
+		echo "<script>var version_pagina='https://app.oxbridge.es/app/';</script>";
 	}
 }
 else
 {
 	$_GET['VER']="";
 	$version_pagina=$_SERVER['DOCUMENT_ROOT']."/app/";	
-	$version_pagina_src="http://app.oxbridge.es/app/";	
-	echo "<script>var version_pagina='http://app.oxbridge.es/app/';</script>";
+	$version_pagina_src="https://app.oxbridge.es/app/";	
+	echo "<script>var version_pagina='https://app.oxbridge.es/app/';</script>";
 }
 $VERSION_LISTADO = array();
 include $version_pagina."version_listado.php";
@@ -76,7 +76,7 @@ function ver_url($url,$tipo)
 			$r=$_SERVER['DOCUMENT_ROOT']."/app/".$url;
 			if($tipo=="src")
 			{
-				$r="http://app.oxbridge.es/app/".$url;
+				$r="https://app.oxbridge.es/app/".$url;
 			}
 		}
 	}
@@ -85,7 +85,7 @@ function ver_url($url,$tipo)
 		$r=$_SERVER['DOCUMENT_ROOT']."/app/".$url;
 		if($tipo=="src")
 		{
-			$r="http://app.oxbridge.es/app/".$url;
+			$r="https://app.oxbridge.es/app/".$url;
 		}
 	}
 	return $r;

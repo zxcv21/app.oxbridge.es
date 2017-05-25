@@ -27,13 +27,13 @@ module.exports = function(grunt) {
                             " * Released under the MIT license\n" +
                             " *\n" +
                             " * The main idea and some parts of the code (e.g. drawing variable width Bézier curve) are taken from:\n" +
-                            " * http://corner.squareup.com/2012/07/smoother-signatures.html\n" +
+                            " * https://corner.squareup.com/2012/07/smoother-signatures.html\n" +
                             " *\n" +
                             " * Implementation of interpolation using cubic Bézier curves is taken from:\n" +
-                            " * http://benknowscode.wordpress.com/2012/09/14/path-interpolation-using-cubic-bezier-and-control-point-estimation-in-javascript\n" +
+                            " * https://benknowscode.wordpress.com/2012/09/14/path-interpolation-using-cubic-bezier-and-control-point-estimation-in-javascript\n" +
                             " *\n" +
                             " * Algorithm for approximated length of a Bézier curve is taken from:\n" +
-                            " * http://www.lemoda.net/maths/bezier-length/index.html\n" +
+                            " * https://www.lemoda.net/maths/bezier-length/index.html\n" +
                             " *\n" +
                             " */\n"
                 },

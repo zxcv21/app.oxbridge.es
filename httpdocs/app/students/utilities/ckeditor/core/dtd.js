@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -330,7 +330,7 @@ CKEDITOR.dtd = ( function() {
 		$tableContent: { caption: 1, col: 1, colgroup: 1, tbody: 1, td: 1, tfoot: 1, th: 1, thead: 1, tr: 1 },
 
 		/**
-		 * List of "transparent" elements. See [W3C's definition of "transparent" element](http://dev.w3.org/html5/markup/terminology.html#transparent).
+		 * List of "transparent" elements. See [W3C's definition of "transparent" element](https://dev.w3.org/html5/markup/terminology.html#transparent).
 		 */
 		$transparent: { a: 1, audio: 1, canvas: 1, del: 1, ins: 1, map: 1, noscript: 1, object: 1, video: 1 },
 

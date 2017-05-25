@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black"-->
   
-  <link rel="stylesheet" href="http://app.oxbridge.es/app/firmas/pad/css/signature-pad.css">
+  <link rel="stylesheet" href="https://app.oxbridge.es/app/firmas/pad/css/signature-pad.css">
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -16,7 +16,7 @@
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
@@ -51,13 +51,13 @@
         </div>
     </div>
     <div class="m-signature-pad--footer">
-        <img src="http://app.oxbridge.es/app/DEV/images/firma_borrar.png" class="p_00995_boton_pad_firma" style="float:left;" onclick="signaturePad.clear();" data-action="clear">
-        <img src="http://app.oxbridge.es/app/DEV/images/firma_ok.png" class="p_00995_boton_pad_firma" style=" float:right;" onclick="signaturePadSave(event);" data-action="save">
+        <img src="https://app.oxbridge.es/app/DEV/images/firma_borrar.png" class="p_00995_boton_pad_firma" style="float:left;" onclick="signaturePad.clear();" data-action="clear">
+        <img src="https://app.oxbridge.es/app/DEV/images/firma_ok.png" class="p_00995_boton_pad_firma" style=" float:right;" onclick="signaturePadSave(event);" data-action="save">
     </div>
 </div>
 
-  <script src="http://app.oxbridge.es/app/firmas/pad/js/signature_pad.js"></script>
-  <script src="http://app.oxbridge.es/app/firmas/pad/js/app.js"></script>
+  <script src="https://app.oxbridge.es/app/firmas/pad/js/signature_pad.js"></script>
+  <script src="https://app.oxbridge.es/app/firmas/pad/js/app.js"></script>
   
 <!--/body>
 </html-->

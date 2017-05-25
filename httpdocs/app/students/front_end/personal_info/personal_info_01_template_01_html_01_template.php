@@ -19,7 +19,7 @@ if(isset($_GET['VER'])) echo "<script> VER = '".$_GET['VER']."';</script>";
 		else echo "<script>  VER = '';</script>"; 
 	
 ?>
-			<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+			<meta https-equiv="Content-Type" content="text/html; charset=utf-8"/>
    <meta name="viewport" content="user-scalable=1, initial-scale=1, minimum-scale=1">
 				<title>Personal Info Template</title>
 		<?

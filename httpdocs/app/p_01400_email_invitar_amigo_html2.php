@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0045)file:///C:/Users/nandordena/Desktop/test.html -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="https://www.w3.org/1999/xhtml"><head><meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--[if gte mso 9]><xml>
      <o:OfficeDocumentSettings>
       <o:AllowPNG/>
@@ -9,7 +9,7 @@
     </xml><![endif]-->
 
     <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta https-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <title>OxApp</title>
 
 </head>
@@ -250,7 +250,7 @@
     <tbody><tr style="vertical-align: top">
         <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px" align="center">
             <div align="center">
-                    <img class="center fullwidth" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;    margin: -30px auto 0;float: none;width: 100% !important;max-width: 500px" align="center" border="0" data-custom-width="500" src="http://app.oxbridge.es/app/images/OXBRIDGE-logo_avio.png"  alt="OXBRIDGE" title="OXBRIDGE">
+                    <img class="center fullwidth" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;    margin: -30px auto 0;float: none;width: 100% !important;max-width: 500px" align="center" border="0" data-custom-width="500" src="https://app.oxbridge.es/app/images/OXBRIDGE-logo_avio.png"  alt="OXBRIDGE" title="OXBRIDGE">
 
             </div>
         </td>

@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 ?>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta https-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
 <script>
@@ -28,7 +28,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 		{
 			case "actividades":
 			{
-				$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_01_material_01_asp_02_select_02_actividades_de_la_clase.asp?p_0001271_get_curso_clase_ids=".$_GET["curso_clase_ids"]."&p_0001270_get_alumno_id=".$_GET["alumno_id"]);
+				$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_01_material_01_asp_02_select_02_actividades_de_la_clase.asp?p_0001271_get_curso_clase_ids=".$_GET["curso_clase_ids"]."&p_0001270_get_alumno_id=".$_GET["alumno_id"]);
 				echo "window.parent.dia_lectivo[".$_GET["id_dia"]."].actividad=".$actualizar.";";
 				echo "console.info('LOAD DAY ".$_GET["id_dia"].".');";
 				echo "window.parent.cargar_clase_cargada(".$_GET["id_dia"].");";
@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 			case "subActividades":
 			{
-				$actualizar = file_get_contents("http://app.oxbridge.es/actividades/clases_01_material_01_php_02_select_03_contenido_de_las_actividades.php?p_0001272_get_dia_lectivo_id=".$_GET["id_dia"]."&p_0001272_get_alumno_id=".$_GET["alumno_id"]."&p_0001272_get_msaccess_actividades_id=".$_GET["actividades"]);
+				$actualizar = file_get_contents("https://app.oxbridge.es/actividades/clases_01_material_01_php_02_select_03_contenido_de_las_actividades.php?p_0001272_get_dia_lectivo_id=".$_GET["id_dia"]."&p_0001272_get_alumno_id=".$_GET["alumno_id"]."&p_0001272_get_msaccess_actividades_id=".$_GET["actividades"]);
 				echo $actualizar;
 				echo "window.parent.cargar_subClase_cargada(".$_GET["id_dia"].");";
 				break;
@@ -116,7 +116,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 				if($ok){
 
-					$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+					$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 					"?p_0001293_get_dia_lectivo_id=".$_GET['dia_lectivo'].
 					"&p_0001293_get_alumno_id=".$_GET['alumno_id'].
 					"&p_0001293_get_firmado=1".
@@ -141,7 +141,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 				}else{
 					echo "ERROR: ".$ok;
-					$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+					$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 					"?p_0001293_get_dia_lectivo_id=".$_GET['dia_lectivo'].
 					"&p_0001293_get_alumno_id=".$_GET['alumno_id'].
 					"&p_0001293_get_firmado=0"

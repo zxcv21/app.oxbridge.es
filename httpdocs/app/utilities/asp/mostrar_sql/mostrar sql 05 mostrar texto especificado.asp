@@ -7,7 +7,7 @@ conn099.open "paginas_web"%>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link rel="stylesheet" type="text/css" href="../oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
@@ -72,7 +72,7 @@ conn099.open "paginas_web"%>
             tdstyle=tdstyle & """"%>
 			<td colspan="4" <%=tdstyle%>>
 				<font class="FUENTEGRANDECOLORINFORMATIVOBOLD">
-					Páginas donde se utilitza la expresión "<%=EXPRESION%>"
+					Pï¿½ginas donde se utilitza la expresiï¿½n "<%=EXPRESION%>"
 				</font>
 			</td>
             <%tdstyle="style="""
@@ -119,9 +119,9 @@ conn099.open "paginas_web"%>
             <td valign="bottom" class="BORDE01BSOLIDOCOLORBORDE01" <%=tdstyle%>>
                 <font class="FUENTEESTANDARCOLORNORMALBOLD">
                     <%if IDIOMA="CATALAN" THEN%>
-                        Pàgina
+                        Pï¿½gina
                     <%else%>
-                        Página
+                        Pï¿½gina
                     <%end if%>
                 </font>
             </td>
@@ -202,7 +202,7 @@ conn099.open "paginas_web"%>
 <!--9.- REDIRIGIR -INICIO-->
 <!--9.- REDIRIGIR -FIN-->
 
-<%'http://192.168.0.1/ox/oxgestion/proyectos/mostrar sql 05 mostrar texto especificado.asp%>
+<%'https://192.168.0.1/ox/oxgestion/proyectos/mostrar sql 05 mostrar texto especificado.asp%>
 
 </body>
 

@@ -5,11 +5,11 @@ File: /front_end/contrato/contrato_02_datos_generales_01_html_01_template.php
 */
 ?>
 <div id='p_0010170_div_respuuesta_ajax' style='display:none;'></div>
-<link rel="stylesheet" type="text/css" href="http://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_02_datos_generales_02_css_01_template.css"/>
+<link rel="stylesheet" type="text/css" href="https://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_02_datos_generales_02_css_01_template.css"/>
 
 <!------------------------ TITULO SECCION ------------------------>
 <div id='p_0010170_div_titulo_seccion' class='p_0010171_css_titulo_de_seccion'>Pagos</div>
-<img id='p_0010170_img_imagen_guardado' class='p_0010171_css_imagen_guardar' src='http://app.oxbridge.es/app/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png'/><br>
+<img id='p_0010170_img_imagen_guardado' class='p_0010171_css_imagen_guardar' src='https://app.oxbridge.es/app/dev/migue/front_end/contrato/imagenes/guardar_desactivado.png'/><br>
 
 <div class='p_0010171_css_separacion'>DATOS CUENTA</div>
 
@@ -77,4 +77,4 @@ File: /front_end/contrato/contrato_02_datos_generales_01_html_01_template.php
 </div>
 
 
-<script type="text/javascript" src="http://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_02_datos_generales_03_js_01_template.js"></script>
+<script type="text/javascript" src="https://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_02_datos_generales_03_js_01_template.js"></script>

@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -15,7 +15,7 @@
 			 * It allows you to create and get {@link CKEDITOR.fileTools.fileLoader file loaders}.
 			 *
 			 *		var loader = editor.uploadRepository.create( file );
-			 *		loader.loadAndUpload( 'http://foo/bar' );
+			 *		loader.loadAndUpload( 'https://foo/bar' );
 			 *
 			 * @since 4.5
 			 * @readonly
@@ -106,7 +106,7 @@
 	 * An instance of the repository is available as the {@link CKEDITOR.editor#uploadRepository}.
 	 *
 	 *		var loader = editor.uploadRepository.create( file );
-	 *		loader.loadAndUpload( 'http://foo/bar' );
+	 *		loader.loadAndUpload( 'https://foo/bar' );
 	 *
 	 * To find more information about handling files see the {@link CKEDITOR.fileTools.fileLoader} class.
 	 *
@@ -225,7 +225,7 @@
 	 *						alert( 'Error!' );
 	 *					} );
 	 *
-	 *					loader.loadAndUpload( 'http://upload.url/' );
+	 *					loader.loadAndUpload( 'https://upload.url/' );
 	 *
 	 *					evt.data.dataValue += 'loading...'
 	 *				}
@@ -395,10 +395,10 @@
 	 */
 
 	/**
-	 * Native `XMLHttpRequest` reference used to upload the file.
+	 * Native `XMLhttpsRequest` reference used to upload the file.
 	 *
 	 * @readonly
-	 * @property {XMLHttpRequest} xhr
+	 * @property {XMLhttpsRequest} xhr
 	 */
 
 	/**
@@ -517,7 +517,7 @@
 			} else {
 				this.uploadUrl = url;
 
-				this.xhr = new XMLHttpRequest();
+				this.xhr = new XMLhttpsRequest();
 				this.attachRequestListeners();
 
 				if ( this.editor.fire( 'fileUploadRequest', { fileLoader: this } ) ) {
@@ -527,10 +527,10 @@
 		},
 
 		/**
-		 * Attaches listeners to the XML HTTP request object.
+		 * Attaches listeners to the XML https request object.
 		 *
 		 * @private
-		 * @param {XMLHttpRequest} xhr XML HTTP request object.
+		 * @param {XMLhttpsRequest} xhr XML https request object.
 		 */
 		attachRequestListeners: function() {
 			var loader = this,
@@ -579,9 +579,9 @@
 				loader.uploaded = loader.uploadTotal;
 
 				if ( xhr.status < 200 || xhr.status > 299 ) {
-					loader.message = loader.lang.filetools[ 'httpError' + xhr.status ];
+					loader.message = loader.lang.filetools[ 'httpsError' + xhr.status ];
 					if ( !loader.message ) {
-						loader.message = loader.lang.filetools.httpError.replace( '%1', xhr.status );
+						loader.message = loader.lang.filetools.httpsError.replace( '%1', xhr.status );
 					}
 					loader.changeStatus( 'error' );
 				} else {

@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Untitled Document</title>
 </head>
 
@@ -43,7 +43,7 @@ include ('S3_config.php');
 	foreach ($contents as $file){
 	
 		$fname = $file['name'];
-		$furl = "http://".$S3bucket.".s3.amazonaws.com/".$fname;
+		$furl = "https://".$S3bucket.".s3.amazonaws.com/".$fname;
 		$contador_ficheros=$contador_ficheros+1;
 		// Imprimo el archivo que voy encontrando
 		echo $contador_ficheros." <a href=\"$furl\">$fname</a><br />";

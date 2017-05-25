@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -206,7 +206,7 @@
 		emailSubjectRegex = /subject=([^;?:@&=$,\/]*)/i,
 		emailBodyRegex = /body=([^;?:@&=$,\/]*)/i,
 		anchorRegex = /^#(.*)$/,
-		urlRegex = /^((?:http|https|ftp|news):\/\/)?(.*)$/,
+		urlRegex = /^((?:https|https|ftp|news):\/\/)?(.*)$/,
 		selectableTargets = /^(_(?:self|top|parent|blank))$/,
 		encodedEmailLinkRegex = /^javascript:void\(location\.href='mailto:'\+String\.fromCharCode\(([^)]+)\)(?:\+'(.*)')?\)$/,
 		functionCallProtectedEmailLinkRegex = /^javascript:([^(]+)\(([^)]+)\)$/,
@@ -561,7 +561,7 @@
 		 *		{
 		 *			// Attributes to be set.
 		 *			set: {
-		 *				href: 'http://foo.bar',
+		 *				href: 'https://foo.bar',
 		 *				target: 'bang'
 		 *			},
 		 *			// Attributes to be removed.
@@ -578,7 +578,7 @@
 			// Compose the URL.
 			switch ( data.type ) {
 				case 'url':
-					var protocol = ( data.url && data.url.protocol !== undefined ) ? data.url.protocol : 'http://',
+					var protocol = ( data.url && data.url.protocol !== undefined ) ? data.url.protocol : 'https://',
 						url = ( data.url && CKEDITOR.tools.trim( data.url.url ) ) || '';
 
 					set[ 'data-cke-saved-href' ] = ( url.indexOf( '/' ) === 0 ) ? url : protocol + url;

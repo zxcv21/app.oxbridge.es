@@ -22,8 +22,8 @@ File: /front_end/contrato/contrato_01_template_01_html_01_template.php
 		};
 	
 	</script>
-	<script type="text/javascript" src="http://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_01_template_03_js_01_template_01_funciones_generales.js"></script>
-	<link rel="stylesheet" type="text/css" href="http://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_01_template_02_css_01_template_01_template.css"/>
+	<script type="text/javascript" src="https://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_01_template_03_js_01_template_01_funciones_generales.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://app.oxbridge.es/app/dev/migue/front_end/contrato/contrato_01_template_02_css_01_template_01_template.css"/>
  </head>
  <body>
 	

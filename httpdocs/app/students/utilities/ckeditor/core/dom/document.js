@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -124,7 +124,7 @@ CKEDITOR.tools.extend( CKEDITOR.dom.document.prototype, {
 	 * but an element with focus is always the active element in a document.
 	 *
 	 * @returns {CKEDITOR.dom.element} Active element or `null` if an IE8-9 bug is encountered.
-	 * See [#10030](http://dev.ckeditor.com/ticket/10030).
+	 * See [#10030](https://dev.ckeditor.com/ticket/10030).
 	 */
 	getActive: function() {
 		var $active;

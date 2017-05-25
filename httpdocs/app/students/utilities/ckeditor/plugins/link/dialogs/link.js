@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -143,10 +143,10 @@
 							id: 'protocol',
 							type: 'select',
 							label: commonLang.protocol,
-							'default': 'http://',
+							'default': 'https://',
 							items: [
 								// Force 'ltr' for protocol names in BIDI. (#5433)
-								[ 'http://\u200E', 'http://' ],
+								[ 'https://\u200E', 'https://' ],
 								[ 'https://\u200E', 'https://' ],
 								[ 'ftp://\u200E', 'ftp://' ],
 								[ 'news://\u200E', 'news://' ],
@@ -175,7 +175,7 @@
 								this.allowOnChange = false;
 								var protocolCmb = this.getDialog().getContentElement( 'info', 'protocol' ),
 									url = this.getValue(),
-									urlOnChangeProtocol = /^(http|https|ftp|news):\/\/(?=.)/i,
+									urlOnChangeProtocol = /^(https|https|ftp|news):\/\/(?=.)/i,
 									urlOnChangeTestOther = /^((javascript:)|[#\/\.\?])/i;
 
 								var protocol = urlOnChangeProtocol.exec( url );

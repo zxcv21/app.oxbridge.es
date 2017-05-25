@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta https-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1s" />
     <title>Editor de preguntas</title>
     
@@ -94,9 +94,9 @@
     	<h3>
         <center>
         	<h1>To Correct</h1>
-            <img style="float:left;" src="http://app.oxbridge.es/app/images/antes.png">
+            <img style="float:left;" src="https://app.oxbridge.es/app/images/antes.png">
             <span id="preguntas_asignadas">1 / 5</span> CCQ still asigned
-            <img style="float:right;" src="http://app.oxbridge.es/app/images/despues.png">
+            <img style="float:right;" src="https://app.oxbridge.es/app/images/despues.png">
         </center>
         <hr />
         Level: <span id="level">S1</span><br>

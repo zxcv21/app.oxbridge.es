@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 CKEDITOR.plugins.add( 'htmlwriter', {
@@ -334,7 +334,7 @@ CKEDITOR.htmlWriter = CKEDITOR.tools.createClass( {
 /**
  * Whether to force using `'&'` instead of `'&amp;'` in element attributes
  * values. It is not recommended to change this setting for compliance with the
- * W3C XHTML 1.0 standards ([C.12, XHTML 1.0](http://www.w3.org/TR/xhtml1/#C_12)).
+ * W3C XHTML 1.0 standards ([C.12, XHTML 1.0](https://www.w3.org/TR/xhtml1/#C_12)).
  *
  *		// Use `'&'` instead of `'&amp;'`
  *		CKEDITOR.config.forceSimpleAmpersand = true;

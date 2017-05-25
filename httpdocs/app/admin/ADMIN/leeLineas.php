@@ -27,6 +27,6 @@ function obtener_array_fichero($ruta)
 $ruta=$_SERVER['DOCUMENT_ROOT']."/app/admin/ADMIN/version_listado.php";
 foreach(obtener_array_fichero($ruta) as $valor )
 echo $valor."<br/>";
-//http://app.oxbridge.es/app/admin/ADMIN/version_listado.php
+//https://app.oxbridge.es/app/admin/ADMIN/version_listado.php
 //obtener_array_fichero($ruta);
 ?>

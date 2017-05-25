@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -461,7 +461,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 		 * `left`, `top`, `right`, `bottom`, `width` and `height`.
 		 */
 		getClientRect: function() {
-			// http://help.dottoro.com/ljvmcrrn.php
+			// https://help.dottoro.com/ljvmcrrn.php
 			var rect = CKEDITOR.tools.extend( {}, this.$.getBoundingClientRect() );
 
 			!rect.width && ( rect.width = rect.right - rect.left );
@@ -563,8 +563,8 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 							name = 'className';
 							break;
 
-						case 'http-equiv':
-							name = 'httpEquiv';
+						case 'https-equiv':
+							name = 'httpsEquiv';
 							break;
 
 						case 'name':
@@ -876,7 +876,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 		/**
 		 * Compare this element's inner html, tag name, attributes, etc. with other one.
 		 *
-		 * See [W3C's DOM Level 3 spec - node#isEqualNode](http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-isEqualNode)
+		 * See [W3C's DOM Level 3 spec - node#isEqualNode](https://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-isEqualNode)
 		 * for more details.
 		 *
 		 * @param {CKEDITOR.dom.element} otherElement Element to compare.
@@ -1209,7 +1209,7 @@ CKEDITOR.dom.element.clearMarkers = function( database, element, removeFromDatab
 			} else if ( CKEDITOR.env.ie8Compat && CKEDITOR.env.secure ) {
 				return function( name, value ) {
 					// IE8 throws error when setting src attribute to non-ssl value. (#7847)
-					if ( name == 'src' && value.match( /^http:\/\// ) ) {
+					if ( name == 'src' && value.match( /^https:\/\// ) ) {
 						try {
 							standard.apply( this, arguments );
 						} catch ( e ) {}

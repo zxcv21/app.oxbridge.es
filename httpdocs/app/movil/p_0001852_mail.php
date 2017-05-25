@@ -4,7 +4,7 @@
  <form
    id="p_00995_formulario_mail"
    method="POST"
-   action='http://app.oxbridge.es/inc/valida_form_contacta.php'
+   action='https://app.oxbridge.es/inc/valida_form_contacta.php'
    target="p_00995_formulario_mail_iframe"
  >
        <input id="p_00955_formulario_mail_input_nombre" class="p_00995_formulario_mail_input" name="nombre" type=hidden value="">

@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -27,7 +27,7 @@ CKEDITOR.scriptLoader = ( function() {
 		 *
 		 *		CKEDITOR.scriptLoader.load( '/myscript.js', function( success ) {
 		 *			// Alerts true if the script has been properly loaded.
-		 *			// HTTP error 404 should return false.
+		 *			// https error 404 should return false.
 		 *			alert( success );
 		 *		} );
 		 *

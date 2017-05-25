@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -92,7 +92,7 @@ if ( !CKEDITOR.env ) {
 			 * The _Internet Explorer 5 Quirks_ mode which is still available in Internet Explorer 10+
 			 * sets this value to `true` and {@link #version} to `7`.
 			 *
-			 * Read more: [IEBlog](http://blogs.msdn.com/b/ie/archive/2011/12/14/interoperable-html5-quirks-mode-in-ie10.aspx)
+			 * Read more: [IEBlog](https://blogs.msdn.com/b/ie/archive/2011/12/14/interoperable-html5-quirks-mode-in-ie10.aspx)
 			 *
 			 * @property {Boolean}
 			 */

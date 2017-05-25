@@ -1,7 +1,7 @@
 <!--
 -ID Pag: p_01395
 -NAME: firma_dia_lectivo_escaneo_api.php
--http://app.oxbridge.es/app/FIRMAS/firma_dia_lectivo_escaneo_api.php
+-https://app.oxbridge.es/app/FIRMAS/firma_dia_lectivo_escaneo_api.php
 -->
 <?
 	
@@ -12,7 +12,7 @@ if ( isset($_POST["p_01395_get_profesor_id"]) )
 }
 if ( isset($_GET["p_01395_get_profesor_id"]) )
 {
-	$p_01395_php_profesor_id = $_GET["p_01395_get_profesor_id"];$p_01395_php_url="http://s.oxbridge.es/ox/estructura_web/codigo/profesores/asistencias/firmas_01_control_03_asp_02_select_01_crear_objeto.asp";
+	$p_01395_php_profesor_id = $_GET["p_01395_get_profesor_id"];$p_01395_php_url="https://s.oxbridge.es/ox/estructura_web/codigo/profesores/asistencias/firmas_01_control_03_asp_02_select_01_crear_objeto.asp";
 	$p_01395_php_url.="?p_0001434_get_profesor_id=".$p_01395_php_profesor_id;
 	
 	
@@ -47,7 +47,7 @@ if ( isset($_GET["p_01395_get_profesor_id"]) )
 
 	<iframe id="p_01395_resultado_envio" name="p_01395_resultado_envio" style="display:none;"></iframe>
 	<form
-		action='http://app.oxbridge.es/app/FIRMAS/firmar_dia_lectivo_escaneo.php'
+		action='https://app.oxbridge.es/app/FIRMAS/firmar_dia_lectivo_escaneo.php'
 		target='p_01395_resultado_envio'
         method="post"
         enctype="multipart/form-data"
@@ -78,7 +78,7 @@ if ( isset($_GET["p_01395_get_profesor_id"]) )
 			var p_01395_firma=p_01395_dia.firmas[j];
 			p_01395_html+=''+
 			'		<div id=\"p_01395_div_dia_lectivo_id_'+p_01395_dia.dia_lectivo_id+'_alumno_id_'+p_01395_firma.alumno_id+'\">'+
-			'			<img class="p_01395_img_alumno_firma" src="http://app.oxbridge.es/app/images/camara.png" onclick="document.getElementById(\'p_01395_input_file_'+p_01395_dia.dia_lectivo_id+'_'+p_01395_firma.alumno_id+'\').click();">'+
+			'			<img class="p_01395_img_alumno_firma" src="https://app.oxbridge.es/app/images/camara.png" onclick="document.getElementById(\'p_01395_input_file_'+p_01395_dia.dia_lectivo_id+'_'+p_01395_firma.alumno_id+'\').click();">'+
 			'			<span class="p_01395_span_alumno_nombre">'+p_01395_firma.alumno_nombre+'</span>'+	
 			
 			'			<input type="file" onchange="if(this.value!=\'\')this.insertAdjacentHTML(\'afterEnd\',this.value);" id="p_01395_input_file_'+p_01395_dia.dia_lectivo_id+'_'+p_01395_firma.alumno_id+'" class="p_01395_input_file" name="p_01396_escaneo_'+p_01395_dia.dia_lectivo_id+'_'+p_01395_firma.alumno_id+'" id="p_01396_escaneo_'+p_01395_dia.dia_lectivo_id+'_'+p_01395_firma.alumno_id+'" /><br>'+

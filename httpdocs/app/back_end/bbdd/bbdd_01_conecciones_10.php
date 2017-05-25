@@ -1,7 +1,7 @@
 <?
 /*
 Page ID: p_0010202
-File: http://sb.oxbridge.es/back_end/bbdd/bbdd_01_conecciones_10.php
+File: https://sb.oxbridge.es/back_end/bbdd/bbdd_01_conecciones_10.php
 */
 ?>
 

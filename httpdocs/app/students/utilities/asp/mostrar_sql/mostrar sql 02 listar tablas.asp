@@ -2,13 +2,13 @@
 
 <!--#include virtual="/utilities/asp/mostrar_sql/conexion_asp.asp"-->
 
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 02 listar tablas.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 02 listar tablas.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>00680 mostrar tablas</title>
 	<link rel="stylesheet" type="text/css" href="oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
@@ -122,9 +122,9 @@
 					<%if len(filtro)>0 THEN%>
                     	<br>
 						<%if IDIOMA="CATALAN" THEN%>
-                            Només es llistaran taules i consultes amb l'expressió "<%=filtro%>"
+                            Nomï¿½s es llistaran taules i consultes amb l'expressiï¿½ "<%=filtro%>"
                         <%else%>
-                            Sólo se listarán tablas y consultas con la expresión "<%=filtro%>"
+                            Sï¿½lo se listarï¿½n tablas y consultas con la expresiï¿½n "<%=filtro%>"
                         <%end if%>
                     <%end if%>
 				</font>
@@ -137,7 +137,7 @@
 						<%if IDIOMA="CATALAN" THEN%>
 							No has seleccionat cap odbc
 						<%else%>
-							No has seleccionado ningún odbc
+							No has seleccionado ningï¿½n odbc
 						<%end if%>
 					</font>
 				</td>
@@ -168,7 +168,7 @@
 						<%if IDIOMA="CATALAN" THEN%>
 							Nom pel codi
 						<%else%>
-							Nombre para el código
+							Nombre para el cï¿½digo
 						<%end if%>
 					</font>
 				</td>
@@ -181,7 +181,7 @@
 						<%if IDIOMA="CATALAN" THEN%>
 							Tipus de codi a generar
 						<%else%>
-							Tipo de código a generar
+							Tipo de cï¿½digo a generar
 						<%end if%>
 					</font>
 				</td>
@@ -216,7 +216,7 @@
                         <tr bgcolor="<%=trbgcolor%>">
                             <%PAGINAGENERARCODIGO="sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 10 10 seleccionar campos.asp"
 							IF LEN(PAGINAGENERARCODIGO)>0 THEN
-                                IRGENERARCODIGO="http://"&PAGINAGENERARCODIGO
+                                IRGENERARCODIGO="https://"&PAGINAGENERARCODIGO
 								IRGENERARCODIGO=IRGENERARCODIGO & "?conexion="&conexion
 								IRGENERARCODIGO=IRGENERARCODIGO & "&conexiondelasentenciasql="&conexiondelasentenciasql
                             END IF%>

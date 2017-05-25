@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -9,9 +9,9 @@
 // This trick works only on Chrome.
 
 ( function() {
-	XMLHttpRequest.prototype.baseSend = XMLHttpRequest.prototype.send;
+	XMLhttpsRequest.prototype.baseSend = XMLhttpsRequest.prototype.send;
 
-	XMLHttpRequest.prototype.send = function( data ) {
+	XMLhttpsRequest.prototype.send = function( data ) {
 		var baseOnProgress = this.onprogress,
 			baseOnLoad = this.onload;
 

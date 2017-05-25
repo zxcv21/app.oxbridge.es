@@ -14,7 +14,7 @@
 	<TR>
 		<%PAGINAMOSTRARTABLAS="app.oxbridge.es/app/front_end/programacion/sql/generador_02_listado_tablas_01_html_01_template.asp"
 		IF LEN(PAGINAMOSTRARTABLAS)>0 THEN
-			IRMOSTRARTABLAS="http://"&PAGINAMOSTRARTABLAS
+			IRMOSTRARTABLAS="https://"&PAGINAMOSTRARTABLAS
 		END IF%>
 		<form method="post" action="<%=IRMOSTRARTABLAS%>" target="p_0010208_iframe_listado_tablas">
 			<%TDSTYLE="STYLE="""

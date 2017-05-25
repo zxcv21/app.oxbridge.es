@@ -202,14 +202,16 @@ window.addEventListener("load",function() {
 
 //poner menú adecuado
 //safari tiene problemas con resize y uso orientationchange para móviles
-if(window.innerWidth<p_00956_ancho_movil){
+/*if(window.innerWidth<p_00956_ancho_movil){
 	//window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
 	window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
 }
 else{
 	//window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
 	window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
-}
+}*/
+window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
+window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
 
 //p_00987_adaptar_menu_al_ancho();
 if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){

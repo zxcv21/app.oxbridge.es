@@ -14,7 +14,7 @@
 		</div>
 			<!-- <div id="myDialogPasarPregTF" title="Are you sure that you doesn't answer"></div> -->
 			<!-- <div id="err_radio" class="missatges"></div> -->
-			<div id="botonPasarTF" align="right" class="estiloBoton"><input style="position: fixed;bottom: 4em;right: 4em;" id="boton_pasar_tf" type="image" src="http://app.oxbridge.es/app/movil/smiles/images/pause_blueapp_70.png" width="15%" title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
+			<div id="botonPasarTF" align="right" class="estiloBoton"><input style="position: fixed;bottom: 4em;right: 4em;" id="boton_pasar_tf" type="image" src="https://app.oxbridge.es/app/movil/smiles/images/pause_blueapp_70.png" width="15%" title="continue without answer" onclick="p_01174_skip_pregunta(this.id)"></div>
 			<div id="botonTF" align="right" class="estiloBoton" style='display:none;'><input style="position: fixed;bottom: 4em;right: 4em;" id="compruebaTF" type="image" src="../images/play_green_70.png" width="15%" title="go next question" onclick="obtenerValor(this.id)"></div>
 	</div>
 </div>

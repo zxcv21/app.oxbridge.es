@@ -1,10 +1,10 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
- * @fileOverview [Widget](http://ckeditor.com/addon/widget) plugin.
+ * @fileOverview [Widget](https://ckeditor.com/addon/widget) plugin.
  */
 
 'use strict';
@@ -2141,7 +2141,7 @@
 						if ( upcastCallbacks[ i ]( element ) === false )
 							return;
 						// Return nothing in order to continue iterating over ascendants.
-						// See http://dev.ckeditor.com/ticket/11186#comment:6
+						// See https://dev.ckeditor.com/ticket/11186#comment:6
 					}
 
 					for ( i = 0; i < upcastsLength; ++i ) {

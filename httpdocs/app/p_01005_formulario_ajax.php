@@ -1,20 +1,20 @@
 <script>
 function nuevoAjax(){
-    var xmlhttp=false;
+    var xmlhttps=false;
     try {
-    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    xmlhttps = new ActiveXObject("Msxml2.XMLhttps");
     } catch (e) {
     try {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttps = new ActiveXObject("Microsoft.XMLhttps");
     } catch (E) {
-    xmlhttp = false;
+    xmlhttps = false;
     }
     }
 
-    if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-    xmlhttp = new XMLHttpRequest();
+    if (!xmlhttps && typeof XMLhttpsRequest!='undefined') {
+    xmlhttps = new XMLhttpsRequest();
     }
-    return xmlhttp;
+    return xmlhttps;
 }
 
 function enviarFormularioAJAX(url, formid, divrespuesta){
@@ -33,7 +33,7 @@ function enviarFormularioAJAX(url, formid, divrespuesta){
 	peticion.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 	peticion.send(cadenaFormulario);
 	peticion.onreadystatechange = function() {
-		if (peticion.readyState == 4 && (peticion.status == 200 || window.location.href.indexOf ("http") == - 1)){
+		if (peticion.readyState == 4 && (peticion.status == 200 || window.location.href.indexOf ("https") == - 1)){
 			document.getElementById(divrespuesta).innerHTML = peticion.responseText;
 		}
 	}

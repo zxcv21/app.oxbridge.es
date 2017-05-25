@@ -18,9 +18,9 @@ conn099.open "paginas_web"%>
 <%
 	'0.1.- DATOS PAGINA ACTUAL -INICIO
 
-	'Página 00735
+	'Pï¿½gina 00735
 	PAGINACODIGO="00735"
-	PAGINADESCRIPCION="Muestra todas las páginas web que utilizan la tabla seleccionada"
+	PAGINADESCRIPCION="Muestra todas las pï¿½ginas web que utilizan la tabla seleccionada"
 	
 	DIRECCIONPAGINACODIGO=PAGINACODIGO
 	CALL DIRECCIONPAGINA( DIRECCIONPAGINAIP, DIRECCIONPAGINACODIGO, DIRECCIONPAGINARUTA, DIRECCIONPAGINASERVIDOR, CONEXIONOFICINA, ANCHOEXPLORER, ANCHOFIREFOX, ANCHOSAFARI, ALTOEXPLORER, ALTOFIREFOX, ALTOSAFARI )
@@ -110,7 +110,7 @@ IF SESIONID>0 THEN
 	INFORMACIONPAGINA=INFORMACIONPAGINA & "&ANCHONAVEGADOR="&ANCHONAVEGADOR
 	INFORMACIONPAGINA=INFORMACIONPAGINA & "&ANCHO="&ANCHO
 
-		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEÑA -INICIO
+		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEï¿½A -INICIO
 
 		ESNECESARIOVERIFICARACCESO="NO"
 
@@ -118,7 +118,7 @@ IF SESIONID>0 THEN
 			CALL VERIFICARACCESO( ESNECESARIOVERIFICARACCESO, MINUTOSPARAVERIFICARCONTRASENYA, SESIONID, SESIONFECHADIA, SESIONFECHAMES, SESIONFECHAANYO, SESIONHORARIOHORA, SESIONHORARIOMINUTO, CONEXIONSERVER, INFORMACIONTRASPASADA, INFORMACIONPAGINA, INFORMACIONNOTRASPASADA, PAGINA, IP, ANCHO, ALTO, REDIRECCION, REDIRECCIONAR, REDIRECCIONARPRIORITARIO, REDIRECCIONOBJETIVO )
 		END IF
 
-		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEÑA -FIN
+		'0.5.2.- VER SI HEMOS DE VERIFICAR LA CONTRASEï¿½A -FIN
 
 	'0.5.- ACTUALIZAR INFORMACION DE LA SESION -FIN
 
@@ -142,8 +142,8 @@ END IF
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title>00735 Páginas donde se utiliza la tabla</title>
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>00735 Pï¿½ginas donde se utiliza la tabla</title>
 	<link rel="stylesheet" type="text/css" href="../oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
@@ -242,15 +242,15 @@ END IF
 				<font class="FUENTEGRANDECOLORINFORMATIVOBOLD">
 					<%if IDIOMA="CATALAN" THEN%>
 						<%if accion="utiliza" then%>
-	                        Pàgines on s'utilitza la taula "<%=tabla%>"
+	                        Pï¿½gines on s'utilitza la taula "<%=tabla%>"
 						<%else%>
-	                        Pàgines on es modifica el contingut de la taula "<%=tabla%>"
+	                        Pï¿½gines on es modifica el contingut de la taula "<%=tabla%>"
                         <%end if%>
 					<%else%>
 						<%if accion="utiliza" then%>
-	                        Páginas donde se utilitza la tabla "<%=tabla%>"
+	                        Pï¿½ginas donde se utilitza la tabla "<%=tabla%>"
 						<%else%>
-	                        Páginas donde se modifica el contenido de la tabla "<%=tabla%>"
+	                        Pï¿½ginas donde se modifica el contenido de la tabla "<%=tabla%>"
                         <%end if%>
 					<%end if%>
 				</font>
@@ -299,9 +299,9 @@ END IF
             <td valign="bottom" class="BORDE01BSOLIDOCOLORBORDE01" <%=tdstyle%>>
                 <font class="FUENTEESTANDARCOLORNORMALBOLD">
                     <%if IDIOMA="CATALAN" THEN%>
-                        Pàgina
+                        Pï¿½gina
                     <%else%>
-                        Página
+                        Pï¿½gina
                     <%end if%>
                 </font>
             </td>

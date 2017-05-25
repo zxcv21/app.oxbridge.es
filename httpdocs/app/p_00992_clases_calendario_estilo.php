@@ -250,7 +250,7 @@ Pag. ID: 00992
 					}
 					
 					//ROFESOR
-					document.getElementById("p_00960_clases_head_foto").src = "http://s.oxbridge.es/ox/Oxteacher/informacion%20personal/ficheros/Raj%20Singh_20140501image.jpg"/*dia_lectivo[i].foto*/;
+					document.getElementById("p_00960_clases_head_foto").src = "https://s.oxbridge.es/ox/Oxteacher/informacion%20personal/ficheros/Raj%20Singh_20140501image.jpg"/*dia_lectivo[i].foto*/;
 					document.getElementById("p_00960_clases_head_nombre").innerHTML = dia_lectivo[i].profesor;
 					mostrar_valoracion(true);
 					val=document.getElementById("p_00960_clases_head_valoracion");

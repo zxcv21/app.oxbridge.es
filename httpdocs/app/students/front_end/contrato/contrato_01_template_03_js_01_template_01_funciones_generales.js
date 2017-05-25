@@ -15,5 +15,5 @@ function p_0010157_js_f_01_cargando(id,he){
 		"		-moz-animation: p_00995_horario_loading infinite 1s linear;"+
 		"		-webkit-animation: p_00995_horario_loading infinite 1s linear;"+
 		"		animation:p_00995_horario_loading infinite 1s linear;"+
-		"' src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/loading.png'>";
+		"' src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/loading.png'>";
 }

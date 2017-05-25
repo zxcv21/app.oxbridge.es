@@ -2,13 +2,13 @@
 
 <!--#include virtual="/utilities/asp/mostrar_sql/conexion_asp.asp"-->
 
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 10 10 seleccionar campos.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 10 10 seleccionar campos.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>00748 codigo sql</title>
 	<link rel="stylesheet" type="text/css" href="oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
@@ -144,7 +144,7 @@
 		</TR>
 		<%DIRECCIONPAGINACODIGO="00749"
         PAGINA00749=DIRECCIONPAGINAIP&DIRECCIONPAGINARUTA
-		IR00749="http://"&PAGINA00749
+		IR00749="https://"&PAGINA00749
 		IR00749=IR00749 & INFORMACIONREDIRECCION
 		IR00749=IR00749 & INFORMACIONTRASPASADA
 		IR00749=IR00749 & "&mostrarcampos=PARCIAL"
@@ -188,9 +188,9 @@
 						<input name="nombre codigo" value="<%=nombrecodigo%>" type="text" class="INPUTFUENTEESTANDARCOLORNORMAL" maxlength="20" style="width: 100px">
 						<br>
 						<%IF IDIOMA="CATALAN" THEN%>
-							Modificar nom conexió:&nbsp;
+							Modificar nom conexiï¿½:&nbsp;
 						<%ELSE%>
-							Modificar nombre conexión:&nbsp;
+							Modificar nombre conexiï¿½n:&nbsp;
 						<%END IF%>
 						<input name="conexion de la sentencia sql" value="<%=conexiondelasentenciasql%>" id="conexion de la sentencia sql" style="width: 100px" class="INPUTFUENTEESTANDARCOLORNORMAL">
                     </font>
@@ -205,7 +205,7 @@
                             <select name="OPCIONES" class="INPUTFUENTEESTANDARCOLORNORMAL">
                                 <option value="" selected></option>
                                 <option value="CREAR MUESTRA">Crear muestra</option>
-                                <option value="CORTAR CODIGO">Cortar código</option>
+                                <option value="CORTAR CODIGO">Cortar cï¿½digo</option>
                             </select>
                             <br>
                         </font>

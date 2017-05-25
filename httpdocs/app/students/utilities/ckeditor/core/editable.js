@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -417,7 +417,7 @@
 
 				// If range is placed in inermediate element (not td or th), we need to do three things:
 				// * fill emptied <td/th>s with if browser needs them,
-				// * remove empty text nodes so IE8 won't crash (http://dev.ckeditor.com/ticket/11183#comment:8),
+				// * remove empty text nodes so IE8 won't crash (https://dev.ckeditor.com/ticket/11183#comment:8),
 				// * fix structure and move range into the <td/th> element.
 				if ( range.startContainer.type == CKEDITOR.NODE_ELEMENT && range.startContainer.is( { tr: 1, table: 1, tbody: 1, thead: 1, tfoot: 1 } ) )
 					fixTableAfterContentsDeletion( range );
@@ -530,10 +530,10 @@
 			 *
 			 * To understand the problem see:
 			 *
-			 * * http://tests.ckeditor.dev:1030/tests/core/selection/manual/focusaftersettingdata
-			 * * http://tests.ckeditor.dev:1030/tests/core/selection/manual/focusafterundoing
-			 * * http://tests.ckeditor.dev:1030/tests/core/selection/manual/selectionafterfocusing
-			 * * http://tests.ckeditor.dev:1030/tests/plugins/newpage/manual/selectionafternewpage
+			 * * https://tests.ckeditor.dev:1030/tests/core/selection/manual/focusaftersettingdata
+			 * * https://tests.ckeditor.dev:1030/tests/core/selection/manual/focusafterundoing
+			 * * https://tests.ckeditor.dev:1030/tests/core/selection/manual/selectionafterfocusing
+			 * * https://tests.ckeditor.dev:1030/tests/plugins/newpage/manual/selectionafternewpage
 			 *
 			 * @since 4.4.6
 			 * @private
@@ -586,7 +586,7 @@
 					}
 
 					// Fix for:
-					// http://tests.ckeditor.dev:1030/tests/core/selection/manual/focusaftersettingdata
+					// https://tests.ckeditor.dev:1030/tests/core/selection/manual/focusaftersettingdata
 					// (the inline editor TC)
 					if ( CKEDITOR.env.webkit ) {
 						var active = that.getDocument().getActive();
@@ -937,7 +937,7 @@
 						return true;
 
 					// Use getKey directly in order to ignore modifiers.
-					// Justification: http://dev.ckeditor.com/ticket/11861#comment:13
+					// Justification: https://dev.ckeditor.com/ticket/11861#comment:13
 					var keyCode = evt.data.domEvent.getKey(),
 						isHandled;
 
@@ -1117,7 +1117,7 @@
 						}
 
 						// Use getKey directly in order to ignore modifiers.
-						// Justification: http://dev.ckeditor.com/ticket/11861#comment:13
+						// Justification: https://dev.ckeditor.com/ticket/11861#comment:13
 						var key = evt.data.domEvent.getKey();
 
 						if ( !( key in backspaceOrDelete ) )
@@ -2259,7 +2259,7 @@
 
 		// Fix empty cells. This means:
 		// * add bogus <br> if browser needs it
-		// * remove empty text nodes on IE8, because it will crash (http://dev.ckeditor.com/ticket/11183#comment:8).
+		// * remove empty text nodes on IE8, because it will crash (https://dev.ckeditor.com/ticket/11183#comment:8).
 		function fixEmptyCells( cells ) {
 			var i = cells.count(),
 				cell;
@@ -2349,7 +2349,7 @@
 			return false;
 
 		// Handle special case, when block's sibling is a <hr>. Delete it and keep selection
-		// in the same place (http://dev.ckeditor.com/ticket/11861#comment:9).
+		// in the same place (https://dev.ckeditor.com/ticket/11861#comment:9).
 		if ( range.startContainer.type == CKEDITOR.NODE_ELEMENT ) {
 			var touched = range.startContainer.getChild( range.startOffset - ( backspace ? 1 : 0 ) );
 			if ( touched && touched.type  == CKEDITOR.NODE_ELEMENT && touched.is( 'hr' ) ) {

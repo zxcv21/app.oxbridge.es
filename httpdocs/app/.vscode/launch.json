@@ -16,7 +16,7 @@
             "type": "ios",
             "request": "launch",
             "port": 9222,
-            "url": "http://app.oxbridge.es",
+            "url": "https://app.oxbridge.es",
             "webRoot": "${workspaceRoot}",
             "deviceName": "*"
         },

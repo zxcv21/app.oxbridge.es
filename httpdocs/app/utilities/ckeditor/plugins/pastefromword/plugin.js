@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -141,7 +141,7 @@
  *		CKEDITOR.config.pasteFromWordCleanupFile = '/ckeditor/plugins/pastefromword/filter/custom.js';
  *
  *		// Load custom.js file from 'customFilerts' folder (located in server's root) using full URL.
- *		CKEDITOR.config.pasteFromWordCleanupFile = 'http://my.example.com/customFilerts/custom.js';
+ *		CKEDITOR.config.pasteFromWordCleanupFile = 'https://my.example.com/customFilerts/custom.js';
  *
  * @since 3.1
  * @cfg {String} [pasteFromWordCleanupFile=<plugin path> + 'filter/default.js']

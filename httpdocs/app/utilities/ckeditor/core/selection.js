@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -244,7 +244,7 @@
 
 		editor.editable().append( hiddenEl );
 
-			// Always use real selection to avoid overriding locked one (http://dev.ckeditor.com/ticket/11104#comment:13).
+			// Always use real selection to avoid overriding locked one (https://dev.ckeditor.com/ticket/11104#comment:13).
 		var sel = editor.getSelection( 1 ),
 			range = editor.createRange(),
 			// Cancel selectionchange fired by selectRanges - prevent from firing selectionChange.

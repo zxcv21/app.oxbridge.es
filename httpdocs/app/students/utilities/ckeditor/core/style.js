@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 'use strict';
@@ -678,7 +678,7 @@ CKEDITOR.STYLE_OBJECT = 3;
 	 * reusing them.
 	 *
 	 * The only style handler which can be implemented from scratch without huge effort is a style
-	 * applicable to objects ([read more about types](http://docs.ckeditor.com/#!/guide/dev_styles-section-style-types)).
+	 * applicable to objects ([read more about types](https://docs.ckeditor.com/#!/guide/dev_styles-section-style-types)).
 	 * Such style can only be applied when a specific object is selected. An example implementation can
 	 * be found in the [widget plugin](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/widget/plugin.js).
 	 *
@@ -2062,7 +2062,7 @@ CKEDITOR.tools.extend( CKEDITOR.editor.prototype, {
  * to prevent loading any styles set.
  *
  * Read more in the [documentation](#!/guide/dev_styles)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/styles.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/styles.html).
  *
  *		// Do not load any file. The styles set is empty.
  *		config.stylesSet = false;
@@ -2074,7 +2074,7 @@ CKEDITOR.tools.extend( CKEDITOR.editor.prototype, {
  *		config.stylesSet = 'mystyles:/editorstyles/styles.js';
  *
  *		// Load the 'mystyles' styles set from a full URL.
- *		config.stylesSet = 'mystyles:http://www.example.com/editorstyles/styles.js';
+ *		config.stylesSet = 'mystyles:https://www.example.com/editorstyles/styles.js';
  *
  *		// Load from a list of definitions.
  *		config.stylesSet = [

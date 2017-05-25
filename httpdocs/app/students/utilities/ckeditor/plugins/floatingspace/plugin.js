@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -89,7 +89,7 @@
 					// be very simple, even though the "width"/"height" property is not
 					// available for all, it's safe to figure that out from the rest.
 
-					// http://help.dottoro.com/ljgupwlp.php
+					// https://help.dottoro.com/ljgupwlp.php
 					spaceRect = floatSpace.getClientRect();
 					editorRect = editable.getClientRect();
 					viewRect = win.getViewPaneSize();

@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -843,7 +843,7 @@
 			// Handled backspace/del key to join list items. (#8248,#9080)
 			editor.on( 'key', function( evt ) {
 				// Use getKey directly in order to ignore modifiers.
-				// Justification: http://dev.ckeditor.com/ticket/11861#comment:13
+				// Justification: https://dev.ckeditor.com/ticket/11861#comment:13
 				var key = evt.data.domEvent.getKey(), li;
 
 				// DEl/BACKSPACE

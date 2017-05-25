@@ -279,20 +279,20 @@ function p_01169_if_cambio_de_idioma(ir_a){
 }
 
 function p_00961_conforme_pago_realizado(){
-	var p_00961_http = new XMLHttpRequest();
+	var p_00961_https = new XMLhttpsRequest();
 	var p_00961_url = "<? echo ver_url("movil/p_0001856_usuario_informado_pago.php","src"); ?>";
 	var p_00961_params = "confirmado=true";
-	p_00961_http.open("POST", p_00961_url, true);
+	p_00961_https.open("POST", p_00961_url, true);
 
 	//Send the proper header information along with the request
-	p_00961_http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	p_00961_https.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	p_00961_http.onreadystatechange = function() {//Call a function when the state changes.
-	    if(p_00961_http.readyState == 4 && p_00961_http.status == 200) {
+	p_00961_https.onreadystatechange = function() {//Call a function when the state changes.
+	    if(p_00961_https.readyState == 4 && p_00961_https.status == 200) {
 	        document.getElementById("p_00961_pago_realizado").style.display="none";
 	    }
 	}
-	p_00961_http.send(p_00961_params);
+	p_00961_https.send(p_00961_params);
 }
 
 

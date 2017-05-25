@@ -59,7 +59,7 @@ if(isset($_POST['p_01393_objeto_firmar_dias']))
 	$tipo = $_FILES["p_01393_firma_archivo"]['type'];
 	$archivo = $_FILES["p_01393_firma_archivo"]['name'];
 	
-	$ruta = "http://app.oxbridge.es/app/movil/firmas_alumnos/".p_01393_corregir_directorio($_POST['p_01393_directirio_id']);
+	$ruta = "https://app.oxbridge.es/app/movil/firmas_alumnos/".p_01393_corregir_directorio($_POST['p_01393_directirio_id']);
 	
 	$destino = $ruta."/".$_POST['p_01393_firma_id'].".png";
 	$data = file_get_contents($firma);
@@ -86,7 +86,7 @@ if(isset($_POST['p_01393_objeto_firmar_dias']))
 	
 	if($ok){
 													
-		$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+		$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 													"?p_0001293_get_dia_lectivo_id=".$_POST['p_01393_dia_lectivo'].
 													"&p_0001293_get_alumno_id=".$_POST['p_01393_alumno_id'].
 													"&p_0001293_get_firmado=1".
@@ -107,7 +107,7 @@ if(isset($_POST['p_01393_objeto_firmar_dias']))
 		
 	}else{
 		echo "ERROR: ".$ok;
-		$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+		$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 													"?p_0001293_get_dia_lectivo_id=".$_POST['p_01393_dia_lectivo'].
 													"&p_0001293_get_alumno_id=".$_POST['p_01393_alumno_id'].
 													"&p_0001293_get_firmado=0"

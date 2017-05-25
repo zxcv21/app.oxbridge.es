@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
  /** @class CKEDITOR */
@@ -200,7 +200,7 @@ CKEDITOR.replaceClass = 'ckeditor';
 
 			// If data has not been modified in the mode which we are currently leaving,
 			// avoid making snapshot right after initializing new mode.
-			// http://dev.ckeditor.com/ticket/5217#comment:20
+			// https://dev.ckeditor.com/ticket/5217#comment:20
 			// Tested by:
 			// 'test switch mode with unrecoreded, inner HTML specific content (boguses)'
 			// 'test switch mode with unrecoreded, inner HTML specific content (boguses) plus changes in source mode'

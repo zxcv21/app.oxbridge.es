@@ -2,15 +2,15 @@
 
 <!--#include virtual="/utilities/asp/mostrar_sql/conexion_asp.asp"-->
 
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_03_campos_tabla_01_html_01_template.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/sql_03_campos_tabla_01_html_01_template.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>00748 codigo sql</title>
-	<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
+	<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/utilities/asp/mostrar_sql/oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
 	' Selecciona una de las tres opciones siguientes
@@ -151,7 +151,7 @@
 		</TR>
 		<%PAGINAGENERARCODIGO="sb.oxbridge.es/utilities/asp/mostrar_sql/sql_04_codigo_01_html_01_template.asp"
         IF LEN(PAGINAGENERARCODIGO)>0 THEN
-            IRCODIGO="http://"&PAGINAGENERARCODIGO
+            IRCODIGO="https://"&PAGINAGENERARCODIGO
             IRCODIGO=IRCODIGO & "?conexion="&conexion
             IRCODIGO=IRCODIGO & "&conexiondelasentenciasql="&conexiondelasentenciasql
             IRCODIGO=IRCODIGO & "&accion="&accion
@@ -196,9 +196,9 @@
 						<input name="nombre codigo" value="<%=nombrecodigo%>" type="text" class="INPUTFUENTEESTANDARCOLORNORMAL" maxlength="20" style="width: 100px">
 						<br>
 						<%IF IDIOMA="CATALAN" THEN%>
-							Modificar nom conexió:&nbsp;
+							Modificar nom conexiï¿½:&nbsp;
 						<%ELSE%>
-							Modificar nombre conexión:&nbsp;
+							Modificar nombre conexiï¿½n:&nbsp;
 						<%END IF%>
 						<input name="conexion de la sentencia sql" value="<%=conexiondelasentenciasql%>" id="conexion de la sentencia sql" style="width: 100px" class="INPUTFUENTEESTANDARCOLORNORMAL">
                     </font>
@@ -213,7 +213,7 @@
                             <select name="OPCIONES" class="INPUTFUENTEESTANDARCOLORNORMAL">
                                 <option value="" selected></option>
                                 <option value="CREAR MUESTRA">Crear muestra</option>
-                                <option value="CORTAR CODIGO">Cortar código</option>
+                                <option value="CORTAR CODIGO">Cortar cï¿½digo</option>
                             </select>
                             <br>
                         </font>

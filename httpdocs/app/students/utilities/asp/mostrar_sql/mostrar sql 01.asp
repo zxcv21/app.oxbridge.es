@@ -1,11 +1,11 @@
-<!--http://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 01.asp-->
+<!--https://sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 01.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title>00679 código sql</title>
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>00679 cï¿½digo sql</title>
 	<link rel="stylesheet" type="text/css" href="oxgestion.css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
@@ -80,7 +80,7 @@
 					<%IF IDIOMA="CATALAN" THEN%>
 						Generar codi sql
 					<%ELSE%>
-						Generar código sql
+						Generar cï¿½digo sql
 					<%END IF%>
 				</FONT>
 			</TD>
@@ -109,7 +109,7 @@
             'CALL DIRECCIONPAGINA( DIRECCIONPAGINAIP, DIRECCIONPAGINACODIGO, DIRECCIONPAGINARUTA, DIRECCIONPAGINASERVIDOR, CONEXIONOFICINA, ANCHOEXPLORER, ANCHOFIREFOX, ANCHOSAFARI, ALTOEXPLORER, ALTOFIREFOX, ALTOSAFARI )
             PAGINAMOSTRARTABLAS="sb.oxbridge.es/utilities/asp/mostrar_sql/mostrar sql 02 listar tablas.asp"
             IF LEN(PAGINAMOSTRARTABLAS)>0 THEN
-                IRMOSTRARTABLAS="http://"&PAGINAMOSTRARTABLAS
+                IRMOSTRARTABLAS="https://"&PAGINAMOSTRARTABLAS
             END IF%>
             <form method="post" action="<%=IRMOSTRARTABLAS%>" target="PAGINA00679IFRAME01">
 				<%TDSTYLE="STYLE="""
@@ -130,9 +130,9 @@
 						</select>
 						&nbsp;&nbsp;
 						<%IF IDIOMA="CATALAN" THEN%>
-							Nom conexió&nbsp;
+							Nom conexiï¿½&nbsp;
 						<%ELSE%>
-							Nombre conexión&nbsp;
+							Nombre conexiï¿½n&nbsp;
 						<%END IF%>
 						<input name="conexion de la sentencia sql" id="conexion de la sentencia sql" style="width: 100px" class="INPUTFUENTEESTANDARCOLORNORMAL">
 						&nbsp;&nbsp;

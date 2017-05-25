@@ -26,8 +26,8 @@ function ajax_load_page(url,id_lugar,post,op_run_js,op_end_function,json)
 	
 	console.info("ajax post: "+post)
 	
-	if (window.XMLHttpRequest) var conexion_interaccion=new XMLHttpRequest(); 
-	else var conexion_interaccion=new ActiveXObject("Microsoft.XMLHttp");
+	if (window.XMLhttpsRequest) var conexion_interaccion=new XMLhttpsRequest(); 
+	else var conexion_interaccion=new ActiveXObject("Microsoft.XMLhttps");
 	
 	conexion_interaccion.open("POST",url,true);
 	conexion_interaccion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -84,7 +84,7 @@ function consulta_ajax()
 {
 	document.getElementById("mi_div").innerHTML="";
 	ajax_load_page(
-		"http://sb.oxbridge.es/ejemplo.php",
+		"https://sb.oxbridge.es/ejemplo.php",
 		"mi_div",
 		"nombre=juan&apellido=cortez",
 		true,
@@ -92,6 +92,6 @@ function consulta_ajax()
 	);
 }
 EJEMPLO JSON:
-objeto=JSON.parse(ajax_load_page("http://sb.oxbridge.es/ejemplo.php","","nombre=juan&apellido=cortez",false,mi_funcion,true));
+objeto=JSON.parse(ajax_load_page("https://sb.oxbridge.es/ejemplo.php","","nombre=juan&apellido=cortez",false,mi_funcion,true));
 	);
 */

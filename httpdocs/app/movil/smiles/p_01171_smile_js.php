@@ -138,6 +138,7 @@ function p_01171_ganar_smile_animacion(smile,numero_pregunta){
 }
 
 function p_01171_mover_yo(json){
+	console.log(json);
 
 /*	if(ESTOY=="smile"){*/
 		if(typeof json !="undefined")
@@ -174,6 +175,9 @@ function p_01171_mover_yo(json){
 		var poblacion = smile_datos.alumno.poblacion = personal_datos_info.poblacion;
 
 		if(distancia=="")
+			var distancia = smile_datos.alumno.distancia= 1496;
+/*
+		if(distancia=="")
 		{
 
 			if(poblacion!="")
@@ -199,10 +203,12 @@ function p_01171_mover_yo(json){
 					p_01171_mover_yo
 				);
 			}
+
 		}
+
 		else
 		{
-
+*/
 			var redondear=smile_datos.alumno.distancia*(proporcion_smiles/100);
 
 			if(smile_datos.smiles_totales.preguntas.totales>0){
@@ -226,7 +232,7 @@ function p_01171_mover_yo(json){
 			document.getElementById("p_00962_yo_kilometros_actual").style.marginLeft= (-document.getElementById("p_00962_yo_kilometros_actual").clientWidth/2+12)+"px";
 
 
-		}
+//		}
 		document.getElementById("p_00955_div_img_cargando").style.display="none";
 /*	}
 	else
@@ -391,7 +397,8 @@ function p_01171_espera_preguntas_para_mostrarlas(){
 
 			document.getElementById('p_01171_carrera_reducida').style.display="";
 			document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="auto";
-			document.getElementById('p_00962_contenedor_smile').style.overflow= "initial";
+		//	document.getElementById('p_00962_contenedor_smile').style.overflow= "initial";
+			document.getElementById('p_00962_contenedor_smile').style.overflow= "";
 
 			if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="";
 		}
@@ -426,7 +433,8 @@ function p_01171_boton_stop(){
 	if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="none";
 	document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="touch";
 	//personal_datos_info.ultimapregunta = smile_datos.preguntas[p_01174_pregunta_actual];
-	document.getElementById('p_00962_contenedor_smile').style.overflow= "auto";
+//document.getElementById('p_00962_contenedor_smile').style.overflow= "auto";
+	document.getElementById('p_00962_contenedor_smile').style.overflow= "";
 	//smile_datos.preguntas.unshift(personal_datos_info.ultimapregunta);
 	p_1176_contar_smiles();
 	p_01171_actualizar_progreso();
@@ -627,7 +635,7 @@ function p_01171_actualizar_progreso(){
 	document.getElementById("p_00962_grafico_progreso_centro").innerHTML=""+
 		"<img style='height:100%;vertical-align: middle;display:none;'>"+promedio+"%"+
 		"<div style='position: absolute; bottom: 15px; width: 100%;vertical-align:  -webkit-baseline-middle;'>"+
-		"	<img id='p_00962_grafico_progreso_i' style='height: 0.7em;' src='http://app.oxbridge.es/app/images/boton_info.png'>"+
+		"	<img id='p_00962_grafico_progreso_i' style='height: 0.7em;' src='https://app.oxbridge.es/app/images/boton_info.png'>"+
 		"</div>";
 	document.getElementById("p_00962_grafico_leyenda").innerHTML="<div class='p_01171_cuadrado_leyenda' style='background:#00f;'></div><span class='p_01171_cursor'><? echo $TEXTOS[130][2];?></span><br>"+
 														"<div class='p_01171_cuadrado_leyenda' style='background:#f00;'></div><span class='p_01171_cursor'><? echo $TEXTOS[131][2];?></span><br>"+
@@ -855,7 +863,7 @@ function p_01447_oponentes_consulta()
 {
 	var script=document.createElement("script");
 	script.src=""+
-		"http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_04_invitados_03_asp_02_select_01_listado.asp"+
+		"https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_04_invitados_03_asp_02_select_01_listado.asp"+
 		"?p_0001446_get_alumno_id="+alumno_id+
 	"";
 	script.id="p_01447_oponentes_consulta_iframe";
@@ -901,7 +909,7 @@ function p_01447_oponentes_listar()
 		lista.insertAdjacentHTML("beforeEnd",""+
 		"<div id='p_01171_oponente_"+i+"' class='p_01172_oponente_en_lista "+clase+"' onclick='"+clic+"'>"+
 			"#"+(i*1+pos)+" "+nombre+
-			"<img class='p_01172_oponente_quitar_img' src='http://app.oxbridge.es/app/images/invitar_menos.png' "+
+			"<img class='p_01172_oponente_quitar_img' src='https://app.oxbridge.es/app/images/invitar_menos.png' "+
 				'onclick="event.stopPropagation();p_01171_oponente_confirmacion_mostrar_ocultar(\'p_01171_oponente_eliminar_'+i+'\');"'+
 			">"+
 			"<div id='p_01171_oponente_eliminar_"+i+"' onclick='event.stopPropagation();'"+
@@ -963,7 +971,7 @@ function p_01447_oponente_actualizar_serleccion(indice_oponente,seleccion,quitar
 		document.getElementById("p_01447_oponente_actualizar_serleccion_resultado").src="";
 		setTimeout(function()
 		{
-			document.getElementById("p_01447_carrera_actualizar_posicion_resultado").src="http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_04_invitados_04_php_04_update_01_seleccionar_competidor.php"+
+			document.getElementById("p_01447_carrera_actualizar_posicion_resultado").src="https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_04_invitados_04_php_04_update_01_seleccionar_competidor.php"+
 				"?p_0001466_get_alumno_id="+opo.alumno_id+
 				"&p_0001466_get_alumno_que_reta_id="+alumno_id+
 				"&p_0001466_get_seleccion="+seleccion+
@@ -975,7 +983,7 @@ function p_01447_oponente_actualizar_serleccion(indice_oponente,seleccion,quitar
 	else
 	{
 		var script = document.createElement("script");
-		script.src="http://app.oxbridge.es/estructura_web/codigo/alumno/smiles_04_invitados_04_php_04_update_01_seleccionar_competidor.php"+
+		script.src="https://app.oxbridge.es/estructura_web/codigo/alumno/smiles_04_invitados_04_php_04_update_01_seleccionar_competidor.php"+
 			"?p_0001466_get_alumno_id="+opo.alumno_id+
 			"&p_0001466_get_alumno_que_reta_id="+alumno_id+
 			"&p_0001466_get_seleccion="+seleccion+
@@ -1026,7 +1034,7 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 	{
 		//url(text),id_elemento(text),post(text),run_js(bolean)[,end_function(function)]
 		ajax_load_page(
-			'http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion%20personal%2001%20_datos_presonales_01_asp_04_guardar_trinity.asp',
+			'https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/informacion%20personal%2001%20_datos_presonales_01_asp_04_guardar_trinity.asp',
 			"p_01171_enviar_solisitud_trinity_div",
 			'p_0001539_post_alumno_id='+alumno_id+
 			'&p_0001539_post_trinity=1'+
@@ -1040,7 +1048,7 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 		over_all(''
 			+'<iframe style="display:none" id="p_01171_condiciones_trinity" name="p_01171_condiciones_trinity"></iframe>'
 			+'<form target="p_01171_condiciones_trinity" class="p_01171_condiciones_trinity" onsubmit="document.getElementById(\'p_01171_condiciones_trinity_submit\').style.display=\'none\';p_00989_cargando(\'p_01171_condiciones_trinity_cargando\',\'60px\');p_01171_enviar_solisitud_trinity(1);">'
-			+'<h1><img src="http://www.trinitycollege.com/images/logo_trinity_college_london.png"></h1>'
+			+'<h1><img src="https://www.trinitycollege.com/images/logo_trinity_college_london.png"></h1>'
 			+TEXTOS[162].text
 			+'<p><input type="checkbox" onchange="document.getElementById(\'p_00990_over_all_contenedor\').scrollTop=999999;" required>'
 			+TEXTOS[163].text+'</p>'
@@ -1064,8 +1072,8 @@ function p_01171_sound()
 	document.getElementById("p_01175_preguntas_media_ganar_smile").volume=1;
 	document.getElementById("p_01175_preguntas_media_perder_smile").volume=1;
 
-	document.getElementById("p_01175_preguntas_media_ganar_smile").src="http://app.oxbridge.es/app/media/ganar_smile.mp3";
-	document.getElementById("p_01175_preguntas_media_perder_smile").src="http://app.oxbridge.es/app/media/perder_smile.mp3";
+	document.getElementById("p_01175_preguntas_media_ganar_smile").src="https://app.oxbridge.es/app/media/ganar_smile.mp3";
+	document.getElementById("p_01175_preguntas_media_perder_smile").src="https://app.oxbridge.es/app/media/perder_smile.mp3";
 }
 function p_01171_mute()
 {

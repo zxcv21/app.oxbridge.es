@@ -205,7 +205,7 @@ Pag. ID: p_00995
 			height: 30px;
 			width: 30px;
 			margin: 10px;
-	    background-image: url(http://app.oxbridge.es/app/images/close.png);
+	    background-image: url(https://app.oxbridge.es/app/images/close.png);
 	    background-repeat: no-repeat;
 	    background-size: 100%;
 	    /*z-index: 9002;*/
@@ -600,6 +600,7 @@ Pag. ID: p_00995
 		    padding: 20px;
 		    margin: auto;
 				position: relative;
+				border: 2px solid #5DC1F2;
 				}
 			#p_00995_horario_contenido_clases_qwest button {
 				color: #689ABE;

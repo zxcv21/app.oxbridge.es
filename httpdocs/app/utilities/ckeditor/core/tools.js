@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -383,17 +383,17 @@
 		 *
 		 *		alert( CKEDITOR.tools.htmlDecode( '&lt;a &amp; b &gt;' ) ); // '<a & b >'
 		 *
-		 * Read more about chosen entities in the [research](http://dev.ckeditor.com/ticket/13105#comment:8).
+		 * Read more about chosen entities in the [research](https://dev.ckeditor.com/ticket/13105#comment:8).
 		 *
 		 * @param {String} The string to be decoded.
 		 * @returns {String} The decoded string.
 		 */
 		htmlDecode: function( text ) {
 			// See:
-			// * http://dev.ckeditor.com/ticket/13105#comment:8 and comment:9,
-			// * http://jsperf.com/wth-is-going-on-with-jsperf JSPerf has some serious problems, but you can observe
+			// * https://dev.ckeditor.com/ticket/13105#comment:8 and comment:9,
+			// * https://jsperf.com/wth-is-going-on-with-jsperf JSPerf has some serious problems, but you can observe
 			// that combined regexp tends to be quicker (except on V8). It will also not be prone to fail on '&amp;lt;'
-			// (see http://dev.ckeditor.com/ticket/13105#DXWTF:CKEDITOR.tools.htmlEnDecodeAttr).
+			// (see https://dev.ckeditor.com/ticket/13105#DXWTF:CKEDITOR.tools.htmlEnDecodeAttr).
 			return text.replace( allEscRegex, allEscDecode );
 		},
 
@@ -1008,7 +1008,7 @@
 				if ( normalize ) {
 					name = name.toLowerCase();
 					// Normalize font-family property, ignore quotes and being case insensitive. (#7322)
-					// http://www.w3.org/TR/css3-fonts/#font-family-the-font-family-property
+					// https://www.w3.org/TR/css3-fonts/#font-family-the-font-family-property
 					if ( name == 'font-family' )
 						value = value.toLowerCase().replace( /["']/g, '' ).replace( /\s*,\s*/g, ',' );
 					value = CKEDITOR.tools.trim( value );

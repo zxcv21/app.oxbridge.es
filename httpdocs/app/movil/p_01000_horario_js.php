@@ -750,7 +750,7 @@ function p_01000_incluir_clase_en_dias_lectivos(p_01000_id_capsula){
 				"style='margin-bottom:"+caja_margin+"px;'><div class='p_00995_horario_contenido_clases_titulo_ticker'>"+
 					"<div class='p_00995_horario_contenido_clases_titulo_ticker_hora'>"+capsula.hora_inicio+"-"+capsula.hora_fin+"</div>"+
 			"</div></div>"+
-			//botón anular reserva
+			//botï¿½n anular reserva
 			"<div id='p_00995_x_anular_"+capsula.dia_lectivo_id+"'  class='p_00995_x_anular'></div>";
 			capsula_icono_tamanyo="";
 
@@ -1394,7 +1394,7 @@ window.addEventListener("resize", function(){
 		'		target="p_00958_formulario_mas_horario_iframe"'+
 		'		class="p_00958_formulario_mas_horario"'+
 		'		method="POST"'+
-		'		action="http://app.oxbridge.es/enviomail/envio-preferencia-horarios.php"'+
+		'		action="https://app.oxbridge.es/enviomail/envio-preferencia-horarios.php"'+
 		'	>'+
 				TEXTOS[35].text+
 		'		<div id="p_00958_formulario_mas_parrillas" style="margin:1em;"></div>'+

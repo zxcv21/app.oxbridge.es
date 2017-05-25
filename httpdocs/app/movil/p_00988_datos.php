@@ -133,7 +133,7 @@
 						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].imagenes[bucle04].ruta = "ruta "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;
 						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].imagenes[bucle04].fichero = "fichero "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;
 						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].sonido[bucle04].tipo = "tipo "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;
-						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].sonido[bucle04].ruta = "http://www.w3schools.com/tags/horse.mp3"/*"ruta "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;*/
+						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].sonido[bucle04].ruta = "https://www.w3schools.com/tags/horse.mp3"/*"ruta "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;*/
 						dia_lectivo[bucle01].actividad[bucle02].target_language[bucle05].sonido[bucle04].fichero = "fichero "+ bucle01+"."+ bucle02+"."+ bucle05 +"."+ bucle04;
 					};
 				};

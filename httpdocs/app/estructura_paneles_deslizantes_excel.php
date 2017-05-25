@@ -1,6 +1,6 @@
 <?
 // 0001006
-// http://app.oxbridge.es/app/estructura_paneles_deslizantes_excel.php
+// https://app.oxbridge.es/app/estructura_paneles_deslizantes_excel.php
 ?>
 <html>
 

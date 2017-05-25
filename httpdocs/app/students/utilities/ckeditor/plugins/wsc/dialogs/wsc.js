@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.html or http://ckeditor.com/license
+ * For licensing, see LICENSE.html or https://ckeditor.com/license
  */
  (function() {
   // Create support tools
@@ -1791,7 +1791,7 @@ CKEDITOR.dialog.add('checkspell', function(editor) {
 				NS.cust_dic_ids = editor.config.wsc_customDictionaryIds;
 				NS.userDictionaryName = editor.config.wsc_userDictionaryName;
 				NS.defaultLanguage = CKEDITOR.config.defaultLanguage;
-				var	protocol = document.location.protocol == "file:" ? "http:" : document.location.protocol;
+				var	protocol = document.location.protocol == "file:" ? "https:" : document.location.protocol;
 				var wscCoreUrl = editor.config.wsc_customLoaderScript  || ( protocol + '//loader.webspellchecker.net/sproxy_fck/sproxy.php?plugin=fck2&customerid=' + NS.wsc_customerId + '&cmd=script&doc=wsc&schema=22');
 			} else {
 				NS.dialog.hide();

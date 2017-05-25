@@ -4,7 +4,7 @@ id: p_00997
 <html>
 <body>
 	<form id="p_00997_horario_reservar_liberar_formulario" method="post"
-   action="http://s.oxbridge.es/Ox/estructura_web/codigo/alumno/horarios/horarios_01_menu_04_01_reservar_capsula_2.asp">
+   action="https://s.oxbridge.es/Ox/estructura_web/codigo/alumno/horarios/horarios_01_menu_04_01_reservar_capsula_2.asp">
 	</form>
 
 	<script>
@@ -19,7 +19,7 @@ id: p_00997
 
 		if(p_00997_capsula.alumno_tiene_la_capsula=="si"){
 			document.getElementById("p_00997_horario_reservar_liberar_formulario").setAttribute("action",""+
-			"http://s.oxbridge.es/Ox/estructura_web/codigo/alumno/horarios/horarios_01_menu_04_02_liberar_capsula_2.asp");
+			"https://s.oxbridge.es/Ox/estructura_web/codigo/alumno/horarios/horarios_01_menu_04_02_liberar_capsula_2.asp");
 			p="0000330";
 		}
 

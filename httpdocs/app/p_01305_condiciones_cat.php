@@ -53,7 +53,7 @@ Pag. ID: 01305
    </p>
    
    <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none'>
-      <span style='font-size:14.0pt;mso-bidi-font-family:Arial; color:#464646'>El present av&iacute;s legal (en endavant, l'&quot;Av&iacute;s Legal&quot;) regula l'&uacute;s del servei del portal d'Internet &quot;<a href="http://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a>&quot; (en endavant, el &quot;Portal&quot;) que la societat <span class=SpellE>Newoxland</span> S.L. (en endavant, &quot;<span class=SpellE>Oxbridge</span>&quot;, que &eacute;s la marca comercial&quot;) posa a disposici&oacute; dels usuaris d'Internet.<o:p></o:p></span>
+      <span style='font-size:14.0pt;mso-bidi-font-family:Arial; color:#464646'>El present av&iacute;s legal (en endavant, l'&quot;Av&iacute;s Legal&quot;) regula l'&uacute;s del servei del portal d'Internet &quot;<a href="https://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a>&quot; (en endavant, el &quot;Portal&quot;) que la societat <span class=SpellE>Newoxland</span> S.L. (en endavant, &quot;<span class=SpellE>Oxbridge</span>&quot;, que &eacute;s la marca comercial&quot;) posa a disposici&oacute; dels usuaris d'Internet.<o:p></o:p></span>
    </p>
    
    <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none'>
@@ -89,7 +89,7 @@ Pag. ID: 01305
    </p>
    
    <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none'>
-      <span style='font-size:14.0pt;mso-bidi-font-family:Arial; color:#464646'>La utilitzaci&oacute; de la P&agrave;gina Web <a href="http://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a> atribueix la condici&oacute; d'usuari de la mateixa (en endavant, l'&quot;Usuari&quot;) i implica la acceptaci&oacute; plena i sense reserves de totes i cadascuna de les disposicions incloses en aquest Av&iacute;s Legal en la versi&oacute; publicada per <span class=SpellE>Oxbridge</span> en el mateix moment en que l'Usuari accedeixi a la citada p&agrave;gina Web. En conseq&uuml;&egrave;ncia, l'Usuari ha de llegir atentament el present Av&iacute;s Legal en cada una de les ocasions en qu&egrave; es proposi utilitzar la p&agrave;gina web, ja que aquesta pot patir modificacions.</span>
+      <span style='font-size:14.0pt;mso-bidi-font-family:Arial; color:#464646'>La utilitzaci&oacute; de la P&agrave;gina Web <a href="https://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a> atribueix la condici&oacute; d'usuari de la mateixa (en endavant, l'&quot;Usuari&quot;) i implica la acceptaci&oacute; plena i sense reserves de totes i cadascuna de les disposicions incloses en aquest Av&iacute;s Legal en la versi&oacute; publicada per <span class=SpellE>Oxbridge</span> en el mateix moment en que l'Usuari accedeixi a la citada p&agrave;gina Web. En conseq&uuml;&egrave;ncia, l'Usuari ha de llegir atentament el present Av&iacute;s Legal en cada una de les ocasions en qu&egrave; es proposi utilitzar la p&agrave;gina web, ja que aquesta pot patir modificacions.</span>
      <span style='font-size:14.0pt;mso-bidi-font-family: Times'><o:p></o:p></span>
    </p>
    
@@ -99,7 +99,7 @@ Pag. ID: 01305
    </p>
    
    <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none'>
-      <span class=SpellE><span style='font-size:14.0pt; mso-bidi-font-family:Arial;color:#464646'>Oxbridge</span></span><span style='font-size:14.0pt;mso-bidi-font-family:Arial;color:#464646'> l'informa que l'acc&eacute;s i l'&uacute;s de la p&agrave;gina web <a href="http://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a> i tots els subdominis i directoris inclosos sota la mateixa (en endavant, conjuntament denominats com el Portal), aix&iacute; com els serveis que a trav&eacute;s d'ell es puguin obtenir, estan subjectes als termes que s'estipulen en aquest Av&iacute;s Legal. Per aix&ograve;, si les consideracions detallades en el mateix no s&oacute;n de la seva conformitat, preguem no faci &uacute;s del Portal, ja que qualsevol &uacute;s d'aquest o dels serveis en ell inclosos implicar&agrave; l'acceptaci&oacute; dels termes legals recollits en aquest text.</span>
+      <span class=SpellE><span style='font-size:14.0pt; mso-bidi-font-family:Arial;color:#464646'>Oxbridge</span></span><span style='font-size:14.0pt;mso-bidi-font-family:Arial;color:#464646'> l'informa que l'acc&eacute;s i l'&uacute;s de la p&agrave;gina web <a href="https://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a> i tots els subdominis i directoris inclosos sota la mateixa (en endavant, conjuntament denominats com el Portal), aix&iacute; com els serveis que a trav&eacute;s d'ell es puguin obtenir, estan subjectes als termes que s'estipulen en aquest Av&iacute;s Legal. Per aix&ograve;, si les consideracions detallades en el mateix no s&oacute;n de la seva conformitat, preguem no faci &uacute;s del Portal, ja que qualsevol &uacute;s d'aquest o dels serveis en ell inclosos implicar&agrave; l'acceptaci&oacute; dels termes legals recollits en aquest text.</span>
      <span style='font-size:14.0pt;mso-bidi-font-family:Times'><o:p></o:p></span>
    </p>
    

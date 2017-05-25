@@ -212,7 +212,7 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 	for(i=smiles_correctos;i>0;i--){
 		if(i>=2)
 		{
-			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_green.png'>";
+			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_green.png'>";
 			i--;
 		}
 		else
@@ -220,11 +220,11 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 			restar+=1;
 			if(smiles_incorrectos>0)
 			{
-				html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_green_red.png'>";
+				html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_green_red.png'>";
 			}
 			else
 			{
-				html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_green_gery.png'>";
+				html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_green_gery.png'>";
 			}
 		}
 
@@ -233,19 +233,19 @@ function p_01176_seccion_tema(tema_id,seccion,smiles_correctos,smiles_incorrecto
 	for(i=smiles_incorrectos-restar;i>0;i--){
 		if(i>=2)
 		{
-			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_red.png'>";
+			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_red.png'>";
 			i--;
 		}
 		else
 		{
-			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_red_grey.png'>";
+			html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_red_grey.png'>";
 			restar+=1;
 		}
 	}
 
 	for(i=smiles_vacios-restar;i>0;i--)
 	{
-		html_smiles+="<img class='p_01172_progreso_detalle_smile' src='http://app.oxbridge.es/app/images/smile_grey.png'>";
+		html_smiles+="<img class='p_01172_progreso_detalle_smile' src='https://app.oxbridge.es/app/images/smile_grey.png'>";
 		i--;
 	}
 

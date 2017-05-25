@@ -21,8 +21,8 @@ p_00996_json: <? echo($p_00996_json); ?>
 <script type="text/javascript">
 	window.parent.test_json=JSON.parse(<? echo("'".$p_00996_json."'"); ?>);
 /*llamada 
-http:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=31537
-http:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=24002
+https:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=31537
+https:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=24002
 
 
 */

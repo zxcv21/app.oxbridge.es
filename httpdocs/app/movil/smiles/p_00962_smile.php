@@ -47,7 +47,7 @@
 			'	<form'+
 			'		id="p_00962_carrera_add_amigo_form"'+
 			'		method="post"'+
-			'		action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_03_invitar_competidor_03_asp_50_otros_01_email_alumno.asp"'+
+			'		action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_03_invitar_competidor_03_asp_50_otros_01_email_alumno.asp"'+
 			'		target="p_00962_carrera_add_amigo_iframe"'+
 			'		onsubmit="'+
 			'				document.getElementById(\'p_00962_carrera_add_amigo_submit\').style.display=\'none\';'+
@@ -75,12 +75,12 @@
 			'				document.getElementById(\'p_00962_carrera_add_amigo_form\').submit();'+
 			'			"'+
 			'			style="width:50px; vertical-align:middle;cursor:pointer;"'+
-			'			src="http://app.oxbridge.es/app/images/invitar_mas.png"'+
+			'			src="https://app.oxbridge.es/app/images/invitar_mas.png"'+
 			'		>'+
 			'		<img'+
 			'			id="p_00962_carrera_add_amigo_cargando"'+
 			'			class="img_cargando"'+
-			'			src="http://app.oxbridge.es/app/images/loading.png"'+
+			'			src="https://app.oxbridge.es/app/images/loading.png"'+
 			'			style="height:50px;display:none"'+
 			'		>'+
 			'	</form>'+
@@ -154,7 +154,7 @@
         >
 
         <div id="p_00962_grafico_progreso" onclick="p_01000_animacion_porcentages_detalles(1);">
-			<!-- 'i' fuera <img id="p_00962_grafico_progreso_i" style="height: 3em;position: absolute;bottom: 0;right: 0;" src="http://app.oxbridge.es/app/images/boton_info.png">-->
+			<!-- 'i' fuera <img id="p_00962_grafico_progreso_i" style="height: 3em;position: absolute;bottom: 0;right: 0;" src="https://app.oxbridge.es/app/images/boton_info.png">-->
             <div id="p_00962_grafico_progreso_centro"></div>
             <div id="p_00962_grafico_progreso_tnt" onclick="p_01171_mostrar_detalle_progreso('tnt');"></div>
             <div id="p_00962_grafico_progreso_estructura" onclick="p_01171_mostrar_detalle_progreso('estructura');"></div>
@@ -162,7 +162,7 @@
           </div>
           <div id="p_00962_grafico_progreso_detalle" style="display:none;">
              <div id="p_00962_grafico_progreso_detalle_trinity" class="p_01172_grafico_progreso_detalle_seccion" style="display:none;font-size: 3em;">
-             	<!--<img id="p_00962_detalle_trinity_logo"  src="http://www.trinitycollege.com/images/logo_trinity_college_london.png">-->
+             	<!--<img id="p_00962_detalle_trinity_logo"  src="https://www.trinitycollege.com/images/logo_trinity_college_london.png">-->
 				<div id="p_00962_detalle_trinity_solisitud_texto" style="margin:1em 0;"><? echo $TEXTOS[138][2]; ?></div>
 				<button id="solisitud_trinity_boton" class="boton_normal" onclick="p_01171_enviar_solisitud_trinity();"><? echo $TEXTOS[160][2]; ?></button>
 				<div id="p_00962_detalle_trinity_solisitud_precio" style="font-size: 18px;font-family: helveticaneueroman;"><? echo $TEXTOS[165][2]; ?></div>

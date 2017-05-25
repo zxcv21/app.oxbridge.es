@@ -3,7 +3,7 @@
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
 <!--
 id: p_00996
@@ -18,7 +18,7 @@ if( $p_0001326_php_sesion_correcta == "si" && $p_0001326_php_usuario_correcto ==
 	/*$alumno_id=31537; //tomas
 	$alumno_id=31899; //fer*/
 	$datos = file_get_contents(
-	"http://s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?".
+	"https://s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?".
 	"p_0001029_get_alumno_id=".$alumno_id);
 	echo $datos;
 	?>
@@ -104,8 +104,8 @@ if( $p_0001326_php_sesion_correcta == "si" && $p_0001326_php_usuario_correcto ==
 		window.parent.dibujar_horario();
 
 	/*llamada
-	http:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=31537
-	http:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=24002
+	https:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=31537
+	https:s.oxbridge.es/ox/estructura_web/codigo/alumno/horarios/horarios_03_alumno_07_asp_02_select_01_obtener_horarios.asp?p_0001029_get_alumno_id=24002
 	*/
 <?
 };

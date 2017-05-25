@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -437,7 +437,7 @@
 					}
 
 					// IE<10 needs this hack to properly enable <base href="...">.
-					// See: http://stackoverflow.com/a/13373180/1485219 (#11910).
+					// See: https://stackoverflow.com/a/13373180/1485219 (#11910).
 					if ( baseTag && CKEDITOR.env.ie && CKEDITOR.env.version < 10 ) {
 						bootstrapCode +=
 							'<script id="cke_basetagscrpt">' +
@@ -622,8 +622,8 @@
  *		config.disableObjectResizing = true;
  *
  * **Note:** Because of incomplete implementation of editing features in browsers
- * this option does not work for inline editors (see ticket [#10197](http://dev.ckeditor.com/ticket/10197)),
- * does not work in Internet Explorer 11+ (see [#9317](http://dev.ckeditor.com/ticket/9317#comment:16) and
+ * this option does not work for inline editors (see ticket [#10197](https://dev.ckeditor.com/ticket/10197)),
+ * does not work in Internet Explorer 11+ (see [#9317](https://dev.ckeditor.com/ticket/9317#comment:16) and
  * [IE11+ issue](https://connect.microsoft.com/IE/feedback/details/742593/please-respect-execcommand-enableobjectresizing-in-contenteditable-elements)).
  * In Internet Explorer 8-10 this option only blocks resizing, but it is unable to hide the resize handles.
  *
@@ -652,7 +652,7 @@ CKEDITOR.config.disableNativeTableHandles = true;
  * users can always reach the native context menu by holding the
  * *Ctrl* key when right-clicking if {@link #browserContextMenuOnCtrl}
  * is enabled or you are simply not using the
- * [context menu](http://ckeditor.com/addon/contextmenu) plugin.
+ * [context menu](https://ckeditor.com/addon/contextmenu) plugin.
  *
  *		config.disableNativeSpellChecker = false;
  *
@@ -664,7 +664,7 @@ CKEDITOR.config.disableNativeSpellChecker = true;
 /**
  * Language code of  the writing language which is used to author the editor
  * content. This option accepts one single entry value in the format defined in the
- * [Tags for Identifying Languages (BCP47)](http://www.ietf.org/rfc/bcp/bcp47.txt)
+ * [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt)
  * IETF document and is used in the `lang` attribute.
  *
  *		config.contentsLanguage = 'fr';
@@ -677,7 +677,7 @@ CKEDITOR.config.disableNativeSpellChecker = true;
  * The base href URL used to resolve relative and absolute URLs in the
  * editor content.
  *
- *		config.baseHref = 'http://www.example.com/path/';
+ *		config.baseHref = 'https://www.example.com/path/';
  *
  * @cfg {String} [baseHref='']
  * @member CKEDITOR.config

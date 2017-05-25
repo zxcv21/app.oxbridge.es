@@ -97,6 +97,7 @@ Pag. ID: p_01168
     left: 15px;
 		overflow: auto;
 		max-height: calc(100vh - 90px);
+		-webkit-overflow-scrolling:touch;
 		}
 		.p_00961_contenedor_seccion_orizontal{
 			width: 400px;

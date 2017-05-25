@@ -87,7 +87,7 @@ Arial;color:#464646'>1. Informaci&oacute;n General</span></b><span style='font-s
 text-autospace:none'><span style='font-size:14.0pt;mso-bidi-font-family:Arial;
 color:#464646'>El presente aviso legal (en adelante, el &quot;Aviso
 Legal&quot;) regula el uso del servicio del portal de Internet &quot;<a
-href="http://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a>&quot;
+href="https://app.oxbridge.es/"><span style='color:#386EFF'>app.oxbridge.es</span></a>&quot;
 (en adelante, el &quot;Portal&quot;) que la sociedad <span class=SpellE>Newoxland</span>
 S.L. (en adelante, &quot;<span class=SpellE>Oxbridge</span>&quot;, que es la
 marca comercial&quot;) pone a disposici&oacute;n de los usuarios de Internet.<o:p></o:p></span></p>
@@ -138,7 +138,7 @@ style='font-size:14.0pt;mso-bidi-font-family:Times'><o:p></o:p></span></p>
 
 <p class=MsoNormal style='mso-pagination:none;mso-layout-grid-align:none;
 text-autospace:none'><span style='font-size:14.0pt;mso-bidi-font-family:Arial;
-color:#464646'>La utilizaci&oacute;n de la P&aacute;gina Web <a href="http://app.oxbridge.es/"><span
+color:#464646'>La utilizaci&oacute;n de la P&aacute;gina Web <a href="https://app.oxbridge.es/"><span
 style='color:#386EFF'>app.oxbridge.es</span></a> atribuye la condici&oacute;n de
 usuario de la misma (en adelante, el &quot;Usuario&quot;) e implica la
 aceptaci&oacute;n plena y sin reservas de todas y cada una de las disposiciones
@@ -163,7 +163,7 @@ style='font-size:14.0pt;mso-bidi-font-family:Times'><o:p></o:p></span></p>
 text-autospace:none'><span class=SpellE><span style='font-size:14.0pt;
 mso-bidi-font-family:Arial;color:#464646'>Oxbridge</span></span><span
 style='font-size:14.0pt;mso-bidi-font-family:Arial;color:#464646'> le informa
-de que el acceso y uso de la p&aacute;gina web <a href="http://app.oxbridge.es/"><span
+de que el acceso y uso de la p&aacute;gina web <a href="https://app.oxbridge.es/"><span
 style='color:#386EFF'>app.oxbridge.es</span></a> y todos los subdominios y
 directorios incluidos bajo la misma (en adelante, conjuntamente denominados
 como el Portal), as&iacute; como los servicios que a trav&eacute;s de &eacute;l se puedan obtener,

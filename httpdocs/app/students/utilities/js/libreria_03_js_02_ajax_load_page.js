@@ -43,8 +43,8 @@ function ajax_load_page(url,id_lugar,post,op_run_js,op_end_function,json)
 		else p_0010234_contenedor_de_peticion=id_lugar;
 	}
 	
-	if (window.XMLHttpRequest) p_0010234_conexion_interaccion=new XMLHttpRequest(); 
-	else p_0010234_conexion_interaccion=new ActiveXObject("Microsoft.XMLHttp");
+	if (window.XMLhttpsRequest) p_0010234_conexion_interaccion=new XMLhttpsRequest(); 
+	else p_0010234_conexion_interaccion=new ActiveXObject("Microsoft.XMLhttps");
 	p_0010234_conexion_interaccion.url=url;
 	if(!json)p_0010234_conexion_interaccion.contenedor=p_0010234_contenedor_de_peticion;
 	p_0010234_conexion_interaccion.id_lugar=id_lugar;

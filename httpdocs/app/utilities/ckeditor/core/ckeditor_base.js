@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -11,7 +11,7 @@
 // #### Compressed Code
 // Compressed code in ckeditor.js must be be updated on changes in the script.
 // The Closure Compiler online service should be used when updating this manually:
-// http://closure-compiler.appspot.com/
+// https://closure-compiler.appspot.com/
 
 // #### Raw code
 // ATTENTION: read the above "Compressed Code" notes when changing this code.
@@ -107,7 +107,7 @@ if ( !window.CKEDITOR ) {
 			 * global variable named `CKEDITOR_BASEPATH`. This global variable
 			 * must be set **before** the editor script loading.
 			 *
-			 *		alert( CKEDITOR.basePath ); // e.g. 'http://www.example.com/ckeditor/'
+			 *		alert( CKEDITOR.basePath ); // e.g. 'https://www.example.com/ckeditor/'
 			 *
 			 * @property {String}
 			 */
@@ -156,14 +156,14 @@ if ( !window.CKEDITOR ) {
 			 * loading. If the custom implementation returns nothing (`==null`), the
 			 * default implementation is used.
 			 *
-			 *		// e.g. 'http://www.example.com/ckeditor/skins/default/editor.css?t=87dm'
+			 *		// e.g. 'https://www.example.com/ckeditor/skins/default/editor.css?t=87dm'
 			 *		alert( CKEDITOR.getUrl( 'skins/default/editor.css' ) );
 			 *
-			 *		// e.g. 'http://www.example.com/skins/default/editor.css?t=87dm'
+			 *		// e.g. 'https://www.example.com/skins/default/editor.css?t=87dm'
 			 *		alert( CKEDITOR.getUrl( '/skins/default/editor.css' ) );
 			 *
-			 *		// e.g. 'http://www.somesite.com/skins/default/editor.css?t=87dm'
-			 *		alert( CKEDITOR.getUrl( 'http://www.somesite.com/skins/default/editor.css' ) );
+			 *		// e.g. 'https://www.somesite.com/skins/default/editor.css?t=87dm'
+			 *		alert( CKEDITOR.getUrl( 'https://www.somesite.com/skins/default/editor.css' ) );
 			 *
 			 * @param {String} resource The resource whose full URL we want to get.
 			 * It may be a full, absolute, or relative URL.
@@ -250,7 +250,7 @@ if ( !window.CKEDITOR ) {
 						// If IE and not a frame
 						// continually check to see if the document is ready
 						// use the trick by Diego Perini
-						// http://javascript.nwbox.com/IEContentLoaded/
+						// https://javascript.nwbox.com/IEContentLoaded/
 						var toplevel = false;
 
 						try {
@@ -307,7 +307,7 @@ if ( !window.CKEDITOR ) {
  * @param {CKEDITOR.config} config A configuration object containing the
  * settings defined for a {@link CKEDITOR.editor} instance up to this
  * function call. Note that not all settings may still be available. See
- * [Configuration Loading Order](http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Setting_Configurations#Configuration_Loading_Order)
+ * [Configuration Loading Order](https://docs.cksource.com/CKEditor_3.x/Developers_Guide/Setting_Configurations#Configuration_Loading_Order)
  * for details.
  */
 

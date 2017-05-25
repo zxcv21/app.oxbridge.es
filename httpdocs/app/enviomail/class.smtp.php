@@ -4,8 +4,8 @@
 |  Software: PHPMailer - PHP email class                                    |
 |   Version: 5.1                                                            |
 |   Contact: via sourceforge.net support pages (also www.codeworxtech.com)  |
-|      Info: http://phpmailer.sourceforge.net                               |
-|   Support: http://sourceforge.net/projects/phpmailer/                     |
+|      Info: https://phpmailer.sourceforge.net                               |
+|   Support: https://sourceforge.net/projects/phpmailer/                     |
 | ------------------------------------------------------------------------- |
 |     Admin: Andy Prevost (project admininistrator)                         |
 |   Authors: Andy Prevost (codeworxtech) codeworxtech@users.sourceforge.net |
@@ -15,7 +15,7 @@
 | Copyright (c) 2001-2003, Brent R. Matzelle                                |
 | ------------------------------------------------------------------------- |
 |   License: Distributed under the Lesser General Public License (LGPL)     |
-|            http://www.gnu.org/copyleft/lesser.html                        |
+|            https://www.gnu.org/copyleft/lesser.html                        |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
 | ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
@@ -34,7 +34,7 @@
  * @author Andy Prevost
  * @author Marcus Bointon
  * @copyright 2004 - 2008 Andy Prevost
- * @license http://www.gnu.org/copyleft/lesser.html Distributed under the Lesser General Public License (LGPL)
+ * @license https://www.gnu.org/copyleft/lesser.html Distributed under the Lesser General Public License (LGPL)
  * @version $Id: class.smtp.php 444 2009-05-05 11:22:26Z coolbru $
  */
 

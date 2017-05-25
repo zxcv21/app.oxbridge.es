@@ -173,7 +173,7 @@
 			// Refreshing CM does not help.
 			lineNumbers: false,
 			lineWrapping: true,
-			// Trick to make CM autogrow. http://codemirror.net/demo/resize.html
+			// Trick to make CM autogrow. https://codemirror.net/demo/resize.html
 			viewportMargin: Infinity,
 			value: cfgValue,
 			smartIndent: false,

@@ -37,7 +37,7 @@
     '	<form'+
     '		id="p_00962_carrera_add_amigo_form"'+
     '		method="post"'+
-    '		action="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_03_invitar_competidor_03_asp_50_otros_01_email_alumno.asp"'+
+    '		action="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_03_invitar_competidor_03_asp_50_otros_01_email_alumno.asp"'+
     '		target="p_00962_carrera_add_amigo_iframe"'+
     '		onsubmit="'+
     '				document.getElementById(\'p_00962_carrera_add_amigo_submit\').style.display=\'none\';'+
@@ -65,12 +65,12 @@
     '				document.getElementById(\'p_00962_carrera_add_amigo_form\').submit();'+
     '			"'+
     '			style="width:10%; vertical-align:middle;"'+
-    '			src="http://app.oxbridge.es/app/images/invitar_mas.png"'+
+    '			src="https://app.oxbridge.es/app/images/invitar_mas.png"'+
     '		>'+
     '		<img'+
     '			id="p_00962_carrera_add_amigo_cargando"'+
     '			class="img_cargando"'+
-    '			src="http://app.oxbridge.es/app/images/loading.png"'+
+    '			src="https://app.oxbridge.es/app/images/loading.png"'+
     '			style="height:2em;display:none"'+
     '		>'+
     '	</form>'+

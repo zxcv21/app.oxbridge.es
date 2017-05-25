@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -596,7 +596,7 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 				me._.tabs[ me._.currentTabId ][ 0 ].focus();
 				me._.currentFocusIndex = -1;
 			} else if ( !this._.hasFocus ) {
-				// http://dev.ckeditor.com/ticket/13114#comment:4.
+				// https://dev.ckeditor.com/ticket/13114#comment:4.
 				this._.currentFocusIndex = hasTabs ? -1 : this._.focusList.length - 1;
 
 				// Decide where to put the initial focus.

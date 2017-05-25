@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.html or http://ckeditor.com/license
+ * For licensing, see LICENSE.html or https://ckeditor.com/license
  */
 
 CKEDITOR.dialog.add( 'checkspell', function( editor ) {
@@ -9,7 +9,7 @@ CKEDITOR.dialog.add( 'checkspell', function( editor ) {
 		textareaId = 'cke_data_' + number,
 		errorBoxId = 'cke_error_' + number,
 		interval,
-		protocol = document.location.protocol || 'http:',
+		protocol = document.location.protocol || 'https:',
 		errorMsg = editor.lang.wsc.notAvailable;
 
 	var pasteArea =

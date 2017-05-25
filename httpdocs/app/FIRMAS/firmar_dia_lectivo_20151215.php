@@ -73,7 +73,7 @@ if(isset($_POST['p_01393_firma_archivo']) && isset($_POST['p_01393_alumno_id']) 
 	
 	/*if($ok){
 													
-		$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+		$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 													"?p_0001293_get_dia_lectivo_id=".$_POST['p_01393_dia_lectivo'].
 													"&p_0001293_get_alumno_id=".$_POST['p_01393_alumno_id'].
 													"&p_0001293_get_firmado=1".
@@ -88,8 +88,8 @@ if(isset($_POST['p_01393_firma_archivo']) && isset($_POST['p_01393_alumno_id']) 
 		
 		if( $_POST['p_01393_volver_a_oxbridgetefl'] == 1 )
 		{
-			//$url = 'Location: http://oxbridgetefl.com/activities/activities_01_class_05_crear_08_firma.php?p_0001429_get_dia_lectivo_id='.$_POST['p_01393_dia_lectivo'];
-			$url = 'Location: http://oxbridgetefl.com/activities/activities_01_class_05_crear_08_firma.php?p_0001429_get_dia_lectivo_id='.$_POST['p_01393_dia_lectivo'].'&p_0001429_get_alumno_id='.$_POST['p_01393_alumno_id'];
+			//$url = 'Location: https://oxbridgetefl.com/activities/activities_01_class_05_crear_08_firma.php?p_0001429_get_dia_lectivo_id='.$_POST['p_01393_dia_lectivo'];
+			$url = 'Location: https://oxbridgetefl.com/activities/activities_01_class_05_crear_08_firma.php?p_0001429_get_dia_lectivo_id='.$_POST['p_01393_dia_lectivo'].'&p_0001429_get_alumno_id='.$_POST['p_01393_alumno_id'];
 			?><script type="text/javascript">console.log("url: <? echo($url); ?>");</script><?
 			header($url);
 		}
@@ -100,7 +100,7 @@ if(isset($_POST['p_01393_firma_archivo']) && isset($_POST['p_01393_alumno_id']) 
 		
 	}else{
 		echo "ERROR: ".$ok;
-		$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+		$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 													"?p_0001293_get_dia_lectivo_id=".$_POST['p_01393_dia_lectivo'].
 													"&p_0001293_get_alumno_id=".$_POST['p_01393_alumno_id'].
 													"&p_0001293_get_firmado=0"

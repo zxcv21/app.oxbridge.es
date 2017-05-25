@@ -11,7 +11,7 @@ if(isset($_GET['p_0010152_carga_inicial']))$p_0010152_carga_inicial=$_GET['p_001
 ?>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta https-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Config Template</title>
 	<?
    if($p_0010152_carga_inicial) include $_SERVER['DOCUMENT_ROOT']."/app/utilities/librerias_10_php_01_basicas.php";

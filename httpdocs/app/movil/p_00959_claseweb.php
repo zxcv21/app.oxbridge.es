@@ -120,7 +120,7 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 			{
 				p_00959_js_f_01_html+= "<div style=\"display: inline-block; cursor: pointer; margin-left: 20px\" align=\"center\" onclick='javascript: p_00959_js_f_02_abrir_clase_por_telefono( "+p_00959_js_f_01_bucle_01+" );'>" ;
 				p_00959_js_f_01_html+= 	"<div>" ;
-				p_00959_js_f_01_html+= 		"<img src=\"http://app.oxbridge.es/app/images/cw_telefono.png\" width=\"150px\">" ;
+				p_00959_js_f_01_html+= 		"<img src=\"https://app.oxbridge.es/app/images/cw_telefono.png\" width=\"150px\">" ;
 				p_00959_js_f_01_html+= 	"</div>" ;
 				p_00959_js_f_01_html+= 	"<div>" ;
 				p_00959_js_f_01_html+= 		"<span style=\"font-size: 14px; color: #01B0F2\">" ;
@@ -134,7 +134,7 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 			{
 				p_00959_js_f_01_html+= "<div style=\"display: inline-block; cursor: pointer; margin-left: 20px\" align=\"center\" onclick='javascript: p_00959_js_f_03_abrir_clase_por_videoconferencia( "+p_00959_js_f_01_bucle_01+" );'>" ;
 				p_00959_js_f_01_html+= 	"<div>" ;
-				p_00959_js_f_01_html+= 		"<img src=\"http://app.oxbridge.es/app/images/cw.png\" width=\"150px\">" ;
+				p_00959_js_f_01_html+= 		"<img src=\"https://app.oxbridge.es/app/images/cw.png\" width=\"150px\">" ;
 				p_00959_js_f_01_html+= 	"</div>" ;
 				p_00959_js_f_01_html+= 	"<div>" ;
 				p_00959_js_f_01_html+= 		"<span style=\"font-size: 14px; color: #01B0F2\">" ;

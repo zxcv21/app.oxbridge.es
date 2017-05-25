@@ -922,7 +922,7 @@ function p_01003_deshacer_estilos_no_asistencia(){
 ////CORREGIR ENLACES
 function p_01003_corregir_enlace(enlace){
 
-	if(!enlace.match(/http:\/\//)&&!enlace.match(/https:\/\//))
+	if(!enlace.match(/https:\/\//)&&!enlace.match(/https:\/\//))
 		enlace="https://"+enlace;
 
 	enlace=enlace.replace("watch?v=","embed/")

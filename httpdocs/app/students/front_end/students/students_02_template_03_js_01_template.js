@@ -12,8 +12,8 @@ File: /front_end/students/students_02_template_03_js_01_template.js
 	
 	console.info("ajax post: "+post)
 	
-	if (window.XMLHttpRequest) var conexion_interaccion=new XMLHttpRequest(); 
-	else var conexion_interaccion=new ActiveXObject("Microsoft.XMLHttp");
+	if (window.XMLhttpsRequest) var conexion_interaccion=new XMLhttpsRequest(); 
+	else var conexion_interaccion=new ActiveXObject("Microsoft.XMLhttps");
 	
 	conexion_interaccion.open("POST",url,true);
 	conexion_interaccion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

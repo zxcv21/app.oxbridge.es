@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -667,7 +667,7 @@ CKEDITOR.UI_SEPARATOR = 'separator';
  * position is set dynamically depending on the position of the editable element on the screen.
  *
  * Read more in the [documentation](#!/guide/dev_toolbarlocation)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/toolbarlocation.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/toolbarlocation.html).
  *
  *		config.toolbarLocation = 'bottom';
  *
@@ -684,7 +684,7 @@ CKEDITOR.config.toolbarLocation = 'top';
  * and {@link #toolbarGroups} as a toolbar groups layout.
  *
  * In CKEditor 4.5+ you can generate your toolbar customization code by using the [visual
- * toolbar configurator](http://docs.ckeditor.com/#!/guide/dev_toolbar).
+ * toolbar configurator](https://docs.ckeditor.com/#!/guide/dev_toolbar).
  *
  *		// Defines a toolbar with only one strip containing the "Source" button, a
  *		// separator, and the "Bold" and "Italic" buttons.
@@ -783,7 +783,7 @@ CKEDITOR.config.toolbarLocation = 'top';
  *
  * This configuration option should not be overused. The recommended way is to use the
  * {@link CKEDITOR.config#removePlugins} setting to remove features from the editor
- * or even better, [create a custom editor build](http://ckeditor.com/builder) with
+ * or even better, [create a custom editor build](https://ckeditor.com/builder) with
  * just the features that you will use.
  * In some cases though, a single plugin may define a set of toolbar buttons and
  * `removeButtons` may be useful when just a few of them are to be removed.

@@ -856,7 +856,7 @@ function func(valor){ //función que se ejecuta cuando le damos a el icono para 
 
 	/**comprobar con api de google**/
 	//valorPalabrapronunciar = smile_datos.preguntas[3].pregunta;
-	//value = "http://translate.google.com/translate_tts?tl=en&q="+valorPalabrapronunciar;
+	//value = "https://translate.google.com/translate_tts?tl=en&q="+valorPalabrapronunciar;
 	//document.getElementById("sound_word").style.display="none";
 	//document.getElementById("reproduccionWord").style.display="inline";
 	//$("#reproduccionWord").attr("src",value);

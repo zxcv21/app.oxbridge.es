@@ -568,7 +568,7 @@ input:checked + .p_0001851_slider:before {
 		</div>-->
 	<!--	<div id="p_0001851_boton_he_asistido" onclick='p_00994_envio_he_asistido();'>
 				<img class="p_0001851_imagen_boton_incidencia" src="<? //echo ver_url("images/incidencia.png","src"); ?>">
-				<span>Sí he asistido a esta clase</span>
+				<span>Sï¿½ he asistido a esta clase</span>
 		</div>
 -->
 		<div id="p_0001851_cargando" style="display:none;">
@@ -661,7 +661,7 @@ input:checked + .p_0001851_slider:before {
 
 			<form id="p_01450_from_valoracion_semanal"
 			method="POST" target="p_00995_formulario_valoracion_enviar"
-			action="http://app.oxbridge.es/actividades/clases_02_valoracion_01_php_01_modificar.php"
+			action="https://app.oxbridge.es/actividades/clases_02_valoracion_01_php_01_modificar.php"
 			>
 				<div id="p_01450_overall_valoracion_inputs_comentario" class="p_01450_div_input_textarea">
 					<textarea id="p_0001292_input_comentario" placeholder="<? echo $TEXTOS[29][2];?>"  class="p_00995_formulario_mail_input" name="p_0001292_input_comentario" cols="40" rows="10"></textarea>

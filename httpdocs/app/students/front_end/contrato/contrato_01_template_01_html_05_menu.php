@@ -3,7 +3,7 @@ Page ID:  p_0010161
 File: /front_end/contrato/contrato_01_template_01_html_05_menu.php
 */?>
 
-<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_01_template_02_css_05_menu.css"/>
+<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_01_template_02_css_05_menu.css"/>
 
 <!--
 <span id='p_0010161_span_pestana_unica' class='p_0010162_css_estilo_inputs'>Pestaña unica</span><input type='checkbox' id='p_0010161_input_pestana_unica'/>
@@ -12,9 +12,9 @@ File: /front_end/contrato/contrato_01_template_01_html_05_menu.php
 -->
 
 <div id='p_0010161_div_opciones_de_pestanas' class='p_0010162_css_opcion_de_pestanyas_div'>
-	<img id='p_0010161_img_pestana_unica' style='opacity:0.4;' src='http://sb.oxbridge.es/images/pestanya_unica.png'></img>
-	<img id='p_0010161_img_pestana_recarga' style='opacity:0.4;' src='http://sb.oxbridge.es/images/pestanya_recarga.png'></img>
-	<img id='p_0010161_img_posicion_pestana' style='opacity:0.4;' src='http://sb.oxbridge.es/images/pestanya_horizontal.png'></img>
+	<img id='p_0010161_img_pestana_unica' style='opacity:0.4;' src='https://sb.oxbridge.es/images/pestanya_unica.png'></img>
+	<img id='p_0010161_img_pestana_recarga' style='opacity:0.4;' src='https://sb.oxbridge.es/images/pestanya_recarga.png'></img>
+	<img id='p_0010161_img_posicion_pestana' style='opacity:0.4;' src='https://sb.oxbridge.es/images/pestanya_horizontal.png'></img>
 </div>
 
 <div id='p_0010161_div_oculta_muestra_pestanas_pantalla_pequena' class='p_0010162_css_oculta_muestra_pestanas_pantalla_pequena' onclick='p_0010163_js_f_05_mostrar_ocultar_lista_pestanas_pantalla_pequena();'><img src='imagenes/menu_icono.png' style='height: 100%;'/></div>
@@ -28,15 +28,15 @@ File: /front_end/contrato/contrato_01_template_01_html_05_menu.php
 <div id='p_0010161_div_alertas' class="p_0010162_css_estilo_pestanas" onclick='p_0010163_js_f_08_obtener_pagina_a_llamar(this.id);'>Alertas</div>
 </div>
 
-<script type="text/javascript" src="http://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_01_template_03_js_05_menu.js"></script>
-<script type="text/javascript" src="http://sb.oxbridge.es/utilities/js/utilities_03_js_01_ajax_load_page.js"></script>
+<script type="text/javascript" src="https://sb.oxbridge.es/dev/migue/front_end/contrato/contrato_01_template_03_js_05_menu.js"></script>
+<script type="text/javascript" src="https://sb.oxbridge.es/utilities/js/utilities_03_js_01_ajax_load_page.js"></script>
 
 
-<img style='display:none;' src='http://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/loading.png'><!--SIMPLEMENTE PONGO LA IMAGEN PARA QUE LA CARGE -->
+<img style='display:none;' src='https://sb.oxbridge.es/dev/migue/front_end/contrato/imagenes/loading.png'><!--SIMPLEMENTE PONGO LA IMAGEN PARA QUE LA CARGE -->
 <!-- 
-http://sb.oxbridge.es/images/pestanya_vertical.png
-http://sb.oxbridge.es/images/pestanya_horizontal.png
-http://sb.oxbridge.es/images/pestanya_unica.png
-http://sb.oxbridge.es/images/pestanya_recarga.png
+https://sb.oxbridge.es/images/pestanya_vertical.png
+https://sb.oxbridge.es/images/pestanya_horizontal.png
+https://sb.oxbridge.es/images/pestanya_unica.png
+https://sb.oxbridge.es/images/pestanya_recarga.png
 
 -->

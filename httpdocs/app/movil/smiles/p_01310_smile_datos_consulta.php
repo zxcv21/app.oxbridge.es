@@ -8,7 +8,7 @@
 <?
 	function p_01310_consulta_smile_datos(){
 		
-		if($datos = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_02_temario_03_asp_02_select_01_smiles_conseguidos_trinity.asp"
+		if($datos = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_02_temario_03_asp_02_select_01_smiles_conseguidos_trinity.asp"
 												."?p_0001368_get_alumno_id=".$_GET['alumno_id']
 												."&p_0001368_get_bd=".$_GET['bd']
 												."&p_0001368_get_nivel=".$_GET['nivel']

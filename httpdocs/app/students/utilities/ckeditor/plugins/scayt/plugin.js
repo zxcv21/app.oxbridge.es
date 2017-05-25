@@ -636,7 +636,7 @@ CKEDITOR.plugins.add('scayt', {
 
 		if(typeof editor.config.scayt_srcUrl !== 'string') {
 			var protocol = document.location.protocol;
-			protocol = protocol.search(/https?:/) != -1 ? protocol : 'http:';
+			protocol = protocol.search(/https?:/) != -1 ? protocol : 'https:';
 
 			editor.config.scayt_srcUrl = protocol + '//svc.webspellchecker.net/spellcheck31/lf/scayt3/ckscayt/ckscayt.js';
 		}
@@ -1446,7 +1446,7 @@ CKEDITOR.on('scaytReady', function() {
  * Automatically enables SCAYT on editor startup. When set to `true`, this option turns on SCAYT automatically
  * after loading the editor.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_autoStartup = true;
  *
@@ -1458,7 +1458,7 @@ CKEDITOR.on('scaytReady', function() {
  * Enables Grammar As You Type (GRAYT) on SCAYT startup. When set to `true`, this option turns on GRAYT automatically
  * after SCAYT started.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.grayt_autoStartup = true;
  *
@@ -1471,7 +1471,7 @@ CKEDITOR.on('scaytReady', function() {
  * Enables SCAYT initialization when inline CKEditor is not focused. When set to `true`, SCAYT markup is
  * displayed in both inline editor states, focused and unfocused, so the SCAYT instance is not destroyed.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		 config.scayt_inlineModeImmediateMarkup = true;
  *
@@ -1491,7 +1491,7 @@ CKEDITOR.on('scaytReady', function() {
  * * Negative number &ndash; Five suggestions are shown in the main context menu. All other
  *     entries will be listed in the "More Suggestions" sub-menu.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Examples:
  *
@@ -1509,7 +1509,7 @@ CKEDITOR.on('scaytReady', function() {
  * Defines the minimum length of words that will be collected from the editor content for spell checking.
  * Possible value is any positive number.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Examples:
  *
@@ -1524,7 +1524,7 @@ CKEDITOR.on('scaytReady', function() {
  * Sets the customer ID for SCAYT. Used for hosted users only. Required for migration from free
  * to trial or paid versions.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Load SCAYT using my customer ID.
  *		config.scayt_customerId  = 'your-encrypted-customer-id';
@@ -1537,7 +1537,7 @@ CKEDITOR.on('scaytReady', function() {
  * Enables and disables the "More Suggestions" sub-menu in the context menu.
  * Possible values are `'on'` and `'off'`.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Disables the "More Suggestions" sub-menu.
  *		config.scayt_moreSuggestions = 'off';
@@ -1565,7 +1565,7 @@ CKEDITOR.on('scaytReady', function() {
  * Please note that availability of the "Options", "Languages" and "Dictionaries" items
  * also depends on the {@link CKEDITOR.config#scayt_uiTabs} option.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Example:
  *
@@ -1583,7 +1583,7 @@ CKEDITOR.on('scaytReady', function() {
  * `'fr_CA'`, `'de_DE'`, `'el_GR'`, `'it_IT'`,
  * `'nb_NO'`, `'pt_PT'`, `'es_ES'`, `'sv_SE'`.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Sets SCAYT to German.
  *		config.scayt_sLang = 'de_DE';
@@ -1598,7 +1598,7 @@ CKEDITOR.on('scaytReady', function() {
  * (disabled) value for each of the following entries, in this precise order,
  * separated by a comma (`','`): `'Options'`, `'Languages'`, and `'Dictionary'`.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Hides the "Languages" tab.
  *		config.scayt_uiTabs = '1,0,1';
@@ -1610,19 +1610,19 @@ CKEDITOR.on('scaytReady', function() {
 /**
  * Sets the protocol for the WebSpellChecker service (`ssrv.cgi`) full path.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Defines the protocol for the WebSpellChecker service (ssrv.cgi) path.
  *		config.scayt_serviceProtocol = 'https';
  *
- * @cfg {String} [scayt_serviceProtocol='http']
+ * @cfg {String} [scayt_serviceProtocol='https']
  * @member CKEDITOR.config
  */
 
 /**
  * Sets the host for the WebSpellChecker service (`ssrv.cgi`) full path.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Defines the host for the WebSpellChecker service (ssrv.cgi) path.
  *		config.scayt_serviceHost = 'my-host';
@@ -1634,7 +1634,7 @@ CKEDITOR.on('scaytReady', function() {
 /**
  * Sets the port for the WebSpellChecker service (`ssrv.cgi`) full path.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Defines the port for the WebSpellChecker service (ssrv.cgi) path.
  *		config.scayt_servicePort = '2330';
@@ -1646,7 +1646,7 @@ CKEDITOR.on('scaytReady', function() {
 /**
  * Sets the path to the WebSpellChecker service (`ssrv.cgi`).
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		// Defines the path to the WebSpellChecker service (ssrv.cgi).
  *		config.scayt_servicePath = 'my-path/ssrv.cgi';
@@ -1658,12 +1658,12 @@ CKEDITOR.on('scaytReady', function() {
 /**
  * Sets the URL to SCAYT core. Required to switch to the licensed version of SCAYT.
  *
- * Refer to [SCAYT documentation](http://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck)
+ * Refer to [SCAYT documentation](https://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck)
  * for more details.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
- *		config.scayt_srcUrl = "http://my-host/spellcheck/lf/scayt/scayt.js";
+ *		config.scayt_srcUrl = "https://my-host/spellcheck/lf/scayt/scayt.js";
  *
  * @cfg {String} [scayt_srcUrl='//svc.webspellchecker.net/spellcheck31/lf/scayt3/ckscayt/ckscayt.js']
  * @member CKEDITOR.config
@@ -1673,10 +1673,10 @@ CKEDITOR.on('scaytReady', function() {
  * Links SCAYT to custom dictionaries. This is a string containing the dictionary IDs
  * separated by commas (`','`). Available only for the licensed version.
  *
- * Refer to [SCAYT documentation](http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed)
+ * Refer to [SCAYT documentation](https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed)
  * for more details.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_customDictionaryIds = '3021,3456,3478';
  *
@@ -1688,10 +1688,10 @@ CKEDITOR.on('scaytReady', function() {
  * Activates a User Dictionary in SCAYT. The user
  * dictionary name must be used. Available only for the licensed version.
  *
- * Refer to [SCAYT documentation](http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:userdictionaries)
+ * Refer to [SCAYT documentation](https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:userdictionaries)
  * for more details.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_userDictionaryName = 'MyDictionary';
  *
@@ -1708,7 +1708,7 @@ CKEDITOR.on('scaytReady', function() {
  * * `moresuggest` &ndash; The "More suggestions" word list.
  * * `control` &ndash; SCAYT commands, such as "Ignore" and "Add Word".
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Example:
  *
@@ -1723,7 +1723,7 @@ CKEDITOR.on('scaytReady', function() {
  * to fix SCAYT issues with incorrect `checkDirty` behavior. If set to `false`,
  * it provides better performance on big preloaded text.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_handleCheckDirty = 'false';
  *
@@ -1737,7 +1737,7 @@ CKEDITOR.on('scaytReady', function() {
  * to fix SCAYT issues with incorrect undo/redo behavior. If set to `false`,
  * it provides better performance on text undo/redo.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_handleUndoRedo = 'false';
  *
@@ -1750,7 +1750,7 @@ CKEDITOR.on('scaytReady', function() {
  * You may need to {@link CKEDITOR.config#scayt_disableOptionsStorage disable option storing} for this setting to be
  * effective because option storage has a higher priority.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_ignoreAllCapsWords = true;
  *
@@ -1764,7 +1764,7 @@ CKEDITOR.on('scaytReady', function() {
  * You may need to {@link CKEDITOR.config#scayt_disableOptionsStorage disable option storing} for this setting to be
  * effective because option storage has a higher priority.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_ignoreDomainNames = true;
  *
@@ -1778,7 +1778,7 @@ CKEDITOR.on('scaytReady', function() {
  * You may need to {@link CKEDITOR.config#scayt_disableOptionsStorage disable option storing} for this setting to be
  * effective because option storage has a higher priority.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_ignoreWordsWithMixedCases = true;
  *
@@ -1792,7 +1792,7 @@ CKEDITOR.on('scaytReady', function() {
  * You may need to {@link CKEDITOR.config#scayt_disableOptionsStorage disable option storing} for this setting to be
  * effective because option storage has a higher priority.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_ignoreWordsWithNumbers = true;
  *
@@ -1813,7 +1813,7 @@ CKEDITOR.on('scaytReady', function() {
  * * `'lang'` &ndash; Disables storing of the SCAYT spell check language.
  * * `'all'` &ndash; Disables storing of all SCAYT options.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Example:
  *
@@ -1832,7 +1832,7 @@ CKEDITOR.on('scaytReady', function() {
  * Specifies the names of tags that will be skipped while spell checking. This is a string containing tag names
  * separated by commas (`','`). Please note that the `'style'` tag would be added to specified tags list.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_elementsToIgnore = 'del,pre';
  *
@@ -1843,7 +1843,7 @@ CKEDITOR.on('scaytReady', function() {
 /**
  * Enables multi-language support in SCAYT. If set to `true`, turns on SCAYT multi-language support after loading the editor.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  *		config.scayt_multiLanguageMode = true;
  *
@@ -1853,10 +1853,10 @@ CKEDITOR.on('scaytReady', function() {
 
 /**
  * Defines additional styles for misspellings for specified languages. Styles will be applied only if
- * the {@link CKEDITOR.config#scayt_multiLanguageMode} option is set to `true` and the [Language](http://ckeditor.com/addon/language)
+ * the {@link CKEDITOR.config#scayt_multiLanguageMode} option is set to `true` and the [Language](https://ckeditor.com/addon/language)
  * plugin is included and loaded in the editor. By default, all misspellings will still be underlined with the red waveline.
  *
- * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](http://sdk.ckeditor.com/samples/spellchecker.html).
+ * Read more in the [documentation](#!/guide/dev_spellcheck) and see the [SDK sample](https://sdk.ckeditor.com/samples/spellchecker.html).
  *
  * Example:
  *

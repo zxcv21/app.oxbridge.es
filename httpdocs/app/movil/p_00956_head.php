@@ -57,9 +57,9 @@ include: 00986-01005
 
 ?>
 	<script>
-	/*mínimo de firmas obligatorias antes de poder dejar ventana de firmas*/
+	/*mï¿½nimo de firmas obligatorias antes de poder dejar ventana de firmas*/
 	p_00989_minimo_firmas= 5;
-	/*máximo de dias desde la clase para que aparezca ventana valoración*/
+	/*mï¿½ximo de dias desde la clase para que aparezca ventana valoraciï¿½n*/
 	p_1003_maximo_dias_valorar= 14;
 	p_0001854_mostrar_pagina_bienvenida_bool= true;
 

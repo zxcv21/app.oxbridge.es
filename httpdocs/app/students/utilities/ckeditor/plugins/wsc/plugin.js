@@ -1,5 +1,5 @@
 ﻿// Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
-// For licensing, see LICENSE.md or http://ckeditor.com/license
+// For licensing, see LICENSE.md or https://ckeditor.com/license
 
 CKEDITOR.plugins.add( 'wsc', {
 	requires: 'dialog',
@@ -85,7 +85,7 @@ CKEDITOR.plugins.add( 'wsc', {
  * It links WSC to custom dictionaries. It should be a string with dictionary IDs
  * separated by commas (`','`). Available only for the licensed version.
  *
- * Further details at [http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed](http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed)
+ * Further details at [https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed](https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:customdictionaries:licensed)
  *
  *		config.wsc_customDictionaryIds = '1,3001';
  *
@@ -105,9 +105,9 @@ CKEDITOR.plugins.add( 'wsc', {
 /**
  * The parameter sets the URL to WSC file. It is required to the licensed version of WSC application.
  *
- * Further details available at [http://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck](http://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck)
+ * Further details available at [https://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck](https://wiki.webspellchecker.net/doku.php?id=migration:hosredfreetolicensedck)
  *
- *		config.wsc_customLoaderScript = "http://my-host/spellcheck/lf/22/js/wsc_fck2plugin.js";
+ *		config.wsc_customLoaderScript = "https://my-host/spellcheck/lf/22/js/wsc_fck2plugin.js";
  *
  * @cfg {String} [wsc_customLoaderScript='']
  * @member CKEDITOR.config
@@ -121,7 +121,7 @@ CKEDITOR.plugins.add( 'wsc', {
  * `'fr_CA'`, `'de_DE'`, `'el_GR'`, `'it_IT'`,
  * `'nb_NO'`, `'pt_PT'`, `'es_ES'`, `'sv_SE'`.
  *
- * Further details available at [http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:supportedlanguages](http://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:supportedlanguages)
+ * Further details available at [https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:supportedlanguages](https://wiki.webspellchecker.net/doku.php?id=installationandconfiguration:supportedlanguages)
  *
  *		config.wsc_lang = 'de_DE';
  *

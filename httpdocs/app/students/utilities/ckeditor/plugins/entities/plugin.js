@@ -1,6 +1,6 @@
 ﻿/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -190,7 +190,7 @@ CKEDITOR.config.entities = true;
 /**
  * Whether to convert some Latin characters (Latin alphabet No. 1, ISO 8859-1)
  * to HTML entities. The list of entities can be found in the
- * [W3C HTML 4.01 Specification, section 24.2.1](http://www.w3.org/TR/html4/sgml/entities.html#h-24.2.1).
+ * [W3C HTML 4.01 Specification, section 24.2.1](https://www.w3.org/TR/html4/sgml/entities.html#h-24.2.1).
  *
  *		config.entities_latin = false;
  *
@@ -203,7 +203,7 @@ CKEDITOR.config.entities_latin = true;
  * Whether to convert some symbols, mathematical symbols, and Greek letters to
  * HTML entities. This may be more relevant for users typing text written in Greek.
  * The list of entities can be found in the
- * [W3C HTML 4.01 Specification, section 24.3.1](http://www.w3.org/TR/html4/sgml/entities.html#h-24.3.1).
+ * [W3C HTML 4.01 Specification, section 24.3.1](https://www.w3.org/TR/html4/sgml/entities.html#h-24.3.1).
  *
  *		config.entities_greek = false;
  *

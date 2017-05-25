@@ -60,7 +60,7 @@ p_01393_finalizador
 	<form
     	enctype="multipart/form-data"
         id="p_01394_firma_formulario"
-        action="http://app.oxbridge.es/app/DEV/firmar_dia_lectivo.php"
+        action="https://app.oxbridge.es/app/DEV/firmar_dia_lectivo.php"
         method="post"
         target="p_01394_firma_respuesta"
         style="display:none;"
@@ -77,8 +77,8 @@ p_01393_finalizador
     </form>
     
      <div id="p_01394_firma_botones">
-      <img src="http://app.oxbridge.es/app/images/firma_borrar.png" class="p_01394_boton_pad_firma" style="margin-right:20%;" onclick="signaturePad.clear();" data-action="clear">
-      <img src="http://app.oxbridge.es/app/images/firma_ok.png" class="p_01394_boton_pad_firma" onclick="signaturePadSave(event);" data-action="save">
+      <img src="https://app.oxbridge.es/app/images/firma_borrar.png" class="p_01394_boton_pad_firma" style="margin-right:20%;" onclick="signaturePad.clear();" data-action="clear">
+      <img src="https://app.oxbridge.es/app/images/firma_ok.png" class="p_01394_boton_pad_firma" onclick="signaturePadSave(event);" data-action="save">
    </div>
    
 </div>

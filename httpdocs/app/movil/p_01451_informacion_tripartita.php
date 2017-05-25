@@ -86,7 +86,7 @@ FILE: p_01451_informacion_tripartita.php
     right: 16px;
     height: 30px;
     width: 30px;
-    background-image: url(http://app.oxbridge.es/app/images/close.png);
+    background-image: url(https://app.oxbridge.es/app/images/close.png);
     background-repeat: no-repeat;
     background-size: 100%;
     cursor: pointer;
@@ -342,8 +342,8 @@ FILE: p_01451_informacion_tripartita.php
 <div id="p_01451_tripartita" style="display: none; height: 100%">
 	<div id="p_01451_tripartita_fondo" style="height: calc(100% - 50px)">
 		<div id="p_01451_tripartita_head" style="overflow: hidden;">
-            <img src="http://app.oxbridge.es/app/images/fundae.png" style="height:100%;"/>
-			<img src="http://app.oxbridge.es/app/images/FSE_anagrama.png" style="height:100%; margin-left: 20px"/>
+            <img src="https://app.oxbridge.es/app/images/fundae.png" style="height:100%;"/>
+			<img src="https://app.oxbridge.es/app/images/FSE_anagrama.png" style="height:100%; margin-left: 20px"/>
 		</div>
 		<div id="p_01451_tripartita_menu">
 			<div id="p_01451_menu_1" class="p_01451_menu_seccion p_01451_activo_seccion" onclick="p_01451_mostrar_seccion('p_01451_tripartita_seccion_1',this);"><? echo $TEXTOS[167][2]; ?></div>
@@ -390,7 +390,7 @@ FILE: p_01451_informacion_tripartita.php
 	                <div id="p_01451_tripartita_6_start" onclick="ocultar_mostrar('p_01451_tripartita'); p_01451_eliminar_duplicados(); mover_menu(true,'p_00987_menu_smile'); p_01171_boton_start();">
 						<div class="p_01451_start_smiles" align="center">
 							Start
-							<img src="http://app.oxbridge.es/app/images/play.png" style="height:1em;">
+							<img src="https://app.oxbridge.es/app/images/play.png" style="height:1em;">
 						</div>
 					</div>
 				</div>
@@ -448,7 +448,7 @@ function p_01451_mostrar_seccion(sec,ele)
 
 		document.getElementById("p_01451_tripartita_seccion_5_detalle").innerHTML="";
 		ajax_load_page(
-			"http://app.oxbridge.es/app/movil/FT/Manual "+paginas[personal_datos_info.nivel.toLowerCase()]+".php",
+			"https://app.oxbridge.es/app/movil/FT/Manual "+paginas[personal_datos_info.nivel.toLowerCase()]+".php",
 			"p_01451_tripartita_seccion_5_detalle",
 			"",
 			false,

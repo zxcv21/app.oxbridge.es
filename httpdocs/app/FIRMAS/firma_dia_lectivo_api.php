@@ -1,7 +1,7 @@
 <!--
 -ID Pag: p_01394
 -NAME: firma_dia_lectivo_api.php
--url: http://app.oxbridge.es/app/firmas/firma_dia_lectivo_api.php
+-url: https://app.oxbridge.es/app/firmas/firma_dia_lectivo_api.php
 -->
 <?
 /*
@@ -119,7 +119,7 @@ function p_01394_rellenar_con_0(numero,largo)
 		'		"'+
 		'	>'+
 		'	<span>'+firma.fecha+"</span> <span>"+firma.dia_lectivo_id+"</span> <span>"+firma.localizador+'</span>'+
-		'	<img src="http://app.oxbridge.es/app/images/boton_firma_pendiente.png"/>'+
+		'	<img src="https://app.oxbridge.es/app/images/boton_firma_pendiente.png"/>'+
 		'	</div>'+
 		'';
 	}
@@ -227,7 +227,7 @@ function p_01394_rellenar_con_0(numero,largo)
 	</style>
     
     <? 
-		$version_pagina_src="http://app.oxbridge.es/app/";
+		$version_pagina_src="https://app.oxbridge.es/app/";
 		include $_SERVER['DOCUMENT_ROOT']."/app/movil/firma/pad/firma.php";
 	?>
 
@@ -235,7 +235,7 @@ function p_01394_rellenar_con_0(numero,largo)
 	<form
         id="p_01394_firma_formulario"
     	enctype="multipart/form-data"
-        action="http://app.oxbridge.es/app/FIRMAS/firmar_dia_lectivo.php"
+        action="https://app.oxbridge.es/app/FIRMAS/firmar_dia_lectivo.php"
         method="POST"
         target="p_01394_firma_respuesta"
         style="display:none;"
@@ -255,10 +255,10 @@ function p_01394_rellenar_con_0(numero,largo)
     </form>
     
 	<div id="p_01394_firma_botones">
-      <img src="http://app.oxbridge.es/app/images/firma_borrar.png" class="p_01394_boton_pad_firma" style="margin-right:20%;" onclick="signaturePad.clear();" data-action="clear" />
-      <img src="http://app.oxbridge.es/app/images/firma_ok.png" class="p_01394_boton_pad_firma" onclick="signaturePadSave(event,'p_01394_firma_formulario');" data-action="save" />
+      <img src="https://app.oxbridge.es/app/images/firma_borrar.png" class="p_01394_boton_pad_firma" style="margin-right:20%;" onclick="signaturePad.clear();" data-action="clear" />
+      <img src="https://app.oxbridge.es/app/images/firma_ok.png" class="p_01394_boton_pad_firma" onclick="signaturePadSave(event,'p_01394_firma_formulario');" data-action="save" />
 	</div>
-      <img id="p_01394_img_cerrar_firma" src="http://app.oxbridge.es/app/images/close.png" class="p_01394_boton_cerrar"
+      <img id="p_01394_img_cerrar_firma" src="https://app.oxbridge.es/app/images/close.png" class="p_01394_boton_cerrar"
       	onclick="
       		document.getElementById('p_01394_lista_firmas').style.display='';
       		document.getElementById('p_01394_firma').style.display='none';

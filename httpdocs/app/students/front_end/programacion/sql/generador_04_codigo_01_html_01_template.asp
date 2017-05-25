@@ -2,15 +2,15 @@
 
 <!--#include virtual="/back_end/bbdd/bbdd_01_conexiones_11.asp"-->
 
-<!--http://sb.oxbridge.es/front_end/programacion/sql/generador_04_codigo_01_html_01_template.asp-->
+<!--https://sb.oxbridge.es/front_end/programacion/sql/generador_04_codigo_01_html_01_template.asp-->
 
 <html>
 
 <HEAD>
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta https-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>0010213 codigo sql</title>
-	<link rel="stylesheet" type="text/css" href="http://sb.oxbridge.es/front_end/programacion/sql/generador_01_menu_02_css_00_global..css">
+	<link rel="stylesheet" type="text/css" href="https://sb.oxbridge.es/front_end/programacion/sql/generador_01_menu_02_css_00_global..css">
 	<%Response.addHeader "pragma", "no-cache"
 	Response.CacheControl = "Private"
 	' Selecciona una de las tres opciones siguientes
@@ -192,7 +192,7 @@
                     tdstyle=tdstyle & """"%>
                     <td <%=tdstyle%>>
                         <font class="FUENTEGRANDECOLORINCORRECTOBOLD">
-                           	Has de seleccionar campos del cuadro de la izquierda o pulsar el botón "TODOS LOS CAMPOS"
+                           	Has de seleccionar campos del cuadro de la izquierda o pulsar el botï¿½n "TODOS LOS CAMPOS"
                         </font>
                     </td>
                 </TR>

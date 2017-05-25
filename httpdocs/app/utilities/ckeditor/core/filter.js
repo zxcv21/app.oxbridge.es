@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 ( function() {
@@ -2207,9 +2207,9 @@
  *					var editor = evt.editor;
  *
  *					editor.filter.check( 'h1' ); // -> false
- *					editor.setData( '<h1><i>Foo</i></h1><p class="left"><span>Bar</span> <a href="http://foo.bar">foo</a></p>' );
+ *					editor.setData( '<h1><i>Foo</i></h1><p class="left"><span>Bar</span> <a href="https://foo.bar">foo</a></p>' );
  *					// Editor contents will be:
- *					'<p><i>Foo</i></p><p>Bar <a href="http://foo.bar">foo</a></p>'
+ *					'<p><i>Foo</i></p><p>Bar <a href="https://foo.bar">foo</a></p>'
  *				}
  *			}
  *		} );
@@ -2219,7 +2219,7 @@
  * editor features. To do that, use the {@link #disallowedContent} option.
  *
  * Read more in the [documentation](#!/guide/dev_acf)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/acf.html).
  *
  * @since 4.1
  * @cfg {CKEDITOR.filter.allowedContentRules/Boolean} [allowedContent=null]
@@ -2242,7 +2242,7 @@
  *
  *					editor.filter.check( 'h1' ); // -> true (thanks to Format combo)
  *					editor.filter.check( 'b' ); // -> true (thanks to extraAllowedContent)
- *					editor.setData( '<h1><i>Foo</i></h1><p class="left"><b>Bar</b> <a href="http://foo.bar">foo</a></p>' );
+ *					editor.setData( '<h1><i>Foo</i></h1><p class="left"><b>Bar</b> <a href="https://foo.bar">foo</a></p>' );
  *					// Editor contents will be:
  *					'<h1><i>Foo</i></h1><p><b>Bar</b> foo</p>'
  *				}
@@ -2250,7 +2250,7 @@
  *		} );
  *
  * Read more in the [documentation](#!/guide/dev_acf-section-automatic-mode-and-allow-additional-tags%2Fproperties)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/acf.html).
  * See also {@link CKEDITOR.config#allowedContent} for more details.
  *
  * @since 4.1
@@ -2263,7 +2263,7 @@
  * Read more in the [Disallowed Content guide](#!/guide/dev_disallowed_content).
  *
  * Read more in the [documentation](#!/guide/dev_acf-section-automatic-mode-but-disallow-certain-tags%2Fproperties)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/acf.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/acf.html).
  * See also {@link CKEDITOR.config#allowedContent} and {@link CKEDITOR.config#extraAllowedContent}.
  *
  * @since 4.4

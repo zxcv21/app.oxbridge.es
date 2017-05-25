@@ -17,10 +17,10 @@
 
 	//REDIRECCION SEGUN DISPOSITIVO
 	if(NAV=="movil"){
-		document.location = 'http://app.oxbridge.es/app/movil';
+		document.location = 'https://app.oxbridge.es/app/movil';
 	}else{
-		document.location = 'http://app.oxbridge.es/oxbridge-english-acceso/';
-		//document.location = 'http://app.oxbridge.es/';
+		document.location = 'https://app.oxbridge.es/oxbridge-english-acceso/';
+		//document.location = 'https://app.oxbridge.es/';
 	}
 
 //////////////////////////DEFINICIONES

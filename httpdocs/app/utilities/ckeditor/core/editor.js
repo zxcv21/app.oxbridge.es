@@ -1,6 +1,6 @@
 /**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * For licensing, see LICENSE.md or https://ckeditor.com/license
  */
 
 /**
@@ -367,7 +367,7 @@
 			false;
 
 		/**
-		 * The [tabbing navigation](http://en.wikipedia.org/wiki/Tabbing_navigation) order determined for this editor instance.
+		 * The [tabbing navigation](https://en.wikipedia.org/wiki/Tabbing_navigation) order determined for this editor instance.
 		 * This can be set by the <code>{@link CKEDITOR.config#tabIndex}</code>
 		 * setting or taken from the `tabindex` attribute of the
 		 * {@link #element} associated with the editor.
@@ -519,7 +519,7 @@
 			 * An object that contains references to all plugins used by this
 			 * editor instance.
 			 *
-			 *		alert( editor.plugins.dialog.path ); // e.g. 'http://example.com/ckeditor/plugins/dialog/'
+			 *		alert( editor.plugins.dialog.path ); // e.g. 'https://example.com/ckeditor/plugins/dialog/'
 			 *
 			 *		// Check if a plugin is available.
 			 *		if ( editor.plugins.image ) {
@@ -1416,7 +1416,7 @@
 		/**
 		 * Shows a notification to the user.
 		 *
-		 * If the [Notification](http://ckeditor.com/addons/notification) plugin is not enabled, this function shows
+		 * If the [Notification](https://ckeditor.com/addons/notification) plugin is not enabled, this function shows
 		 * a normal alert with the given `message`. The `type` and `progressOrDuration` parameters are supported
 		 * only by the Notification plugin.
 		 *
@@ -1493,7 +1493,7 @@ CKEDITOR.ELEMENT_MODE_INLINE = 3;
  * if the linked `<textarea>` element has the `disabled` attribute.
  *
  * Read more in the [documentation](#!/guide/dev_readonly)
- * and see the [SDK sample](http://sdk.ckeditor.com/samples/readonly.html).
+ * and see the [SDK sample](https://sdk.ckeditor.com/samples/readonly.html).
  *
  *		config.readOnly = true;
  *

@@ -100,7 +100,7 @@ Pag ID: p_01300
    
    <div id="p_01300_login" aling="center" class="p_01300_login" >
    	<form
-			action="http://s.oxbridge.es/ox/estructura_web/codigo/sesiones/sesion_03_pedir_contrasenya_01_asp_01_select_01_comprobar.asp"
+			action="https://s.oxbridge.es/ox/estructura_web/codigo/sesiones/sesion_03_pedir_contrasenya_01_asp_01_select_01_comprobar.asp"
 			target="p_00995_iframe_reloguin"
 			method="post"
          class="p_01300_login_formulario"
@@ -132,7 +132,7 @@ Pag ID: p_01300
    
    <div id="p_01300_login_recover" class="p_01300_login" style="display:none">
    	<form
-			action="http://s.oxbridge.es/ox/principal/inc_verificar_usuario_envio_contrasenya_previo_TEFL.asp"
+			action="https://s.oxbridge.es/ox/principal/inc_verificar_usuario_envio_contrasenya_previo_TEFL.asp"
 			target="p_00995_iframe_reloguin_recover"
 			method="post"
          class="p_01300_login_formulario"

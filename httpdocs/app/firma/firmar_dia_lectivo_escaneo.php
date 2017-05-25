@@ -44,7 +44,7 @@ foreach($_FILES as $clave=>$p_01396_dia_firmado)
 			{
 				echo "El fichero de:".$_POST['p_01396_fecha_'.$id]." ".$clave." es válido y se subió con éxito.\n";
 
-				$p_01396_php_url="http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_02_asp_02_modificar_firma_alumno_foto_del_profesor.asp";
+				$p_01396_php_url="https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_02_asp_02_modificar_firma_alumno_foto_del_profesor.asp";
 				$p_01396_php_url.="?p_0001436_get_dia_lectivo_id=".$_POST['p_01396_dia_lectivo_id_'.$id];
 				$p_01396_php_url.="&p_0001436_get_alumno_id=".$_POST['p_01396_alumno_id_'.$id];
 				file_get_contents($p_01396_php_url);

@@ -23,7 +23,7 @@
 	if((navigator.userAgent.toLowerCase()+" "+navigator.platform.toLowerCase()).search(/mobi|mobile|mini|iphone|ipod|ipad|android|blackberry/) > -1){
 		NAV = 'movil';
 		if(navigator.platform.toLowerCase().search(/window/) > -1){
-			window.location='http://s.oxbridge.es/ox/alumno/menu 01.asp?SESIONID=<? echo $sesion_id_vieja.'&UID='.$alumno_id; ?>';
+			window.location='https://s.oxbridge.es/ox/alumno/menu 01.asp?SESIONID=<? echo $sesion_id_vieja.'&UID='.$alumno_id; ?>';
 		}
 	}else{
 		if(navigator.userAgent.search("OPR") != -1) NAV = "Opera";
@@ -36,7 +36,7 @@
 
 	//REDIRECCION SEGUN DISPOSITIVO
 	/*if(NAV!="movil"){
-		document.location = 'http://app.oxbridge.es/';
+		document.location = 'https://app.oxbridge.es/';
 	}*/
 
 //FORMULARIO CON COMPRABACION DE SES
@@ -406,7 +406,7 @@ function p_00989_escuchar_texto(txt) {
 	txt  = txt.replace(reg,'+');
 
 	//creo la url
-	var url = "http://translate.google.com/translate_tts?tl=en&q=" + txt;
+	var url = "https://translate.google.com/translate_tts?tl=en&q=" + txt;
 	if(document.getElementById("iframe_escuchar_palabra")){
 		document.getElementById("iframe_escuchar_palabra").src=url;
 	}else{
@@ -522,16 +522,16 @@ function p_00989_error_img(url)
 window.initMap=function(){}
 function p_00989_get_json(url,funcion)
 {
-	var xmlhttp = new XMLHttpRequest();
+	var xmlhttps = new XMLhttpsRequest();
 
-	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			var json = JSON.parse(xmlhttp.responseText);
+	xmlhttps.onreadystatechange = function() {
+		if (xmlhttps.readyState == 4 && xmlhttps.status == 200) {
+			var json = JSON.parse(xmlhttps.responseText);
 			funcion(json);
 		}
 	};
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
+	xmlhttps.open("GET", url, true);
+	xmlhttps.send();
 }
 
 //evitar que logiin se encoja con el teclado de movil
@@ -604,11 +604,11 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-/*	for(i in dia_lectivo){
+	for(i in dia_lectivo){
 		dia_lectivo[i].firmado="0";
 		dia_lectivo[i].incidencia="0";
 		dia_lectivo[i].asistencia="1";
-	}*/
+	}
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -858,4 +858,4 @@ function testeo(res){
   return false;
 }*/
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR0VydWbzvb4GgecypsSlVm_cQVf-If3w&callback=initMap"></script>
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR0VydWbzvb4GgecypsSlVm_cQVf-If3w&callback=initMap"></script>-->
