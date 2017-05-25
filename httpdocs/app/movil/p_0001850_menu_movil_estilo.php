@@ -142,7 +142,7 @@ function p_0001850_php_f_02_mover_menu(p_0001850_php_f_02_reves_variable,p_00018
 									"	id='p_00987_boton_tripartita'"+
 									"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 									"	style='height:100%;float: right;margin-right: 10px;'"+
-									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';"'+
+									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 									">";
 								}
 
@@ -160,7 +160,7 @@ function p_0001850_php_f_02_mover_menu(p_0001850_php_f_02_reves_variable,p_00018
 								"	id='p_00987_boton_tripartita'"+
 								"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 								"	style='height:100%;float: right;margin-right: 10px;'"+
-								'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';"'+
+								'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 								">";
 							}
 
@@ -211,7 +211,7 @@ function p_0001850_php_f_02_mover_menu(p_0001850_php_f_02_reves_variable,p_00018
 									"	id='p_00987_boton_tripartita_2'"+
 									"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 									"	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer'"+
-									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';"'+
+									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 									">";
 							}
 

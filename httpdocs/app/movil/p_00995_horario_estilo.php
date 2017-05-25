@@ -288,6 +288,7 @@ Pag. ID: p_00995
 		position: relative;
 		width: 100%;
 		box-sizing: border-box;
+		/*-webkit-overflow-scrolling: touch;*/
 		}
 		#p_00958_horario_contenedor::-webkit-scrollbar {
 			width: 10px;
@@ -818,8 +819,9 @@ Pag. ID: p_00995
 @media screen and (max-width: 767px) {
 	.p_00958_horario_menu_boton{
 		height: 100%;
-		margin-top: 2px;
-		margin-right: 4px;
+		margin: 0;
+		box-sizing: border-box;
+		padding: 3px;
 	}
 	#p_00958_horario_contenedor {
 		/*overflow-y: visible;*/

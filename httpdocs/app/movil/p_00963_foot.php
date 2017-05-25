@@ -37,4 +37,23 @@
 		document.getElementById("contenedor_menu").style.display="";
 		document.getElementById("contenedor").style.display="";
 	}
+
+	function p_00963_removeIOSRubberEffect( p_00963_element ) {
+    p_00963_element.addEventListener( "touchstart", function () {
+
+        var top = p_00963_element.scrollTop, totalScroll = p_00963_element.scrollHeight, currentScroll = top + p_00963_element.offsetHeight;
+
+        if ( top === 0 ) {
+            p_00963_element.scrollTop = 1;
+        } else if ( currentScroll === totalScroll ) {
+            p_00963_element.scrollTop = top - 1;
+        }
+
+    } );
+	}
+
+	document.querySelectorAll( ".avoid_ios_rubber_band").forEach(function(p_00963_val){
+		p_00963_removeIOSRubberEffect(p_00963_val);
+	});
+
 </script>

@@ -187,13 +187,16 @@ Pag. ID: 00992
 		#p_00960_clases_head_calendario{
 			width: 100%;
 		}
+		#p_00960_clases_head_calendario_mes{
+			font-size: 18px;
+		}
 		#p_00992_cerrar_actividad{
 			display: block;
 			position:absolute;
 			height: 30px;
 			width: 30px;
 			top: 2px;
-			right: 0px;
+			right: 2px;
 			background-image:url(<? echo ver_url("images/close.png","src"); ?>);
 			background-repeat:no-repeat;
 			background-size:100%;
@@ -287,7 +290,7 @@ Pag. ID: 00992
 					if(dia_lectivo[j].lectivo=="1"){
 					if(dia_lectivo[j].historica=="0"||dia_lectivo[j].asistencia=="1"&&dia_lectivo[j].historica=="1"){
 						elem.className = "p_00960_clases_head_calendario_contenedor_lectivo";
-						elem.setAttribute("onClick",'clases_fecha('+dia_compara+","+mes_tot+","+ano_tot+")");
+						elem.setAttribute("onClick",'clases_fecha('+dia_compara+","+mes_tot+","+ano_tot+");p_00987_mostrar_menu_inferior();");
 					}}
 				}
 			}
@@ -303,7 +306,7 @@ Pag. ID: 00992
 	function actividades(ac_dia, ac_mes, ac_ano, ac_hor, ac_min){
 
 		//document.getElementById("p_00960_clases_head_horario_imprimir").innerHTML = ac_hor+":"+ac_min;
-		document.getElementById("p_00960_clases_contenedor_actividad").style.display = "inline";
+		document.getElementById("p_00960_clases_contenedor_actividad_overall").style.display = "inline";
 		html_actividades = "";
 		html_actividades_cabeceras="";
 		html_attachmen = "";
@@ -529,6 +532,7 @@ Pag. ID: 00992
 		calendario = document.getElementById("p_00960_clases_head_calendario");
 		ocultar_mostrar("p_00960_clases_head_calendario_out");
  		ocultar_mostrar("p_00960_clases_head_calendario");
+		p_00987_esconder_menu_inferior();
 	}
 
 /////SET SIGUIENTE CLASE + llamada horario + imprimir calendario
@@ -804,7 +808,14 @@ var BUFER_CARGA_ACTIVIDADES=[];
 
 function p_00992_cerrar_ventana_actividades(){
 	document.getElementById('p_00960_clases_contenedor_actividad_contenido').innerHTML="";
-	document.getElementById('p_00960_clases_contenedor_actividad').style.display="none";
+	document.getElementById('p_00960_clases_contenedor_actividad_overall').style.display="none";
+	if(window.innerWidth<p_00956_ancho_movil){
+		document.getElementById('head_oxbridge').style.display="";
+		document.getElementById('contenedor_menu').style.display="";
+		document.getElementById('p_00960_clases_contenedor_actividad_overall').style.height="";
+		document.getElementById('clases').style.height = "" ;
+	}
+
 }
 
 </script>

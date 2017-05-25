@@ -61,14 +61,7 @@ function signaturePadSave(event){
     document.getElementById("firma").setAttribute("target","firma_res");
     document.getElementById("firma_id").setAttribute("value",dia_lectivo[p_00989_clase_para_firma].fecha.split("/")[0]+"_"+dia_lectivo[p_00989_clase_para_firma].fecha.split("/")[1]+"_"+dia_lectivo[p_00989_clase_para_firma].fecha.split("/")[2]+"_"+rellenarcon0(p_00989_clase_para_firma)+"_"+rellenarcon0(alumno_id));
     document.getElementById("directirio_id").setAttribute("value",dia_lectivo[p_00989_clase_para_firma].fecha.split("/")[0]+"_"+dia_lectivo[p_00989_clase_para_firma].fecha.split("/")[1]);
-	if( version_pagina == "_version_desarrollo" )
-	{
-	    var js_url="app"+version_pagina+"/p_01177_calse_iframe_datos.php?consulta=firma&alumno_id="+alumno_id+"&dia_lectivo="+p_00989_clase_para_firma;
-	}
-	else
-	{
-	    var js_url=version_pagina+"p_01177_calse_iframe_datos.php?consulta=firma&alumno_id="+alumno_id+"&dia_lectivo="+p_00989_clase_para_firma;
-	};
+    var js_url=version_pagina+"p_01177_calse_iframe_datos.php?consulta=firma&alumno_id="+alumno_id+"&dia_lectivo="+p_00989_clase_para_firma;
     js_url=js_url + "&p_0001326_get_sesion_id="+document.getElementById('p_0001317_input_sesion_id').value;
     js_url=js_url + "&p_0001326_get_sesion_uid="+document.getElementById('p_0001317_input_usuario_id').value;
     js_url=js_url + "&p_0001326_get_area_id="+document.getElementById('p_0001317_input_area_id').value;

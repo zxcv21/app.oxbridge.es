@@ -246,6 +246,15 @@ if(!isset($_GET['idioma'])){
 
    <div id="p_00995_tutorial" style="display:none;">
    </div>
+	 <div id="p_00955_div_iframe_videoconf">
+		 <div id="p_00955_falsa_barra_menu_iframe_videoconf">
+			 <div id="p_00955_div_boton_salir_iframe_videoconf">
+			 	<img id="p_00955_img_boton_salir_iframe_videoconf" src="<? echo ver_url("images/log_out.png","src"); ?>" onclick="document.getElementById('p_00955_div_iframe_videoconf').style.display='none';document.getElementById('p_00955_iframe_videoconf').src=''">
+			 </div>
+		 </div>
+		 <iframe id="p_00955_iframe_videoconf">
+		 </iframe>
+	 </div>
 
 	<div id="contenedor" style="display:none;">
 			<div id="p_00955_testeo"></div>
@@ -361,8 +370,6 @@ if(!isset($_GET['idioma'])){
 	<div style="position:fixed; margin-top:200px; width:100%; margin-left: 43%; display:none">
     <img style="width:130px;" src="<? echo ver_url("images/loading.gif","src")?>">
     </div>
-
 	</body>
 	<? include ver_url("movil/p_00963_foot.php","");?>
-
 </html>

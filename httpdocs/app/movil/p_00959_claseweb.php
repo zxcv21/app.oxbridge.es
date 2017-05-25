@@ -163,7 +163,10 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	{
 
 		var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_sin_videconferencia/videoconf_5_sin_video/pag_alumno__p_0001841_php.php?p_0000100_dia_lectivo_id="+p_00959_js_f_02_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id+"&get__parametro_videoconferencia_id__p_0000100=produccion";
-		window.open( p_00959_js_f_02_url, "_blank" );
+		//window.open( p_00959_js_f_02_url, "_blank" );
+		document.getElementById("p_00955_div_iframe_videoconf").style.display="block";
+		document.getElementById("p_00955_iframe_videoconf").src=p_00959_js_f_02_url;
+
 
 	}
 
@@ -171,7 +174,10 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	{
 
 		var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_sin_videconferencia/videoconf_5_sin_video/pag_alumno__p_0001841_php.php?p_0000100_dia_lectivo_id="+p_00959_js_f_03_dia_lectivo_id+"&p_0000100_alumno_id="+alumno_id+"&get__parametro_videoconferencia_id__p_0000100=produccion";
-		window.open( p_00959_js_f_02_url, "_blank" );
+		//window.open( p_00959_js_f_02_url, "_blank" );
+		document.getElementById("p_00955_div_iframe_videoconf").style.display="block";
+		document.getElementById("p_00955_iframe_videoconf").src=p_00959_js_f_02_url;
+
 
 	}
 
@@ -179,7 +185,9 @@ function p_00959_js_f_01_pintar_botones_clases_a_distancia()
 	{
 
 		var p_00959_js_f_02_url = "https://s.oxbridge.es/ox/estructura_web/codigo/capsulas/clase_sin_videconferencia/videoconf_5_sin_video/pag_alumno__p_0001841_php.php";
-		window.open( p_00959_js_f_02_url, "_blank" );
+		//window.open( p_00959_js_f_02_url, "_blank" );
+		document.getElementById("p_00955_div_iframe_videoconf").style.display="block";
+		document.getElementById("p_00955_iframe_videoconf").src=p_00959_js_f_02_url;
 
 	}
 

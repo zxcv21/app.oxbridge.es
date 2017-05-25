@@ -97,8 +97,24 @@ FILE: p_01451_informacion_tripartita.php
     border-radius: 20px 20px 0 0;
     background: #fff;
     padding:3px 20px 10px 20px;
-	z-index:2;
+	  z-index:2;
+    width: 100%;
+    box-sizing: border-box;
 }
+#p_01451_tripartita_head img:first-child{
+    height: initial !important;
+    width: 58%;
+    max-width: 300px;
+    max-height: 100%;
+}
+#p_01451_tripartita_head img:last-child{
+  height: initial !important;
+  margin-left: 20px;
+  width: 30%;
+  max-width: 200px;
+  max-height: 100%;
+}
+
 #p_01451_tripartita_6_progreso
 {
     height: 200px;
@@ -173,7 +189,7 @@ FILE: p_01451_informacion_tripartita.php
 
 #p_01451_tripartita_seccion_3_seccion_1
 {
-  /*  border-top: #ddf solid 20px;*/
+    border-top: #ddf solid 20px;
 }
 #p_01451_tripartita_seccion_3_seccion_2
 {
@@ -239,13 +255,94 @@ FILE: p_01451_informacion_tripartita.php
     padding: 6px;
     z-index: 4;
 }
+@media screen and (max-width: 767px) {
+  #p_01451_tripartita_contenedor{
+    overflow: visible !important;
 
+  }
+  .p_01451_tripartita_seccion_3_seccion_detalle .p_01172_contenido_seccion{
+
+  }
+  #p_01451_tripartita_seccion_3_menu{
+    height: initial !important;
+  }
+  .p_01451_tripartita_seccion_3_menu_titulo{
+    width: 23vw;
+    height: 23vw;
+    margin: 0;
+    max-width: 115px;
+    max-height: 115px;
+  }
+  .p_01451_tripartita_seccion_3_menu_titulo .p_01309_centro{
+      font-size: 20px;
+      padding-top: 7%;
+  }
+  .p_01451_tripartita_seccion_3_menu_titulo .p_01172_torta_titulo{
+    font-size: 15px;
+    top: 55%;
+  }
+  #p_01451_tripartita_menu{
+    height: initial;
+    min-width: 0;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  #p_01451_tripartita_menu .p_01451_menu_seccion{
+    font-size: 12px;
+  }
+/*  #p_01451_tripartita_contenedor #p_01451_tripartita_seccion_3_seccion_1{
+    border-top: #ddf solid 2px;
+  }
+  #p_01451_tripartita_contenedor  #p_01451_tripartita_seccion_3_seccion_2{
+    border-top: #fdd solid 2px;
+  }
+  #p_01451_tripartita_contenedor #p_01451_tripartita_seccion_3_seccion_3{
+    border-top: #dfd solid 2px;
+  }*/
+  #p_01451_tripartita_menu .p_01451_activo_seccion{
+    border-bottom: 2px solid #2DCEE4;
+    color: #2DCEE4;
+  }
+  #p_01451_tripartita_menu .p_01451_menu_seccion{
+    float: none;
+    display: inline-block;
+    height: initial;
+    min-width: 0;
+    margin: 0 2px;
+  }
+  .p_01451_tripartita_seccion_3_seccion_detalle{
+    padding: 0;
+    webkit-overflow-scrolling: touch;
+  }
+  #p_01451_tripartita_seccion_3_seccion{
+    height: 100% !important;
+
+  }
+  #p_01451_tripartita_6_progreso{
+    margin-bottom: 53px;
+  }
+  #p_01451_tripartita_6_leyenda{
+    position: absolute;
+    bottom: -63px;
+    left: 0;
+  }
+  .p_01451_marcapaginas{
+    position: absolute;
+    left: 0;
+  }
+}
+@media screen and (max-width: 378px) {
+  #p_01451_tripartita_menu .p_01451_menu_seccion{
+    font-size: 10px;
+  }
+}
 </style>
 
 <div id="p_01451_tripartita" style="display: none; height: 100%">
 	<div id="p_01451_tripartita_fondo" style="height: calc(100% - 50px)">
-		<div id="p_01451_tripartita_head" style="overflow: hidden; width: 800px ">
-            <img src="http://app.oxbridge.es/app/images/tripartita_anagrama.jpg" style="height:100%;"/>
+		<div id="p_01451_tripartita_head" style="overflow: hidden;">
+            <img src="http://app.oxbridge.es/app/images/fundae.png" style="height:100%;"/>
 			<img src="http://app.oxbridge.es/app/images/FSE_anagrama.png" style="height:100%; margin-left: 20px"/>
 		</div>
 		<div id="p_01451_tripartita_menu">
@@ -399,5 +496,15 @@ function p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplica
     '</div>'+
   '');
   document.getElementById("p_00962_grafico_progreso_vocabulario").setAttribute("style","border-radius: 100%; overflow: hidden;");
+
+  //volver a poner el contenido
+  document.getElementById("p_01451_tripartita_seccion_3_seccion_1").innerHTML=document.getElementById("p_00962_grafico_progreso_detalle_vocabulario").innerHTML;
+  document.getElementById("p_01451_tripartita_seccion_3_seccion_2").innerHTML=document.getElementById("p_00962_grafico_progreso_detalle_estructura").innerHTML;
+  document.getElementById("p_01451_tripartita_seccion_3_seccion_3").innerHTML=document.getElementById("p_00962_grafico_progreso_detalle_trinity").innerHTML;
+
+  document.getElementById('p_01451_tripartita_seccion_3_menu_1').innerHTML=document.getElementById('p_00962_grafico_progreso_vocabulario').innerHTML;
+  document.getElementById('p_01451_tripartita_seccion_3_menu_2').innerHTML=document.getElementById('p_00962_grafico_progreso_estructura').innerHTML;
+  document.getElementById('p_01451_tripartita_seccion_3_menu_3').innerHTML=document.getElementById('p_00962_grafico_progreso_tnt').innerHTML;
+
 }
 </script>

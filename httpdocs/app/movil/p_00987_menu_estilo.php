@@ -143,12 +143,8 @@ foreach ($MENU as $i){
 		height:100%;
 		/*width: <?// echo (100-($TOTAL*0.14))/$TOTAL; ?>%;*/
    	border-radius: 19% 19% 0 0;
-		background-repeat:no-repeat;
-		background-position: center;
-		background-size:50%;
 		z-index:1000;
 		border: none;
-		border-right:solid 1px #fff;
 		position: relative;
 		-webkit-transition: none;
 		transition: none;
@@ -177,10 +173,6 @@ foreach ($MENU as $i){
 		float:left;
 		height:8vw;
 		/*width: 60px;*/
-		background-repeat:no-repeat;
-		background-position: center;
-		background-size:50%;
-		z-index:1000;
 		border-right:solid 1px #fff;
 		border-radius: 10px;
 		border: 3px solid #fff;
@@ -209,11 +201,15 @@ window.addEventListener("load",function() {
 });
 
 //poner menú adecuado
-//safari tiene problemas con resize
-if(window.innerWidth<p_00956_ancho_movil)
+//safari tiene problemas con resize y uso orientationchange para móviles
+if(window.innerWidth<p_00956_ancho_movil){
+	//window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
 	window.addEventListener("orientationchange", p_00987_adaptar_menu_al_ancho);
-else
+}
+else{
+	//window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
 	window.addEventListener("resize", p_00987_adaptar_menu_al_ancho);
+}
 
 //p_00987_adaptar_menu_al_ancho();
 if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
@@ -230,8 +226,13 @@ function p_00987_adaptar_menu_al_ancho(){
 	if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
 		p_00987_menu_movil= true;
 		ALTO = "100%";
-		ANCHO = window.innerWidth/6.05;//(100-(TOTAL*0.14))/TOTAL+"%";
+		ANCHO = window.innerWidth/6.05;
+		//ANCHO = "calc(100% / 6)";
+		ANCHO_CSS="calc(100% / 6)";
 		SEPARACION = 10;
+		//coloca en portrait el menu en el body para que no desaparezca en ios al hacer scroll con la página arriba
+		if((document.getElementById('head_oxbridge').contains( document.getElementById('contenedor_menu')))&&!p_00987_menu_inferior_escondido)
+			document.getElementById('p_00955_body').appendChild(document.getElementById('contenedor_menu'));
 	}
 	else{
 		p_00987_menu_movil= false;
@@ -239,35 +240,33 @@ function p_00987_adaptar_menu_al_ancho(){
 			//ALTO = 60;
 			ALTO = "8vw";
 			ANCHO = 60;
+			ANCHO_CSS = "60px";
 			//SEPARACION = 4;
 		}
 		else{
 			ALTO = "65px";
 			ANCHO = 65;
+			ANCHO_CSS = "65px";
 		}
 		SEPARACION = 8;
+
+		//deshace colocar en portrait el menu en el body para que no desaparezca en ios al hacer scroll con la página arriba
+		if(!document.getElementById('head_oxbridge').contains( document.getElementById('contenedor_menu')))
+			document.getElementById('head_oxbridge').insertBefore(document.getElementById('contenedor_menu'),document.getElementById('head_oxbridge').children[1]);
+
 	}
 	var p_00987_elementos_del_menu= document.querySelectorAll(".p_00957_elemento_del_menu");
 
-	if(window.innerWidth>=p_00956_ancho_movil){
-		if((p_00987_elementos_del_menu.length)&&(!p_00987_mouseover_on)){
-			for(var i=0; i<p_00987_elementos_del_menu.length; i++)
-				p_00987_elementos_del_menu[i].addEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
-			document.getElementById("p_00987_menu_out").addEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
-			p_00987_mouseover_on= true;
-		}
-	}
-	else{
-		if((p_00987_elementos_del_menu.length)&&(p_00987_mouseover_on)){
-			for(var i=0; i<p_00987_elementos_del_menu.length; i++)
-				p_00987_elementos_del_menu[i].removeEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
-			document.getElementById("p_00987_menu_out").removeEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
-			p_00987_mouseover_on= false;
-		}
+	//para dispositivos no tactiles -> hover
+	if((p_00987_elementos_del_menu.length)&&(typeof this.p_00987_eventos_hover=='undefined')){
+		for(var i=0; i<p_00987_elementos_del_menu.length; i++)
+			p_00987_elementos_del_menu[i].addEventListener("mouseover", p_00987_funcion_mouseover_elemento_menu);
+		document.getElementById("p_00987_menu_out").addEventListener("mouseover", p_00987_funcion_mouseover_menu_out_menu);
+		this.p_00987_eventos_hover= true;
 	}
 	for(var i=0; i<p_00987_elementos_del_menu.length; i++){
 		p_00987_elementos_del_menu[i].style.height= ALTO;
-		p_00987_elementos_del_menu[i].style.width= ANCHO+"px";
+		p_00987_elementos_del_menu[i].style.width= ANCHO_CSS;
 	}
 
 	if(document.getElementById(menu[0][2])){
@@ -277,15 +276,23 @@ function p_00987_adaptar_menu_al_ancho(){
 	}
 //}
 	set_menu();
-	mover_menu(true,0);
+	//mover_menu(true,0);
+	//p_00987_recolocar_menu(true,0);
+	if(typeof estoy!= 'undefined')
+		p_00987_recolocar_menu(true,"p_00987_menu_"+estoy);
+	else
+		p_00987_recolocar_menu(true,0);
 }
 
-function p_00987_funcion_mouseover_elemento_menu(){
-	mover_menu(false,0);
+function p_00987_funcion_mouseover_elemento_menu(p_00987_event){
+	if (!('ontouchstart' in window))
+		mover_menu(false,0);
 }
 
-function p_00987_funcion_mouseover_menu_out_menu(){
-	mover_menu(true,0);
+function p_00987_funcion_mouseover_menu_out_menu(p_00987_event){
+	//if(typeof p_00987_event.changedTouches == 'undefined')
+		if (!('ontouchstart' in window))
+			mover_menu(true,0);
 }
 
 ////LLAMADA AL MOVIMIENTO
@@ -294,76 +301,21 @@ set_menu();
 p_1003_mostrar_reservas= false;
 
 function mover_menu(reves,clic,true_click){
-			//comprueba si es click real y no llamada para cambiar pantalla
-			if((typeof true_click!='undefined')&&(true_click)){
-				//si hay click con el menú plegado, simula un hover
-				if((document.getElementById("p_00987_menu_out").style.display=="none")&&(!p_00987_menu_movil)){
-					reves= false;
-					clic= 0;
-				}
+		//comprueba si es click real y no llamada para cambiar pantalla
+		if((typeof true_click!='undefined')&&(true_click)){
+			//si hay click con el menú plegado, simula un hover
+			if((document.getElementById("p_00987_menu_out").style.display=="none")&&(!p_00987_menu_movil)){
+				reves= false;
+				clic= 0;
 			}
+		}
 
-			if(clic!=0)MOVIENDO_MENU=1;
-			//restablecer menu si se clica
-			if(clic!=0)
-				set_menu();
-			//
-
-				for(i in menu){
-					if(menu[i][2]==String(clic)){
-						//contenedor elemento en el que estoy
-						if(typeof estoy != 'undefined')
-							document.getElementById(estoy).style.display="none";
-
-						if(!p_00987_menu_movil){
-						//cambiar posiciones del menu
-							menu[i][0]=menu[menu.length-1][0];
-							menu[i][3]=200;
-							menu[i][4]=10;
-
-							for(j=parseInt(i)+parseInt(1);j<menu.length;j++){
-								menu[j][0]=(j-1)*SEPARACION;
-							}
-						}
-						else{
-							document.getElementById(menu[i][2]).style.height="125%";
-							document.getElementById(menu[i][2]).style.margin="-2% 0 0 0";
-						}
-						estoy=menu[i][2].substr(13,menu[i][2].length);
-						document.getElementById(estoy).style.display="block";
-					}
-					else{
-							if(p_00987_menu_movil){
-								document.getElementById(menu[i][2]).style.height="100%";
-								document.getElementById(menu[i][2]).style.top="0";
-								document.getElementById(menu[i][2]).style.margin="0 0 0 0";
-								//document.getElementById(menu[i][2].slice(13)).style.display="none";
-								document.getElementById(menu[i][2]).style.left=0+"px";
-							}
-					}
-					if(!p_00987_menu_movil){
-						//set MENU[][0:pos_cerrado;1:pos_abierto;2:id;3:z-index;4:top]
-						if(reves){
-							document.getElementById("p_00987_menu_out").style.display = "none";
-							document.getElementById(menu[i][2]).style.left=menu[i][0]+"px";
-							document.getElementById(menu[i][2]).style.zIndex=menu[i][3];
-							document.getElementById(menu[i][2]).style.top="0px";
-						}else{
-							document.getElementById("p_00987_menu_out").style.display = "inline";
-							document.getElementById(menu[i][2]).style.left=menu[i][1]+"px";
-							document.getElementById(menu[i][2]).style.zIndex=menu[i][3];
-							//if(clic!= "p_00987_menu_mail")
-								document.getElementById(menu[i][2]).style.top=menu[i][4]+"px";
-						}
-					}
-/*					else{
-						document.getElementById(menu[i][2]).style.height="100%";
-						document.getElementById(menu[i][2]).style.margin="0 0 0 0";
-						//document.getElementById(menu[i][2].slice(13)).style.display="none";
-						document.getElementById(menu[i][2]).style.left=0+"px";
-					}*/
-				}
-
+		if(clic!=0)MOVIENDO_MENU=1;
+		//restablecer menu si se clica
+		if(clic!=0)
+			set_menu();
+		//
+		p_00987_recolocar_menu(reves,clic);
 		//funciones de inicio de seccion
 		if(clic!=0){
 			ESTOY=clic;
@@ -399,7 +351,7 @@ function mover_menu(reves,clic,true_click){
 									"	id='p_00987_boton_tripartita'"+
 									"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 									"	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer;'"+
-									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\'; p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 									">";
 								}
 
@@ -418,7 +370,7 @@ function mover_menu(reves,clic,true_click){
 								"	id='p_00987_boton_tripartita'"+
 								"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 								"	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer;'"+
-								'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+								'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 								">";
 							}
 
@@ -432,7 +384,7 @@ function mover_menu(reves,clic,true_click){
 								 "	id='p_00987_boton_tripartita'"+
 								 "	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 								 "	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer;'"+
-								 '	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+								 '	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 								 ">";
 							 }
 							 else
@@ -482,7 +434,7 @@ function mover_menu(reves,clic,true_click){
 									"	id='p_00987_boton_tripartita_2'"+
 									"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 									"	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer;'"+
-									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+									'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 									">";
 							}
 
@@ -499,7 +451,7 @@ function mover_menu(reves,clic,true_click){
 						"	id='p_00987_boton_tripartita'"+
 						"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 						"	style='height:58px;float: right;margin: 8px 10px 0 0;cursor:pointer;'"+
-						'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+						'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 						">";
 					}
 
@@ -507,7 +459,70 @@ function mover_menu(reves,clic,true_click){
 				//default: break;
 			}
 		}
+		document.getElementById("p_00955_body").scrollTop = 0;
 	}
 
+function p_00987_recolocar_menu(reves,clic){
+	for(i in menu){
+		if(menu[i][2]==String(clic)){
+			//contenedor elemento en el que estoy
+			if(typeof estoy != 'undefined')
+				document.getElementById(estoy).style.display="none";
+			document.getElementById(menu[i][2]).style.left=0+"px";
+			if(!p_00987_menu_movil){
+			//cambiar posiciones del menu
+				menu[i][0]=menu[menu.length-1][0];
+				menu[i][3]=200;
+				menu[i][4]=10;
 
+				for(j=parseInt(i)+parseInt(1);j<menu.length;j++){
+					menu[j][0]=(j-1)*SEPARACION;
+				}
+			}
+			else{
+				document.getElementById(menu[i][2]).style.height="125%";
+				document.getElementById(menu[i][2]).style.margin="-2% 0 0 0";
+			}
+			estoy=menu[i][2].substr(13,menu[i][2].length);
+			document.getElementById(estoy).style.display="block";
+		}
+		else{
+				if(p_00987_menu_movil){
+					document.getElementById(menu[i][2]).style.height="100%";
+					document.getElementById(menu[i][2]).style.top="0";
+					document.getElementById(menu[i][2]).style.margin="0 0 0 0";
+					//document.getElementById(menu[i][2].slice(13)).style.display="none";
+					document.getElementById(menu[i][2]).style.left=0+"px";
+				}
+		}
+		if(!p_00987_menu_movil){
+			//set MENU[][0:pos_cerrado;1:pos_abierto;2:id;3:z-index;4:top]
+			if(reves){
+				document.getElementById("p_00987_menu_out").style.display = "none";
+				document.getElementById(menu[i][2]).style.left=menu[i][0]+"px";
+				document.getElementById(menu[i][2]).style.zIndex=menu[i][3];
+				document.getElementById(menu[i][2]).style.top="0px";
+			}else{
+				document.getElementById("p_00987_menu_out").style.display = "inline";
+				document.getElementById(menu[i][2]).style.left=menu[i][1]+"px";
+				document.getElementById(menu[i][2]).style.zIndex=menu[i][3];
+				//if(clic!= "p_00987_menu_mail")
+					document.getElementById(menu[i][2]).style.top=menu[i][4]+"px";
+			}
+		}
+	}
+}
+var p_00987_menu_inferior_escondido= false;
+function p_00987_esconder_menu_inferior(){
+	if(!document.getElementById('head_oxbridge').contains( document.getElementById('contenedor_menu'))){
+		document.getElementById('head_oxbridge').insertBefore(document.getElementById('contenedor_menu'),document.getElementById('head_oxbridge').children[1]);
+		p_00987_menu_inferior_escondido= true;
+	}
+}
+function p_00987_mostrar_menu_inferior(){
+	if(p_00987_menu_inferior_escondido && (document.getElementById('head_oxbridge').contains( document.getElementById('contenedor_menu')))){
+		document.getElementById('p_00955_body').appendChild(document.getElementById('contenedor_menu'));
+		p_00987_menu_inferior_escondido= false;
+	}
+}
 </script>

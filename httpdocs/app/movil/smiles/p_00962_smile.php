@@ -162,7 +162,7 @@
           </div>
           <div id="p_00962_grafico_progreso_detalle" style="display:none;">
              <div id="p_00962_grafico_progreso_detalle_trinity" class="p_01172_grafico_progreso_detalle_seccion" style="display:none;font-size: 3em;">
-             	<img id="p_00962_detalle_trinity_logo"  src="http://www.trinitycollege.com/images/logo_trinity_college_london.png">
+             	<!--<img id="p_00962_detalle_trinity_logo"  src="http://www.trinitycollege.com/images/logo_trinity_college_london.png">-->
 				<div id="p_00962_detalle_trinity_solisitud_texto" style="margin:1em 0;"><? echo $TEXTOS[138][2]; ?></div>
 				<button id="solisitud_trinity_boton" class="boton_normal" onclick="p_01171_enviar_solisitud_trinity();"><? echo $TEXTOS[160][2]; ?></button>
 				<div id="p_00962_detalle_trinity_solisitud_precio" style="font-size: 18px;font-family: helveticaneueroman;"><? echo $TEXTOS[165][2]; ?></div>
@@ -181,7 +181,7 @@
           <div id="p_00962_start" class="p_00962_start" onclick="p_01171_boton_start();"><? echo $TEXTOS[59][2];?>
              <img src="<? echo ver_url("images/play.png","src"); ?>" style="height:1em;" />
           </div>
-          <div id="p_00962_preguntas_contenedor" style="display:none;">
+          <div id="p_00962_preguntas_contenedor"  class="avoid_ios_rubber_band" style="display:none;">
 						<div id= "p_00962_preguntas_y_botones_contenedor">
 							<div id="head_oxbridge_menu_apartados2"></div>
             	<? include ver_url('movil/smiles/p_01175_preguntas.php',"");?>

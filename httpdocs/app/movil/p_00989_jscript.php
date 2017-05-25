@@ -608,7 +608,6 @@ function p_00989_contar_firmas_pendientes(){
 		dia_lectivo[i].firmado="0";
 		dia_lectivo[i].incidencia="0";
 		dia_lectivo[i].asistencia="1";
-		break;
 	}*/
 
 	p_00989_firmas_enviadas= 0;
@@ -703,6 +702,7 @@ function p_00989_cerrar_firmas_minimas(){
 }
 
 function p_00989_cerrar_firmas(){
+		p_00987_mostrar_menu_inferior()
 		document.getElementById("p_00995_firma").style.display="none";
 		document.getElementById("p_00995_ventana_alerta").style.display="none";
 		document.getElementById("p_00989_salir_firmas_div").style.display="none";
@@ -711,6 +711,7 @@ function p_00989_cerrar_firmas(){
 
 
 function p_00989_crear_formulario_firma(p_00989_dia){
+	p_00987_esconder_menu_inferior();
 	ocultar_mostrar('p_00995_firma');
 
 	if((typeof p_00989_una_vez!='undefined')&&(p_00989_una_vez)){

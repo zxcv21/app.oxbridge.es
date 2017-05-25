@@ -129,9 +129,18 @@ function p_00989_quitar_aviso_reservar(set){
 
 //funcion para mostrar actividad
 function p_01003_mostrar_actividad(tipo,d,a,m){
-	document.getElementById('p_00960_clases_contenedor_actividad').style.display="block";
+	document.getElementById('p_00960_clases_contenedor_actividad_overall').style.display="block";
 	document.getElementById('p_00960_clases_contenedor_actividad_cabecera').style.display = "block" ;
 	document.getElementById('p_00960_clases_contenedor_actividad_contenido').style.display = "block" ;
+	if(window.innerWidth<p_00956_ancho_movil){
+		document.getElementById('clases').style.height = "100%" ;
+	}
+
+	if(window.innerWidth<p_00956_ancho_movil){
+		document.getElementById('head_oxbridge').style.display="none";
+		document.getElementById('contenedor_menu').style.display="none";
+		document.getElementById('p_00960_clases_contenedor_actividad_overall').style.height="100vmax";
+	}
 	var actividades=dia_lectivo[d].actividad[a];
 	p_01003_dia_imprimir= d;
 	p_01003_actividad_imprimir= a;
@@ -178,10 +187,14 @@ function p_01003_mostrar_actividad(tipo,d,a,m){
 			if(actividades.enlace[m].ruta.match(/youtube/g)){
 				//estilo_youtube= "style='heigth:auto;width:500px'";
 			}
-			over_all('<div class="p_00990_over_all_cerrar_video" onclick="cerrar_over_all();document.getElementById(\'p_00990_over_all_cerrar\').style.display=\'\';" style="display: inline;"></div><div id="p_01003_contenedor_video"><iframe class="p_01003_enlace_actividad" src="'+p_01003_corregir_enlace(actividades.enlace[m].ruta)+'"></iframe></div>','rgba(0,0,0,0.7)');
+			over_all('<div class="p_00990_over_all_cerrar_video" onclick="p_01003_cerrar_video();document.getElementById(\'p_00990_over_all_cerrar\').style.display=\'\';" style="display: inline;"></div><div id="p_01003_contenedor_video"><iframe class="p_01003_enlace_actividad" src="'+p_01003_corregir_enlace(actividades.enlace[m].ruta)+'"></iframe></div>','rgba(0,0,0,0.7)');
 			document.getElementById("p_00990_over_all_cerrar").style.display="none" ;
 			document.getElementById('p_00990_over_all_contenedor').style.backgroundColor = "transparent" ;
 			document.getElementById('p_00990_over_all_contenedor').style.border = "0px" ;
+			if((window.innerWidth<p_00956_ancho_movil)&&(window.innerWidth>window.innerHeight)){
+				document.getElementById('p_00990_over_all_contenedor').style.top= "0";
+				document.getElementById('p_00990_over_all_contenedor').style.padding="0";
+			}
 
 		break;}
 		case 'tar':{
@@ -249,11 +262,32 @@ function p_01003_mostrar_actividad(tipo,d,a,m){
 	document.getElementById("p_00960_clases_contenedor_actividad_contenido").scrollTop = 0;
 }
 
+if(window.innerWidth<p_00956_ancho_movil)
+	window.addEventListener("orientationchange", p_01174_resize_video);
+
+function p_01174_resize_video(){
+	if((window.innerWidth<p_00956_ancho_movil)&&(window.innerWidth>window.innerHeight)){
+		document.getElementById('p_00990_over_all_contenedor').style.top= "0";
+		document.getElementById('p_00990_over_all_contenedor').style.padding="0";
+	}
+	else{
+		document.getElementById('p_00990_over_all_contenedor').style.top= "";
+		document.getElementById('p_00990_over_all_contenedor').style.padding="";
+	}
+}
+
+function p_01003_cerrar_video(){
+	if((window.innerWidth<p_00956_ancho_movil)&&(window.innerWidth>window.innerHeight)){
+		document.getElementById('p_00990_over_all_contenedor').style.top= "";
+		document.getElementById('p_00990_over_all_contenedor').style.padding="";
+	}
+	cerrar_over_all();
+}
 window.addEventListener('resize', p_01003_calcular_posicion_actividades);
 
 function p_01003_calcular_posicion_actividades(){
-	if(document.getElementById("p_00960_clases_contenedor_actividad")){
-		document.getElementById("p_00960_clases_contenedor_actividad").style.marginTop =
+	if(document.getElementById("p_00960_clases_contenedor_actividad_overall")){
+		document.getElementById("p_00960_clases_contenedor_actividad_overall").style.marginTop =
 		document.getElementById("p_00960_clases_contenedor_actividad_cabecera").offsetHeight+"px";
 	}
 }
@@ -579,8 +613,10 @@ function p_1003_crear_formulario_valoracion(p_01003_clase){
 	document.getElementById("p_00995_input_form_valoracion_disparador_js").value="window.parent.ocultar_mostrar('p_00995_formulario_valoracion_contenedor');"+
 		"window.parent.p_01003_enviar_comentario();";
 
-	if(window.innerWidth<p_00956_ancho_movil)
+	if(window.innerWidth<p_00956_ancho_movil){
 		document.getElementById("p_0001851_form_valoracion").style.height = "";
+		p_00987_esconder_menu_inferior();
+	}
 	else
 		document.getElementById("p_0001851_form_valoracion").style.height = "200px";
 	document.getElementById("p_01450_overall_valoracion_inputs").style.display = "none";
@@ -682,6 +718,7 @@ function p_1003_comprobar_valoraciones_pendientes(){
 					dia_lectivo[i].incidencia=0;
 					dia_lectivo[i].asistencia="1";
 					this.primera_vez= false;
+					break;
 			}
 		}
 		this.primera_vez= false;
@@ -823,6 +860,7 @@ function p_01003_enviar_valoracion(){
 		p_01003_deshacer_estilos_no_asistencia();
 		mostrar_valoracion(false,"formulario_valoracion");
 		mostrar_valoracion(true);
+
 	}
 	else
 	{
@@ -852,6 +890,9 @@ function p_01003_enviar_valoracion(){
 	}
 	document.getElementById("p_0001851_boton_incidencia").style.width="";
 	document.getElementById("p_0001851_boton_incidencia").style.top="";
+	if(window.innerWidth<p_00956_ancho_movil)
+		setTimeout(p_00987_mostrar_menu_inferior, 800);
+
 }
 
 function p_01003_deshacer_estilos_no_asistencia(){

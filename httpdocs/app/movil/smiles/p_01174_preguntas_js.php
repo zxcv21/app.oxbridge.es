@@ -2395,7 +2395,7 @@ function p_01174_drag_move_touch(e){
 					document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_element_over.getBoundingClientRect().left-30)+"px";
 			document.getElementById("p_01175_preguntas").style.background="";
 			document.getElementById("p_01175_forbidden").style.display="none";
-			document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_element_over)-this.p_01174_mitad_alto_caja-25)+"px";
+			document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_element_over)-this.p_01174_mitad_alto_caja-31)+"px";
 			//document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_element_over.getBoundingClientRect().left-12)+"px";
 			document.getElementById("p_01175_flecha_posicion").style.display="block";
 			this.p_01174_last_element_over= p_01174_element_over;
@@ -2422,7 +2422,7 @@ function p_01174_drag_move_touch(e){
 				else
 					document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_elemento_izq.getBoundingClientRect().right-30)+"px";
 				//document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_elemento_izq)-7)+"px";
-				document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_elemento_izq)-this.p_01174_mitad_alto_caja-25)+"px";
+				document.getElementById("p_01175_flecha_posicion").style.top=(p_01174_getOffsetTop(p_01174_elemento_izq)-this.p_01174_mitad_alto_caja-31)+"px";
 				//document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_elemento_izq.getBoundingClientRect().right)+"px";
 				//document.getElementById("p_01175_flecha_posicion").style.left=(p_01174_elemento_izq.getBoundingClientRect().right-12)+"px";
 				document.getElementById("p_01175_flecha_posicion").style.display="block";

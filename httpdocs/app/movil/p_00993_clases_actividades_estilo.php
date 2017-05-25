@@ -81,7 +81,7 @@ Pag. ID: p_00993
 }
 
 /*//////////////////////////////////////////////CONTENEDOR ACTIVIDADES*/
-#p_00960_clases_contenedor_actividad{
+#p_00960_clases_contenedor_actividad_overall{
 	position: absolute;
 	top: 140px;
 	left: 425px;
@@ -320,28 +320,65 @@ display:inline-block;
 	#p_00992_clases_actividades_actividad_titulo{
 		padding-left: 24px;
 	}
-	#p_00960_clases_contenedor_actividad_cabecera{
+	#p_00960_clases_contenedor_actividad{
+		border: 2px solid rgb(33, 174, 215);
+    border-radius: 10px;
+    box-sizing: border-box;
+		position: absolute;
+    height: 100vmax;
+    width: 98%;
+    overflow: hidden;
+		max-width: 667px;
 		left: 0;
+		right: 0;
+		margin: auto;
+		height: 97vh;
+		margin-top: 2%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+	}
+	#p_00960_clases_contenedor_actividad_cabecera{
+/*		left: 0;
 		top: 0;
 		background: #f3f3f3;
-		z-index: 1;
-		position: absolute;
+		z-index: 2;
+		position: absolute;*/
+		background: #f3f3f3;
+		z-index: 2;
+		position: initial;
+		padding-right: 35px;
 	}
 	#p_00960_clases_contenedor_actividad_contenido{
-		position: absolute;
+/*		position: absolute;
 		left: 0;
-		top: 54px;
+		top: 54px;*/
 		background-color: white;
 		z-index: 1;
 		width: 100%;
 		overflow: auto;
 		/*bottom: 0;*/
 		padding-bottom: 16vh;
+		height: 100%;
+		box-sizing: border-box;
+		-webkit-overflow-scrolling: touch;
+		flex-grow: 1;
 	}
-	#p_00960_clases_contenedor_actividad{
+	#p_00960_clases_contenedor_actividad_overall{
 		/*top: 0;
 		left:780px;*/
-		position: initial;
+		/*position: initial;*/
+		display: none;
+		position: fixed;
+    height: 0;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    margin-top: 0 !important;
+		background-color: rgba(0,0,0,0.8);
+
+
 	}
 	#p_01003_contenedor_actividad img{
 		width: 100%;

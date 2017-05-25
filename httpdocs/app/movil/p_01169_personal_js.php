@@ -135,6 +135,8 @@ function p_01169_cargar_presonal_datos_info_load()
 			p_01176_funcion_consulta_smile_datos();
 		}
 	}
+/*	if(personal_datos_info.alumno_id=="40830")
+		personal_datos_info.tripartita="1";*/
 	if(personal_datos_info.tripartita=="1")
 	{
 		if(!document.getElementById("p_00987_boton_tripartita"))
@@ -143,7 +145,7 @@ function p_01169_cargar_presonal_datos_info_load()
 				"	id='p_00987_boton_tripartita'"+
 				"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
 				"	style='height:100%;float: right;margin-right: 10px;cursor:pointer;'"+
-				'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';"'+
+				'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 				">");
 		}
 	}

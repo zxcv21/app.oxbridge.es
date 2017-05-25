@@ -74,40 +74,43 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 				$fp = fopen($destino, 'wb');
 
 				//guardar firma;
-				$ok = fwrite( $fp, $decodedData);
+				$ok_file = fwrite( $fp, $decodedData);
 				fclose( $fp );
 
 /*AMAZON*/
 ///////////////////////////////////////////////////////
+				$ok= false;
+				if($ok_file){
+					$gertrudis_times = substr_count($_SERVER['PHP_SELF'],"/");
+					$gertrudis_root_access = "";
+					$gertrudis_i = 0;
 
-				$gertrudis_times = substr_count($_SERVER['PHP_SELF'],"/");
-				$gertrudis_root_access = "";
-				$gertrudis_i = 0;
+					while ($gertrudis_i < $gertrudis_times)
+					{
+						$gertrudis_root_access .= "../";
+						$gertrudis_i++;
+					}
 
-				while ($gertrudis_i < $gertrudis_times)
-				{
-					$gertrudis_root_access .= "../";
-					$gertrudis_i++;
+					require_once($gertrudis_root_access.'gertrudis/aws_function_firmas.php');
+					getAWSconfig();
+					//AWS access FIN
+					require_once($_SERVER['DOCUMENT_ROOT']."/app/aws-s3/s3_config.php");
+					//include('s3_config.php');
+
+					$bucket='ox-firmas';//'ox-media-server';
+					$folder="firmas/";
+					$tmp= $destino;
+					$name= $folder.p_01177_nombrar_archivo().".png";//$_POST['firma_id'].".png";
+					$filetype= 'image/png';
+
+					if($s3->putObjectFile($tmp, $bucket , $name, S3::ACL_PUBLIC_READ ,$filetype) ){
+						$ok=true;
+					}
+					else{
+						$ok= false;
+					}
 				}
 
-				include($gertrudis_root_access.'gertrudis/aws_function_firmas.php');
-				getAWSconfig();
-				//AWS access FIN
-				require_once($_SERVER['DOCUMENT_ROOT']."/app/aws-s3/s3_config.php");
-				//include('s3_config.php');
-
-				$bucket='ox-firmas';//'ox-media-server';
-				$folder="firmas/";
-				$tmp= $destino;
-				$name= $folder.p_01177_nombrar_archivo().".png";//$_POST['firma_id'].".png";
-				$filetype= 'image/png';
-
-				if($s3->putObjectFile($tmp, $bucket , $name, S3::ACL_PUBLIC_READ ,$filetype) ){
-					$ok=true;
-				}
-				else{
-					$ok= false;
-				}
 				//unlink($destino);
 /////////////////////////////////////////////////////////
 
@@ -149,14 +152,16 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 				}else{
 					echo "ERROR: ".$ok;
-					$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+					/*$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 					"?p_0001293_get_dia_lectivo_id=".$_GET['dia_lectivo'].
 					"&p_0001293_get_alumno_id=".$_GET['alumno_id'].
 					"&p_0001293_get_firmado=0"
-					);
+				);*/
 
-					echo 'window.parent.dia_lectivo['.$_GET['dia_lectivo'].'].firmado="0";';
-					echo 'window.parent.console.info("FIRMA DIA:'.$_GET['dia_lectivo'].' ¡ERROR!");';//FIRMA
+					echo "window.parent.ocultar_mostrar('signature-pad-cargando');";
+					echo "window.parent.ocultar_mostrar('p_00995_firma');";
+					echo 'window.parent.dia_lectivo['.$_GET['dia_lectivo'].'].firmado="0";\n';
+					echo 'window.parent.console.info("FIRMA DIA:'.$_GET['dia_lectivo'].' ¡ERROR!");\n';//FIRMA
 					//boton firma
 					//echo 'window.parent.document.getElementById("p_00987_boton_firma_pendiente").style.display="inline";\n';
 					//echo 'window.parent.document.getElementById("p_00987_boton_firma").style.display="none";\n';

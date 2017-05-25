@@ -4,18 +4,18 @@
 <script>
 p_01171_smile="";
 function p_01171_ganar_smile_animacion(smile){
-	
+
 	var boton=document.getElementById("head_oxbridge_menu_apartados");
 	if(p_01171_smile!=""){
 		p_01171_smile.parentNode.removeChild(p_01171_smile);
 	}
-	
+
 	p_01171_smile=document.createElement("img");
 	p_01171_smile.style.display="none";
 	p_01171_smile.style.height="100%";
 	p_01171_smile.style.transition="1s";
 	boton.appendChild(p_01171_smile);
-	
+
 	if(smile=="+"){
 		smile_datos.alumno.smiles++;
 		smile_datos.alumno.sxm++;
@@ -50,10 +50,10 @@ function p_01171_ganar_smile_animacion(smile){
 function p_01171_mover_yo(smiles_total,smiles_mios,distancia,poblacion){
 	var proporcion_smiles=(100/smiles_total)*smiles_mios;
 	document.getElementById("p_00962_yo").style.left=(proporcion_smiles-12)+"%";
-	
+
 	//comprovar transporte
 	document.getElementById("p_00962_yo_img").src=p_01171_switch_treansporte(smile_datos.curso.smiles,smile_datos.curso.duracion,smile_datos.alumno.sxm,"yo");
-	
+
 	if(typeof distancia=="undefined"||distancia==0){
 		//resultado google API
 		distancia={"destination_addresses" : [ "Londres, Reino Unido" ],
@@ -93,7 +93,7 @@ function p_01171_comprobar_tras_delante(){
 	//set_default
 	document.getElementById("p_00962_tras_kilometros").innerHTML="< "+Math.round(distancia*(proporcion_smiles/100));
 	document.getElementById("p_00962_delante_kilometros").innerHTML=distancia-Math.round(distancia*(proporcion_smiles/100))+" >";
-	
+
 	//comprobar
 	for(i in smile_datos.vs){
 		var vs=smile_datos.vs[i];
@@ -115,9 +115,9 @@ function p_01171_switch_treansporte(smiles,duracion,smiles_mes,yo){
 	if(relacion<=smiles_mes) transporte="../images/"+yo+"_scooter.png";
 	if(relacion*1.33<=smiles_mes) transporte="../images/"+yo+"_coche.png";
 	if(relacion*1.66<=smiles_mes) transporte="../images/"+yo+"_avion.png";
-	
+
 	if(yo=="yo") p_01171_siguiente_transporte(relacion,smiles_mes);
-	
+
 	return transporte;
 }
 
@@ -130,10 +130,10 @@ function p_01171_siguiente_transporte(rel,sml){
 	p_01171_distancia_transportes.scooter= Math.ceil(rel-sml);
 	p_01171_distancia_transportes.coche= Math.ceil(rel*1.33-sml);
 	p_01171_distancia_transportes.avion= Math.ceil(rel*1.66-sml);
-	
+
 	var siguiente_transporte="../images/sk8.png";
 	document.getElementById("p_01171_siguiente_transporte_texto").innerHTML=p_01171_distancia_transportes.sk8;
-	
+
 	if(rel*0.33<=sml){
 		siguiente_transporte="../images/bici.png";
 		document.getElementById("p_01171_siguiente_transporte_texto").innerHTML=p_01171_distancia_transportes.bici;
@@ -154,8 +154,8 @@ function p_01171_siguiente_transporte(rel,sml){
 		siguiente_transporte="";
 	}
 	document.getElementById("p_01171_siguiente_transporte").src=siguiente_transporte;
-	
-} 
+
+}
 
 
 //STAR/STOP PREGUNTAS
@@ -182,7 +182,7 @@ function p_01171_boton_stop(){
 
 //set INICIO
 function p_01171_seccion_smile(){
-	
+
 	document.getElementById("head_oxbridge_menu_apartados").innerHTML=""+
 		"<img"+
 		"	id='p_00987_boton_progreso'"+

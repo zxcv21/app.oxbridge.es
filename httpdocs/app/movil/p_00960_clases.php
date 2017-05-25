@@ -90,20 +90,22 @@ var DIA_LEC="";
 <!--//////////////////////////////////fin-ACTIVIDADES////////////////////////////////////////////////////////////////////-->
 <!--///////////////////////////////////////////CONTENEDOR/////////////////////////////////////////////////////-->
 
-   <div id="p_00960_clases_contenedor_actividad">
-     <div id="p_00960_clases_contenedor_actividad_cabecera">
-     </div>
-     <div id="p_00960_clases_contenedor_actividad_contenido">
+   <div id="p_00960_clases_contenedor_actividad_overall">
+     <div id="p_00960_clases_contenedor_actividad">
+       <div id="p_00960_clases_contenedor_actividad_cabecera">
+       </div>
+       <div id="p_00960_clases_contenedor_actividad_contenido" class="avoid_ios_rubber_band">
+       </div>
      </div>
    </div>
 </div>
 
  <!--//////////////////////////IMPRECION DE CALENDARIO///////////////////////////-->
-         <div id="p_00960_clases_head_calendario_out" style="display:none" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');">
+         <div id="p_00960_clases_head_calendario_out" style="display:none" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');p_00987_mostrar_menu_inferior();">
 	         <div id="p_00960_clases_head_calendario_out_cerrar"></div>
          </div>
          <div id="p_00960_clases_head_calendario" style="display:none;">
-           <div id="p_00960_clases_head_calendario_ir_ultima" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');p_00989_quitar_aviso_reservar('mostrar_ultima');document.getElementById('p_00960_clases_head').style.cssFloat='left';">
+           <div id="p_00960_clases_head_calendario_ir_ultima" onclick="ocultar_mostrar('p_00960_clases_head_calendario_out');ocultar_mostrar('p_00960_clases_head_calendario');p_00989_quitar_aviso_reservar('mostrar_ultima');document.getElementById('p_00960_clases_head').style.cssFloat='left';p_00987_mostrar_menu_inferior();">
              <p><? echo $TEXTOS[188][2];?></p>
            </div>
             <div id="p_00960_clases_head_calendario_mes">

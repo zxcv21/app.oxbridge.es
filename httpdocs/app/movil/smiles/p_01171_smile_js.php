@@ -368,29 +368,35 @@ function p_01171_boton_start(){
 			p_01174_filtro_pregunta_smile();
 			p_01174_consulta_smile_preguntas(p_01174_js_cantidad_preguntas_smiles, 'inicial');
 		}
-
 		document.getElementById('p_00962_start').style.display="none";
 		//document.getElementById('p_00962_preguntas_contenedor').style.display="inline";
 		document.getElementById('p_00962_preguntas_contenedor').style.display="block";
-		//document.getElementById('p_00962_start_config').style.display="none";
-		//document.getElementById('p_00987_boton_amigo').style.display="none";
-		document.getElementById('p_00987_boton_stop').style.display="";
-		document.getElementById('p_00987_boton_volume').style.display="";
-		document.getElementById('p_01171_siguiente_transporte_div').style.display="";
-		//document.getElementById("contenedor_menu").style.display="none";
-		document.getElementById('p_00962_grafico_progreso').style.display="none";
-		document.getElementById('p_00962_grafico_leyenda').style.display="none";
-		//document.getElementById('head_oxbridge_mail').style.display="none";
+		p_01171_espera_preguntas_para_mostrarlas();
 
-		document.getElementById('p_01171_carrera_reducida').style.display="";
-		//document.getElementById('p_00962_carrera').style.display="";
-		document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="auto";
-		document.getElementById('p_00962_contenedor_smile').style.overflow= "initial";
-
-		if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="";
+		p_00987_esconder_menu_inferior();
 
 		document.getElementById("contenedor").style.height="100%";//"100%";
 }
+
+function p_01171_espera_preguntas_para_mostrarlas(){
+		if(!smile_datos.preguntas){
+			setTimeout(p_01171_espera_preguntas_para_mostrarlas, 500);
+		}
+		else{
+			document.getElementById('p_00987_boton_stop').style.display="";
+			document.getElementById('p_00987_boton_volume').style.display="";
+			document.getElementById('p_01171_siguiente_transporte_div').style.display="";
+			document.getElementById('p_00962_grafico_progreso').style.display="none";
+			document.getElementById('p_00962_grafico_leyenda').style.display="none";
+
+			document.getElementById('p_01171_carrera_reducida').style.display="";
+			document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="auto";
+			document.getElementById('p_00962_contenedor_smile').style.overflow= "initial";
+
+			if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="";
+		}
+}
+
 function p_01171_boton_stop(){
 	document.getElementById('head_oxbridge').style.zIndex="999";
 	document.getElementById('p_00962_carrera').style.display="block";
@@ -419,12 +425,17 @@ function p_01171_boton_stop(){
 
 	if(document.getElementById("p_00962_preguntas_insidencia_boton"))document.getElementById("p_00962_preguntas_insidencia_boton").style.display="none";
 	document.getElementById('p_00962_contenedor_smile').style.WebkitOverflowScrolling="touch";
-	document.getElementById('p_00962_contenedor_smile').style.overflow= "auto";
 	//personal_datos_info.ultimapregunta = smile_datos.preguntas[p_01174_pregunta_actual];
+	document.getElementById('p_00962_contenedor_smile').style.overflow= "auto";
 	//smile_datos.preguntas.unshift(personal_datos_info.ultimapregunta);
 	p_1176_contar_smiles();
 	p_01171_actualizar_progreso();
 
+	p_00987_mostrar_menu_inferior();
+	if(window.innerWidth<p_00956_ancho_movil){
+		p_01000_animacion_porcentages_detalles(0);
+		document.getElementById('p_00962_grafico_progreso_detalle_close').style.display="none";
+	}
 	document.getElementById("contenedor").style.height="101vh";
 }
 
@@ -438,13 +449,25 @@ function p_01171_seccion_smile(){
 		document.getElementById('p_00962_carrera').style.display="block";
 		if(personal_datos_info.tripartita=="1")
 		{
-			html="<img"+
-			"	id='p_00987_boton_tripartita'"+
-			"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
-			//"	style='height:100%;float: right;margin-right: 10px;cursor:pointer'"+
-			"	style='height:58px;position:relative;left:264px;cursor:pointer;top:11px;'"+
-			'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados()"'+
-			">";
+/*			if(window.innerWidth>=p_00956_ancho_movil){
+				html="<img"+
+				"	id='p_00987_boton_tripartita'"+
+				"	src='<?// echo ver_url("images/boton_FT.png","src"); ?>'"+
+				//"	style='height:100%;float: right;margin-right: 10px;cursor:pointer'"+
+				"	style='height:58px;position:relative;left:264px;cursor:pointer;top:11px;'"+
+				'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados()"'+
+				">";
+			}
+			else{*/
+				html="<img"+
+				"	id='p_00987_boton_tripartita_smiles'"+
+				" class= 'p_01171_menu_botones_smile'"+
+				"	src='<? echo ver_url("images/boton_FT.png","src"); ?>'"+
+				//"	style='height:100%;float: right;margin-right: 10px;cursor:pointer'"+
+				"	style='height:30px;left:40px;cursor:pointer;z-index:3;padding:0;'"+
+				'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
+				">";
+			//}
 		}
 
 		html+="<div id='p_01171_carrera_reducida' style='display:none;float:right;text-align:center'>"+
@@ -587,7 +610,7 @@ function p_01171_actualizar_progreso(){
 	if(isNaN(x_tnt))x_tnt=0;
 
 	p_01309_crear_torta(x_tnt,"#0b0","#bfb","p_00962_grafico_progreso_tnt",true);
-	document.getElementById("p_00962_grafico_progreso_tnt").insertAdjacentHTML("beforeEnd","<div class='p_01172_torta_titulo'>"+TEXTOS[132].text+"</div>");
+	document.getElementById("p_00962_grafico_progreso_tnt").insertAdjacentHTML("beforeEnd","<div class='p_01172_torta_titulo'>"+TEXTOS[221].text+"</div>");
 
 	p_01309_crear_torta(x_vocabulario,"#00f","#bbf","p_00962_grafico_progreso_vocabulario",true);
 	document.getElementById("p_00962_grafico_progreso_vocabulario").insertAdjacentHTML("beforeEnd","<div class='p_01172_torta_titulo'>"+TEXTOS[136].text+"</div>");
@@ -609,8 +632,8 @@ function p_01171_actualizar_progreso(){
 	document.getElementById("p_00962_grafico_leyenda").innerHTML="<div class='p_01171_cuadrado_leyenda' style='background:#00f;'></div><span class='p_01171_cursor'><? echo $TEXTOS[130][2];?></span><br>"+
 														"<div class='p_01171_cuadrado_leyenda' style='background:#f00;'></div><span class='p_01171_cursor'><? echo $TEXTOS[131][2];?></span><br>"+
 														"<div class='p_01171_cuadrado_leyenda' style='background:#0b0;'></div><span class='p_01171_cursor'><? echo $TEXTOS[132][2];?></span>";
-
-	p_01171_mostrar_detalle_progreso('vocabulario');
+	if(window.innerWidth>=p_00956_ancho_movil)
+		p_01171_mostrar_detalle_progreso('vocabulario');
 }
 
 //estilos para tortas independientes

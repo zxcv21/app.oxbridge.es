@@ -400,6 +400,41 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
   margin: auto;
   margin-top: 54px;
 }
+#p_00955_div_iframe_videoconf{
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 1000;
+}
+#p_00955_falsa_barra_menu_iframe_videoconf{
+	width: 100%;
+    max-width: 1200px;
+    position: absolute;
+    height: 45px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+#p_00955_div_boton_salir_iframe_videoconf{
+		width: 80px;
+    background: black;
+    float: right;
+    height: 100%;
+}
+#p_00955_img_boton_salir_iframe_videoconf{
+		height: 20px;
+    margin: 16px;
+    float: right;
+		cursor: pointer;
+}
+#p_00955_iframe_videoconf{
+	height: 100%;
+	width: 100%;
+}
 @media screen and (max-width: 767px) {
 	#contenedor_menu{
 	position:fixed;
@@ -454,6 +489,12 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 		/*height: 100%;*/
 		overflow: hidden  !important;
 		position: absolute;
+	}
+	#p_00987_boton_tripartita, #p_00987_boton_tripartita_2{
+		box-sizing: border-box;
+		padding: 3px;
+		height: 100% !important;
+		margin: 0 !important;
 	}
 }
 

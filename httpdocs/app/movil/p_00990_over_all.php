@@ -98,6 +98,11 @@ Pag. ID: p_00990
 		top: -13px;
 		right: -13px;
 	}
+	@media screen and (max-width: 767px) and (orientation:landscape){
+		#p_01003_contenedor_video{
+			padding-bottom: 55%;
+		}
+	}
 </style>
 
 <div id="p_00990_over_all" onClick=""></div>
