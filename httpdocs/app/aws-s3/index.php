@@ -8,8 +8,8 @@
 <body>
 
 <?
-$S3bucket='ox-firmas-app-2';
-$folder='firmas';
+$S3bucket='ox-firmas';
+$folder='';
 $imagesizeh='1024';
 $imagesizev='1024';
 $tipofichero='image';
@@ -24,8 +24,8 @@ $tipofichero='image';
 <input type="hidden" value="<? echo($S3bucket)?>" name="bucket" />
 <input type="hidden" value="<? echo($folder)?>" name="folder" />
 </form>
-<?php 
-echo $msg.'<br/>'; 
+<?php
+echo $msg.'<br/>';
 ?>
 
 </body>

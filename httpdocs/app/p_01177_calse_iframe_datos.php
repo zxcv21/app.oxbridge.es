@@ -28,7 +28,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 		{
 			case "actividades":
 			{
-				$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_01_material_01_asp_02_select_02_actividades_de_la_clase.asp?p_0001271_get_curso_clase_ids=".$_GET["curso_clase_ids"]."&p_0001270_get_alumno_id=".$_GET["alumno_id"]);
+				$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_01_material_01_asp_02_select_02_actividades_de_la_clase.asp?p_0001271_get_curso_clase_ids=".$_GET["curso_clase_ids"]."&p_0001270_get_alumno_id=".$_GET["alumno_id"]);
 				echo "window.parent.dia_lectivo[".$_GET["id_dia"]."].actividad=".$actualizar.";";
 				//echo "console.info('LOAD DAY ".$_GET["id_dia"].".');";
 				echo "window.parent.cargar_clase_cargada(".$_GET["id_dia"].");";
@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 			case "subActividades":
 			{
-				$actualizar = file_get_contents("http://app.oxbridge.es/actividades/clases_01_material_01_php_02_select_03_contenido_de_las_actividades.php?p_0001272_get_dia_lectivo_id=".$_GET["id_dia"]."&p_0001272_get_alumno_id=".$_GET["alumno_id"]."&p_0001272_get_msaccess_actividades_id=".$_GET["actividades"]);
+				$actualizar = file_get_contents("https://app.oxbridge.es/actividades/clases_01_material_01_php_02_select_03_contenido_de_las_actividades.php?p_0001272_get_dia_lectivo_id=".$_GET["id_dia"]."&p_0001272_get_alumno_id=".$_GET["alumno_id"]."&p_0001272_get_msaccess_actividades_id=".$_GET["actividades"]);
 				echo $actualizar;
 				echo "window.parent.cargar_subClase_cargada(".$_GET["id_dia"].");";
 				break;
@@ -92,26 +92,29 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 					}
 
 					require_once($gertrudis_root_access.'gertrudis/aws_function_firmas.php');
+
 					getAWSconfig();
 					//AWS access FIN
-					require_once($_SERVER['DOCUMENT_ROOT']."/app/aws-s3/s3_config.php");
+					//require_once($_SERVER['DOCUMENT_ROOT']."/kk/subir_imagen_2_prueba/s3_config.php");
+					require_once($_SERVER['DOCUMENT_ROOT']."/app/aws-s3/S3_config2.php");
+
 					//include('s3_config.php');
 
 					$bucket='ox-firmas';//'ox-media-server';
 					$folder="firmas/";
-					$tmp= $destino;
+					$tmp= $_SERVER['DOCUMENT_ROOT']."/app/".$destino;
+					$tmp = str_replace("\\","/",$tmp);
 					$name= $folder.p_01177_nombrar_archivo().".png";//$_POST['firma_id'].".png";
 					$filetype= 'image/png';
 
 					if($s3->putObjectFile($tmp, $bucket , $name, S3::ACL_PUBLIC_READ ,$filetype) ){
-						$ok=true;
+						$ok=TRUE;
 					}
 					else{
-						$ok= false;
+						$ok= FALSE;
 					}
 				}
 
-				//unlink($destino);
 /////////////////////////////////////////////////////////
 
 
@@ -125,7 +128,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 						$iptomas = $_SERVER['REMOTE_ADDR'];
 					}
 
-					$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
+					$actualizar = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 					"?p_0001293_get_dia_lectivo_id=".$_GET['dia_lectivo'].
 					"&p_0001293_get_alumno_id=".$_GET['alumno_id'].
 					"&p_0001293_get_firmado=1".
@@ -151,7 +154,7 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 				echo "}\n";
 
 				}else{
-					echo "ERROR: ".$ok;
+					/*echo "ERROR: ";*/
 					/*$actualizar = file_get_contents("http://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/clases_03_firma_01_asp_01_modificar.asp".
 					"?p_0001293_get_dia_lectivo_id=".$_GET['dia_lectivo'].
 					"&p_0001293_get_alumno_id=".$_GET['alumno_id'].
@@ -160,8 +163,8 @@ include $_SERVER['DOCUMENT_ROOT']."/sesiones/sesion_02_comprobacion_04_php_02_se
 
 					echo "window.parent.ocultar_mostrar('signature-pad-cargando');";
 					echo "window.parent.ocultar_mostrar('p_00995_firma');";
-					echo 'window.parent.dia_lectivo['.$_GET['dia_lectivo'].'].firmado="0";\n';
-					echo 'window.parent.console.info("FIRMA DIA:'.$_GET['dia_lectivo'].' ¡ERROR!");\n';//FIRMA
+					echo 'window.parent.dia_lectivo['.$_GET['dia_lectivo'].'].firmado="0";';
+					echo 'window.parent.console.info("FIRMA DIA:'.$_GET['dia_lectivo'].' ¡ERROR!");';//FIRMA
 					//boton firma
 					//echo 'window.parent.document.getElementById("p_00987_boton_firma_pendiente").style.display="inline";\n';
 					//echo 'window.parent.document.getElementById("p_00987_boton_firma").style.display="none";\n';

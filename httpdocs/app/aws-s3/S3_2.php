@@ -28,7 +28,7 @@
 /**
 * Amazon S3 PHP class
 *
-* @link https://undesigned.org.za/2007/10/22/amazon-s3-php-class
+* @link http://undesigned.org.za/2007/10/22/amazon-s3-php-class
 * @version 0.2.3
 */
 class S3 {
@@ -77,7 +77,7 @@ class S3 {
 		$rest = new S3Request('GET', '', '');
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::listBuckets(): [%s] %s", $rest->error['code'], $rest->error['message']), E_USER_WARNING);
 			return false;
@@ -120,7 +120,7 @@ class S3 {
 		if ($maxKeys !== null && $prefix !== '') $rest->setParameter('max-keys', $maxKeys);
 		$response = $rest->getResponse();
 		if ($response->error === false && $response->code !== 200)
-			$response->error = array('code' => $response->code, 'message' => 'Unexpected https status');
+			$response->error = array('code' => $response->code, 'message' => 'Unexpected HTTP status');
 		if ($response->error !== false) {
 			trigger_error(sprintf("S3::getBucket(): [%s] %s", $response->error['code'], $response->error['message']), E_USER_WARNING);
 			return false;
@@ -181,7 +181,7 @@ class S3 {
 		$rest->setAmzHeader('x-amz-acl', $acl);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::putBucket({$bucket}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -201,7 +201,7 @@ class S3 {
 		$rest = new S3Request('DELETE', $bucket);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 204)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::deleteBucket({$bucket}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -313,7 +313,7 @@ class S3 {
 			$rest->response->error = array('code' => 0, 'message' => 'Missing input parameters');
 
 		if ($rest->response->error === false && $rest->response->code !== 200)
-			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected https status');
+			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->response->error !== false) {
 			trigger_error(sprintf("S3::putObject(): [%s] %s", $rest->response->error['code'], $rest->response->error['message']), E_USER_WARNING);
 			return false;
@@ -374,7 +374,7 @@ class S3 {
 		if ($rest->response->error === false) $rest->getResponse();
 
 		if ($rest->response->error === false && $rest->response->code !== 200)
-			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected https status');
+			$rest->response->error = array('code' => $rest->response->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->response->error !== false) {
 			trigger_error(sprintf("S3::getObject({$bucket}, {$uri}): [%s] %s",
 			$rest->response->error['code'], $rest->response->error['message']), E_USER_WARNING);
@@ -397,7 +397,7 @@ class S3 {
 		$rest = new S3Request('HEAD', $bucket, $uri);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && ($rest->code !== 200 && $rest->code !== 404))
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::getObjectInfo({$bucket}, {$uri}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -418,7 +418,7 @@ class S3 {
 	public static function setBucketLogging($bucket, $targetBucket, $targetPrefix) {
 		$dom = new DOMDocument;
 		$bucketLoggingStatus = $dom->createElement('BucketLoggingStatus');
-		$bucketLoggingStatus->setAttribute('xmlns', 'https://s3.amazonaws.com/doc/2006-03-01/');
+		$bucketLoggingStatus->setAttribute('xmlns', 'http://s3.amazonaws.com/doc/2006-03-01/');
 
 		$loggingEnabled = $dom->createElement('LoggingEnabled');
 
@@ -437,7 +437,7 @@ class S3 {
 		$rest->setHeader('Content-Type', 'application/xml');
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::setBucketLogging({$bucket}, {$uri}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -461,7 +461,7 @@ class S3 {
 		$rest->setParameter('logging', null);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::getBucketLogging({$bucket}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -498,7 +498,7 @@ class S3 {
 		foreach ($acp['acl'] as $g) {
 			$grant = $dom->createElement('Grant');
 			$grantee = $dom->createElement('Grantee');
-			$grantee->setAttribute('xmlns:xsi', 'https://www.w3.org/2001/XMLSchema-instance');
+			$grantee->setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
 			if (isset($g['id'])) { // CanonicalUser (DisplayName is omitted)
 				$grantee->setAttribute('xsi:type', 'CanonicalUser');
 				$grantee->appendChild($dom->createElement('ID', $g['id']));
@@ -524,7 +524,7 @@ class S3 {
 		$rest->setHeader('Content-Type', 'application/xml');
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::setAccessControlPolicy({$bucket}, {$uri}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -548,7 +548,7 @@ class S3 {
 		$rest->setParameter('acl', null);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 200)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::getAccessControlPolicy({$bucket}, {$uri}): [%s] %s",
 			$rest->error['code'], $rest->error['message']), E_USER_WARNING);
@@ -603,7 +603,7 @@ class S3 {
 		$rest = new S3Request('DELETE', $bucket, $uri);
 		$rest = $rest->getResponse();
 		if ($rest->error === false && $rest->code !== 204)
-			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected https status');
+			$rest->error = array('code' => $rest->code, 'message' => 'Unexpected HTTP status');
 		if ($rest->error !== false) {
 			trigger_error(sprintf("S3::deleteObject(): [%s] %s", $rest->error['code'], $rest->error['message']), E_USER_WARNING);
 			return false;
@@ -771,7 +771,7 @@ final class S3Request {
 			if (isset($this->parameters['acl']) || !isset($this->parameters['logging']))
 				$this->resource .= $query;
 		}
-		$url = (extension_loaded('openssl')?'https://':'https://').$this->headers['Host'].$this->uri;
+		$url = (extension_loaded('openssl')?'https://':'http://').$this->headers['Host'].$this->uri;
 		//var_dump($this->bucket, $this->uri, $this->resource, $url);
 
 		// Basic setup
@@ -799,7 +799,7 @@ final class S3Request {
 			$this->headers['Date'].$amz."\n".$this->resource
 		);
 
-		curl_setopt($curl, CURLOPT_httpsHEADER, $headers);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
 		curl_setopt($curl, CURLOPT_WRITEFUNCTION, array(&$this, '__responseWriteCallback'));
@@ -834,7 +834,7 @@ final class S3Request {
 
 		// Execute, grab errors
 		if (curl_exec($curl))
-			$this->response->code = curl_getinfo($curl, CURLINFO_https_CODE);
+			$this->response->code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 		else
 			$this->response->error = array(
 				'code' => curl_errno($curl),
@@ -894,7 +894,7 @@ final class S3Request {
 	*/
 	private function __responseHeaderCallback(&$curl, &$data) {
 		if (($strlen = strlen($data)) <= 2) return $strlen;
-		if (substr($data, 0, 4) == 'https')
+		if (substr($data, 0, 4) == 'HTTP')
 			$this->response->code = (int)substr($data, 9, 3);
 		else {
 			list($header, $value) = explode(': ', trim($data));

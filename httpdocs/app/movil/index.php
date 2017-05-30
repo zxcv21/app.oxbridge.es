@@ -28,7 +28,7 @@ if( isset($_SERVER['HTTPS']) )
 
 if( $var__http__p_00955_php == "http" )
 {
-	header('Location: https://app.oxbridge.es/app');
+	header('Location: https://app.oxbridge.es');
 }
 else
 {
