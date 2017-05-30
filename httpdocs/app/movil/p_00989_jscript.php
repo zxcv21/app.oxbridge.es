@@ -604,11 +604,15 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-	for(i in dia_lectivo){
-		dia_lectivo[i].firmado="0";
-		dia_lectivo[i].incidencia="0";
-		dia_lectivo[i].asistencia="1";
+
+	if(personal_datos_info.alumno_id=="40830"){
+		for(i in dia_lectivo){
+			dia_lectivo[i].firmado="0";
+			dia_lectivo[i].incidencia="0";
+			dia_lectivo[i].asistencia="1";
+		}
 	}
+
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;

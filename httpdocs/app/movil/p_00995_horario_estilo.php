@@ -873,6 +873,7 @@ Pag. ID: p_00995
     box-sizing: border-box;
 	}
 	#p_00990_over_all_contenedor{
+		padding-bottom: 0;
 		padding-right: 0;
 		padding-left: 0;
 		width: initial;

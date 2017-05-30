@@ -635,6 +635,18 @@
 		/* To smooth any scrolling behavior (IOS)*/
 		/*-webkit-overflow-scrolling: touch;*/
 	}
+	#p_01171_condiciones_trinity_submit{
+		float: none !important;
+		margin-bottom: 5px;
+	}
+	.p_01171_condiciones_trinity{
+		font-size: 14px;
+		background: whitesmoke;
+		padding-top: 40px;
+	}
+	.p_01171_condiciones_trinity p{
+		margin-bottom: 0;
+	}
 }
 @media screen and (max-width: 767px) and (orientation: landscape){
 	#p_01175_preguntas{

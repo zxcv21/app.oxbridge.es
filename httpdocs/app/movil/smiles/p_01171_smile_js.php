@@ -625,18 +625,19 @@ function p_01171_actualizar_progreso(){
 
 	p_01309_crear_torta(x_estructura,"#f00","#fbb","p_00962_grafico_progreso_estructura",true);
 	document.getElementById("p_00962_grafico_progreso_estructura").insertAdjacentHTML("beforeEnd","<div class='p_01172_torta_titulo'>"+TEXTOS[137].text+"</div>");
-
-	/* 'i' fuera
-	document.getElementById("p_00962_grafico_progreso_centro").innerHTML=""+
-		"<img style='height:100%;vertical-align: middle;'>"+promedio+"%"+
-		"<div style='position: absolute; bottom: 0; width: 100%;vertical-align:  -webkit-baseline-middle;'>...</div>";
-	*/
-	/* 'i' dentro*/
+/*
 	document.getElementById("p_00962_grafico_progreso_centro").innerHTML=""+
 		"<img style='height:100%;vertical-align: middle;display:none;'>"+promedio+"%"+
 		"<div style='position: absolute; bottom: 15px; width: 100%;vertical-align:  -webkit-baseline-middle;'>"+
 		"	<img id='p_00962_grafico_progreso_i' style='height: 0.7em;' src='https://app.oxbridge.es/app/images/boton_info.png'>"+
 		"</div>";
+*/
+	document.getElementById("p_00962_grafico_progreso_centro").innerHTML=""+
+		"<img style='height:100%;vertical-align: middle;display:none;'>"+promedio+"%"+
+		"<div style='position: absolute; bottom: 15px; width: 100%;vertical-align:  -webkit-baseline-middle;'>"+
+		"	<img id='p_00962_grafico_progreso_i' style='height: 0.7em;' src='https://app.oxbridge.es/app/images/boton_info.png'>"+
+		"</div>";
+
 	document.getElementById("p_00962_grafico_leyenda").innerHTML="<div class='p_01171_cuadrado_leyenda' style='background:#00f;'></div><span class='p_01171_cursor'><? echo $TEXTOS[130][2];?></span><br>"+
 														"<div class='p_01171_cuadrado_leyenda' style='background:#f00;'></div><span class='p_01171_cursor'><? echo $TEXTOS[131][2];?></span><br>"+
 														"<div class='p_01171_cuadrado_leyenda' style='background:#0b0;'></div><span class='p_01171_cursor'><? echo $TEXTOS[132][2];?></span>";
@@ -1042,10 +1043,14 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 			0,
 			p_01171_enviar_solisitud_trinity_final
 		);
+		if(window.innerWidth<p_00956_ancho_movil){
+			document.getElementById("p_00990_over_all_contenedor").style.paddingTop= "0";
+			document.getElementById("p_00990_over_all_contenedor").style.top= "0";
+		}
 	}
 	else
 	{
-		over_all(''
+/*		over_all(''
 			+'<iframe style="display:none" id="p_01171_condiciones_trinity" name="p_01171_condiciones_trinity"></iframe>'
 			+'<form target="p_01171_condiciones_trinity" class="p_01171_condiciones_trinity" onsubmit="document.getElementById(\'p_01171_condiciones_trinity_submit\').style.display=\'none\';p_00989_cargando(\'p_01171_condiciones_trinity_cargando\',\'60px\');p_01171_enviar_solisitud_trinity(1);">'
 			+'<h1><img src="https://www.trinitycollege.com/images/logo_trinity_college_london.png"></h1>'
@@ -1055,6 +1060,23 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 			+'<p><input id="p_01171_condiciones_trinity_submit" type="submit" style="float:left; display:inline-block;"><div id="p_01171_condiciones_trinity_cargando"></div></p>'
 			+'</form>'
 		+'');
+*/
+	over_all(''
+		+'<iframe style="display:none" id="p_01171_condiciones_trinity" name="p_01171_condiciones_trinity"></iframe>'
+		+'<form target="p_01171_condiciones_trinity" class="p_01171_condiciones_trinity" onsubmit="document.getElementById(\'p_01171_condiciones_trinity_submit\').style.display=\'none\';p_00989_cargando(\'p_01171_condiciones_trinity_cargando\',\'60px\');p_01171_enviar_solisitud_trinity(1);">'
+		//+'<h1><img src="https://www.trinitycollege.com/images/logo_trinity_college_london.png"></h1>'
+		+TEXTOS[162].text
+		+'<p><input type="checkbox" onchange="document.getElementById(\'p_00990_over_all_contenedor\').scrollTop=999999;" required>'
+		+TEXTOS[163].text
+		+'<p><input id="p_01171_condiciones_trinity_submit" type="submit" style="float:left; display:inline-block;"></p><div id="p_01171_condiciones_trinity_cargando"></div>'
+		+'</form>'
+		+'');
+
+		if(window.innerWidth<p_00956_ancho_movil){
+			document.getElementById("p_00990_over_all_contenedor").style.paddingTop= "0";
+			document.getElementById("p_00990_over_all_contenedor").style.top= "0";
+		}
+
 	}
 }
 

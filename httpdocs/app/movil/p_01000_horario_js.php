@@ -1376,6 +1376,14 @@ window.addEventListener("resize", function(){
 		}
 	}
 
+	function p_1000_mostrar_mensaje_usuario(p_1000_mensaje){
+
+		document.getElementById("p_00955_mensaje_usuario").style.display="block";
+		setTimeout(function(){
+			document.getElementById("p_00955_mensaje_usuario").style.display="none";
+		},1500);
+
+	}
 	//insertar formulario + horarios en body
 	document.body.insertAdjacentHTML("afterBegin",''+
 		'<iframe id="p_00958_formulario_mas_horario_iframe" name="p_00958_formulario_mas_horario_iframe" style="display:none;"'+

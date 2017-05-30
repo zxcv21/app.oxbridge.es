@@ -7,7 +7,7 @@
 //p_00989_cargando("cargando_imagen");
 <?
 	function p_01310_consulta_smile_datos(){
-		
+
 		if($datos = file_get_contents("https://s.oxbridge.es/ox/estructura_web/codigo/alumno_v2/smiles_02_temario_03_asp_02_select_01_smiles_conseguidos_trinity.asp"
 												."?p_0001368_get_alumno_id=".$_GET['alumno_id']
 												."&p_0001368_get_bd=".$_GET['bd']
@@ -21,7 +21,11 @@
 		}
 
 	}
-	p_01310_consulta_smile_datos();
+	try{
+		p_01310_consulta_smile_datos();
+	}catch(Exception $e){
+		echo "window.parent.console.log('".$e."');";
+	}
 ?>
 </script>
 </html>

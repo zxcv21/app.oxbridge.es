@@ -143,5 +143,11 @@ Pag. ID: p_00990
 		boton = document.getElementById("p_00990_over_all_cerrar").style.display = "none";
 		//set escala de att
 		if(typeof p_01003_escala_att!="undefined")p_01003_escala_att=1;
+
+		if(window.innerWidth<p_00956_ancho_movil){
+			document.getElementById("p_00990_over_all_contenedor").style.paddingTop= "";
+			document.getElementById("p_00990_over_all_contenedor").style.top= "";
+		}
+
 	}
 </script>
