@@ -20,7 +20,8 @@
 		GO_TO="smile";
 	}
 
-	if((p_0001854_mostrar_pagina_bienvenida_bool)&&(window.innerWidth>=p_00956_ancho_movil))
+	//if((p_0001854_mostrar_pagina_bienvenida_bool)&&(window.innerWidth>=p_00956_ancho_movil))
+	if(p_0001854_mostrar_pagina_bienvenida_bool)
 		p_0001854_mostrar_pagina_bienvenida();
 	else
 		document.getElementById("p_00955_div_img_cargando").style.display="none";

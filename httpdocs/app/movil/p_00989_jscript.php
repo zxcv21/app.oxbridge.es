@@ -604,13 +604,13 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-	if(personal_datos_info.alumno_id=="40830"){
+/*	if(personal_datos_info.alumno_id=="40830"){
 		for(i in dia_lectivo){
 			dia_lectivo[i].firmado="0";
 			dia_lectivo[i].incidencia="0";
 			dia_lectivo[i].asistencia="1";
 		}
-	}
+	}*/
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -628,7 +628,6 @@ function p_00989_comprobar_firmas_pendientes(){
 		return
 	/*crear mensaje pop-up*/
 	if(p_00989_firmas_enviadas>=p_00989_minimo_firmas){
-		//document.getElementById("p_00995_cerrar_firma").style.backgroundImage = "url('<? //echo ver_url("images/close.png","src"); ?>')";
 		document.getElementById("p_00995_alerta_firmas_pendientes").style.backgroundColor="transparent";
 		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").innerHTML=TEXTOS[205].text;
 		document.getElementById("p_00995_alerta_firmas_pendientes_mensaje").style.padding = "11px 0px 0px 0px";
@@ -688,8 +687,6 @@ function p_00989_comprobar_firmas_pendientes(){
 
 		return;
 	}
-	//if(p_0001854_mostrar_pagina_bienvenida_bool)
-		//p_0001854_mostrar_pagina_bienvenida();
 
 	p_01003_comprobar_alarma();
 
@@ -746,51 +743,6 @@ function p_00989_crear_formulario_firma(p_00989_dia){
 	document.getElementById("p_00995_fecha_firma_dia_hora").innerHTML=p_00989_fecha;
 	resizeCanvas();
 	p_00989_resize_firmas();
-	//movil vertical -> pedir que lo giren
-}
-
-//iniciar aviso de firma
-function p_00989_avisos_firmas_set()
-{
-/*	for(i in dia_lectivo)
-	{
-		if(dia_lectivo[i].fecha==datos_servidor.fecha)
-		{
-			if(
-				dia_lectivo[i].horaInicio.split(":")[0]>datos_servidor.horario.split(":")[0]
-				||(
-					dia_lectivo[i].horaInicio.split(":")[0]==datos_servidor.horario.split(":")[0]
-					&& dia_lectivo[i].horaInicio.split(":")[1]>datos_servidor.horario.split(":")[1]
-				)
-			)
-			{
-				var set_aviso=60*(dia_lectivo[i].horaInicio.split(":")[0]-datos_servidor.horario.split(":")[0]);
-				set_aviso+=dia_lectivo[i].horaInicio.split(":")[1]-datos_servidor.horario.split(":")[1];
-				p_00989_avisos_firmas_mostrar(i,set_aviso);
-			}
-		}
-	}*/
-}
-
-//mostrar aviso firmar clase
-function p_00989_avisos_firmas_mostrar(indice,time)
-{
-/*	console.info("Aviso de firma: "+indice+" en: "+time+"min.");
-	setTimeout(function(){
-		alert("$TEXTOS[141].text");
-		console.info("Firma: "+indice);
-		DIA_LEC=indice;
-
-		p_00989_una_vez=true;
-		p_00989_crear_formulario_firma(indice);
-		p_00989_clase_para_firma= p_00992_clase_cargada;
-		p_00989_permitir_cerrar=true;
-		resizeCanvas();
-		signaturePad.clear();
-
-		//p_00989_crear_formulario_firma(indice);
-		//resizeCanvas();
-	},time*60*1000);*/
 }
 
 function p_00989_firmar_antes_clase(p_00989_dia){
