@@ -328,16 +328,16 @@ html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
 }
 #p_00955_mensaje_usuario{
 		display: none;
-		width: 100%;
-    max-width: 400px;
+    max-width: 320px;
     padding: 20px;
     box-sizing: border-box;
     background: ghostwhite;
     margin: auto;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 8vmax;
+    left: 50%;
+		margin-top: 50%;
+		transform: translateX(-50%);
+		width: 100%;
     border: 2px solid #5DC1F2;
     border-radius: 10px;
 		box-shadow: 3px 3px 10px grey;

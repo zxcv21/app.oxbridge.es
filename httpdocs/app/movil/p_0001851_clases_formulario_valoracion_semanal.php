@@ -198,10 +198,11 @@
 #p_0001851_etiqueta_si_no{
 	width: 100%;
 	text-align: left;
+	padding: 10px;
 }
 #p_0001851_etiqueta_si_no span{
 	font-size: 18px;
-  margin-right: 28px;
+  margin-right: 15px;
   font-weight: bold;
 }
 /*************************/
@@ -394,7 +395,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-	background-color: #EB4B3D;
+	background-color: #50BD65;/*#EB4B3D;*/
   -webkit-transition: .4s;
   transition: .4s;
 	border-radius: 34px;
@@ -414,7 +415,7 @@
 }
 
 input:checked + .p_0001851_slider {
-  background-color: #50BD65;
+  background-color: #EB4B3D;/*#50BD65;*/
 }
 
 input:focus + .p_0001851_slider {
@@ -620,13 +621,13 @@ input:checked + .p_0001851_slider:before {
 			"></iframe>-->
 			<!--/**********************************************************************************/-->
 			<div class="p_01450_div_valoracion_dia">
-				<div id="p_0001851_etiqueta_si_no"><span><? echo $TEXTOS[219][2];?></span><span><? echo $TEXTOS[220][2];?></span></div>
+				<div id="p_0001851_etiqueta_si_no"><!--<span><? //echo $TEXTOS[219][2];?></span><span><?// echo $TEXTOS[220][2];?></span>--></div>
 				<div id="p_01450_overall_valoracion_inputs_puntual" class="p_01450_div_check_smile">
 					<!--<input type="checkbox" class="p_01450_checkbox_carita" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual" style="display:none;" checked>
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_puntual">
 					</label>-->
 					<label class="p_0001851_switch">
-					  <input type="checkbox" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual" checked>
+					  <input type="checkbox" id="p_01450_input_valoracion_semanal_puntual" name="p_0001292_input_puntual">
 					  <div class="p_0001851_slider round"></div>
 					</label>
 					<div class="p_01450_div_check_smile p_01450_div_formulario_titulos_check"><? echo $TEXTOS[157][2];?></div>
@@ -636,7 +637,7 @@ input:checked + .p_0001851_slider:before {
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_preparado">
 					</label>-->
 					<label class="p_0001851_switch">
-						<input type="checkbox" id="p_01450_input_valoracion_semanal_preparado" name="p_0001292_input_preparado" checked>
+						<input type="checkbox" id="p_01450_input_valoracion_semanal_preparado" name="p_0001292_input_preparado">
 						<div class="p_0001851_slider round"></div>
 					</label>
 
@@ -647,7 +648,7 @@ input:checked + .p_0001851_slider:before {
 					<label class="p_01450_label_smiles" for="p_01450_input_valoracion_semanal_sistema">
 					</label>-->
 					<label class="p_0001851_switch">
-						<input type="checkbox" id="p_01450_input_valoracion_semanal_sistema" name="p_0001292_input_sistema" checked>
+						<input type="checkbox" id="p_01450_input_valoracion_semanal_sistema" name="p_0001292_input_sistema">
 						<div class="p_0001851_slider round"></div>
 					</label>
 

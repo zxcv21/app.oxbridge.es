@@ -148,6 +148,6 @@ Pag. ID: p_00990
 			document.getElementById("p_00990_over_all_contenedor").style.paddingTop= "";
 			document.getElementById("p_00990_over_all_contenedor").style.top= "";
 		}
-
+		document.getElementById("p_00990_over_all").style.background="";
 	}
 </script>

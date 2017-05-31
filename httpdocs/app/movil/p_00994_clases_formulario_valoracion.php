@@ -234,9 +234,9 @@ function p_0001851_volver_atras_valoracion(){
 	mostrar_valoracion(false,"formulario_valoracion");
 	p_01003_deshacer_estilos_no_asistencia();
 	document.getElementById("p_01450_overall_valoracion_inputs").style.display="none";
-	document.getElementById("p_01450_input_valoracion_semanal_puntual").checked= true;
-	document.getElementById("p_01450_input_valoracion_semanal_preparado").checked= true;
-	document.getElementById("p_01450_input_valoracion_semanal_sistema").checked= true;
+	document.getElementById("p_01450_input_valoracion_semanal_puntual").checked= false;
+	document.getElementById("p_01450_input_valoracion_semanal_preparado").checked= false;
+	document.getElementById("p_01450_input_valoracion_semanal_sistema").checked= false;
 
 }
 </script>

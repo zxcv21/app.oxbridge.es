@@ -398,7 +398,7 @@ Pag. ID: 00961
 
                   <div style="width:100%; text-align:left;clear:both; font-size:0.75em; padding-top:1em; ">
                      <input style="font-size:1.5em; height:1em; width:1em; float:left;" type="checkbox" id="p_00982_checkbox_aviso_de_baja_aceptado_id" >
-                     <? echo $TEXTOS[97][2];?> <a style="text-decoration:underline; color:#000;" onclick="over_all('');document.getElementById('p_00990_over_all_contenedor').innerHTML=document.getElementById( TEXTOS[95].text.replace(/https.*:\/\/.*\.{0,1}oxbridge.es\/app\//g,'') ).innerHTML;"><? echo $TEXTOS[98][2];?></a> <? echo $TEXTOS[99][2];?>
+                     <? echo $TEXTOS[97][2];?> <a style="text-decoration:underline; color:#000;" onclick="over_all('');document.getElementById('p_00990_over_all_contenedor').innerHTML=document.getElementById( TEXTOS[95].text.replace(/http.*:\/\/.*\.{0,1}oxbridge.es\/app\//g,'') ).innerHTML;document.getElementById('p_00990_over_all').style.background='whitesmoke';"><? echo $TEXTOS[98][2];?></a> <? echo $TEXTOS[99][2];?>
                   </div>
                   <br>
                   <div style="width:100%; text-align:center;clear: both;">

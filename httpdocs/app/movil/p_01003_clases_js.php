@@ -710,18 +710,17 @@ p_00994_valoracion_voluntaria= false;
 
 function p_1003_comprobar_valoraciones_pendientes(){
 //testeo
-/*	if(typeof this.primera_vez== "undefined"){
-		p_1003_maximo_dias_valorar= 1000;
-		if(typeof this.primera_vez== "undefined"){
-			for(i in dia_lectivo){
-					dia_lectivo[i].valoracion="";
-					dia_lectivo[i].incidencia=0;
-					dia_lectivo[i].asistencia="1";
-					this.primera_vez= false;
-					break;
+/*	if(personal_datos_info.alumno_id=="40830"){
+			if(typeof this.primera_vez== "undefined"){
+				p_1003_maximo_dias_valorar= 1000;
+				for(i in dia_lectivo){
+						dia_lectivo[i].valoracion="";
+						dia_lectivo[i].incidencia=0;
+						dia_lectivo[i].asistencia="1";
+						break;
+				}
+				this.primera_vez= false;
 			}
-		}
-		this.primera_vez= false;
 	}*/
 
 	if(!p_00994_valoracion_voluntaria){
@@ -781,29 +780,29 @@ function p_01003_enviar_valoracion(){
 
 	if(document.getElementById("p_01450_input_valoracion_semanal_puntual").checked)
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].puntual = "1" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].puntual = "0" ;
 	}
 	else
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].puntual = "0" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].puntual = "1" ;
 	} ;
 
 	if(document.getElementById("p_01450_input_valoracion_semanal_preparado").checked)
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].preparado = "1" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].preparado = "0" ;
 	}
 	else
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].preparado = "0" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].preparado = "1" ;
 	} ;
 
 	if(document.getElementById("p_01450_input_valoracion_semanal_sistema").checked)
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].sistema = "1" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].sistema = "0" ;
 	}
 	else
 	{
-		dia_lectivo[p_1003_clase_formulario_valorar].sistema = "0" ;
+		dia_lectivo[p_1003_clase_formulario_valorar].sistema = "1" ;
 	} ;
 
 
@@ -821,29 +820,29 @@ function p_01003_enviar_valoracion(){
 
 		if(document.getElementById("p_01450_input_valoracion_semanal_puntual").checked)
 		{
-			document.getElementById("p_0001292_input_puntual").value= "1" ;
+			document.getElementById("p_0001292_input_puntual").value= "0" ;
 		}
 		else
 		{
-			document.getElementById("p_0001292_input_puntual").value= "0" ;
+			document.getElementById("p_0001292_input_puntual").value= "1" ;
 		} ;
 
 		if(document.getElementById("p_01450_input_valoracion_semanal_preparado").checked)
 		{
-			document.getElementById("p_0001292_input_preparado").value= "1" ;
+			document.getElementById("p_0001292_input_preparado").value= "0" ;
 		}
 		else
 		{
-			document.getElementById("p_0001292_input_preparado").value= "0" ;
+			document.getElementById("p_0001292_input_preparado").value= "1" ;
 		} ;
 
 		if(document.getElementById("p_01450_input_valoracion_semanal_sistema").checked)
 		{
-			document.getElementById("p_0001292_input_sistema").value= "1" ;
+			document.getElementById("p_0001292_input_sistema").value= "0" ;
 		}
 		else
 		{
-			document.getElementById("p_0001292_input_sistema").value= "0" ;
+			document.getElementById("p_0001292_input_sistema").value= "1" ;
 		} ;
 
 

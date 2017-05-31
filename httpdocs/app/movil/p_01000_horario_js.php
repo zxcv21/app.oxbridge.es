@@ -1377,7 +1377,7 @@ window.addEventListener("resize", function(){
 	}
 
 	function p_1000_mostrar_mensaje_usuario(p_1000_mensaje){
-
+		document.getElementById("p_00955_mensaje_usuario").innerText=p_1000_mensaje;
 		document.getElementById("p_00955_mensaje_usuario").style.display="block";
 		setTimeout(function(){
 			document.getElementById("p_00955_mensaje_usuario").style.display="none";

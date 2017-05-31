@@ -874,8 +874,8 @@ Pag. ID: p_00995
 	}
 	#p_00990_over_all_contenedor{
 		padding-bottom: 0;
-		padding-right: 0;
-		padding-left: 0;
+		padding-right: 5px;
+		padding-left: 5px;
 		width: initial;
 	}
 	#p_00990_over_all_cerrar_reservas{

@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 Pag. ID: 01306
 -->
 <div class=WordSection1>

@@ -604,7 +604,6 @@ function p_00989_separar_hora_HH_MM(p_00989_hora){
 
 function p_00989_contar_firmas_pendientes(){
 //monica
-
 	if(personal_datos_info.alumno_id=="40830"){
 		for(i in dia_lectivo){
 			dia_lectivo[i].firmado="0";
@@ -612,7 +611,6 @@ function p_00989_contar_firmas_pendientes(){
 			dia_lectivo[i].asistencia="1";
 		}
 	}
-
 
 	p_00989_firmas_enviadas= 0;
 	p_00989_firmas_pendientes= 0;
@@ -678,6 +676,16 @@ function p_00989_comprobar_firmas_pendientes(){
 	if(p_00989_ultimo_dia){
 		p_00989_clase_para_firma= p_00989_ultimo_dia;
 		p_00989_crear_formulario_firma(p_00989_ultimo_dia);
+		if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
+			document.getElementById("p_00990_over_all").style.display="block";
+			document.getElementById("p_00955_mensaje_usuario").innerText="Por favor, firma en posición horizontal";
+			document.getElementById("p_00955_mensaje_usuario").style.display="block";
+		}
+		else{
+			document.getElementById("p_00990_over_all").style.display="none";
+			document.getElementById("p_00955_mensaje_usuario").style.display="none";
+		}
+
 		return;
 	}
 	//if(p_0001854_mostrar_pagina_bienvenida_bool)
@@ -738,6 +746,7 @@ function p_00989_crear_formulario_firma(p_00989_dia){
 	document.getElementById("p_00995_fecha_firma_dia_hora").innerHTML=p_00989_fecha;
 	resizeCanvas();
 	p_00989_resize_firmas();
+	//movil vertical -> pedir que lo giren
 }
 
 //iniciar aviso de firma
@@ -813,7 +822,35 @@ function validar_email( email ) {
 	return r;
 }
 
-window.addEventListener("resize",p_00989_resize_firmas);
+window.addEventListener("resize",function(){
+	if(document.getElementById("p_00995_firma").style.display!=="none"){
+		p_00989_resize_firmas();
+		document.getElementById("p_00990_over_all").style.display="none";
+		document.getElementById("p_00955_mensaje_usuario").style.display="none";
+		if((window.innerWidth<p_00956_ancho_movil)&&(window.innerHeight>window.innerWidth)){
+				document.getElementById("p_00990_over_all").style.display="block";
+				document.getElementById("p_00955_mensaje_usuario").innerText="Por favor, firma en posición horizontal";
+				document.getElementById("p_00955_mensaje_usuario").style.display="block";
+		}
+	}
+});
+window.addEventListener("orientationchange",function(){
+	if(window.innerWidth<p_00956_ancho_movil){
+			p_00989_resize_firmas();
+			if(document.getElementById("p_00995_firma").style.display!=="none"){
+				if(window.innerHeight>window.innerWidth){
+					document.getElementById("p_00990_over_all").style.display="block";
+					document.getElementById("p_00955_mensaje_usuario").innerText="Por favor, firma en posición horizontal";
+					document.getElementById("p_00955_mensaje_usuario").style.display="block";
+				}
+				else{
+					document.getElementById("p_00990_over_all").style.display="none";
+					document.getElementById("p_00955_mensaje_usuario").style.display="none";
+				}
+			}
+	}
+});
+
 
 //vh no funciona bien en ios
 function p_00989_resize_firmas(){
@@ -827,17 +864,14 @@ function p_00989_resize_firmas(){
 					document.getElementById("p_00995_firma_contenedor").style.width=window.innerHeight+"px";
 					document.getElementById("p_00995_firma_contenedor").style.height=window.innerWidth+"px";
 				}
-			//	document.getElementById("p_00995_firma").scrollTop = 0;
-/*				if(window.innerWidth>window.innerHeight){
-					document.getElementById("p_00995_firma").style.width=window.innerWidth+"px";
-					document.getElementById("p_00995_firma").style.height=window.innerHeight+"px";
+				//deshace colocar en portrait el menu en el body para que no desaparezca en ios al hacer scroll con la página arriba
+				if(!document.getElementById('head_oxbridge').contains( document.getElementById('contenedor_menu'))){
+					document.getElementById('head_oxbridge').insertBefore(document.getElementById('contenedor_menu'),document.getElementById('head_oxbridge').children[1]);
 				}
-				else{
-					document.getElementById("p_00995_firma").style.width=window.innerHeight+"px";
-					document.getElementById("p_00995_firma").style.height=window.innerWidth+"px";
-				}
-				document.getElementById("p_00995_firma").scrollTop = 0;
-				document.body.scrollTop = 0;*/
+		}
+		else{
+			document.getElementById("p_00995_firma_contenedor").style.width="";
+			document.getElementById("p_00995_firma_contenedor").style.height="";
 		}
 	}
 
