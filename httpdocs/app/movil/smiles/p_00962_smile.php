@@ -164,7 +164,7 @@
              <div id="p_00962_grafico_progreso_detalle_trinity" class="p_01172_grafico_progreso_detalle_seccion" style="display:none;font-size: 3em;">
              	<!--<img id="p_00962_detalle_trinity_logo"  src="https://www.trinitycollege.com/images/logo_trinity_college_london.png">-->
 				<div id="p_00962_detalle_trinity_solisitud_texto" style="margin:1em 0;"><? echo $TEXTOS[138][2]; ?></div>
-				<button id="solisitud_trinity_boton" class="boton_normal" onclick="p_01171_enviar_solisitud_trinity();"><? echo $TEXTOS[160][2]; ?></button>
+				<button id="solisitud_trinity_boton" class="boton_normal" onclick="p_01171_enviar_solisitud_trinity();document.getElementById('p_01171_div_cerrar_condiciones_trinity').style.display='block';document.getElementById('p_00990_over_all_cerrar').style.display='none';"><? echo $TEXTOS[160][2]; ?></button>
 				<div id="p_00962_detalle_trinity_solisitud_precio" style="font-size: 18px;font-family: helveticaneueroman;"><? echo $TEXTOS[165][2]; ?></div>
 				<br><span id="solisitud_trinity_proseso" style="display:none;font-family: helveticaneueroman;"><? echo $TEXTOS[161][2]; ?></span>
 				<div id="p_00962_detalle_trinity_no_disponible" style="display:none;">

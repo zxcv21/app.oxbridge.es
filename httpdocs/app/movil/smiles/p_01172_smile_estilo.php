@@ -449,9 +449,44 @@
 #p_00962_detalle_trinity_solisitud_texto{
 	font-size: 16px;
 }
+#p_01171_div_condiciones_trinity{
+	font-size: 14px;
+  background: whitesmoke;
+  padding-top: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  max-width: 550px;
+  max-height: 100%;
+	padding: 10px;
+	padding-top: 40px;
+  overflow: auto;
+  box-sizing: border-box;
+	border: 2px solid #5DC1F2;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px grey;
+}
 .p_01171_condiciones_trinity
 {
-	font-size:2em;
+	/*font-size:2em;*/
+/*	font-size: 14px;
+    background: whitesmoke;
+    padding-top: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    max-width: 550px;
+    max-height: 100%;
+		padding: 10px;
+    overflow: auto;
+    box-sizing: border-box;
+		border: 2px solid #5DC1F2;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px grey;*/
 }
 .p_01171_condiciones_trinity p
 {
@@ -642,7 +677,6 @@
 	.p_01171_condiciones_trinity{
 		font-size: 14px;
 		background: whitesmoke;
-		padding-top: 40px;
 	}
 	.p_01171_condiciones_trinity p{
 		margin-bottom: 0;

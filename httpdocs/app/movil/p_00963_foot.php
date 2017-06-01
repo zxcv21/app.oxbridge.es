@@ -21,10 +21,10 @@
 	}
 
 	//if((p_0001854_mostrar_pagina_bienvenida_bool)&&(window.innerWidth>=p_00956_ancho_movil))
-	if(p_0001854_mostrar_pagina_bienvenida_bool)
+	if((p_0001854_mostrar_pagina_bienvenida_bool)&&(personal_datos_info.solicitar_datos_bancarios!="1"))
 		p_0001854_mostrar_pagina_bienvenida();
-	else
-		document.getElementById("p_00955_div_img_cargando").style.display="none";
+	//else
+	//	document.getElementById("p_00955_div_img_cargando").style.display="none";
 
 	p_00987_adaptar_menu_al_ancho();
 	mover_menu(true,"p_00987_menu_"+GO_TO);

@@ -10,11 +10,9 @@ Pag. ID: p_00990
 	width:100%;
 	position:fixed;
 	display:none;
-	}
+}
+
 #p_00990_over_all_contenedor{
-/*	background-color: #fff;
-	border: solid 3px #2dcee4;
-	border-radius: 10px;*/
 	top: 50px;
 	left: 0;
 	right: 0;
@@ -23,21 +21,13 @@ Pag. ID: p_00990
 	position: absolute;
 	z-index: 9001;
 	display: none;
-	/*height:223px;
-	width:250px;*/
 	overflow-y:auto;
 	box-sizing: border-box;
-
-	/*position: relative;*/
-	/*padding-bottom: 56.25%;
-	padding-top: 25px;
-	height: 0;*/
 	width: 80%;
 	max-width: 1000px;
 	padding-top: 12px;
 	padding-right: 15px;
-
-	}
+}
 
 #p_01003_contenedor_video{
 	overflow-y: auto;
@@ -58,7 +48,7 @@ Pag. ID: p_00990
 	/*width: 560px;
 	height: 349px;*/
 }
-#p_00990_over_all_cerrar, #p_00990_over_all_cerrar_mail,.p_00990_over_all_cerrar_video,#p_00990_over_all_cerrar_reservas{
+#p_00990_over_all_cerrar, #p_00990_over_all_cerrar_mail,.p_00990_over_all_cerrar_video,#p_00990_over_all_cerrar_reservas,#p_01171_div_cerrar_condiciones_trinity{
 	display:none;
 	position:fixed;
 	height: 30px;

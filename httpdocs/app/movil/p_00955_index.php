@@ -67,7 +67,7 @@ if(!isset($_GET['idioma'])){
 	<img id="p_00955_img_cargando" class="img_cargando" src="<? echo ver_url("images/loading.png","src"); ?>" >
 </div>
 <div id="p_00955_mensaje_usuario">
-</div>	
+</div>
 	<? /* if($_GET['VER']=="dev"){?>
 		<a style="z-index:9999999999; position:absolute; top:0; left:0;" href="https://app.oxbridge.es/app/movil/?TIPO=no-login&DEV=<? echo $_GET['VER'];?>">
         	entrar sin login
@@ -355,7 +355,20 @@ if(!isset($_GET['idioma'])){
       onClick="var a=new Image(); a.src='https://app.oxbridge.es/app/DEV/images/boton_key.png';"
    >TEST</button>
 
-
+	 <style>
+		 .WordSection1 .MsoNormal{
+		 	font-size: 14px !important;
+		 }
+		 .WordSection1 .MsoNormal span{
+			font-size: 14px !important;
+		 }
+		 .WordSection1 .MsoTitle{
+			font-size: 16px;
+		 }
+		 .WordSection1 .MsoTitleCxSpLast span{
+		 	font-size: 20px;
+		 }
+	 </style>
    <div id="p_01304_condiciones_esp.php"  style='tab-interval:35.4pt;display:none;'>
    	<? include ver_url("p_01304_condiciones_esp.php","");?>
    </div>

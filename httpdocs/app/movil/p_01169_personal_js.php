@@ -58,7 +58,7 @@ function p_01169_cargar_presonal_datos_info(){
 			js_url=js_url + "&p_0001326_get_sesion_uid="+document.getElementById('p_0001317_input_usuario_id').value;
 			js_url=js_url + "&p_0001326_get_area_id="+document.getElementById('p_0001317_input_area_id').value;
 			js_url=js_url + "&p_0001326_get_disparador_js=window.parent.p_01169_cargar_presonal_datos_info()";
-			js_url=js_url + "&p_0001326_get_finalizador_js=window.parent.p_01169_cargar_presonal_datos_info()";
+			js_url=js_url + "&p_0001326_get_finalizador_js=window.parent.p_01169_cargar_presonal_datos_info();";
 			personal_datos.setAttribute("src",js_url);
 			//personal_datos.setAttribute("src","<? //echo ver_url("p_01170_personal_datos_info.php","src"); ?>?alumno_id="+alumno_id+"&consulta=imprimir");
 			document.body.appendChild(personal_datos);
@@ -66,16 +66,10 @@ function p_01169_cargar_presonal_datos_info(){
 	}
 	else
 	{
-		setTimeout(
-		function()
-		{
-			p_01169_cargar_presonal_datos_info();
-		}
-		, 500);
+		setTimeout(p_01169_cargar_presonal_datos_info, 1000);
 	};
 	mostrar_datos_pendientes();
 }
-
 
 function mostrar_datos_pendientes(){
 	if(typeof personal_datos_info.mostrar_firmas_pendientes == "undefined" && typeof personal_datos_info.solicitar_datos_bancarios == "undefined"){
@@ -148,6 +142,9 @@ function p_01169_cargar_presonal_datos_info_load()
 				'	onclick="document.getElementById(\'p_01451_tripartita\').style.display=\'\';p_00987_esconder_menu_inferior();p_01451_restaurar_circulos_progreso_tripartita_despues_eliminar_duplicados();"'+
 				">");
 		}
+	}
+	if((personal_datos_info.solicitar_datos_bancarios=="1")&&(document.getElementById("p_0001854_pag_bienvenida_div").style.display!="none")){
+		p_0001854_animar_icono_menu(document.getElementById("p_0001854_personal"));
 	}
 }
 

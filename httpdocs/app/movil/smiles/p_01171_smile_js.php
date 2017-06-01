@@ -1062,6 +1062,8 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 		+'');
 */
 	over_all(''
+		+'<div id="p_01171_div_condiciones_trinity">'
+		+'<div id="p_01171_div_cerrar_condiciones_trinity" onclick=\'document.getElementById("p_00990_over_all_cerrar").style.display="none";cerrar_over_all();\'></div>'
 		+'<iframe style="display:none" id="p_01171_condiciones_trinity" name="p_01171_condiciones_trinity"></iframe>'
 		+'<form target="p_01171_condiciones_trinity" class="p_01171_condiciones_trinity" onsubmit="document.getElementById(\'p_01171_condiciones_trinity_submit\').style.display=\'none\';p_00989_cargando(\'p_01171_condiciones_trinity_cargando\',\'60px\');p_01171_enviar_solisitud_trinity(1);">'
 		//+'<h1><img src="https://www.trinitycollege.com/images/logo_trinity_college_london.png"></h1>'
@@ -1070,6 +1072,7 @@ function p_01171_enviar_solisitud_trinity(condiciones)
 		+TEXTOS[163].text
 		+'<p><input id="p_01171_condiciones_trinity_submit" type="submit" style="float:left; display:inline-block;"></p><div id="p_01171_condiciones_trinity_cargando"></div>'
 		+'</form>'
+		+'</div>'
 		+'');
 
 		if(window.innerWidth<p_00956_ancho_movil){

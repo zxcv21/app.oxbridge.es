@@ -443,6 +443,9 @@ function mover_menu(reves,clic,true_click){
 							p_0100_contenedor_resize();
 							p_01169_seleccionar_seccion(document.getElementById("p_00961_menu_info_primero"));
 							p_01169_resize_contenedor_personal_data();
+							if(personal_datos_info.solicitar_datos_bancarios=="1"){
+								document.getElementById("p_00961_info_menu_banco").click();
+							}
 				break;}
 				case "p_00987_menu_mail":
 					document.getElementById("head_oxbridge_menu_apartados").innerHTML="";

@@ -775,7 +775,7 @@ function validar_email( email ) {
 }
 
 window.addEventListener("resize",function(){
-	if(document.getElementById("p_00995_firma").style.display!=="none"){
+	if((document.getElementById("p_00995_firma"))&&(document.getElementById("p_00995_firma").style.display!=="none")){
 		p_00989_resize_firmas();
 		document.getElementById("p_00990_over_all").style.display="none";
 		document.getElementById("p_00955_mensaje_usuario").style.display="none";
@@ -787,9 +787,9 @@ window.addEventListener("resize",function(){
 	}
 });
 window.addEventListener("orientationchange",function(){
-	if(window.innerWidth<p_00956_ancho_movil){
-			p_00989_resize_firmas();
-			if(document.getElementById("p_00995_firma").style.display!=="none"){
+	if((document.getElementById("p_00995_firma"))&&(document.getElementById("p_00995_firma").style.display!=="none")){
+		if(window.innerWidth<p_00956_ancho_movil){
+				p_00989_resize_firmas();
 				if(window.innerHeight>window.innerWidth){
 					document.getElementById("p_00990_over_all").style.display="block";
 					document.getElementById("p_00955_mensaje_usuario").innerText="Por favor, firma en posición horizontal";

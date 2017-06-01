@@ -313,7 +313,6 @@
       "
       onClick="alert(DIA_LEC);"
    >TEST</button>
-
    <div id="p_01304_condiciones_esp.php"  style='tab-interval:35.4pt;display:none;'>
    	<? include $_SERVER['DOCUMENT_ROOT']."/app/p_01304_condiciones_esp.php";?>
    </div>
