@@ -144,7 +144,12 @@ function p_01169_cargar_presonal_datos_info_load()
 		}
 	}
 	if((personal_datos_info.solicitar_datos_bancarios=="1")&&(document.getElementById("p_0001854_pag_bienvenida_div").style.display!="none")){
-		p_0001854_animar_icono_menu(document.getElementById("p_0001854_personal"));
+		document.getElementById("contenedor_menu").style.transition="0s";
+		document.getElementById("contenedor_menu").style.opacity="0";
+		document.getElementById("contenedor_menu").style.height="";
+		setTimeout(function(){p_0001854_animar_icono_menu(document.getElementById("p_0001854_personal"));document.getElementById("contenedor_menu").style.opacity="1";document.getElementById("contenedor_menu").style.transition="";},500);
+
+
 	}
 }
 
